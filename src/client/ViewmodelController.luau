@@ -72,7 +72,7 @@ function ViewmodelController.new(camera)
 	emitter.Lifetime = NumberRange.new(0.035, 0.065)
 	emitter.Speed = NumberRange.new(0)
 	emitter.Rate = 0
-	emitter.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.27), NumberSequenceKeypoint.new(1, 0) })
+	emitter.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.2), NumberSequenceKeypoint.new(1, 0) })
 	emitter.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.08), NumberSequenceKeypoint.new(1, 1) })
 	emitter.Color = ColorSequence.new(Color3.fromRGB(255, 220, 139), Color3.fromRGB(255, 154, 58))
 	emitter.LightEmission = 1
@@ -116,7 +116,7 @@ function ViewmodelController:Fire(ads, sprinting)
 	self.flashSerial += 1
 	local serial = self.flashSerial
 	self.MuzzleEmitter:Emit(3)
-	self.Light.Brightness = 2.2
+	self.Light.Brightness = 1.8
 	task.delay(Config.Vfx.MuzzleDuration, function()
 		if self.flashSerial == serial and self.Light.Parent then self.Light.Brightness = 0 end
 	end)
@@ -143,7 +143,7 @@ function ViewmodelController:Tracer(hitPosition)
 	beam.Attachment0 = self.MuzzleAttachment
 	beam.Attachment1 = endAttachment
 	beam.FaceCamera = true
-	beam.Width0 = 0.035
+	beam.Width0 = 0.026
 	beam.Width1 = 0.008
 	beam.Color = ColorSequence.new(Color3.fromRGB(255, 231, 174))
 	beam.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.28), NumberSequenceKeypoint.new(1, 0.82) })
@@ -152,24 +152,47 @@ function ViewmodelController:Tracer(hitPosition)
 	Debris:AddItem(endPart, Config.Vfx.TracerDuration)
 end
 
-function ViewmodelController:Impact(position, kind)
+function ViewmodelController:Impact(position, kind, info)
 	local anchor, attachment = invisibleAnchor("ShotImpact", workspace)
-	anchor.Position = position
+	local normal = info and info.normal or Vector3.new(0, 1, 0)
+	anchor.CFrame = CFrame.lookAt(position + normal * 0.025, position + normal)
 	local biological = kind == "Body" or kind == "Headshot"
 	local headshot = kind == "Headshot"
+	local material = info and info.material or ""
+	local worldColor = Color3.fromRGB(181, 181, 166)
+	if material == "Metal" or material == "DiamondPlate" or material == "CorrodedMetal" then
+		worldColor = Color3.fromRGB(255, 200, 106)
+	elseif material == "Wood" or material == "WoodPlanks" then
+		worldColor = Color3.fromRGB(148, 111, 76)
+	end
 	local emitter = Instance.new("ParticleEmitter")
 	emitter.Enabled = false
 	emitter.Rate = 0
-	emitter.Lifetime = NumberRange.new(0.08, headshot and 0.24 or 0.16)
-	emitter.Speed = NumberRange.new(1, headshot and 6 or 3)
-	emitter.SpreadAngle = Vector2.new(180, 180)
+	emitter.Lifetime = NumberRange.new(0.08, biological and Config.Vfx.BloodParticleLifetime or Config.Vfx.WorldImpactDuration)
+	emitter.Speed = NumberRange.new(1, headshot and 6 or biological and 3 or 4)
+	emitter.SpreadAngle = Vector2.new(biological and 75 or 55, biological and 75 or 55)
+	emitter.EmissionDirection = Enum.NormalId.Front
 	emitter.Drag = 6
 	emitter.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, headshot and 0.14 or 0.08), NumberSequenceKeypoint.new(1, 0) })
 	emitter.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.15), NumberSequenceKeypoint.new(1, 1) })
-	emitter.Color = ColorSequence.new(biological and Color3.fromRGB(146, 40, 31) or Color3.fromRGB(231, 193, 121))
+	emitter.Color = ColorSequence.new(biological and Color3.fromRGB(146, 40, 31) or worldColor)
 	emitter.LightEmission = biological and 0 or 0.7
 	emitter.Parent = attachment
-	emitter:Emit(headshot and 11 or biological and 6 or 4)
+	emitter:Emit(headshot and Config.Vfx.HeadBloodParticleCount or biological and Config.Vfx.BloodParticleCount or 4)
+	if not biological and info then
+		local mark = Instance.new("Part")
+		mark.Name = "ImpactMark"
+		mark.Size = Vector3.new(0.085, 0.085, 0.012)
+		mark.Anchored = true
+		mark.CanCollide = false
+		mark.CanTouch = false
+		mark.CanQuery = false
+		mark.Material = Enum.Material.SmoothPlastic
+		mark.Color = material == "Metal" and Color3.fromRGB(77, 67, 55) or Color3.fromRGB(48, 48, 45)
+		mark.CFrame = CFrame.lookAt(position + normal * 0.018, position + normal)
+		mark.Parent = workspace
+		Debris:AddItem(mark, 0.9)
+	end
 	local duration = headshot and Config.Vfx.HeadImpactDuration or biological and Config.Vfx.BodyImpactDuration or Config.Vfx.WorldImpactDuration
 	Debris:AddItem(anchor, duration + 0.12)
 end

@@ -30,21 +30,33 @@ Config.Feel = {
 	CameraRecoilRecoveryFraction = 0.55, LandingKick = 0.055,
 }
 Config.Vfx = {
-	MuzzleDuration = 0.055, TracerDuration = 0.065, TracerMaxLength = 75,
+	MuzzleDuration = 0.05, TracerDuration = 0.055, TracerMaxLength = 75,
 	WorldImpactDuration = 0.14, BodyImpactDuration = 0.2, HeadImpactDuration = 0.26,
-	DamageFlashDuration = 0.28,
+	DamageFlashDuration = 0.28, BloodParticleCount = 6, HeadBloodParticleCount = 10, BloodParticleLifetime = 0.2,
 }
 Config.Zombies = {
-	MaxAlive = 7, SpawnInterval = 2.5, MinSpawnDistance = 36,
-	Health = 100, WalkSpeed = 11, AggroRange = 180, AttackRange = 4.4, PreferredMinDistance = 2.8,
-	AttackDamage = 12, AttackWindup = 0.48, AttackCooldown = 1.6,
-	ThinkInterval = 0.23, PathInterval = 1, CorpseLifetime = 3,
-	ApproachSpacing = 3.8, SeparationRadius = 4, SeparationStrength = 3.2,
-	NavigationHalfExtent = 58.5,
+	MaxAlive = 7, SpawnInterval = 2.5, RespawnDelay = 1, MinSpawnDistance = 36, MaxSpawnDistance = 105,
+	MaxHealth = 100, WalkSpeed = 11, AggroRange = 180, AttackRange = 4.4, PreferredMinDistance = 2.8,
+	AttackDamage = 12, AttackWindup = 0.48, AttackRecover = 0.38, AttackCooldown = 1.6,
+	AttackCoordinationInterval = 0.75,
+	ThinkInterval = 0.16, RepathInterval = 1.15, CorpseLifetime = 3.5,
+	ApproachSpacing = 3.8, PersonalSpace = 4, SeparationStrength = 3.2,
+	NavigationHalfExtent = 58.5, SpawnSeparation = 8, SpawnFade = 0.45,
+	HitReactDuration = 0.13, HeadReactDuration = 0.2, HurtSoundCooldown = 0.55,
+	IdleGroanMin = 9, IdleGroanMax = 17, DirectSightInterval = 0.65,
 }
 Config.Audio = {
-	Gunshot = "", MechanicalShot = "", Reload = "", EmptyClick = "",
-	BodyHit = "", Headshot = "", ZombieHurt = "", ZombieAttack = "", ZombieDeath = "",
+	Gunshot = { Id = "", Volume = 0.9, PitchMin = 0.98, PitchMax = 1.02 },
+	MechanicalShot = { Id = "", Volume = 0.35, PitchMin = 0.96, PitchMax = 1.04 },
+	Reload = { Id = "", Volume = 0.6 }, EmptyClick = { Id = "", Volume = 0.45 },
+	WorldConcrete = { Id = "", Volume = 0.35 }, WorldMetal = { Id = "", Volume = 0.42 },
+	WorldWood = { Id = "", Volume = 0.35 }, WorldGeneric = { Id = "", Volume = 0.32 },
+	BodyHit = { Id = "", Volume = 0.43 }, Headshot = { Id = "", Volume = 0.55 },
+	ZombieIdle = { Id = "", Volume = 0.4, MaxDistance = 65 },
+	ZombieHurt = { Id = "", Volume = 0.5, MaxDistance = 70 },
+	ZombieAttack = { Id = "", Volume = 0.55, MaxDistance = 75 },
+	ZombieDeath = { Id = "", Volume = 0.55, MaxDistance = 80 },
+	PlayerHurt = { Id = "", Volume = 0.45 },
 }
 
 return Config

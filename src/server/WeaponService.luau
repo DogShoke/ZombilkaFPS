@@ -56,6 +56,7 @@ local function fire(player, origin, direction)
 	local result = workspace:Raycast(origin, direction * Config.Pistol.Range, rayParams)
 	local hitPosition = result and result.Position or origin + direction * Config.Pistol.Range
 	local hitKind = "World"
+	local hitInfo = result and { material = result.Material.Name, normal = result.Normal, direction = direction } or nil
 	if result then
 		local model = result.Instance:FindFirstAncestorOfClass("Model")
 		local targetHumanoid = model and model:FindFirstChildOfClass("Humanoid")
@@ -63,12 +64,12 @@ local function fire(player, origin, direction)
 			local headshot = result.Instance.Name == "Head"
 			local damage = Config.Pistol.Damage * (headshot and Config.Pistol.HeadshotMultiplier or 1)
 			if damage >= targetHumanoid.Health then model:SetAttribute("FatalHeadshot", headshot) end
+			ZombieService.React(model, headshot, direction)
 			targetHumanoid:TakeDamage(damage)
-			ZombieService.React(model, headshot)
 			hitKind = headshot and "Headshot" or "Body"
 		end
 	end
-	feedbackRemote:FireClient(player, "Shot", hitKind, hitPosition)
+	feedbackRemote:FireClient(player, "Shot", hitKind, hitPosition, hitInfo)
 end
 
 local function reload(player)

@@ -33,10 +33,49 @@ function CombatHud.new(playerGui)
 	damageOverlay.ZIndex = 0
 	damageOverlay.Parent = gui
 	self.DamageOverlay = damageOverlay
+	self.DamageEdges = {}
+	for _, edge in ipairs({
+		{ "Top", UDim2.fromScale(1, 0.22), UDim2.fromScale(0, 0), 0 },
+		{ "Bottom", UDim2.fromScale(1, 0.22), UDim2.fromScale(0, 0.78), 180 },
+		{ "Left", UDim2.fromScale(0.18, 1), UDim2.fromScale(0, 0), 90 },
+		{ "Right", UDim2.fromScale(0.18, 1), UDim2.fromScale(0.82, 0), 270 },
+	}) do
+		local frame = Instance.new("Frame")
+		frame.Name = "Damage" .. edge[1]
+		frame.Size, frame.Position = edge[2], edge[3]
+		frame.BackgroundColor3 = Color3.fromRGB(130, 29, 26)
+		frame.BackgroundTransparency = 1
+		frame.BorderSizePixel = 0
+		frame.ZIndex = 1
+		local gradient = Instance.new("UIGradient")
+		gradient.Rotation = edge[4]
+		gradient.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(1, 1) })
+		gradient.Parent = frame
+		frame.Parent = gui
+		table.insert(self.DamageEdges, frame)
+	end
 	self.AmmoLabel = label(gui, UDim2.fromOffset(150, 42), UDim2.new(1, -180, 1, -82), 26)
+	self.AmmoLabel.Name = "AmmoLabel"
 	self.AmmoLabel.TextXAlignment = Enum.TextXAlignment.Right
 	self.ReloadLabel = label(gui, UDim2.fromOffset(150, 24), UDim2.new(1, -180, 1, -105), 13)
+	self.ReloadLabel.Name = "ReloadLabel"
 	self.ReloadLabel.TextXAlignment = Enum.TextXAlignment.Right
+	self.HealthLabel = label(gui, UDim2.fromOffset(150, 24), UDim2.new(0, 30, 1, -105), 14)
+	self.HealthLabel.Name = "HealthLabel"
+	self.HealthLabel.TextXAlignment = Enum.TextXAlignment.Left
+	local healthBack = Instance.new("Frame")
+	healthBack.Name = "HealthBack"
+	healthBack.Size = UDim2.fromOffset(150, 6)
+	healthBack.Position = UDim2.new(0, 30, 1, -77)
+	healthBack.BackgroundColor3 = Color3.fromRGB(24, 30, 29)
+	healthBack.BorderSizePixel = 0
+	healthBack.Parent = gui
+	self.HealthFill = Instance.new("Frame")
+	self.HealthFill.Name = "HealthFill"
+	self.HealthFill.Size = UDim2.fromScale(1, 1)
+	self.HealthFill.BackgroundColor3 = Color3.fromRGB(140, 184, 143)
+	self.HealthFill.BorderSizePixel = 0
+	self.HealthFill.Parent = healthBack
 	self.Crosshair = {}
 	for i = 1, 4 do
 		local line = Instance.new("Frame")
@@ -59,7 +98,15 @@ function CombatHud.new(playerGui)
 		self.HitLines[i] = line
 	end
 	self:SetAmmo(self.ammo, false)
+	self:SetHealth(100, 100)
 	return self
+end
+
+function CombatHud:SetHealth(health, maximum)
+	local fraction = math.clamp(health / math.max(maximum, 1), 0, 1)
+	self.HealthLabel.Text = string.format("HEALTH  %d", math.ceil(health))
+	self.HealthFill.Size = UDim2.fromScale(fraction, 1)
+	self.HealthFill.BackgroundColor3 = Color3.fromRGB(208, 93, 75):Lerp(Color3.fromRGB(140, 184, 143), fraction)
 end
 
 function CombatHud:SetAmmo(ammo, reloading)
@@ -90,6 +137,10 @@ function CombatHud:Damage()
 	self.DamageOverlay.BackgroundTransparency = 0.82
 	self.damageTween = TweenService:Create(self.DamageOverlay, TweenInfo.new(Config.Vfx.DamageFlashDuration), { BackgroundTransparency = 1 })
 	self.damageTween:Play()
+	for _, edge in ipairs(self.DamageEdges) do
+		edge.BackgroundTransparency = 0.42
+		TweenService:Create(edge, TweenInfo.new(Config.Vfx.DamageFlashDuration + 0.22), { BackgroundTransparency = 1 }):Play()
+	end
 end
 
 function CombatHud:Update(dt, moving, ads, kick)

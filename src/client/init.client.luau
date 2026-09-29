@@ -1,11 +1,10 @@
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
-local SoundService = game:GetService("SoundService")
-local Debris = game:GetService("Debris")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Config = require(ReplicatedStorage.Shared.Config)
+local Audio = require(ReplicatedStorage.Shared.Audio)
 local Spring = require(ReplicatedStorage.Shared.Spring)
 local ViewmodelController = require(script.ViewmodelController)
 local CombatHud = require(script.CombatHud)
@@ -24,16 +23,13 @@ local ammo, reloading = Config.Pistol.MagazineSize, false
 local lastLocalShot = -math.huge
 local localShotKick = 0
 
-local function playSound(key, parent)
-	local id = Config.Audio[key]
-	if not id or id == "" then return end
-	local sound = Instance.new("Sound")
-	sound.SoundId = id
-	sound.Volume = 0.8
-	sound.Parent = parent or SoundService
-	sound:Play()
-	sound.Ended:Once(function() sound:Destroy() end)
-	Debris:AddItem(sound, 8)
+local function playSound(key) Audio.Play(key) end
+
+local function impactSound(material)
+	if material == "Metal" or material == "DiamondPlate" or material == "CorrodedMetal" then return "WorldMetal" end
+	if material == "Wood" or material == "WoodPlanks" then return "WorldWood" end
+	if material == "Concrete" or material == "Brick" or material == "Rock" or material == "Slate" then return "WorldConcrete" end
+	return "WorldGeneric"
 end
 
 local function setCharacter(newCharacter)
@@ -49,6 +45,7 @@ local function setCharacter(newCharacter)
 	wantsSprint, wantsAds = false, false
 	ammo, reloading = Config.Pistol.MagazineSize, false
 	hud:SetAmmo(ammo, reloading)
+	hud:SetHealth(newHumanoid.Health, newHumanoid.MaxHealth)
 	cameraKick.Position, cameraKick.Velocity, cameraKick.Target = Vector3.zero, Vector3.zero, Vector3.zero
 	player.CameraMode = Enum.CameraMode.LockFirstPerson
 	UserInputService.MouseDeltaSensitivity = Config.Camera.MouseSensitivity
@@ -65,7 +62,12 @@ local function setCharacter(newCharacter)
 	end)
 	local previousHealth = humanoid.Health
 	healthConnection = humanoid.HealthChanged:Connect(function(currentHealth)
-		if currentHealth < previousHealth then hud:Damage() end
+		if currentHealth < previousHealth then
+			hud:Damage()
+			cameraKick:Impulse(Vector3.new(math.rad(0.38), rng:NextNumber(-0.035, 0.035), rng:NextNumber(-0.025, 0.025)))
+			playSound("PlayerHurt")
+		end
+		hud:SetHealth(currentHealth, humanoid.MaxHealth)
 		previousHealth = currentHealth
 	end)
 end
@@ -126,7 +128,7 @@ UserInputService.InputEnded:Connect(function(input)
 	elseif input.UserInputType == Enum.UserInputType.MouseButton2 then wantsAds = false end
 end)
 
-feedbackRemote.OnClientEvent:Connect(function(kind, a, b)
+feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c)
 	if kind == "Ammo" then
 		ammo, reloading = a, b
 		hud:SetAmmo(ammo, reloading)
@@ -134,9 +136,11 @@ feedbackRemote.OnClientEvent:Connect(function(kind, a, b)
 		if a == "Body" or a == "Headshot" then
 			hud:Hit(a == "Headshot")
 			playSound(a == "Headshot" and "Headshot" or "BodyHit")
+		elseif a == "World" and c then
+			playSound(impactSound(c.material))
 		end
 		if viewmodel and b and (a ~= "World" or (b - workspace.CurrentCamera.CFrame.Position).Magnitude < Config.Pistol.Range - 1) then
-			viewmodel:Impact(b, a)
+			viewmodel:Impact(b, a, c)
 		end
 	elseif kind == "Empty" then
 		playSound("EmptyClick")

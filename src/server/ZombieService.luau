@@ -93,15 +93,47 @@ local function nearestTarget(position)
 	return best, bestDistance
 end
 
+local function crowdSeparation(model, root, approachAngle)
+	local separation = Vector3.zero
+	for other in pairs(active) do
+		if other ~= model and other.Parent then
+			local otherRoot = other:FindFirstChild("HumanoidRootPart")
+			if otherRoot then
+				local delta = root.Position - otherRoot.Position
+				local horizontal = Vector3.new(delta.X, 0, delta.Z)
+				local distance = horizontal.Magnitude
+				if distance < Config.Zombies.SeparationRadius then
+					local direction = distance > 0.05 and horizontal.Unit or Vector3.new(math.cos(approachAngle), 0, math.sin(approachAngle))
+					separation += direction * (Config.Zombies.SeparationRadius - distance) / Config.Zombies.SeparationRadius
+				end
+			end
+		end
+	end
+	return separation.Magnitude > 1 and separation.Unit or separation
+end
+
+local function insideArena(position)
+	local half = Config.Zombies.NavigationHalfExtent
+	return Vector3.new(math.clamp(position.X, -half, half), position.Y, math.clamp(position.Z, -half, half))
+end
+
 local function runAI(model, humanoid, root)
 	local nextAttack = 0
 	local nextPath = 0
 	local waypointPosition
+	local approachAngle = model:GetAttribute("ApproachAngle") or 0
 	while model.Parent and humanoid.Health > 0 do
 		local target, distance = nearestTarget(root.Position)
 		if target then
+			local separation = crowdSeparation(model, root, approachAngle)
 			if distance <= Config.Zombies.AttackRange then
-				humanoid:MoveTo(root.Position)
+				local away = Vector3.new(root.Position.X - target.root.Position.X, 0, root.Position.Z - target.root.Position.Z)
+				local retreat = Vector3.zero
+				if away.Magnitude < Config.Zombies.PreferredMinDistance then
+					local direction = away.Magnitude > 0.05 and away.Unit or Vector3.new(math.cos(approachAngle), 0, math.sin(approachAngle))
+					retreat = direction * (Config.Zombies.PreferredMinDistance - away.Magnitude)
+				end
+				humanoid:MoveTo(insideArena(root.Position + retreat + separation * Config.Zombies.SeparationStrength))
 				if os.clock() >= nextAttack then
 					nextAttack = os.clock() + Config.Zombies.AttackCooldown
 					model:SetAttribute("Attacking", true)
@@ -119,20 +151,22 @@ local function runAI(model, humanoid, root)
 					end
 				end
 			else
+				local approach = Vector3.new(math.cos(approachAngle), 0, math.sin(approachAngle)) * Config.Zombies.ApproachSpacing
+				local destination = insideArena(target.root.Position + approach + separation * Config.Zombies.SeparationStrength)
 				if os.clock() >= nextPath then
 					nextPath = os.clock() + Config.Zombies.PathInterval + rng:NextNumber(0, 0.3)
 					local path = PathfindingService:CreatePath({ AgentRadius = 2, AgentHeight = 5, AgentCanJump = true })
-					local ok = pcall(function() path:ComputeAsync(root.Position, target.root.Position) end)
+					local ok = pcall(function() path:ComputeAsync(root.Position, destination) end)
 					if ok and path.Status == Enum.PathStatus.Success then
 						local waypoints = path:GetWaypoints()
 						local nextWaypoint = waypoints[math.min(2, #waypoints)]
-						waypointPosition = nextWaypoint and nextWaypoint.Position or target.root.Position
+						waypointPosition = nextWaypoint and nextWaypoint.Position or destination
 						if nextWaypoint and nextWaypoint.Action == Enum.PathWaypointAction.Jump then humanoid.Jump = true end
 					else
-						waypointPosition = target.root.Position
+						waypointPosition = destination
 					end
 				end
-				humanoid:MoveTo(waypointPosition or target.root.Position)
+				humanoid:MoveTo(waypointPosition or destination)
 			end
 		end
 		task.wait(Config.Zombies.ThinkInterval)
@@ -142,13 +176,15 @@ end
 local function onDeath(model, root)
 	active[model] = nil
 	model:SetAttribute("Dead", true)
+	model:SetAttribute("Attacking", false)
 	playSound("ZombieDeath", model:FindFirstChild("Torso"))
 	for _, item in ipairs(model:GetDescendants()) do
 		if item:IsA("BasePart") then item.CanCollide = false end
 	end
 	root.Anchored = true
-	local tilt = CFrame.Angles(math.rad(75), 0, math.rad(rng:NextInteger(-25, 25)))
-	TweenService:Create(root, TweenInfo.new(0.42, Enum.EasingStyle.Quad), { CFrame = root.CFrame * tilt }):Play()
+	local headshot = model:GetAttribute("FatalHeadshot") == true
+	local tilt = CFrame.Angles(math.rad(headshot and 105 or 75), 0, math.rad(rng:NextInteger(-25, 25)))
+	TweenService:Create(root, TweenInfo.new(headshot and 0.32 or 0.42, Enum.EasingStyle.Quad), { CFrame = root.CFrame * tilt }):Play()
 	Debris:AddItem(model, Config.Zombies.CorpseLifetime)
 end
 
@@ -158,17 +194,24 @@ function ZombieService.React(model, headshot)
 	local head = model:FindFirstChild("Head")
 	local part = headshot and head or torso
 	if not part then return end
+	local serial = (model:GetAttribute("ReactionSerial") or 0) + 1
+	model:SetAttribute("ReactionSerial", serial)
 	playSound("ZombieHurt", torso)
-	local original = part.Color
+	local original = part:GetAttribute("BaseColor") or part.Color
+	part:SetAttribute("BaseColor", original)
 	part.Color = headshot and Color3.fromRGB(255, 227, 165) or Color3.fromRGB(174, 89, 83)
 	task.delay(headshot and 0.22 or 0.13, function()
-		if part.Parent and not model:GetAttribute("Dead") then part.Color = original end
+		if part.Parent and not model:GetAttribute("Dead") and model:GetAttribute("ReactionSerial") == serial then part.Color = original end
 	end)
-	local shoulder = model:FindFirstChild("Right Shoulder", true)
-	if shoulder and shoulder:IsA("Motor6D") then
-		shoulder.C0 = CFrame.new(1.4, 0, 0) * CFrame.Angles(math.rad(headshot and -38 or -18), 0, 0)
-		task.delay(0.23, function() if shoulder.Parent then shoulder.C0 = CFrame.new(1.4, 0, 0) end end)
-	end
+	local rootJoint = model:FindFirstChild("RootJoint", true)
+	local neck = model:FindFirstChild("Neck", true)
+	if rootJoint then rootJoint.C0 = CFrame.Angles(math.rad(headshot and -13 or -6), 0, math.rad(headshot and 8 or 4)) end
+	if headshot and neck then neck.C0 = CFrame.new(0, 1.65, 0) * CFrame.Angles(math.rad(-22), math.rad(10), 0) end
+	task.delay(headshot and 0.25 or 0.16, function()
+		if model:GetAttribute("ReactionSerial") ~= serial or model:GetAttribute("Dead") then return end
+		if rootJoint and rootJoint.Parent then rootJoint.C0 = CFrame.identity end
+		if neck and neck.Parent then neck.C0 = CFrame.new(0, 1.65, 0) end
+	end)
 end
 
 function ZombieService.Start(spawnZones)
@@ -205,6 +248,7 @@ function ZombieService.Start(spawnZones)
 					local zone = candidates[rng:NextInteger(1, #candidates)]
 					local point = zone + Vector3.new(rng:NextNumber(-3, 3), 0, rng:NextNumber(-3, 3))
 					local model, humanoid, root = makeZombie(point)
+					model:SetAttribute("ApproachAngle", rng:NextNumber(-math.pi, math.pi))
 					active[model] = true
 					humanoid.Died:Connect(function() onDeath(model, root) end)
 					task.spawn(runAI, model, humanoid, root)

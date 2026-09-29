@@ -24,7 +24,16 @@ function CombatHud.new(playerGui)
 	gui.ResetOnSpawn = false
 	gui.Parent = playerGui
 	local self = setmetatable({ Gui = gui, ammo = Config.Pistol.MagazineSize, reloading = false, spread = 0, hitSerial = 0 }, CombatHud)
-	self.AmmoLabel = label(gui, UDim2.fromOffset(150, 48), UDim2.new(1, -180, 1, -85), 30)
+	local damageOverlay = Instance.new("Frame")
+	damageOverlay.Name = "DamageOverlay"
+	damageOverlay.Size = UDim2.fromScale(1, 1)
+	damageOverlay.BackgroundColor3 = Color3.fromRGB(150, 26, 22)
+	damageOverlay.BackgroundTransparency = 1
+	damageOverlay.BorderSizePixel = 0
+	damageOverlay.ZIndex = 0
+	damageOverlay.Parent = gui
+	self.DamageOverlay = damageOverlay
+	self.AmmoLabel = label(gui, UDim2.fromOffset(150, 42), UDim2.new(1, -180, 1, -82), 26)
 	self.AmmoLabel.TextXAlignment = Enum.TextXAlignment.Right
 	self.ReloadLabel = label(gui, UDim2.fromOffset(150, 24), UDim2.new(1, -180, 1, -105), 13)
 	self.ReloadLabel.TextXAlignment = Enum.TextXAlignment.Right
@@ -66,6 +75,7 @@ function CombatHud:Hit(headshot)
 	for _, line in ipairs(self.HitLines) do
 		line.BackgroundColor3 = color
 		line.BackgroundTransparency = 0
+		line.Size = UDim2.fromOffset(headshot and 11 or 8, headshot and 3 or 2)
 		TweenService:Create(line, TweenInfo.new(headshot and 0.3 or 0.2), { BackgroundTransparency = 1 }):Play()
 	end
 	task.delay(0.31, function()
@@ -75,11 +85,18 @@ function CombatHud:Hit(headshot)
 	end)
 end
 
+function CombatHud:Damage()
+	if self.damageTween then self.damageTween:Cancel() end
+	self.DamageOverlay.BackgroundTransparency = 0.82
+	self.damageTween = TweenService:Create(self.DamageOverlay, TweenInfo.new(Config.Vfx.DamageFlashDuration), { BackgroundTransparency = 1 })
+	self.damageTween:Play()
+end
+
 function CombatHud:Update(dt, moving, ads, kick)
 	local goal = (moving and 3 or 0) + kick * 2
 	self.spread += (goal - self.spread) * (1 - math.exp(-dt * 15))
-	local gap = 5 + self.spread
-	local alpha = 0.12 + ads * 0.66
+	local gap = (5 + self.spread) * (1 - ads * 0.45)
+	local alpha = 0.12 + ads * 0.78
 	for _, line in ipairs(self.Crosshair) do line.BackgroundTransparency = alpha end
 	self.Crosshair[1].Size = UDim2.fromOffset(2, 6)
 	self.Crosshair[1].Position = UDim2.new(0.5, -1, 0.5, -gap - 6)

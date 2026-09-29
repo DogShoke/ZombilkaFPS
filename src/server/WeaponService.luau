@@ -62,6 +62,7 @@ local function fire(player, origin, direction)
 		if model and model:GetAttribute("IsZombie") and targetHumanoid and targetHumanoid.Health > 0 then
 			local headshot = result.Instance.Name == "Head"
 			local damage = Config.Pistol.Damage * (headshot and Config.Pistol.HeadshotMultiplier or 1)
+			if damage >= targetHumanoid.Health then model:SetAttribute("FatalHeadshot", headshot) end
 			targetHumanoid:TakeDamage(damage)
 			ZombieService.React(model, headshot)
 			hitKind = headshot and "Headshot" or "Body"

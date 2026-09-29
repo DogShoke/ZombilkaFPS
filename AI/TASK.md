@@ -1,5 +1,5 @@
-# FPS CORE 1.0
+# FPS COMBAT FEEL 1.0
 
-Deliver a playable Baseplate combat sandbox: first-person movement, sprint, ADS, a semi-auto pistol with reload and feedback, server-authoritative hits, and continuously spawning humanoid zombies that chase, attack, react, and die.
+Polish the existing combat sandbox around the authored FpsGlock rig: hidden system cursor, sprint firing, authored animations, sight alignment, motion and recoil, restrained shot effects, clearer zombie reactions, and crowd spacing.
 
-Verify Rojo synchronization and test runtime behavior through Roblox_Studio MCP. Record observed results and remaining limitations in `AI/IMPLEMENTATION.md`.
+Verify Rojo synchronization and test runtime behavior through Roblox_Studio MCP. The implementation and observed results are recorded in `AI/IMPLEMENTATION.md`.

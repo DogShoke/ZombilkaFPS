@@ -5,6 +5,7 @@ local ZombieService = require(script.Parent.ZombieService)
 
 local WeaponService = {}
 local states = {}
+local reloadSerial = 0
 
 local remotes = Instance.new("Folder")
 remotes.Name = "CombatRemotes"
@@ -34,7 +35,7 @@ local function fire(player, origin, direction)
 	local character = player.Character
 	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
 	local head = character and character:FindFirstChild("Head")
-	if not state or not humanoid or humanoid.Health <= 0 or not head then return end
+	if not state or not humanoid or humanoid.Health <= 0 or not head or player:GetAttribute("OptionsOpen") or player:GetAttribute("InElevatorTravel") then return end
 	if not validVector(origin) or not validVector(direction) then return end
 	if (origin - head.Position).Magnitude > 4.5 then return end
 	local magnitude = direction.Magnitude
@@ -76,9 +77,11 @@ local function reload(player)
 	local state = states[player]
 	local character = player.Character
 	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
-	if not state or not humanoid or humanoid.Health <= 0 then return end
+	if not state or not humanoid or humanoid.Health <= 0 or player:GetAttribute("OptionsOpen") or player:GetAttribute("InElevatorTravel") then return end
 	if state.reloading or state.ammo >= Config.Pistol.MagazineSize then return end
 	state.reloading = true
+	reloadSerial += 1
+	feedbackRemote:FireClient(player, "ReloadStarted", Config.Pistol.ReloadDuration, reloadSerial, character)
 	sendAmmo(player)
 	task.delay(Config.Pistol.ReloadDuration, function()
 		if states[player] ~= state then return end
@@ -89,12 +92,16 @@ local function reload(player)
 end
 
 function WeaponService.Start()
-	Players.PlayerAdded:Connect(function(player)
-		player.CharacterAdded:Connect(function()
+	local function prepare(player)
+		local function reset()
 			states[player] = { ammo = Config.Pistol.MagazineSize, reloading = false, lastShot = -math.huge }
 			sendAmmo(player)
-		end)
-	end)
+		end
+		player.CharacterAdded:Connect(reset)
+		if player.Character then reset() end
+	end
+	Players.PlayerAdded:Connect(prepare)
+	for _, player in ipairs(Players:GetPlayers()) do prepare(player) end
 	Players.PlayerRemoving:Connect(function(player) states[player] = nil end)
 	fireRemote.OnServerEvent:Connect(fire)
 	reloadRemote.OnServerEvent:Connect(reload)

@@ -1,5 +1,3 @@
-# FPS COMBAT FEEL 1.0
+# OFFICE OUTBREAK 1.0
 
-Polish the existing combat sandbox around the authored FpsGlock rig: hidden system cursor, sprint firing, authored animations, sight alignment, motion and recoil, restrained shot effects, clearer zombie reactions, and crowd spacing.
-
-Verify Rojo synchronization and test runtime behavior through Roblox_Studio MCP. The implementation and observed results are recorded in `AI/IMPLEMENTATION.md`.
+Preserve authored FpsGlock and server combat. Build two readable office floors, three configurable waves per floor, a server FloorDirector and sliding elevator transition. Fix accepted-reload animation, add C slide and O sensitivity settings with gameplay pause. Use sanitized ready-made zombie/visual/audio assets; record provenance and actual Studio observations. No talents, persistence, multiplayer or automatic commit.

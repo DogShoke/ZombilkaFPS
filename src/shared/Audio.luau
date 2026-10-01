@@ -18,8 +18,9 @@ function Audio.Play(key, parent)
 		sound.RollOffMaxDistance = entry.MaxDistance
 	end
 	sound.Parent = parent or SoundService
+	if entry.StartTime then sound.TimePosition = entry.StartTime end
 	sound:Play()
-	Debris:AddItem(sound, 8)
+	Debris:AddItem(sound, entry.Duration or 8)
 	return sound
 end
 

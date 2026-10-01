@@ -8,6 +8,9 @@ local Audio = require(ReplicatedStorage.Shared.Audio)
 local Spring = require(ReplicatedStorage.Shared.Spring)
 local ViewmodelController = require(script.ViewmodelController)
 local CombatHud = require(script.CombatHud)
+local SlideController = require(script.SlideController)
+local SettingsController = require(script.SettingsController)
+local GuiService = game:GetService("GuiService")
 local remotes = ReplicatedStorage:WaitForChild("CombatRemotes")
 local fireRemote = remotes:WaitForChild("Fire")
 local reloadRemote = remotes:WaitForChild("Reload")
@@ -22,6 +25,21 @@ local wantsSprint, wantsAds = false, false
 local ammo, reloading = Config.Pistol.MagazineSize, false
 local lastLocalShot = -math.huge
 local localShotKick = 0
+local slide = SlideController.new()
+local runState = ReplicatedStorage:WaitForChild("RunState")
+hud:SetRun(runState)
+runState.AttributeChanged:Connect(function() hud:SetRun(runState) end)
+local pauseRemote = remotes:WaitForChild("Options")
+local settings
+local lastReloadSerial = 0
+local function blocked()
+	return (settings and settings.Open) or GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true
+end
+settings = SettingsController.new(player, function(open)
+	wantsSprint, wantsAds = false, false
+	slide:Cancel()
+	pauseRemote:FireServer(open)
+end)
 
 local function playSound(key) Audio.Play(key) end
 
@@ -48,7 +66,9 @@ local function setCharacter(newCharacter)
 	hud:SetHealth(newHumanoid.Health, newHumanoid.MaxHealth)
 	cameraKick.Position, cameraKick.Velocity, cameraKick.Target = Vector3.zero, Vector3.zero, Vector3.zero
 	player.CameraMode = Enum.CameraMode.LockFirstPerson
-	UserInputService.MouseDeltaSensitivity = Config.Camera.MouseSensitivity
+	settings:SetValue(settings.Value)
+	slide:Bind(newCharacter)
+	settings:SetOpen(false)
 	UserInputService.MouseIconEnabled = false
 	UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
 	viewmodel = ViewmodelController.new(workspace.CurrentCamera)
@@ -73,7 +93,7 @@ local function setCharacter(newCharacter)
 end
 
 local function shoot()
-	if not humanoid or humanoid.Health <= 0 or not viewmodel or reloading then return end
+	if blocked() or not humanoid or humanoid.Health <= 0 or not viewmodel or reloading then return end
 	if ammo <= 0 then
 		playSound("EmptyClick")
 		reloadRemote:FireServer()
@@ -107,19 +127,18 @@ local function shoot()
 end
 
 local function requestReload()
-	if not humanoid or humanoid.Health <= 0 or reloading or ammo >= Config.Pistol.MagazineSize then return end
-	reloading = true
-	hud:SetAmmo(ammo, true)
-	if viewmodel then viewmodel:Reload() end
-	playSound("Reload")
+	if blocked() or not humanoid or humanoid.Health <= 0 or reloading or ammo >= Config.Pistol.MagazineSize then return end
+
 	reloadRemote:FireServer()
 end
 
 UserInputService.InputBegan:Connect(function(input, processed)
-	if processed then return end
+	if processed or blocked() then return end
 	if input.KeyCode == Enum.KeyCode.LeftShift then wantsSprint = true
 	elseif input.KeyCode == Enum.KeyCode.R then requestReload()
-	elseif input.UserInputType == Enum.UserInputType.MouseButton2 then wantsAds = true
+	elseif input.KeyCode == Enum.KeyCode.C then slide:Start(blocked() or wantsAds)
+	elseif input.KeyCode == Enum.KeyCode.Space then slide:Cancel()
+	elseif input.UserInputType == Enum.UserInputType.MouseButton2 then slide:Cancel() wantsAds = true
 	elseif input.UserInputType == Enum.UserInputType.MouseButton1 then shoot() end
 end)
 
@@ -129,7 +148,14 @@ UserInputService.InputEnded:Connect(function(input)
 end)
 
 feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c)
-	if kind == "Ammo" then
+	if kind == "ReloadStarted" then
+		if c ~= character or b <= lastReloadSerial then return end
+		lastReloadSerial = b
+		reloading = true
+		hud:SetAmmo(ammo, true)
+		if viewmodel then viewmodel:Reload(a) end
+		playSound("Reload")
+	elseif kind == "Ammo" then
 		ammo, reloading = a, b
 		hud:SetAmmo(ammo, reloading)
 	elseif kind == "Shot" then
@@ -149,24 +175,39 @@ end)
 
 RunService:BindToRenderStep("ZombilkaFPSPresentation", Enum.RenderPriority.Camera.Value + 1, function(dt)
 	local camera = workspace.CurrentCamera
-	if not camera or not humanoid or not root or humanoid.Health <= 0 or not viewmodel then return end
-	UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
-	UserInputService.MouseIconEnabled = false
+	local slideBlend = slide:Present(dt)
+	if not camera or not humanoid or not root or not viewmodel then return end
+	local inputBlocked = blocked() or humanoid.Health <= 0
+	if inputBlocked then wantsSprint, wantsAds = false, false slide:Cancel() end
+	if settings.Open then
+		UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+		UserInputService.MouseIconEnabled = true
+	else
+		UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+		UserInputService.MouseIconEnabled = false
+	end
 	local moving = humanoid.MoveDirection.Magnitude > 0.1
 	local sprinting = wantsSprint and moving and humanoid.FloorMaterial ~= Enum.Material.Air and not wantsAds
-	local ads = wantsAds
-	humanoid.WalkSpeed = sprinting and Config.Movement.SprintSpeed or Config.Movement.WalkSpeed
+	sprinting = sprinting and not slide.Active and not inputBlocked
+	local ads = wantsAds and not inputBlocked
+	if not slide.Active then humanoid.WalkSpeed = inputBlocked and 0 or sprinting and Config.Movement.SprintSpeed or Config.Movement.WalkSpeed end
+	humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, not inputBlocked)
 	local velocity = root.AssemblyLinearVelocity
 	local horizontalSpeed = Vector3.new(velocity.X, 0, velocity.Z).Magnitude
 	local strafe = humanoid.MoveDirection:Dot(camera.CFrame.RightVector)
 	local kick = cameraKick:Step(dt)
 	camera.CFrame *= CFrame.Angles(kick.X, kick.Y, kick.Z)
-	local adsBlend = viewmodel:Update(dt, camera, UserInputService:GetMouseDelta(), horizontalSpeed, strafe, ads, sprinting)
+	if player:GetAttribute("InElevatorTravel") and not settings.Open then
+		camera.CFrame *= CFrame.new(0, math.sin(os.clock() * Config.Camera.ElevatorShakeFrequency) * Config.Camera.ElevatorShake, 0)
+	end
+	local adsBlend = viewmodel:Update(dt, camera, UserInputService:GetMouseDelta(), horizontalSpeed, strafe, ads, sprinting, slideBlend)
 	local targetFov = sprinting and Config.Camera.SprintFov or Config.Camera.HipFov
+	targetFov += (Config.Movement.SlideFov - targetFov) * slideBlend
 	targetFov += (Config.Camera.AdsFov - targetFov) * adsBlend
 	camera.FieldOfView += (targetFov - camera.FieldOfView) * (1 - math.exp(-Config.Camera.FovResponse * dt))
 	localShotKick = math.max(0, localShotKick - dt * 4)
 	hud:Update(dt, moving, adsBlend, localShotKick)
+	for _, line in ipairs(hud.Crosshair) do line.Visible = not inputBlocked end
 end)
 
 player.CharacterAdded:Connect(setCharacter)

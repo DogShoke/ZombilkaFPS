@@ -6,17 +6,18 @@ local Config = require(game.ReplicatedStorage.Shared.Config)
 local Audio = require(game.ReplicatedStorage.Shared.Audio)
 local ZombieRig = require(script.Parent.ZombieRig)
 
+local Clock = require(script.Parent.RunClock)
 local ZombieService = {}
 local active, zones = {}, {}
 local nextPlayerWindup = setmetatable({}, { __mode = "k" })
 local rng = Random.new()
 local settings = Config.Zombies
-local nextSpawnAllowedAt = 0
+
 
 local function setState(data, state, now)
 	if data.state == "Dead" then return end
 	data.state = state
-	data.stateSince = now or os.clock()
+	data.stateSince = now or Clock.Now()
 	data.rig.model:SetAttribute("State", state)
 	data.rig.model:SetAttribute("Attacking", state == "AttackWindup" or state == "AttackRecover")
 end
@@ -84,6 +85,7 @@ local function navigate(data, destination, target, now)
 		data.nextPath = now + settings.RepathInterval + rng:NextNumber(0, 0.25)
 		local path = PathfindingService:CreatePath({ AgentRadius = 2, AgentHeight = 5, AgentCanJump = true })
 		local ok = pcall(function() path:ComputeAsync(rig.root.Position, destination) end)
+		if not rig.model.Parent or rig.humanoid.Health <= 0 then return end
 		if ok and path.Status == Enum.PathStatus.Success then
 			data.waypoints = path:GetWaypoints()
 			data.waypointIndex = math.min(2, #data.waypoints)
@@ -127,7 +129,8 @@ end
 local function runAI(data)
 	local rig = data.rig
 	while rig.model.Parent and rig.humanoid.Health > 0 and data.state ~= "Dead" do
-		local now = os.clock()
+		if Clock.Paused then task.wait(settings.ThinkInterval) continue end
+		local now = Clock.Now()
 		local target, distance = nearestTarget(rig.root.Position)
 		if data.state == "Spawn" and now - data.stateSince >= settings.SpawnFade then setState(data, "Idle", now) end
 		if data.state == "HitReact" and now >= data.reactUntil then setState(data, "Chase", now) end
@@ -157,6 +160,7 @@ local function runAI(data)
 				end
 			end
 		end
+		if not rig.model.Parent or rig.humanoid.Health <= 0 then break end
 		if now >= data.nextGroan then
 			data.nextGroan = now + rng:NextNumber(settings.IdleGroanMin, settings.IdleGroanMax)
 			Audio.Play("ZombieIdle", rig.torso)
@@ -181,7 +185,7 @@ local function onDeath(data)
 	if data.state == "Dead" then return end
 	local rig = data.rig
 	active[rig.model] = nil
-	nextSpawnAllowedAt = os.clock() + settings.RespawnDelay
+
 	setState(data, "Dead")
 	rig.model:SetAttribute("Dead", true)
 	rig.model:SetAttribute("Attacking", false)
@@ -197,10 +201,11 @@ end
 function ZombieService.React(model, headshot, shotDirection)
 	local data = active[model]
 	if not data then return end
-	local now = os.clock()
+	local now = Clock.Now()
 	data.reactDuration = headshot and settings.HeadReactDuration or settings.HitReactDuration
 	data.reactUntil = now + data.reactDuration
 	data.hitSide = shotDirection and math.sign(data.rig.root.CFrame.RightVector:Dot(shotDirection)) or 1
+	ZombieRig.React(data.rig, headshot)
 	local part = headshot and data.rig.head or data.rig.torso
 	local original = part:GetAttribute("BaseColor") or part.Color
 	part:SetAttribute("BaseColor", original)
@@ -233,7 +238,7 @@ local function validSpawn(point)
 		end
 	end
 	if not nearestDistance or nearestDistance > settings.MaxSpawnDistance then return false end
-	local arena = workspace:FindFirstChild("CombatArena")
+	local arena = workspace:FindFirstChild("OfficeRun")
 	if arena then
 		local params = OverlapParams.new()
 		params.FilterType = Enum.RaycastFilterType.Include
@@ -290,31 +295,51 @@ function ZombieService.Start(spawnZones)
 	end
 	Players.PlayerAdded:Connect(preparePlayer)
 	for _, player in ipairs(Players:GetPlayers()) do preparePlayer(player) end
-	task.spawn(function()
-		while true do
-			local count = 0
-			for _ in pairs(active) do count += 1 end
-			if count < settings.MaxAlive and #Players:GetPlayers() > 0 and os.clock() >= nextSpawnAllowedAt then
-				local point = chooseSpawn()
-				if point then
-					local rig = ZombieRig.Create(point, rng:NextInteger(1, 9))
-					local angle = rng:NextNumber(-math.pi, math.pi)
-					local now = os.clock()
-					local data = {
-						rig = rig, state = "Spawn", stateSince = now, approach = Vector3.new(math.cos(angle), 0, math.sin(angle)),
-						nextAttack = now + 0.7, nextPath = 0, nextSight = 0, nextHurtSound = 0,
-						nextGroan = now + rng:NextNumber(settings.IdleGroanMin, settings.IdleGroanMax),
-						reactUntil = 0, reactDuration = 1, hitSide = 0, reactionSerial = 0,
-						lastPosition = rig.root.Position, lastMovedAt = now,
-					}
-					active[rig.model] = data
-					rig.humanoid.Died:Connect(function() onDeath(data) end)
-					task.spawn(runAI, data)
-				end
-			end
-			task.wait(settings.SpawnInterval)
-		end
-	end)
 end
 
+function ZombieService.Configure(spawnZones)
+	zones = spawnZones
+end
+function ZombieService.Count()
+	local count = 0
+	for model, data in pairs(active) do
+		if model.Parent and data.rig.humanoid.Health > 0 then count += 1
+		else active[model] = nil end
+	end
+	return count
+end
+function ZombieService.Clear()
+	for model, data in pairs(active) do
+		data.state = "Dead"
+		model:Destroy()
+	end
+	table.clear(active)
+	table.clear(nextPlayerWindup)
+	for _,m in workspace:GetChildren() do if m:GetAttribute("IsZombie") then m:Destroy() end end
+end
+function ZombieService.SetPaused(paused)
+	for _,data in pairs(active) do
+		data.rig.root.Anchored = paused
+		if not paused then data.rig.root:SetNetworkOwner(nil) end
+		ZombieRig.Pause(data.rig, paused)
+	end
+end
+function ZombieService.Spawn()
+	if Clock.Paused or ZombieService.Count() >= settings.MaxAlive then return false end
+	local point = chooseSpawn()
+	if not point then return false end
+	local rig = ZombieRig.Create(point, rng:NextInteger(1,9))
+	local angle, now = rng:NextNumber(-math.pi, math.pi), Clock.Now()
+	local data = {
+		rig=rig, state="Spawn", stateSince=now, approach=Vector3.new(math.cos(angle),0,math.sin(angle)),
+		nextAttack=now+0.7, nextPath=0, nextSight=0, nextHurtSound=0,
+		nextGroan=now+rng:NextNumber(settings.IdleGroanMin,settings.IdleGroanMax),
+		reactUntil=0, reactDuration=1, hitSide=0, reactionSerial=0,
+		lastPosition=rig.root.Position, lastMovedAt=now,
+	}
+	active[rig.model]=data
+	rig.humanoid.Died:Connect(function() onDeath(data) end)
+	task.spawn(runAI,data)
+	return true
+end
 return ZombieService

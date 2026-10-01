@@ -1,7 +1,8 @@
-# FPS COMBAT FEEL 1.0 plan
+# OFFICE OUTBREAK 1.0 plan
 
-1. Map and inspect the authored Glock rig through Rojo and Studio.
-2. Replace the block viewmodel; fix cursor and sprint firing; play Idle, Shoot, and Reload.
-3. Tune camera poses, procedural motion, recoil, and shot feedback from static framing and runtime samples.
-4. Improve zombie hit/death/attack presentation and spacing.
-5. Run repeated Studio MCP Play sessions, fix observed issues, and document remaining manual feel work.
+1. Inspect repository and connected ZombilkaFPS place; preserve FpsGlock. Sanitize and capture asset data into Rojo source.
+2. One server ReloadStarted event; duration-matched animation. Add bounded C slide, composable camera/viewmodel offsets, O sensitivity slider and input gates.
+3. Build two modular office floors with open routes, cover, distributed spawn zones and deterministic elevator doors.
+4. Replace endless replenishment with FloorDirector wave budgets, pause, death restart and guarded elevator travel.
+5. Adapt sanitized zombie rig to existing server AI; authored Animator locomotion/attack, reactions/death and verified audio.
+6. Multiple Studio playtests: reload, movement/settings, wave boundary, both elevator transitions, zombie combat, respawn and Output. Inspect diff; document evidence and remaining subjective/art reviews.

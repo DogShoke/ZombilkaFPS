@@ -1,7 +1,23 @@
 local Config = {}
 
-Config.Movement = { WalkSpeed = 16, SprintSpeed = 24, JumpPower = 50 }
-Config.Camera = { HipFov = 70, AdsFov = 55, SprintFov = 77, MouseSensitivity = 0.8, FovResponse = 12 }
+Config.Movement = {
+	WalkSpeed = 16, SprintSpeed = 24, JumpPower = 50,
+	SlideMinSpeed = 15, SlideInitialSpeed = 30, SlideEndSpeed = 16, SlideStopSpeed = 7,
+	SlideDuration = 0.8, SlideCooldown = 0.45, SlideSteering = 1.3, SlideExitSpeed = 24,
+	SlideCameraDrop = 1.3, SlideResponse = 14, SlideFov = 80,
+}
+Config.Settings = { Min = 0.2, Max = 2.5, Default = 1 }
+Config.ZombieAnimations = {
+	Idle = "rbxassetid://125750544", Run = "rbxassetid://125749145", Attack = "rbxassetid://180416148",
+	BodyHit = "", HeadHit = "", Death = "", -- Source-authored ZombieClips; publish for live Animator playback.
+}
+Config.ZombieAnimationTuning = { RunSpeed = 11 }
+Config.Run = {
+	Waves = { 5, 7, 9 }, IntroDuration = 4, BetweenWaves = 4, SpawnInterval = 1.15,
+	DoorDuration = 0.85, TravelDuration = 3.5, Tick = 0.1,
+	FloorHeight = 32, BaseHeight = 180, HalfExtent = 78,
+}
+Config.Camera = { HipFov = 70, AdsFov = 55, SprintFov = 77, FovResponse = 12, ElevatorShake = 0.025, ElevatorShakeFrequency = 18 }
 Config.Pistol = {
 	MagazineSize = 12, Damage = 25, HeadshotMultiplier = 2, ReloadDuration = 1.5,
 	FireInterval = 0.22, Range = 450, SemiAutomatic = true,
@@ -27,6 +43,7 @@ Config.Feel = {
 	ViewmodelKick = Vector3.new(0, -0.025, 0.16),
 	ViewmodelRotate = Vector3.new(math.rad(5), math.rad(0.4), math.rad(1)),
 	AdsRecoilMultiplier = 0.48, CameraKick = math.rad(0.75), CameraYaw = math.rad(0.12),
+	SlideOffset = CFrame.new(0.08, -0.16, 0.08) * CFrame.Angles(math.rad(-5), 0, math.rad(9)),
 	CameraRecoilRecoveryFraction = 0.55, LandingKick = 0.055,
 }
 Config.Vfx = {
@@ -35,28 +52,15 @@ Config.Vfx = {
 	DamageFlashDuration = 0.28, BloodParticleCount = 6, HeadBloodParticleCount = 10, BloodParticleLifetime = 0.2,
 }
 Config.Zombies = {
-	MaxAlive = 7, SpawnInterval = 2.5, RespawnDelay = 1, MinSpawnDistance = 36, MaxSpawnDistance = 105,
+	MaxAlive = 9, MinSpawnDistance = 32, MaxSpawnDistance = 210,
 	MaxHealth = 100, WalkSpeed = 11, AggroRange = 180, AttackRange = 4.4, PreferredMinDistance = 2.8,
 	AttackDamage = 12, AttackWindup = 0.48, AttackRecover = 0.38, AttackCooldown = 1.6,
 	AttackCoordinationInterval = 0.75,
 	ThinkInterval = 0.16, RepathInterval = 1.15, CorpseLifetime = 3.5,
 	ApproachSpacing = 3.8, PersonalSpace = 4, SeparationStrength = 3.2,
-	NavigationHalfExtent = 58.5, SpawnSeparation = 8, SpawnFade = 0.45,
+	NavigationHalfExtent = 75, SpawnSeparation = 8, SpawnFade = 0.45,
 	HitReactDuration = 0.13, HeadReactDuration = 0.2, HurtSoundCooldown = 0.55,
 	IdleGroanMin = 9, IdleGroanMax = 17, DirectSightInterval = 0.65,
 }
-Config.Audio = {
-	Gunshot = { Id = "", Volume = 0.9, PitchMin = 0.98, PitchMax = 1.02 },
-	MechanicalShot = { Id = "", Volume = 0.35, PitchMin = 0.96, PitchMax = 1.04 },
-	Reload = { Id = "", Volume = 0.6 }, EmptyClick = { Id = "", Volume = 0.45 },
-	WorldConcrete = { Id = "", Volume = 0.35 }, WorldMetal = { Id = "", Volume = 0.42 },
-	WorldWood = { Id = "", Volume = 0.35 }, WorldGeneric = { Id = "", Volume = 0.32 },
-	BodyHit = { Id = "", Volume = 0.43 }, Headshot = { Id = "", Volume = 0.55 },
-	ZombieIdle = { Id = "", Volume = 0.4, MaxDistance = 65 },
-	ZombieHurt = { Id = "", Volume = 0.5, MaxDistance = 70 },
-	ZombieAttack = { Id = "", Volume = 0.55, MaxDistance = 75 },
-	ZombieDeath = { Id = "", Volume = 0.55, MaxDistance = 80 },
-	PlayerHurt = { Id = "", Volume = 0.45 },
-}
-
+Config.Audio = require(script.Parent.AudioConfig)
 return Config

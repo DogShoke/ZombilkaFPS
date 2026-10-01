@@ -122,9 +122,22 @@ function ViewmodelController:Fire(ads, sprinting)
 	end)
 end
 
-function ViewmodelController:Reload()
+function ViewmodelController:Reload(duration)
 	local reload = self.Tracks.Reload
-	if reload then reload:Play(0.08) end
+	if not reload then return end
+	self.reloadSerial = (self.reloadSerial or 0) + 1
+	local serial = self.reloadSerial
+	if self.Tracks.Shoot then self.Tracks.Shoot:Stop(0.04) end
+	reload:Play(0.08, 1, reload.Length > 0 and reload.Length / duration or 1)
+	-- Animation may finish loading after acceptance. One bounded adjustment, never ammo polling.
+	task.spawn(function()
+		local started = os.clock()
+		while reload.Length == 0 and os.clock() - started < duration and self.Model.Parent do task.wait() end
+		if self.Model.Parent and self.reloadSerial == serial and reload.Length > 0 then reload:AdjustSpeed(reload.Length / duration) end
+	end)
+	task.delay(duration, function()
+		if self.Model.Parent and self.reloadSerial == serial then reload:Stop(0.08) end
+	end)
 end
 
 function ViewmodelController:LandImpulse()
@@ -197,7 +210,7 @@ function ViewmodelController:Impact(position, kind, info)
 	Debris:AddItem(anchor, duration + 0.12)
 end
 
-function ViewmodelController:Update(dt, camera, mouseDelta, horizontalSpeed, strafe, wantsAds, wantsSprint)
+function ViewmodelController:Update(dt, camera, mouseDelta, horizontalSpeed, strafe, wantsAds, wantsSprint, slideBlend)
 	local feel = Config.Feel
 	local effectiveSprint = wantsSprint and os.clock() >= self.sprintFireUntil
 	self.ads += ((wantsAds and 1 or 0) - self.ads) * (1 - math.exp(-feel.AdsResponse * dt))
@@ -221,7 +234,9 @@ function ViewmodelController:Update(dt, camera, mouseDelta, horizontalSpeed, str
 	local pose = feel.HipPose:Lerp(feel.SprintPose, self.sprint):Lerp(feel.AdsPose, self.ads)
 	local motion = CFrame.new(swayPos + recoilPos + bob + Vector3.new(-self.strafe * feel.StrafeShift * (1 - self.ads * 0.7), -landing, 0))
 		* CFrame.Angles(swayRot.X + recoilRot.X, swayRot.Y + recoilRot.Y, swayRot.Z + recoilRot.Z + self.strafe * feel.StrafeRoll * (1 - self.ads * 0.7))
-	self.Root.CFrame = camera.CFrame * pose * motion
+	-- Camera -> base pose -> composable SlideOffset -> recoil/sway/bob. Animator owns bones.
+	local slideOffset = CFrame.identity:Lerp(feel.SlideOffset, slideBlend or 0)
+	self.Root.CFrame = camera.CFrame * pose * slideOffset * motion
 	local muzzlePosition = self.Barrel and self.Barrel.WorldPosition or (self.Root.CFrame * CFrame.new(-1.25, 0.45, -1)).Position
 	self.MuzzlePart.CFrame = CFrame.lookAt(muzzlePosition + camera.CFrame.LookVector * 0.25, muzzlePosition + camera.CFrame.LookVector * 1.25)
 	if self.Model.Parent ~= camera then self.Model.Parent = camera end

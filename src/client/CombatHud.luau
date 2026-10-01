@@ -98,13 +98,20 @@ function CombatHud.new(playerGui)
 		self.HitLines[i] = line
 	end
 	self:SetAmmo(self.ammo, false)
+	self.RunLabel = label(gui, UDim2.fromOffset(320, 70), UDim2.fromOffset(30, 30), 16)
+	self.RunLabel.Name = "RunLabel"
+	self.RunLabel.TextXAlignment = Enum.TextXAlignment.Left
+	self.Message = label(gui, UDim2.fromOffset(560, 40), UDim2.new(0.5, -280, 0, 110), 22)
+	self.Message.Name = "RunMessage"
+	local controls = label(gui, UDim2.fromOffset(480, 20), UDim2.new(0.5, -240, 1, -30), 12)
+	controls.Text = "SHIFT  БЕГ    C  ПОДКАТ    R  ПЕРЕЗАРЯДКА    O  НАСТРОЙКИ"
 	self:SetHealth(100, 100)
 	return self
 end
 
 function CombatHud:SetHealth(health, maximum)
 	local fraction = math.clamp(health / math.max(maximum, 1), 0, 1)
-	self.HealthLabel.Text = string.format("HEALTH  %d", math.ceil(health))
+	self.HealthLabel.Text = string.format("ЗДОРОВЬЕ  %d", math.ceil(health))
 	self.HealthFill.Size = UDim2.fromScale(fraction, 1)
 	self.HealthFill.BackgroundColor3 = Color3.fromRGB(208, 93, 75):Lerp(Color3.fromRGB(140, 184, 143), fraction)
 end
@@ -112,7 +119,14 @@ end
 function CombatHud:SetAmmo(ammo, reloading)
 	self.ammo, self.reloading = ammo, reloading
 	self.AmmoLabel.Text = string.format("%02d / ∞", ammo)
-	self.ReloadLabel.Text = reloading and "RELOADING" or ""
+	self.ReloadLabel.Text = reloading and "ПЕРЕЗАРЯДКА" or ""
+end
+
+function CombatHud:SetRun(state)
+	local phase = state:GetAttribute("State")
+	self.RunLabel.Text = string.format("ЭТАЖ %02d\nВОЛНА %d / %d    ЗОМБИ %d", state:GetAttribute("Floor") or 1, state:GetAttribute("Wave") or 0, state:GetAttribute("Waves") or 3, state:GetAttribute("Remaining") or 0)
+	local messages = { FloorIntro = "ЗАЧИСТИТЕ ЭТАЖ", BetweenWaves = "СЛЕДУЮЩАЯ ВОЛНА", FloorCleared = "ЭТАЖ ЗАЧИЩЕН", ElevatorAvailable = "ЛИФТ ОТКРЫТ  ↑", ElevatorTravel = "ПОДЪЁМ  ↑", NextFloor = "ВЫЙДИТЕ ИЗ ЛИФТА" }
+	self.Message.Text = state:GetAttribute("Paused") and "ПАУЗА" or messages[phase] or ""
 end
 
 function CombatHud:Hit(headshot)

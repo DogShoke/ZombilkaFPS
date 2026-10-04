@@ -1,0 +1,162 @@
+[
+  {
+    "file": "Zombie_Female_A.fbx",
+    "height": 1.8000001759542688,
+    "headBindDistance": 0.09835593081556254,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Female_B.fbx",
+    "height": 1.7833911182830688,
+    "headBindDistance": 0.0988660458346218,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Female_C.fbx",
+    "height": 1.8000001952211586,
+    "headBindDistance": 0.10153348766572712,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Female_D.fbx",
+    "height": 1.8000000519651245,
+    "headBindDistance": 0.10822289412524619,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Female_E.fbx",
+    "height": 1.7999999516286134,
+    "headBindDistance": 0.11017587153299664,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Male_A.fbx",
+    "height": 1.799999816035541,
+    "headBindDistance": 0.10758810127398558,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Male_B.fbx",
+    "height": 1.7736911613027555,
+    "headBindDistance": 0.09937312539705294,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Male_C.fbx",
+    "height": 1.7999999369377218,
+    "headBindDistance": 0.11628437757875898,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Male_D.fbx",
+    "height": 1.7999995843269145,
+    "headBindDistance": 0.10560915407433531,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "file": "Zombie_Male_E.fbx",
+    "height": 1.7817129938377185,
+    "headBindDistance": 0.10272118675776577,
+    "bones": 38,
+    "meshScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armScale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+]

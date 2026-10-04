@@ -1,12 +1,12 @@
 local Config = {}
 
 Config.Movement = {
-	WalkSpeed = 16, SprintSpeed = 24, JumpPower = 50,
+	WalkSpeed = 16, SprintSpeed = 24, SprintJumpSpeed = 28, JumpPower = 50,
+	JumpRiseGravity = 1.65, JumpFallGravity = 0.65,
 	SlideMinSpeed = 15, SlideInitialSpeed = 30, SlideEndSpeed = 16, SlideStopSpeed = 7,
-	SlideDuration = 0.8, SlideCooldown = 0.45, SlideSteering = 1.3, SlideExitSpeed = 24,
+	SlideInputBuffer = 0.18, SlideDuration = 0.8, SlideCooldown = 0.45, SlideSteering = 1.3, SlideExitSpeed = 24,
 	SlideCameraDrop = 1.3, SlideResponse = 14, SlideFov = 80,
 }
-Config.Settings = { Min = 0.2, Max = 2.5, Default = 1 }
 Config.ZombieAnimations = {
 	Idle = "rbxassetid://125750544", Run = "rbxassetid://125749145", Attack = "rbxassetid://180416148",
 	BodyHit = "", HeadHit = "", Death = "", -- Source-authored ZombieClips; publish for live Animator playback.
@@ -17,7 +17,7 @@ Config.Run = {
 	DoorDuration = 0.85, TravelDuration = 3.5, Tick = 0.1,
 	FloorHeight = 32, BaseHeight = 180, HalfExtent = 78,
 }
-Config.Camera = { HipFov = 70, AdsFov = 55, SprintFov = 77, FovResponse = 12, ElevatorShake = 0.025, ElevatorShakeFrequency = 18 }
+Config.Camera = { MouseSensitivity = 1, HipFov = 70, AdsFov = 55, SprintFov = 77, FovResponse = 12, ElevatorShake = 0.025, ElevatorShakeFrequency = 18 }
 Config.Pistol = {
 	MagazineSize = 12, Damage = 25, HeadshotMultiplier = 2, ReloadDuration = 1.5,
 	FireInterval = 0.22, Range = 450, SemiAutomatic = true,

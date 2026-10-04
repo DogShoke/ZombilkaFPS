@@ -1,0 +1,22 @@
+{
+  "fullyTexturedFbx": "FpsGlock_FullyTextured.fbx",
+  "gameAsset": "FpsGlock_GameTextured.rbxmx",
+  "Glock19": {
+    "UV": "Glock_BaseColor_UV",
+    "PNG": "Glock_BaseColor.png",
+    "ColorMap": "rbxassetid://76283602140992",
+    "MeshId": "rbxassetid://72354353674240",
+    "MeshPartColor": "255,255,255",
+    "assignment": "SurfaceAppearance.ColorMap"
+  },
+  "ArmModel": {
+    "UV": "Arms_BaseColor_UV",
+    "PNG": "Arms_BaseColor.png",
+    "ColorMap": "rbxassetid://104563458117746",
+    "MeshId": "rbxassetid://119543931671165",
+    "MeshPartColor": "255,255,255",
+    "assignment": "TextureID or SurfaceAppearance.ColorMap",
+    "requiresNewMeshImport": false
+  },
+  "note": "Both persistent mesh assets were imported into Studio. Rojo uses the new game asset with the existing game rig and SurfaceAppearance color maps. Original FpsGlock.rbxm is preserved. The temporary EditableMesh preview was removed."
+}

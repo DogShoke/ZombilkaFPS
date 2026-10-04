@@ -1,6 +1,7 @@
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
+local ContextActionService = game:GetService("ContextActionService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Config = require(ReplicatedStorage.Shared.Config)
@@ -9,7 +10,8 @@ local Spring = require(ReplicatedStorage.Shared.Spring)
 local ViewmodelController = require(script.ViewmodelController)
 local CombatHud = require(script.CombatHud)
 local SlideController = require(script.SlideController)
-local SettingsController = require(script.SettingsController)
+local JumpController = require(script.JumpController)
+local ZombieVisuals = require(script.ZombieVisuals)
 local GuiService = game:GetService("GuiService")
 local remotes = ReplicatedStorage:WaitForChild("CombatRemotes")
 local fireRemote = remotes:WaitForChild("Fire")
@@ -26,20 +28,20 @@ local ammo, reloading = Config.Pistol.MagazineSize, false
 local lastLocalShot = -math.huge
 local localShotKick = 0
 local slide = SlideController.new()
+local jump = JumpController.new()
+ZombieVisuals.Start()
 local runState = ReplicatedStorage:WaitForChild("RunState")
 hud:SetRun(runState)
 runState.AttributeChanged:Connect(function() hud:SetRun(runState) end)
-local pauseRemote = remotes:WaitForChild("Options")
-local settings
 local lastReloadSerial = 0
 local function blocked()
-	return (settings and settings.Open) or GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true
+	return GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true
 end
-settings = SettingsController.new(player, function(open)
-	wantsSprint, wantsAds = false, false
-	slide:Cancel()
-	pauseRemote:FireServer(open)
-end)
+slide.GetExitSpeed = function()
+	if blocked() or UserInputService:GetFocusedTextBox() or not humanoid or humanoid.Health <= 0 then return 0 end
+	local heldSprint = UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) or UserInputService:IsKeyDown(Enum.KeyCode.RightShift)
+	return heldSprint and not wantsAds and Config.Movement.SprintSpeed or Config.Movement.WalkSpeed
+end
 
 local function playSound(key) Audio.Play(key) end
 
@@ -66,9 +68,9 @@ local function setCharacter(newCharacter)
 	hud:SetHealth(newHumanoid.Health, newHumanoid.MaxHealth)
 	cameraKick.Position, cameraKick.Velocity, cameraKick.Target = Vector3.zero, Vector3.zero, Vector3.zero
 	player.CameraMode = Enum.CameraMode.LockFirstPerson
-	settings:SetValue(settings.Value)
+	UserInputService.MouseDeltaSensitivity = Config.Camera.MouseSensitivity
 	slide:Bind(newCharacter)
-	settings:SetOpen(false)
+	jump:Bind(newCharacter)
 	UserInputService.MouseIconEnabled = false
 	UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
 	viewmodel = ViewmodelController.new(workspace.CurrentCamera)
@@ -132,19 +134,38 @@ local function requestReload()
 	reloadRemote:FireServer()
 end
 
+local slideKeys = { Enum.KeyCode.C, Enum.KeyCode.LeftControl }
+local heldSlideKeys = {}
+local function requestSlide()
+	if not UserInputService:GetFocusedTextBox() and not blocked() then slide:Request(wantsAds) end
+end
+
+-- Consume the action and also poll key state: processed input can skip action events.
+ContextActionService:BindActionAtPriority("ZombilkaSlide", function(_, state)
+	if UserInputService:GetFocusedTextBox() or blocked() then return Enum.ContextActionResult.Pass end
+	if state == Enum.UserInputState.Begin then requestSlide() end
+	return Enum.ContextActionResult.Sink
+end, false, Enum.ContextActionPriority.High.Value + 10, table.unpack(slideKeys))
+
+RunService.PreSimulation:Connect(function()
+	for _, key in ipairs(slideKeys) do
+		local down = UserInputService:IsKeyDown(key)
+		if down and not heldSlideKeys[key] then requestSlide() end
+		heldSlideKeys[key] = down
+	end
+end)
+
 UserInputService.InputBegan:Connect(function(input, processed)
-	if processed or blocked() then return end
-	if input.KeyCode == Enum.KeyCode.LeftShift then wantsSprint = true
-	elseif input.KeyCode == Enum.KeyCode.R then requestReload()
-	elseif input.KeyCode == Enum.KeyCode.C then slide:Start(blocked() or wantsAds)
+	if table.find(slideKeys, input.KeyCode) then requestSlide() end
+	if processed or blocked() or UserInputService:GetFocusedTextBox() then return end
+	if input.KeyCode == Enum.KeyCode.R then requestReload()
 	elseif input.KeyCode == Enum.KeyCode.Space then slide:Cancel()
 	elseif input.UserInputType == Enum.UserInputType.MouseButton2 then slide:Cancel() wantsAds = true
 	elseif input.UserInputType == Enum.UserInputType.MouseButton1 then shoot() end
 end)
 
 UserInputService.InputEnded:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.LeftShift then wantsSprint = false
-	elseif input.UserInputType == Enum.UserInputType.MouseButton2 then wantsAds = false end
+	if input.UserInputType == Enum.UserInputType.MouseButton2 then wantsAds = false end
 end)
 
 feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c)
@@ -173,31 +194,33 @@ feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c)
 	end
 end)
 
+-- Apply after camera/default controls, even while the character/viewmodel is being rebuilt.
+RunService:BindToRenderStep("ZombilkaFPSCursor", Enum.RenderPriority.Last.Value + 1, function()
+	local menuOpen = GuiService.MenuIsOpen
+	UserInputService.MouseBehavior = menuOpen and Enum.MouseBehavior.Default or Enum.MouseBehavior.LockCenter
+	UserInputService.MouseIconEnabled = menuOpen
+end)
+
 RunService:BindToRenderStep("ZombilkaFPSPresentation", Enum.RenderPriority.Camera.Value + 1, function(dt)
 	local camera = workspace.CurrentCamera
 	local slideBlend = slide:Present(dt)
 	if not camera or not humanoid or not root or not viewmodel then return end
-	local inputBlocked = blocked() or humanoid.Health <= 0
+	local inputBlocked = blocked() or UserInputService:GetFocusedTextBox() ~= nil or humanoid.Health <= 0
+	-- Read held keys every frame so slide completion never loses sprint intent.
+	wantsSprint = not inputBlocked and (UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) or UserInputService:IsKeyDown(Enum.KeyCode.RightShift))
 	if inputBlocked then wantsSprint, wantsAds = false, false slide:Cancel() end
-	if settings.Open then
-		UserInputService.MouseBehavior = Enum.MouseBehavior.Default
-		UserInputService.MouseIconEnabled = true
-	else
-		UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
-		UserInputService.MouseIconEnabled = false
-	end
 	local moving = humanoid.MoveDirection.Magnitude > 0.1
-	local sprinting = wantsSprint and moving and humanoid.FloorMaterial ~= Enum.Material.Air and not wantsAds
+	local sprinting = wantsSprint and moving and not wantsAds
 	sprinting = sprinting and not slide.Active and not inputBlocked
 	local ads = wantsAds and not inputBlocked
-	if not slide.Active then humanoid.WalkSpeed = inputBlocked and 0 or sprinting and Config.Movement.SprintSpeed or Config.Movement.WalkSpeed end
+	if not slide.Active then humanoid.WalkSpeed = inputBlocked and 0 or sprinting and jump:GetSprintSpeed() or Config.Movement.WalkSpeed end
 	humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, not inputBlocked)
 	local velocity = root.AssemblyLinearVelocity
 	local horizontalSpeed = Vector3.new(velocity.X, 0, velocity.Z).Magnitude
 	local strafe = humanoid.MoveDirection:Dot(camera.CFrame.RightVector)
 	local kick = cameraKick:Step(dt)
 	camera.CFrame *= CFrame.Angles(kick.X, kick.Y, kick.Z)
-	if player:GetAttribute("InElevatorTravel") and not settings.Open then
+	if player:GetAttribute("InElevatorTravel") then
 		camera.CFrame *= CFrame.new(0, math.sin(os.clock() * Config.Camera.ElevatorShakeFrequency) * Config.Camera.ElevatorShake, 0)
 	end
 	local adsBlend = viewmodel:Update(dt, camera, UserInputService:GetMouseDelta(), horizontalSpeed, strafe, ads, sprinting, slideBlend)

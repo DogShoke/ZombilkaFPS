@@ -328,7 +328,7 @@ function ZombieService.Spawn()
 	if Clock.Paused or ZombieService.Count() >= settings.MaxAlive then return false end
 	local point = chooseSpawn()
 	if not point then return false end
-	local rig = ZombieRig.Create(point, rng:NextInteger(1,9))
+	local rig = ZombieRig.Create(point, rng:NextInteger(1,10))
 	local angle, now = rng:NextNumber(-math.pi, math.pi), Clock.Now()
 	local data = {
 		rig=rig, state="Spawn", stateSince=now, approach=Vector3.new(math.cos(angle),0,math.sin(angle)),

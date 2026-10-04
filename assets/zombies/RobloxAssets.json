@@ -1,0 +1,136 @@
+{
+  "heightStuds": 6,
+  "variants": {
+    "1": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "lpFemale_zombie_A",
+          "mesh": "rbxassetid://123406163947454",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Female_A"
+    },
+    "2": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "acc_hair_punkin",
+          "mesh": "rbxassetid://73287558607444",
+          "texture": "rbxassetid://135266649823455"
+        },
+        "2": {
+          "name": "lpFemale_zombie_B",
+          "mesh": "rbxassetid://83025498172148",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Female_B"
+    },
+    "3": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "acc_hair_blond_fringes",
+          "mesh": "rbxassetid://79139935319658",
+          "texture": "rbxassetid://135266649823455"
+        },
+        "2": {
+          "name": "lpFemale_zombie_C",
+          "mesh": "rbxassetid://110688629479929",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Female_C"
+    },
+    "4": {
+      "bones": 26,
+      "meshes": {
+        "1": {
+          "name": "lpFemale_zombie_D",
+          "mesh": "rbxassetid://81723076908084",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Female_D"
+    },
+    "5": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "lpFemale_zombie_E",
+          "mesh": "rbxassetid://86707783431897",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Female_E"
+    },
+    "6": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "lpMale_zombie_A",
+          "mesh": "rbxassetid://102297706950478",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Male_A"
+    },
+    "7": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "acc_men_hair_brown",
+          "mesh": "rbxassetid://72812700130522",
+          "texture": "rbxassetid://135266649823455"
+        },
+        "2": {
+          "name": "lpMale_zombie_B",
+          "mesh": "rbxassetid://90135187831572",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Male_B"
+    },
+    "8": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "lpMale_zombie_C",
+          "mesh": "rbxassetid://119649955582712",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Male_C"
+    },
+    "9": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "lpMale_zombie_D",
+          "mesh": "rbxassetid://82766360710274",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Male_D"
+    },
+    "10": {
+      "bones": 30,
+      "meshes": {
+        "1": {
+          "name": "acc_beannieHat",
+          "mesh": "rbxassetid://73141199332848",
+          "texture": "rbxassetid://135266649823455"
+        },
+        "2": {
+          "name": "lpMale_zombie_E",
+          "mesh": "rbxassetid://133452084703785",
+          "texture": "rbxassetid://135266649823455"
+        }
+      },
+      "name": "Zombie_Male_E"
+    }
+  },
+  "texture": "rbxassetid://135266649823455"
+}

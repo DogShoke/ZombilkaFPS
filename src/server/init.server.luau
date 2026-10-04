@@ -1,6 +1,16 @@
 local Players = game:GetService("Players")
 -- The avatar body is hidden; avoid loading catalog faces/moods into the FPS camera rig.
-local function prepareAvatar(player) player.CanLoadCharacterAppearance = false end
+local Config = require(game.ReplicatedStorage.Shared.Config)
+local function configureMovement(character)
+	local humanoid = character:WaitForChild("Humanoid")
+	humanoid.UseJumpPower = true
+	humanoid.JumpPower = Config.Movement.JumpPower
+end
+local function prepareAvatar(player)
+	player.CanLoadCharacterAppearance = false
+	player.CharacterAdded:Connect(configureMovement)
+	if player.Character then task.spawn(configureMovement, player.Character) end
+end
 Players.PlayerAdded:Connect(prepareAvatar)
 for _, player in ipairs(Players:GetPlayers()) do prepareAvatar(player) end
 

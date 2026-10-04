@@ -1,0 +1,141 @@
+{
+  "variants": [
+    {
+      "name": "Zombie_Female_A",
+      "file": "Zombie_Female_A.fbx",
+      "body": "lpFemale_zombie_A",
+      "rig": "Zombie_Female_A_Rig",
+      "meshes": [
+        "lpFemale_zombie_A"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip|Take 001|BaseLayer",
+      "sourceHeight": 1.65042223589262,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Female_B",
+      "file": "Zombie_Female_B.fbx",
+      "body": "lpFemale_zombie_B",
+      "rig": "Zombie_Female_B_Rig",
+      "meshes": [
+        "acc_hair_punkin",
+        "lpFemale_zombie_B"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip001|Take 001|BaseLayer",
+      "sourceHeight": 1.701794429216534,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Female_C",
+      "file": "Zombie_Female_C.fbx",
+      "body": "lpFemale_zombie_C",
+      "rig": "Zombie_Female_C_Rig",
+      "meshes": [
+        "lpFemale_zombie_C",
+        "acc_hair_blond_fringes"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip002|Take 001|BaseLayer",
+      "sourceHeight": 1.6900719157420099,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Female_D",
+      "file": "Zombie_Female_D.fbx",
+      "body": "lpFemale_zombie_D",
+      "rig": "Zombie_Female_D_Rig",
+      "meshes": [
+        "lpFemale_zombie_D"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip003|Take 001|BaseLayer",
+      "sourceHeight": 1.6171851926483214,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Female_E",
+      "file": "Zombie_Female_E.fbx",
+      "body": "lpFemale_zombie_E",
+      "rig": "Zombie_Female_E_Rig",
+      "meshes": [
+        "lpFemale_zombie_E"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip004|Take 001|BaseLayer",
+      "sourceHeight": 1.7216903495718725,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Male_A",
+      "file": "Zombie_Male_A.fbx",
+      "body": "lpMale_zombie_A",
+      "rig": "Zombie_Male_A_Rig",
+      "meshes": [
+        "lpMale_zombie_A"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip005|Take 001|BaseLayer",
+      "sourceHeight": 1.6726826603990048,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Male_B",
+      "file": "Zombie_Male_B.fbx",
+      "body": "lpMale_zombie_B",
+      "rig": "Zombie_Male_B_Rig",
+      "meshes": [
+        "acc_men_hair_brown",
+        "lpMale_zombie_B"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip006|Take 001|BaseLayer",
+      "sourceHeight": 1.8365600695833564,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Male_C",
+      "file": "Zombie_Male_C.fbx",
+      "body": "lpMale_zombie_C",
+      "rig": "Zombie_Male_C_Rig",
+      "meshes": [
+        "lpMale_zombie_C"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip007|Take 001|BaseLayer",
+      "sourceHeight": 1.6818253230303526,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Male_D",
+      "file": "Zombie_Male_D.fbx",
+      "body": "lpMale_zombie_D",
+      "rig": "Zombie_Male_D_Rig",
+      "meshes": [
+        "lpMale_zombie_D"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip008|Take 001|BaseLayer",
+      "sourceHeight": 1.6814367836341262,
+      "normalizedHeightMeters": 1.8
+    },
+    {
+      "name": "Zombie_Male_E",
+      "file": "Zombie_Male_E.fbx",
+      "body": "lpMale_zombie_E",
+      "rig": "Zombie_Male_E_Rig",
+      "meshes": [
+        "lpMale_zombie_E",
+        "acc_beannieHat"
+      ],
+      "boneCount": 38,
+      "sourceAction": "bip009|Take 001|BaseLayer",
+      "sourceHeight": 1.7002466963604093,
+      "normalizedHeightMeters": 1.8
+    }
+  ],
+  "bulkImport": "exports/Zombies_All_Roblox.fbx",
+  "texture": "textures/world_people_colors.png",
+  "animationNote": "Authored source actions retained in blend; FBX import files contain rest rigs."
+}

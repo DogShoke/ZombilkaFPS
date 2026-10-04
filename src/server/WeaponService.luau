@@ -35,7 +35,7 @@ local function fire(player, origin, direction)
 	local character = player.Character
 	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
 	local head = character and character:FindFirstChild("Head")
-	if not state or not humanoid or humanoid.Health <= 0 or not head or player:GetAttribute("OptionsOpen") or player:GetAttribute("InElevatorTravel") then return end
+	if not state or not humanoid or humanoid.Health <= 0 or not head or player:GetAttribute("InElevatorTravel") then return end
 	if not validVector(origin) or not validVector(direction) then return end
 	if (origin - head.Position).Magnitude > 4.5 then return end
 	local magnitude = direction.Magnitude
@@ -77,7 +77,7 @@ local function reload(player)
 	local state = states[player]
 	local character = player.Character
 	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
-	if not state or not humanoid or humanoid.Health <= 0 or player:GetAttribute("OptionsOpen") or player:GetAttribute("InElevatorTravel") then return end
+	if not state or not humanoid or humanoid.Health <= 0 or player:GetAttribute("InElevatorTravel") then return end
 	if state.reloading or state.ammo >= Config.Pistol.MagazineSize then return end
 	state.reloading = true
 	reloadSerial += 1

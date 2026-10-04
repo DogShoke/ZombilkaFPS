@@ -1,7 +1,7 @@
 local TweenService=game:GetService("TweenService")
 local RunService=game:GetService("RunService")
 local Config=require(game.ReplicatedStorage.Shared.Config)
-local Asset=require(script.Parent.ZombieAsset)
+local Variants=require(script.Parent.ZombieVariants)
 local Clips=require(script.Parent.ZombieClips)
 local ZombieRig={}
 local clipIds={}
@@ -21,19 +21,20 @@ local function track(animator,key,priority,looped)
 	if not ok then return end
 	t.Priority=priority t.Looped=looped return t
 end
-function ZombieRig.Create(position)
-	local model=Asset() model.Name="Zombie" model:SetAttribute("IsZombie",true) model:SetAttribute("State","Spawn")
+function ZombieRig.Create(position,variant)
+	local model=Variants.Create(variant or 1) model.Name="Zombie" model:SetAttribute("IsZombie",true) model:SetAttribute("State","Spawn")
 	local root=model.HumanoidRootPart local h=model.Humanoid
 	model.PrimaryPart=root
 	h.MaxHealth=Config.Zombies.MaxHealth h.Health=h.MaxHealth h.WalkSpeed=Config.Zombies.WalkSpeed h.BreakJointsOnDeath=false h.DisplayDistanceType=Enum.HumanoidDisplayDistanceType.None
 	local colors=model:FindFirstChildOfClass("BodyColors") if colors then colors:Destroy() end
-	for _,p in model:GetDescendants() do if p:IsA("BasePart") then p.Anchored=false p.CanTouch=false p.CanCollide=p.Name=="Torso" p.CanQuery=p~=root p.CollisionGroup="Zombies" end end
+	for _,p in model:GetDescendants() do if p:IsA("BasePart") then p.Anchored=false p.CanTouch=false p.CanCollide=p.Name=="Torso" p.CanQuery=model:GetAttribute("SkinnedZombie") and (p.Name=="Head" or p.Name=="Torso") or not model:GetAttribute("SkinnedZombie") and p~=root p.CollisionGroup="Zombies" end end
 	model.Parent=workspace model:PivotTo(CFrame.new(position+Vector3.new(0,3,0))) root:SetNetworkOwner(nil)
 	local animator=Instance.new("Animator") animator.Parent=h
-	local tracks={Idle=track(animator,"Idle",Enum.AnimationPriority.Idle,true),Run=track(animator,"Run",Enum.AnimationPriority.Movement,true),Attack=track(animator,"Attack",Enum.AnimationPriority.Action,false),BodyHit=track(animator,"BodyHit",Enum.AnimationPriority.Action2,false),HeadHit=track(animator,"HeadHit",Enum.AnimationPriority.Action3,false),Death=track(animator,"Death",Enum.AnimationPriority.Action4,false)}
+	local tracks={}
+	if not model:GetAttribute("SkinnedZombie") then tracks={Idle=track(animator,"Idle",Enum.AnimationPriority.Idle,true),Run=track(animator,"Run",Enum.AnimationPriority.Movement,true),Attack=track(animator,"Attack",Enum.AnimationPriority.Action,false),BodyHit=track(animator,"BodyHit",Enum.AnimationPriority.Action2,false),HeadHit=track(animator,"HeadHit",Enum.AnimationPriority.Action3,false),Death=track(animator,"Death",Enum.AnimationPriority.Action4,false)} end
 	if tracks.Idle then tracks.Idle:Play(0.15) end
 	local rig={model=model,root=root,humanoid=h,head=model.Head,torso=model.Torso,tracks=tracks,lastState="Spawn",lastHit=0}
-	for _,p in model:GetDescendants() do if p:IsA("BasePart") and p~=root then p.Transparency=1 TweenService:Create(p,TweenInfo.new(Config.Zombies.SpawnFade),{Transparency=0}):Play() end end
+	for _,p in model:GetDescendants() do if p:IsA("BasePart") and p~=root then local visible=p:GetAttribute("VisualTransparency") or 0 p.Transparency=1 TweenService:Create(p,TweenInfo.new(Config.Zombies.SpawnFade),{Transparency=visible}):Play() end end
 	return rig
 end
 function ZombieRig.Pose(rig,state)
@@ -65,7 +66,18 @@ function ZombieRig.React(rig,headshot)
 	end
 end
 function ZombieRig.Pause(rig,paused)
-	for _,t in pairs(rig.tracks) do if t.IsPlaying then t:AdjustSpeed(paused and 0 or 1) end end
+	rig.pausedSpeeds = rig.pausedSpeeds or {}
+	for _,t in pairs(rig.tracks) do
+		if t.IsPlaying then
+			if paused then
+				if rig.pausedSpeeds[t] == nil then rig.pausedSpeeds[t] = t.Speed end
+				t:AdjustSpeed(0)
+			else
+				t:AdjustSpeed(rig.pausedSpeeds[t] or 1)
+			end
+		end
+	end
+	if not paused then table.clear(rig.pausedSpeeds) end
 end
 function ZombieRig.Die(rig)
 	for _,t in pairs(rig.tracks) do t:Stop(0.08) end

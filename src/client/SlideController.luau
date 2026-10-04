@@ -21,17 +21,30 @@ function SlideController:Bind(character)
 	self.params.CollisionGroup = "Players"
 	self.humanoid.Died:Once(function() self:Cancel() end)
 end
+-- Keep a quick C press through the initial movement acceleration.
+function SlideController:Request(blocked)
+	local h = self.humanoid
+	if blocked or self.Active or not h or h.Health <= 0 or os.clock() < self.nextStart then return end
+	self.pendingUntil = os.clock() + S.SlideInputBuffer
+	self:Start(false)
+end
 function SlideController:Start(blocked)
 	local h, r = self.humanoid, self.root
 	if blocked or self.Active or not h or h.Health <= 0 or h.FloorMaterial == Enum.Material.Air or os.clock() < self.nextStart then return end
 	local v = r.AssemblyLinearVelocity * Vector3.new(1, 0, 1)
 	if v.Magnitude < S.SlideMinSpeed or h.MoveDirection.Magnitude < 0.1 then return end
+	self.pendingUntil = nil
 	self.Active, self.started, self.direction = true, os.clock(), v.Unit
 	self.character:SetAttribute("Sliding", true)
 end
 function SlideController:Cancel()
+	self.pendingUntil = nil
 	if self.Active then
 		self.nextStart = os.clock() + S.SlideCooldown
+		-- Restore held sprint before the next physics step, not the next render frame.
+		if self.humanoid and self.humanoid.Parent then
+			self.humanoid.WalkSpeed = self.GetExitSpeed and self.GetExitSpeed() or S.WalkSpeed
+		end
 		if self.root and self.root.Parent then
 			local v = self.root.AssemblyLinearVelocity
 			local flat = v * Vector3.new(1, 0, 1)
@@ -42,6 +55,10 @@ function SlideController:Cancel()
 	if self.character then self.character:SetAttribute("Sliding", false) end
 end
 function SlideController:Step(dt)
+	if self.pendingUntil then
+		if os.clock() > self.pendingUntil then self.pendingUntil = nil
+		else self:Start(false) end
+	end
 	if not self.Active then return end
 	local h, r = self.humanoid, self.root
 	local age = os.clock() - self.started

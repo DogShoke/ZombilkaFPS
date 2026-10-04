@@ -9,7 +9,6 @@ local Elevator=require(script.Parent.ElevatorService)
 local FloorDirector={}
 function FloorDirector.Start(floors)
 	local state=Instance.new("Folder") state.Name="RunState" state.Parent=ReplicatedStorage
-	local options=Instance.new("RemoteEvent") options.Name="Options" options.Parent=ReplicatedStorage.CombatRemotes
 	local owner, floorIndex, floorNumber, wave, spawned, nextSpawn, deadline = nil,1,1,0,0,0,0
 	local phase="WaitingForPlayer"
 	local travelStage, travelRoot
@@ -27,7 +26,7 @@ function FloorDirector.Start(floors)
 	end
 	local function reset(character)
 		pause(false)
-		owner:SetAttribute("OptionsOpen",false) owner:SetAttribute("InElevatorTravel",false)
+		owner:SetAttribute("InElevatorTravel",false)
 		if travelRoot and travelRoot.Parent then travelRoot.Anchored=false end
 		travelRoot=nil travelStage=nil Zombies.Clear()
 		wave,spawned=0,0
@@ -45,11 +44,6 @@ function FloorDirector.Start(floors)
 		player.CharacterAdded:Connect(reset)
 		if player.Character then task.spawn(reset,player.Character) end
 	end
-	options.OnServerEvent:Connect(function(player,open)
-		if player~=owner or typeof(open)~="boolean" then return end
-		player:SetAttribute("OptionsOpen",open)
-		pause(open)
-	end)
 	Players.PlayerAdded:Connect(join)
 	Players.PlayerRemoving:Connect(function(player)
 		if player~=owner then return end

@@ -1,0 +1,3091 @@
+{
+  "objects": [
+    {
+      "name": "acc_beannieHat",
+      "type": "MESH",
+      "parent": "bip009",
+      "location": [
+        -63.655914306640625,
+        -123.52376556396484,
+        77.0251235961914
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 163,
+      "faces": 168,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Head009"
+      ],
+      "bounds": [
+        [
+          2.4736006259918213,
+          -0.6151282787322998,
+          0.69941246509552
+        ],
+        [
+          2.6569035053253174,
+          -0.4172618091106415,
+          0.9215323328971863
+        ]
+      ]
+    },
+    {
+      "name": "acc_hair_blond_fringes",
+      "type": "MESH",
+      "parent": "bip002",
+      "location": [
+        10.976470947265625,
+        -7.272139072418213,
+        73.68309783935547
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 243,
+      "faces": 266,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Spine005",
+        "bip Head002"
+      ],
+      "bounds": [
+        [
+          0.5248642563819885,
+          1.8796650171279907,
+          1.1067917346954346
+        ],
+        [
+          0.9564746022224426,
+          2.040994882583618,
+          2.012462615966797
+        ]
+      ]
+    },
+    {
+      "name": "acc_hair_punkin",
+      "type": "MESH",
+      "parent": "bip001",
+      "location": [
+        -215.08338928222656,
+        -6.181380271911621,
+        80.49185180664062
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 203,
+      "faces": 218,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Neck001",
+        "bip Head001"
+      ],
+      "bounds": [
+        [
+          -0.202300563454628,
+          -3.054166316986084,
+          -0.3377282917499542
+        ],
+        [
+          0.12043152004480362,
+          -2.177835702896118,
+          -0.030733317136764526
+        ]
+      ]
+    },
+    {
+      "name": "acc_men_hair_brown",
+      "type": "MESH",
+      "parent": "bip006",
+      "location": [
+        113.50215148925781,
+        51.44353103637695,
+        -89.88469696044922
+      ],
+      "scale": [
+        0.9999999403953552,
+        0.9999999403953552,
+        0.9999999403953552
+      ],
+      "vertices": 133,
+      "faces": 146,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Head006"
+      ],
+      "bounds": [
+        [
+          -1.2032228708267212,
+          4.176600933074951,
+          1.794033169746399
+        ],
+        [
+          -0.9966441988945007,
+          4.357783794403076,
+          2.0332717895507812
+        ]
+      ]
+    },
+    {
+      "name": "bip",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot",
+      "location": [
+        0.0,
+        0.0,
+        82.03184509277344
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis",
+          "parent": null
+        },
+        {
+          "name": "bip Spine",
+          "parent": "bip Pelvis"
+        },
+        {
+          "name": "bip Spine1",
+          "parent": "bip Spine"
+        },
+        {
+          "name": "bip Neck",
+          "parent": "bip Spine1"
+        },
+        {
+          "name": "bip Head",
+          "parent": "bip Neck"
+        },
+        {
+          "name": "bip HeadNub",
+          "parent": "bip Head"
+        },
+        {
+          "name": "bip jaw",
+          "parent": "bip Head"
+        },
+        {
+          "name": "bip jawNub",
+          "parent": "bip jaw"
+        },
+        {
+          "name": "bip L Clavicle",
+          "parent": "bip Spine1"
+        },
+        {
+          "name": "bip L UpperArm",
+          "parent": "bip L Clavicle"
+        },
+        {
+          "name": "bip L Forearm",
+          "parent": "bip L UpperArm"
+        },
+        {
+          "name": "bip L Hand",
+          "parent": "bip L Forearm"
+        },
+        {
+          "name": "bip L Finger0",
+          "parent": "bip L Hand"
+        },
+        {
+          "name": "bip L Finger01",
+          "parent": "bip L Finger0"
+        },
+        {
+          "name": "bip L Finger0Nub",
+          "parent": "bip L Finger01"
+        },
+        {
+          "name": "bip L Finger1",
+          "parent": "bip L Hand"
+        },
+        {
+          "name": "bip L Finger11",
+          "parent": "bip L Finger1"
+        },
+        {
+          "name": "bip L Finger1Nub",
+          "parent": "bip L Finger11"
+        },
+        {
+          "name": "bip R Clavicle",
+          "parent": "bip Spine1"
+        },
+        {
+          "name": "bip R UpperArm",
+          "parent": "bip R Clavicle"
+        },
+        {
+          "name": "bip R Forearm",
+          "parent": "bip R UpperArm"
+        },
+        {
+          "name": "bip R Hand",
+          "parent": "bip R Forearm"
+        },
+        {
+          "name": "bip R Finger0",
+          "parent": "bip R Hand"
+        },
+        {
+          "name": "bip R Finger01",
+          "parent": "bip R Finger0"
+        },
+        {
+          "name": "bip R Finger0Nub",
+          "parent": "bip R Finger01"
+        },
+        {
+          "name": "bip R Finger1",
+          "parent": "bip R Hand"
+        },
+        {
+          "name": "bip R Finger11",
+          "parent": "bip R Finger1"
+        },
+        {
+          "name": "bip R Finger1Nub",
+          "parent": "bip R Finger11"
+        },
+        {
+          "name": "bip L Thigh",
+          "parent": "bip Pelvis"
+        },
+        {
+          "name": "bip L Calf",
+          "parent": "bip L Thigh"
+        },
+        {
+          "name": "bip L Foot",
+          "parent": "bip L Calf"
+        },
+        {
+          "name": "bip L Toe0",
+          "parent": "bip L Foot"
+        },
+        {
+          "name": "bip L Toe0Nub",
+          "parent": "bip L Toe0"
+        },
+        {
+          "name": "bip R Thigh",
+          "parent": "bip Pelvis"
+        },
+        {
+          "name": "bip R Calf",
+          "parent": "bip R Thigh"
+        },
+        {
+          "name": "bip R Foot",
+          "parent": "bip R Calf"
+        },
+        {
+          "name": "bip R Toe0",
+          "parent": "bip R Foot"
+        },
+        {
+          "name": "bip R Toe0Nub",
+          "parent": "bip R Toe0"
+        }
+      ]
+    },
+    {
+      "name": "bip Footsteps",
+      "type": "EMPTY",
+      "parent": "bip",
+      "location": [
+        0.0,
+        0.0,
+        -81.86923217773438
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps001",
+      "type": "EMPTY",
+      "parent": "bip001",
+      "location": [
+        0.0,
+        0.0,
+        -85.26397705078125
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps002",
+      "type": "EMPTY",
+      "parent": "bip002",
+      "location": [
+        0.0,
+        0.0,
+        -92.59191131591797
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps003",
+      "type": "EMPTY",
+      "parent": "bip003",
+      "location": [
+        0.0,
+        0.0,
+        -82.52314758300781
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps004",
+      "type": "EMPTY",
+      "parent": "bip004",
+      "location": [
+        0.0,
+        0.0,
+        -88.90765380859375
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps005",
+      "type": "EMPTY",
+      "parent": "bip005",
+      "location": [
+        0.0,
+        0.0,
+        -79.06968688964844
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps006",
+      "type": "EMPTY",
+      "parent": "bip006",
+      "location": [
+        0.0,
+        0.0,
+        -89.72209167480469
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps007",
+      "type": "EMPTY",
+      "parent": "bip007",
+      "location": [
+        0.0,
+        0.0,
+        -79.63816833496094
+      ],
+      "scale": [
+        0.9999999403953552,
+        0.9999999403953552,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps008",
+      "type": "EMPTY",
+      "parent": "bip008",
+      "location": [
+        0.0,
+        0.0,
+        -79.63117980957031
+      ],
+      "scale": [
+        0.9999999403953552,
+        0.9999999403953552,
+        1.0
+      ]
+    },
+    {
+      "name": "bip Footsteps009",
+      "type": "EMPTY",
+      "parent": "bip009",
+      "location": [
+        0.0,
+        0.0,
+        -76.9310073852539
+      ],
+      "scale": [
+        1.0000001192092896,
+        1.0000001192092896,
+        1.0
+      ]
+    },
+    {
+      "name": "bip001",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot001",
+      "location": [
+        7.152557373046875e-06,
+        -2.794403076171875,
+        85.97293853759766
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis001",
+          "parent": null
+        },
+        {
+          "name": "bip Spine002",
+          "parent": "bip Pelvis001"
+        },
+        {
+          "name": "bip Spine003",
+          "parent": "bip Spine002"
+        },
+        {
+          "name": "bip Neck001",
+          "parent": "bip Spine003"
+        },
+        {
+          "name": "bip Head001",
+          "parent": "bip Neck001"
+        },
+        {
+          "name": "bip HeadNub001",
+          "parent": "bip Head001"
+        },
+        {
+          "name": "bip jaw001",
+          "parent": "bip Head001"
+        },
+        {
+          "name": "bip jawNub001",
+          "parent": "bip jaw001"
+        },
+        {
+          "name": "bip L Clavicle001",
+          "parent": "bip Spine003"
+        },
+        {
+          "name": "bip L UpperArm001",
+          "parent": "bip L Clavicle001"
+        },
+        {
+          "name": "bip L Forearm001",
+          "parent": "bip L UpperArm001"
+        },
+        {
+          "name": "bip L Hand001",
+          "parent": "bip L Forearm001"
+        },
+        {
+          "name": "bip L Finger012",
+          "parent": "bip L Hand001"
+        },
+        {
+          "name": "bip L Finger013",
+          "parent": "bip L Finger012"
+        },
+        {
+          "name": "bip L Finger0Nub001",
+          "parent": "bip L Finger013"
+        },
+        {
+          "name": "bip L Finger014",
+          "parent": "bip L Hand001"
+        },
+        {
+          "name": "bip L Finger015",
+          "parent": "bip L Finger014"
+        },
+        {
+          "name": "bip L Finger1Nub001",
+          "parent": "bip L Finger015"
+        },
+        {
+          "name": "bip R Clavicle001",
+          "parent": "bip Spine003"
+        },
+        {
+          "name": "bip R UpperArm001",
+          "parent": "bip R Clavicle001"
+        },
+        {
+          "name": "bip R Forearm001",
+          "parent": "bip R UpperArm001"
+        },
+        {
+          "name": "bip R Hand001",
+          "parent": "bip R Forearm001"
+        },
+        {
+          "name": "bip R Finger012",
+          "parent": "bip R Hand001"
+        },
+        {
+          "name": "bip R Finger013",
+          "parent": "bip R Finger012"
+        },
+        {
+          "name": "bip R Finger0Nub001",
+          "parent": "bip R Finger013"
+        },
+        {
+          "name": "bip R Finger014",
+          "parent": "bip R Hand001"
+        },
+        {
+          "name": "bip R Finger015",
+          "parent": "bip R Finger014"
+        },
+        {
+          "name": "bip R Finger1Nub001",
+          "parent": "bip R Finger015"
+        },
+        {
+          "name": "bip L Thigh001",
+          "parent": "bip Pelvis001"
+        },
+        {
+          "name": "bip L Calf001",
+          "parent": "bip L Thigh001"
+        },
+        {
+          "name": "bip L Foot001",
+          "parent": "bip L Calf001"
+        },
+        {
+          "name": "bip L Toe001",
+          "parent": "bip L Foot001"
+        },
+        {
+          "name": "bip L Toe0Nub001",
+          "parent": "bip L Toe001"
+        },
+        {
+          "name": "bip R Thigh001",
+          "parent": "bip Pelvis001"
+        },
+        {
+          "name": "bip R Calf001",
+          "parent": "bip R Thigh001"
+        },
+        {
+          "name": "bip R Foot001",
+          "parent": "bip R Calf001"
+        },
+        {
+          "name": "bip R Toe001",
+          "parent": "bip R Foot001"
+        },
+        {
+          "name": "bip R Toe0Nub001",
+          "parent": "bip R Toe001"
+        }
+      ]
+    },
+    {
+      "name": "bip002",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot002",
+      "location": [
+        -1.430511474609375e-06,
+        1.953425407409668,
+        92.75452423095703
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis002",
+          "parent": null
+        },
+        {
+          "name": "bip Spine004",
+          "parent": "bip Pelvis002"
+        },
+        {
+          "name": "bip Spine005",
+          "parent": "bip Spine004"
+        },
+        {
+          "name": "bip Neck002",
+          "parent": "bip Spine005"
+        },
+        {
+          "name": "bip Head002",
+          "parent": "bip Neck002"
+        },
+        {
+          "name": "bip HeadNub002",
+          "parent": "bip Head002"
+        },
+        {
+          "name": "bip jaw002",
+          "parent": "bip Head002"
+        },
+        {
+          "name": "bip jawNub002",
+          "parent": "bip jaw002"
+        },
+        {
+          "name": "bip L Clavicle002",
+          "parent": "bip Spine005"
+        },
+        {
+          "name": "bip L UpperArm002",
+          "parent": "bip L Clavicle002"
+        },
+        {
+          "name": "bip L Forearm002",
+          "parent": "bip L UpperArm002"
+        },
+        {
+          "name": "bip L Hand002",
+          "parent": "bip L Forearm002"
+        },
+        {
+          "name": "bip L Finger016",
+          "parent": "bip L Hand002"
+        },
+        {
+          "name": "bip L Finger017",
+          "parent": "bip L Finger016"
+        },
+        {
+          "name": "bip L Finger0Nub002",
+          "parent": "bip L Finger017"
+        },
+        {
+          "name": "bip L Finger018",
+          "parent": "bip L Hand002"
+        },
+        {
+          "name": "bip L Finger019",
+          "parent": "bip L Finger018"
+        },
+        {
+          "name": "bip L Finger1Nub002",
+          "parent": "bip L Finger019"
+        },
+        {
+          "name": "bip R Clavicle002",
+          "parent": "bip Spine005"
+        },
+        {
+          "name": "bip R UpperArm002",
+          "parent": "bip R Clavicle002"
+        },
+        {
+          "name": "bip R Forearm002",
+          "parent": "bip R UpperArm002"
+        },
+        {
+          "name": "bip R Hand002",
+          "parent": "bip R Forearm002"
+        },
+        {
+          "name": "bip R Finger016",
+          "parent": "bip R Hand002"
+        },
+        {
+          "name": "bip R Finger017",
+          "parent": "bip R Finger016"
+        },
+        {
+          "name": "bip R Finger0Nub002",
+          "parent": "bip R Finger017"
+        },
+        {
+          "name": "bip R Finger018",
+          "parent": "bip R Hand002"
+        },
+        {
+          "name": "bip R Finger019",
+          "parent": "bip R Finger018"
+        },
+        {
+          "name": "bip R Finger1Nub002",
+          "parent": "bip R Finger019"
+        },
+        {
+          "name": "bip L Thigh002",
+          "parent": "bip Pelvis002"
+        },
+        {
+          "name": "bip L Calf002",
+          "parent": "bip L Thigh002"
+        },
+        {
+          "name": "bip L Foot002",
+          "parent": "bip L Calf002"
+        },
+        {
+          "name": "bip L Toe002",
+          "parent": "bip L Foot002"
+        },
+        {
+          "name": "bip L Toe0Nub002",
+          "parent": "bip L Toe002"
+        },
+        {
+          "name": "bip R Thigh002",
+          "parent": "bip Pelvis002"
+        },
+        {
+          "name": "bip R Calf002",
+          "parent": "bip R Thigh002"
+        },
+        {
+          "name": "bip R Foot002",
+          "parent": "bip R Calf002"
+        },
+        {
+          "name": "bip R Toe002",
+          "parent": "bip R Foot002"
+        },
+        {
+          "name": "bip R Toe0Nub002",
+          "parent": "bip R Toe002"
+        }
+      ]
+    },
+    {
+      "name": "bip003",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot003",
+      "location": [
+        0.0,
+        0.0,
+        82.68576049804688
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis003",
+          "parent": null
+        },
+        {
+          "name": "bip Spine006",
+          "parent": "bip Pelvis003"
+        },
+        {
+          "name": "bip Spine007",
+          "parent": "bip Spine006"
+        },
+        {
+          "name": "bip Neck003",
+          "parent": "bip Spine007"
+        },
+        {
+          "name": "bip Head003",
+          "parent": "bip Neck003"
+        },
+        {
+          "name": "bip HeadNub003",
+          "parent": "bip Head003"
+        },
+        {
+          "name": "bip jaw003",
+          "parent": "bip Head003"
+        },
+        {
+          "name": "bip jawNub003",
+          "parent": "bip jaw003"
+        },
+        {
+          "name": "bip L Clavicle003",
+          "parent": "bip Spine007"
+        },
+        {
+          "name": "bip L UpperArm003",
+          "parent": "bip L Clavicle003"
+        },
+        {
+          "name": "bip L Forearm003",
+          "parent": "bip L UpperArm003"
+        },
+        {
+          "name": "bip L Hand003",
+          "parent": "bip L Forearm003"
+        },
+        {
+          "name": "bip L Finger020",
+          "parent": "bip L Hand003"
+        },
+        {
+          "name": "bip L Finger021",
+          "parent": "bip L Finger020"
+        },
+        {
+          "name": "bip L Finger0Nub003",
+          "parent": "bip L Finger021"
+        },
+        {
+          "name": "bip L Finger022",
+          "parent": "bip L Hand003"
+        },
+        {
+          "name": "bip L Finger023",
+          "parent": "bip L Finger022"
+        },
+        {
+          "name": "bip L Finger1Nub003",
+          "parent": "bip L Finger023"
+        },
+        {
+          "name": "bip R Clavicle003",
+          "parent": "bip Spine007"
+        },
+        {
+          "name": "bip R UpperArm003",
+          "parent": "bip R Clavicle003"
+        },
+        {
+          "name": "bip R Forearm003",
+          "parent": "bip R UpperArm003"
+        },
+        {
+          "name": "bip R Hand003",
+          "parent": "bip R Forearm003"
+        },
+        {
+          "name": "bip R Finger020",
+          "parent": "bip R Hand003"
+        },
+        {
+          "name": "bip R Finger021",
+          "parent": "bip R Finger020"
+        },
+        {
+          "name": "bip R Finger0Nub003",
+          "parent": "bip R Finger021"
+        },
+        {
+          "name": "bip R Finger022",
+          "parent": "bip R Hand003"
+        },
+        {
+          "name": "bip R Finger023",
+          "parent": "bip R Finger022"
+        },
+        {
+          "name": "bip R Finger1Nub003",
+          "parent": "bip R Finger023"
+        },
+        {
+          "name": "bip L Thigh003",
+          "parent": "bip Pelvis003"
+        },
+        {
+          "name": "bip L Calf003",
+          "parent": "bip L Thigh003"
+        },
+        {
+          "name": "bip L Foot003",
+          "parent": "bip L Calf003"
+        },
+        {
+          "name": "bip L Toe003",
+          "parent": "bip L Foot003"
+        },
+        {
+          "name": "bip L Toe0Nub003",
+          "parent": "bip L Toe003"
+        },
+        {
+          "name": "bip R Thigh003",
+          "parent": "bip Pelvis003"
+        },
+        {
+          "name": "bip R Calf003",
+          "parent": "bip R Thigh003"
+        },
+        {
+          "name": "bip R Foot003",
+          "parent": "bip R Calf003"
+        },
+        {
+          "name": "bip R Toe003",
+          "parent": "bip R Foot003"
+        },
+        {
+          "name": "bip R Toe0Nub003",
+          "parent": "bip R Toe003"
+        }
+      ]
+    },
+    {
+      "name": "bip004",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot004",
+      "location": [
+        0.0,
+        1.9534251689910889,
+        89.06793212890625
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis004",
+          "parent": null
+        },
+        {
+          "name": "bip Spine008",
+          "parent": "bip Pelvis004"
+        },
+        {
+          "name": "bip Spine009",
+          "parent": "bip Spine008"
+        },
+        {
+          "name": "bip Neck004",
+          "parent": "bip Spine009"
+        },
+        {
+          "name": "bip Head004",
+          "parent": "bip Neck004"
+        },
+        {
+          "name": "bip HeadNub004",
+          "parent": "bip Head004"
+        },
+        {
+          "name": "bip jaw004",
+          "parent": "bip Head004"
+        },
+        {
+          "name": "bip jawNub004",
+          "parent": "bip jaw004"
+        },
+        {
+          "name": "bip L Clavicle004",
+          "parent": "bip Spine009"
+        },
+        {
+          "name": "bip L UpperArm004",
+          "parent": "bip L Clavicle004"
+        },
+        {
+          "name": "bip L Forearm004",
+          "parent": "bip L UpperArm004"
+        },
+        {
+          "name": "bip L Hand004",
+          "parent": "bip L Forearm004"
+        },
+        {
+          "name": "bip L Finger024",
+          "parent": "bip L Hand004"
+        },
+        {
+          "name": "bip L Finger025",
+          "parent": "bip L Finger024"
+        },
+        {
+          "name": "bip L Finger0Nub004",
+          "parent": "bip L Finger025"
+        },
+        {
+          "name": "bip L Finger026",
+          "parent": "bip L Hand004"
+        },
+        {
+          "name": "bip L Finger027",
+          "parent": "bip L Finger026"
+        },
+        {
+          "name": "bip L Finger1Nub004",
+          "parent": "bip L Finger027"
+        },
+        {
+          "name": "bip R Clavicle004",
+          "parent": "bip Spine009"
+        },
+        {
+          "name": "bip R UpperArm004",
+          "parent": "bip R Clavicle004"
+        },
+        {
+          "name": "bip R Forearm004",
+          "parent": "bip R UpperArm004"
+        },
+        {
+          "name": "bip R Hand004",
+          "parent": "bip R Forearm004"
+        },
+        {
+          "name": "bip R Finger024",
+          "parent": "bip R Hand004"
+        },
+        {
+          "name": "bip R Finger025",
+          "parent": "bip R Finger024"
+        },
+        {
+          "name": "bip R Finger0Nub004",
+          "parent": "bip R Finger025"
+        },
+        {
+          "name": "bip R Finger026",
+          "parent": "bip R Hand004"
+        },
+        {
+          "name": "bip R Finger027",
+          "parent": "bip R Finger026"
+        },
+        {
+          "name": "bip R Finger1Nub004",
+          "parent": "bip R Finger027"
+        },
+        {
+          "name": "bip L Thigh004",
+          "parent": "bip Pelvis004"
+        },
+        {
+          "name": "bip L Calf004",
+          "parent": "bip L Thigh004"
+        },
+        {
+          "name": "bip L Foot004",
+          "parent": "bip L Calf004"
+        },
+        {
+          "name": "bip L Toe004",
+          "parent": "bip L Foot004"
+        },
+        {
+          "name": "bip L Toe0Nub004",
+          "parent": "bip L Toe004"
+        },
+        {
+          "name": "bip R Thigh004",
+          "parent": "bip Pelvis004"
+        },
+        {
+          "name": "bip R Calf004",
+          "parent": "bip R Thigh004"
+        },
+        {
+          "name": "bip R Foot004",
+          "parent": "bip R Calf004"
+        },
+        {
+          "name": "bip R Toe004",
+          "parent": "bip R Foot004"
+        },
+        {
+          "name": "bip R Toe0Nub004",
+          "parent": "bip R Toe004"
+        }
+      ]
+    },
+    {
+      "name": "bip005",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot005",
+      "location": [
+        0.0,
+        1.66644287109375,
+        79.37677001953125
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis005",
+          "parent": null
+        },
+        {
+          "name": "bip Spine010",
+          "parent": "bip Pelvis005"
+        },
+        {
+          "name": "bip Spine011",
+          "parent": "bip Spine010"
+        },
+        {
+          "name": "bip Neck005",
+          "parent": "bip Spine011"
+        },
+        {
+          "name": "bip Head005",
+          "parent": "bip Neck005"
+        },
+        {
+          "name": "bip HeadNub005",
+          "parent": "bip Head005"
+        },
+        {
+          "name": "bip jaw005",
+          "parent": "bip Head005"
+        },
+        {
+          "name": "bip jawNub005",
+          "parent": "bip jaw005"
+        },
+        {
+          "name": "bip L Clavicle005",
+          "parent": "bip Spine011"
+        },
+        {
+          "name": "bip L UpperArm005",
+          "parent": "bip L Clavicle005"
+        },
+        {
+          "name": "bip L Forearm005",
+          "parent": "bip L UpperArm005"
+        },
+        {
+          "name": "bip L Hand005",
+          "parent": "bip L Forearm005"
+        },
+        {
+          "name": "bip L Finger028",
+          "parent": "bip L Hand005"
+        },
+        {
+          "name": "bip L Finger029",
+          "parent": "bip L Finger028"
+        },
+        {
+          "name": "bip L Finger0Nub005",
+          "parent": "bip L Finger029"
+        },
+        {
+          "name": "bip L Finger030",
+          "parent": "bip L Hand005"
+        },
+        {
+          "name": "bip L Finger031",
+          "parent": "bip L Finger030"
+        },
+        {
+          "name": "bip L Finger1Nub005",
+          "parent": "bip L Finger031"
+        },
+        {
+          "name": "bip R Clavicle005",
+          "parent": "bip Spine011"
+        },
+        {
+          "name": "bip R UpperArm005",
+          "parent": "bip R Clavicle005"
+        },
+        {
+          "name": "bip R Forearm005",
+          "parent": "bip R UpperArm005"
+        },
+        {
+          "name": "bip R Hand005",
+          "parent": "bip R Forearm005"
+        },
+        {
+          "name": "bip R Finger028",
+          "parent": "bip R Hand005"
+        },
+        {
+          "name": "bip R Finger029",
+          "parent": "bip R Finger028"
+        },
+        {
+          "name": "bip R Finger0Nub005",
+          "parent": "bip R Finger029"
+        },
+        {
+          "name": "bip R Finger030",
+          "parent": "bip R Hand005"
+        },
+        {
+          "name": "bip R Finger031",
+          "parent": "bip R Finger030"
+        },
+        {
+          "name": "bip R Finger1Nub005",
+          "parent": "bip R Finger031"
+        },
+        {
+          "name": "bip L Thigh005",
+          "parent": "bip Pelvis005"
+        },
+        {
+          "name": "bip L Calf005",
+          "parent": "bip L Thigh005"
+        },
+        {
+          "name": "bip L Foot005",
+          "parent": "bip L Calf005"
+        },
+        {
+          "name": "bip L Toe005",
+          "parent": "bip L Foot005"
+        },
+        {
+          "name": "bip L Toe0Nub005",
+          "parent": "bip L Toe005"
+        },
+        {
+          "name": "bip R Thigh005",
+          "parent": "bip Pelvis005"
+        },
+        {
+          "name": "bip R Calf005",
+          "parent": "bip R Thigh005"
+        },
+        {
+          "name": "bip R Foot005",
+          "parent": "bip R Calf005"
+        },
+        {
+          "name": "bip R Toe005",
+          "parent": "bip R Foot005"
+        },
+        {
+          "name": "bip R Toe0Nub005",
+          "parent": "bip R Toe005"
+        }
+      ]
+    },
+    {
+      "name": "bip006",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot006",
+      "location": [
+        0.0,
+        1.6664505004882812,
+        89.88468933105469
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis006",
+          "parent": null
+        },
+        {
+          "name": "bip Spine012",
+          "parent": "bip Pelvis006"
+        },
+        {
+          "name": "bip Spine013",
+          "parent": "bip Spine012"
+        },
+        {
+          "name": "bip Neck006",
+          "parent": "bip Spine013"
+        },
+        {
+          "name": "bip Head006",
+          "parent": "bip Neck006"
+        },
+        {
+          "name": "bip HeadNub006",
+          "parent": "bip Head006"
+        },
+        {
+          "name": "bip jaw006",
+          "parent": "bip Head006"
+        },
+        {
+          "name": "bip jawNub006",
+          "parent": "bip jaw006"
+        },
+        {
+          "name": "bip L Clavicle006",
+          "parent": "bip Spine013"
+        },
+        {
+          "name": "bip L UpperArm006",
+          "parent": "bip L Clavicle006"
+        },
+        {
+          "name": "bip L Forearm006",
+          "parent": "bip L UpperArm006"
+        },
+        {
+          "name": "bip L Hand006",
+          "parent": "bip L Forearm006"
+        },
+        {
+          "name": "bip L Finger032",
+          "parent": "bip L Hand006"
+        },
+        {
+          "name": "bip L Finger033",
+          "parent": "bip L Finger032"
+        },
+        {
+          "name": "bip L Finger0Nub006",
+          "parent": "bip L Finger033"
+        },
+        {
+          "name": "bip L Finger034",
+          "parent": "bip L Hand006"
+        },
+        {
+          "name": "bip L Finger035",
+          "parent": "bip L Finger034"
+        },
+        {
+          "name": "bip L Finger1Nub006",
+          "parent": "bip L Finger035"
+        },
+        {
+          "name": "bip R Clavicle006",
+          "parent": "bip Spine013"
+        },
+        {
+          "name": "bip R UpperArm006",
+          "parent": "bip R Clavicle006"
+        },
+        {
+          "name": "bip R Forearm006",
+          "parent": "bip R UpperArm006"
+        },
+        {
+          "name": "bip R Hand006",
+          "parent": "bip R Forearm006"
+        },
+        {
+          "name": "bip R Finger032",
+          "parent": "bip R Hand006"
+        },
+        {
+          "name": "bip R Finger033",
+          "parent": "bip R Finger032"
+        },
+        {
+          "name": "bip R Finger0Nub006",
+          "parent": "bip R Finger033"
+        },
+        {
+          "name": "bip R Finger034",
+          "parent": "bip R Hand006"
+        },
+        {
+          "name": "bip R Finger035",
+          "parent": "bip R Finger034"
+        },
+        {
+          "name": "bip R Finger1Nub006",
+          "parent": "bip R Finger035"
+        },
+        {
+          "name": "bip L Thigh006",
+          "parent": "bip Pelvis006"
+        },
+        {
+          "name": "bip L Calf006",
+          "parent": "bip L Thigh006"
+        },
+        {
+          "name": "bip L Foot006",
+          "parent": "bip L Calf006"
+        },
+        {
+          "name": "bip L Toe006",
+          "parent": "bip L Foot006"
+        },
+        {
+          "name": "bip L Toe0Nub006",
+          "parent": "bip L Toe006"
+        },
+        {
+          "name": "bip R Thigh006",
+          "parent": "bip Pelvis006"
+        },
+        {
+          "name": "bip R Calf006",
+          "parent": "bip R Thigh006"
+        },
+        {
+          "name": "bip R Foot006",
+          "parent": "bip R Calf006"
+        },
+        {
+          "name": "bip R Toe006",
+          "parent": "bip R Foot006"
+        },
+        {
+          "name": "bip R Toe0Nub006",
+          "parent": "bip R Toe006"
+        }
+      ]
+    },
+    {
+      "name": "bip007",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot007",
+      "location": [
+        3.6317291259765625,
+        1.6664505004882812,
+        80.38411712646484
+      ],
+      "scale": [
+        1.0000001192092896,
+        1.0000001192092896,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis007",
+          "parent": null
+        },
+        {
+          "name": "bip Spine014",
+          "parent": "bip Pelvis007"
+        },
+        {
+          "name": "bip Spine015",
+          "parent": "bip Spine014"
+        },
+        {
+          "name": "bip Neck007",
+          "parent": "bip Spine015"
+        },
+        {
+          "name": "bip Head007",
+          "parent": "bip Neck007"
+        },
+        {
+          "name": "bip HeadNub007",
+          "parent": "bip Head007"
+        },
+        {
+          "name": "bip jaw007",
+          "parent": "bip Head007"
+        },
+        {
+          "name": "bip jawNub007",
+          "parent": "bip jaw007"
+        },
+        {
+          "name": "bip L Clavicle007",
+          "parent": "bip Spine015"
+        },
+        {
+          "name": "bip L UpperArm007",
+          "parent": "bip L Clavicle007"
+        },
+        {
+          "name": "bip L Forearm007",
+          "parent": "bip L UpperArm007"
+        },
+        {
+          "name": "bip L Hand007",
+          "parent": "bip L Forearm007"
+        },
+        {
+          "name": "bip L Finger036",
+          "parent": "bip L Hand007"
+        },
+        {
+          "name": "bip L Finger037",
+          "parent": "bip L Finger036"
+        },
+        {
+          "name": "bip L Finger0Nub007",
+          "parent": "bip L Finger037"
+        },
+        {
+          "name": "bip L Finger038",
+          "parent": "bip L Hand007"
+        },
+        {
+          "name": "bip L Finger039",
+          "parent": "bip L Finger038"
+        },
+        {
+          "name": "bip L Finger1Nub007",
+          "parent": "bip L Finger039"
+        },
+        {
+          "name": "bip R Clavicle007",
+          "parent": "bip Spine015"
+        },
+        {
+          "name": "bip R UpperArm007",
+          "parent": "bip R Clavicle007"
+        },
+        {
+          "name": "bip R Forearm007",
+          "parent": "bip R UpperArm007"
+        },
+        {
+          "name": "bip R Hand007",
+          "parent": "bip R Forearm007"
+        },
+        {
+          "name": "bip R Finger036",
+          "parent": "bip R Hand007"
+        },
+        {
+          "name": "bip R Finger037",
+          "parent": "bip R Finger036"
+        },
+        {
+          "name": "bip R Finger0Nub007",
+          "parent": "bip R Finger037"
+        },
+        {
+          "name": "bip R Finger038",
+          "parent": "bip R Hand007"
+        },
+        {
+          "name": "bip R Finger039",
+          "parent": "bip R Finger038"
+        },
+        {
+          "name": "bip R Finger1Nub007",
+          "parent": "bip R Finger039"
+        },
+        {
+          "name": "bip L Thigh007",
+          "parent": "bip Pelvis007"
+        },
+        {
+          "name": "bip L Calf007",
+          "parent": "bip L Thigh007"
+        },
+        {
+          "name": "bip L Foot007",
+          "parent": "bip L Calf007"
+        },
+        {
+          "name": "bip L Toe007",
+          "parent": "bip L Foot007"
+        },
+        {
+          "name": "bip L Toe0Nub007",
+          "parent": "bip L Toe007"
+        },
+        {
+          "name": "bip R Thigh007",
+          "parent": "bip Pelvis007"
+        },
+        {
+          "name": "bip R Calf007",
+          "parent": "bip R Thigh007"
+        },
+        {
+          "name": "bip R Foot007",
+          "parent": "bip R Calf007"
+        },
+        {
+          "name": "bip R Toe007",
+          "parent": "bip R Foot007"
+        },
+        {
+          "name": "bip R Toe0Nub007",
+          "parent": "bip R Toe007"
+        }
+      ]
+    },
+    {
+      "name": "bip008",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot008",
+      "location": [
+        3.6317291259765625,
+        1.6664505004882812,
+        80.38411712646484
+      ],
+      "scale": [
+        1.0000001192092896,
+        1.0000001192092896,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis008",
+          "parent": null
+        },
+        {
+          "name": "bip Spine016",
+          "parent": "bip Pelvis008"
+        },
+        {
+          "name": "bip Spine017",
+          "parent": "bip Spine016"
+        },
+        {
+          "name": "bip Neck008",
+          "parent": "bip Spine017"
+        },
+        {
+          "name": "bip Head008",
+          "parent": "bip Neck008"
+        },
+        {
+          "name": "bip HeadNub008",
+          "parent": "bip Head008"
+        },
+        {
+          "name": "bip jaw008",
+          "parent": "bip Head008"
+        },
+        {
+          "name": "bip jawNub008",
+          "parent": "bip jaw008"
+        },
+        {
+          "name": "bip L Clavicle008",
+          "parent": "bip Spine017"
+        },
+        {
+          "name": "bip L UpperArm008",
+          "parent": "bip L Clavicle008"
+        },
+        {
+          "name": "bip L Forearm008",
+          "parent": "bip L UpperArm008"
+        },
+        {
+          "name": "bip L Hand008",
+          "parent": "bip L Forearm008"
+        },
+        {
+          "name": "bip L Finger040",
+          "parent": "bip L Hand008"
+        },
+        {
+          "name": "bip L Finger041",
+          "parent": "bip L Finger040"
+        },
+        {
+          "name": "bip L Finger0Nub008",
+          "parent": "bip L Finger041"
+        },
+        {
+          "name": "bip L Finger042",
+          "parent": "bip L Hand008"
+        },
+        {
+          "name": "bip L Finger043",
+          "parent": "bip L Finger042"
+        },
+        {
+          "name": "bip L Finger1Nub008",
+          "parent": "bip L Finger043"
+        },
+        {
+          "name": "bip R Clavicle008",
+          "parent": "bip Spine017"
+        },
+        {
+          "name": "bip R UpperArm008",
+          "parent": "bip R Clavicle008"
+        },
+        {
+          "name": "bip R Forearm008",
+          "parent": "bip R UpperArm008"
+        },
+        {
+          "name": "bip R Hand008",
+          "parent": "bip R Forearm008"
+        },
+        {
+          "name": "bip R Finger040",
+          "parent": "bip R Hand008"
+        },
+        {
+          "name": "bip R Finger041",
+          "parent": "bip R Finger040"
+        },
+        {
+          "name": "bip R Finger0Nub008",
+          "parent": "bip R Finger041"
+        },
+        {
+          "name": "bip R Finger042",
+          "parent": "bip R Hand008"
+        },
+        {
+          "name": "bip R Finger043",
+          "parent": "bip R Finger042"
+        },
+        {
+          "name": "bip R Finger1Nub008",
+          "parent": "bip R Finger043"
+        },
+        {
+          "name": "bip L Thigh008",
+          "parent": "bip Pelvis008"
+        },
+        {
+          "name": "bip L Calf008",
+          "parent": "bip L Thigh008"
+        },
+        {
+          "name": "bip L Foot008",
+          "parent": "bip L Calf008"
+        },
+        {
+          "name": "bip L Toe008",
+          "parent": "bip L Foot008"
+        },
+        {
+          "name": "bip L Toe0Nub008",
+          "parent": "bip L Toe008"
+        },
+        {
+          "name": "bip R Thigh008",
+          "parent": "bip Pelvis008"
+        },
+        {
+          "name": "bip R Calf008",
+          "parent": "bip R Thigh008"
+        },
+        {
+          "name": "bip R Foot008",
+          "parent": "bip R Calf008"
+        },
+        {
+          "name": "bip R Toe008",
+          "parent": "bip R Foot008"
+        },
+        {
+          "name": "bip R Toe0Nub008",
+          "parent": "bip R Toe008"
+        }
+      ]
+    },
+    {
+      "name": "bip009",
+      "type": "ARMATURE",
+      "parent": "rig_CharRoot009",
+      "location": [
+        4.714149475097656,
+        -6.386497497558594,
+        77.19893646240234
+      ],
+      "scale": [
+        0.9999999403953552,
+        0.9999999403953552,
+        1.0
+      ],
+      "bones": [
+        {
+          "name": "bip Pelvis009",
+          "parent": null
+        },
+        {
+          "name": "bip Spine018",
+          "parent": "bip Pelvis009"
+        },
+        {
+          "name": "bip Spine019",
+          "parent": "bip Spine018"
+        },
+        {
+          "name": "bip Neck009",
+          "parent": "bip Spine019"
+        },
+        {
+          "name": "bip Head009",
+          "parent": "bip Neck009"
+        },
+        {
+          "name": "bip HeadNub009",
+          "parent": "bip Head009"
+        },
+        {
+          "name": "bip jaw009",
+          "parent": "bip Head009"
+        },
+        {
+          "name": "bip jawNub009",
+          "parent": "bip jaw009"
+        },
+        {
+          "name": "bip L Clavicle009",
+          "parent": "bip Spine019"
+        },
+        {
+          "name": "bip L UpperArm009",
+          "parent": "bip L Clavicle009"
+        },
+        {
+          "name": "bip L Forearm009",
+          "parent": "bip L UpperArm009"
+        },
+        {
+          "name": "bip L Hand009",
+          "parent": "bip L Forearm009"
+        },
+        {
+          "name": "bip L Finger044",
+          "parent": "bip L Hand009"
+        },
+        {
+          "name": "bip L Finger045",
+          "parent": "bip L Finger044"
+        },
+        {
+          "name": "bip L Finger0Nub009",
+          "parent": "bip L Finger045"
+        },
+        {
+          "name": "bip L Finger046",
+          "parent": "bip L Hand009"
+        },
+        {
+          "name": "bip L Finger047",
+          "parent": "bip L Finger046"
+        },
+        {
+          "name": "bip L Finger1Nub009",
+          "parent": "bip L Finger047"
+        },
+        {
+          "name": "bip R Clavicle009",
+          "parent": "bip Spine019"
+        },
+        {
+          "name": "bip R UpperArm009",
+          "parent": "bip R Clavicle009"
+        },
+        {
+          "name": "bip R Forearm009",
+          "parent": "bip R UpperArm009"
+        },
+        {
+          "name": "bip R Hand009",
+          "parent": "bip R Forearm009"
+        },
+        {
+          "name": "bip R Finger044",
+          "parent": "bip R Hand009"
+        },
+        {
+          "name": "bip R Finger045",
+          "parent": "bip R Finger044"
+        },
+        {
+          "name": "bip R Finger0Nub009",
+          "parent": "bip R Finger045"
+        },
+        {
+          "name": "bip R Finger046",
+          "parent": "bip R Hand009"
+        },
+        {
+          "name": "bip R Finger047",
+          "parent": "bip R Finger046"
+        },
+        {
+          "name": "bip R Finger1Nub009",
+          "parent": "bip R Finger047"
+        },
+        {
+          "name": "bip L Thigh009",
+          "parent": "bip Pelvis009"
+        },
+        {
+          "name": "bip L Calf009",
+          "parent": "bip L Thigh009"
+        },
+        {
+          "name": "bip L Foot009",
+          "parent": "bip L Calf009"
+        },
+        {
+          "name": "bip L Toe009",
+          "parent": "bip L Foot009"
+        },
+        {
+          "name": "bip L Toe0Nub009",
+          "parent": "bip L Toe009"
+        },
+        {
+          "name": "bip R Thigh009",
+          "parent": "bip Pelvis009"
+        },
+        {
+          "name": "bip R Calf009",
+          "parent": "bip R Thigh009"
+        },
+        {
+          "name": "bip R Foot009",
+          "parent": "bip R Calf009"
+        },
+        {
+          "name": "bip R Toe009",
+          "parent": "bip R Foot009"
+        },
+        {
+          "name": "bip R Toe0Nub009",
+          "parent": "bip R Toe009"
+        }
+      ]
+    },
+    {
+      "name": "Line001",
+      "type": "MESH",
+      "parent": null,
+      "location": [
+        -0.009452005848288536,
+        0.46296000480651855,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ],
+      "vertices": 133,
+      "faces": 178,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [],
+      "bounds": [
+        [
+          -3.467909574508667,
+          -3.2799785137176514,
+          -0.4811428487300873
+        ],
+        [
+          3.7125086784362793,
+          2.0157887935638428,
+          1.636090303236415e-07
+        ]
+      ]
+    },
+    {
+      "name": "lpFemale_zombie_A",
+      "type": "MESH",
+      "parent": "bip",
+      "location": [
+        126.53101348876953,
+        -237.72662353515625,
+        -82.03185272216797
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 999,
+      "faces": 1057,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis",
+        "bip Spine",
+        "bip Spine1",
+        "bip Neck",
+        "bip Head",
+        "bip jaw",
+        "bip L Clavicle",
+        "bip L UpperArm",
+        "bip L Forearm",
+        "bip L Hand",
+        "bip L Finger0",
+        "bip L Finger01",
+        "bip L Finger1",
+        "bip L Finger11",
+        "bip R Clavicle",
+        "bip R UpperArm",
+        "bip R Forearm",
+        "bip R Hand",
+        "bip R Finger0",
+        "bip R Finger01",
+        "bip R Finger1",
+        "bip R Finger11",
+        "bip L Thigh",
+        "bip L Calf",
+        "bip L Foot",
+        "bip L Toe0",
+        "bip R Thigh",
+        "bip R Calf",
+        "bip R Foot",
+        "bip R Toe0"
+      ],
+      "bounds": [
+        [
+          -0.23402731120586395,
+          2.083745002746582,
+          -1.900975227355957
+        ],
+        [
+          5.485573768615723,
+          4.933561325073242,
+          4.165626525878906
+        ]
+      ]
+    },
+    {
+      "name": "lpFemale_zombie_B",
+      "type": "MESH",
+      "parent": "bip001",
+      "location": [
+        -220.4513702392578,
+        -6.18137264251709,
+        -80.97293090820312
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 824,
+      "faces": 886,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis001",
+        "bip Spine002",
+        "bip Spine003",
+        "bip Neck001",
+        "bip Head001",
+        "bip jaw001",
+        "bip L Clavicle001",
+        "bip L UpperArm001",
+        "bip L Forearm001",
+        "bip L Hand001",
+        "bip L Finger012",
+        "bip L Finger013",
+        "bip L Finger014",
+        "bip L Finger015",
+        "bip R Clavicle001",
+        "bip R UpperArm001",
+        "bip R Forearm001",
+        "bip R Hand001",
+        "bip R Finger012",
+        "bip R Finger013",
+        "bip R Finger014",
+        "bip R Finger015",
+        "bip L Thigh001",
+        "bip L Calf001",
+        "bip L Foot001",
+        "bip L Toe001",
+        "bip R Thigh001",
+        "bip R Calf001",
+        "bip R Foot001",
+        "bip R Toe001"
+      ],
+      "bounds": [
+        [
+          -1.3417812585830688,
+          -4.466130256652832,
+          -0.5842084288597107
+        ],
+        [
+          1.4364287853240967,
+          -1.7606195211410522,
+          1.5296831130981445
+        ]
+      ]
+    },
+    {
+      "name": "lpFemale_zombie_C",
+      "type": "MESH",
+      "parent": "bip002",
+      "location": [
+        5.100998401641846,
+        -7.272130966186523,
+        -87.75452423095703
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 853,
+      "faces": 906,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis002",
+        "bip Spine004",
+        "bip Spine005",
+        "bip Neck002",
+        "bip Head002",
+        "bip jaw002",
+        "bip L Clavicle002",
+        "bip L UpperArm002",
+        "bip L Forearm002",
+        "bip L Hand002",
+        "bip L Finger016",
+        "bip L Finger017",
+        "bip L Finger018",
+        "bip L Finger019",
+        "bip R Clavicle002",
+        "bip R UpperArm002",
+        "bip R Forearm002",
+        "bip R Hand002",
+        "bip R Finger016",
+        "bip R Finger017",
+        "bip R Finger018",
+        "bip R Finger019",
+        "bip L Thigh002",
+        "bip L Calf002",
+        "bip L Foot002",
+        "bip L Toe002",
+        "bip R Thigh002",
+        "bip R Calf002",
+        "bip R Foot002",
+        "bip R Toe002"
+      ],
+      "bounds": [
+        [
+          -0.40684306621551514,
+          0.056086327880620956,
+          -0.23522721230983734
+        ],
+        [
+          0.9419342279434204,
+          2.036370038986206,
+          2.0309994220733643
+        ]
+      ]
+    },
+    {
+      "name": "lpFemale_zombie_D",
+      "type": "MESH",
+      "parent": "bip003",
+      "location": [
+        6.6703715324401855,
+        136.41893005371094,
+        -77.68576049804688
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 796,
+      "faces": 849,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis003",
+        "bip Spine006",
+        "bip Spine007",
+        "bip Neck003",
+        "bip Head003",
+        "bip jaw003",
+        "bip L Clavicle003",
+        "bip L UpperArm003",
+        "bip L Forearm003",
+        "bip L Hand003",
+        "bip L Finger020",
+        "bip L Finger021",
+        "bip L Finger022",
+        "bip L Finger023",
+        "bip R Clavicle003",
+        "bip R UpperArm003",
+        "bip R Forearm003",
+        "bip R Hand003",
+        "bip L Thigh003",
+        "bip L Calf003",
+        "bip L Foot003",
+        "bip L Toe003",
+        "bip R Thigh003",
+        "bip R Calf003",
+        "bip R Foot003",
+        "bip R Toe003"
+      ],
+      "bounds": [
+        [
+          -3.171699047088623,
+          -0.37773334980010986,
+          -1.1389743089675903
+        ],
+        [
+          -1.092167615890503,
+          2.300598382949829,
+          2.6685214042663574
+        ]
+      ]
+    },
+    {
+      "name": "lpFemale_zombie_E",
+      "type": "MESH",
+      "parent": "bip004",
+      "location": [
+        -3.6139018535614014,
+        -144.04940795898438,
+        -89.06793212890625
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 811,
+      "faces": 848,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis004",
+        "bip Spine008",
+        "bip Spine009",
+        "bip Neck004",
+        "bip Head004",
+        "bip jaw004",
+        "bip L Clavicle004",
+        "bip L UpperArm004",
+        "bip L Forearm004",
+        "bip L Hand004",
+        "bip L Finger024",
+        "bip L Finger025",
+        "bip L Finger026",
+        "bip L Finger027",
+        "bip R Clavicle004",
+        "bip R UpperArm004",
+        "bip R Forearm004",
+        "bip R Hand004",
+        "bip R Finger024",
+        "bip R Finger025",
+        "bip R Finger026",
+        "bip R Finger027",
+        "bip L Thigh004",
+        "bip L Calf004",
+        "bip L Foot004",
+        "bip L Toe004",
+        "bip R Thigh004",
+        "bip R Calf004",
+        "bip R Foot004",
+        "bip R Toe004"
+      ],
+      "bounds": [
+        [
+          0.6723511219024658,
+          -0.10354867577552795,
+          -0.9847116470336914
+        ],
+        [
+          3.4399712085723877,
+          2.210254669189453,
+          2.484464168548584
+        ]
+      ]
+    },
+    {
+      "name": "lpMale_zombie_A",
+      "type": "MESH",
+      "parent": "bip005",
+      "location": [
+        132.62200927734375,
+        216.99119567871094,
+        -79.37677764892578
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 864,
+      "faces": 923,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis005",
+        "bip Spine010",
+        "bip Spine011",
+        "bip Neck005",
+        "bip Head005",
+        "bip jaw005",
+        "bip L Clavicle005",
+        "bip L UpperArm005",
+        "bip L Forearm005",
+        "bip L Hand005",
+        "bip L Finger028",
+        "bip L Finger029",
+        "bip L Finger030",
+        "bip L Finger031",
+        "bip R Clavicle005",
+        "bip R UpperArm005",
+        "bip R Forearm005",
+        "bip R Hand005",
+        "bip R Finger028",
+        "bip R Finger029",
+        "bip R Finger030",
+        "bip R Finger031",
+        "bip L Thigh005",
+        "bip L Calf005",
+        "bip L Foot005",
+        "bip L Toe005",
+        "bip R Thigh005",
+        "bip R Calf005",
+        "bip R Foot005",
+        "bip R Toe005"
+      ],
+      "bounds": [
+        [
+          -4.582563400268555,
+          -1.6237794160842896,
+          -2.6753523349761963
+        ],
+        [
+          0.720475971698761,
+          4.770601749420166,
+          3.911804437637329
+        ]
+      ]
+    },
+    {
+      "name": "lpMale_zombie_B",
+      "type": "MESH",
+      "parent": "bip006",
+      "location": [
+        113.50215148925781,
+        51.44353103637695,
+        -89.88469696044922
+      ],
+      "scale": [
+        0.9999999403953552,
+        0.9999999403953552,
+        0.9999999403953552
+      ],
+      "vertices": 890,
+      "faces": 931,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis006",
+        "bip Spine012",
+        "bip Spine013",
+        "bip Neck006",
+        "bip Head006",
+        "bip jaw006",
+        "bip L Clavicle006",
+        "bip L UpperArm006",
+        "bip L Forearm006",
+        "bip L Hand006",
+        "bip L Finger032",
+        "bip L Finger033",
+        "bip L Finger034",
+        "bip L Finger035",
+        "bip R Clavicle006",
+        "bip R UpperArm006",
+        "bip R Forearm006",
+        "bip R Hand006",
+        "bip R Finger032",
+        "bip R Finger033",
+        "bip R Finger034",
+        "bip R Finger035",
+        "bip L Thigh006",
+        "bip L Calf006",
+        "bip L Foot006",
+        "bip L Toe006",
+        "bip R Thigh006",
+        "bip R Calf006",
+        "bip R Foot006",
+        "bip R Toe006"
+      ],
+      "bounds": [
+        [
+          -1.2847622632980347,
+          2.0907397270202637,
+          -0.6788229942321777
+        ],
+        [
+          0.8279229998588562,
+          4.340986251831055,
+          2.010394811630249
+        ]
+      ]
+    },
+    {
+      "name": "lpMale_zombie_C",
+      "type": "MESH",
+      "parent": "bip007",
+      "location": [
+        130.0382080078125,
+        -69.59935760498047,
+        -80.38412475585938
+      ],
+      "scale": [
+        0.9999998211860657,
+        0.9999998211860657,
+        1.0
+      ],
+      "vertices": 827,
+      "faces": 876,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis007",
+        "bip Spine014",
+        "bip Spine015",
+        "bip Neck007",
+        "bip Head007",
+        "bip jaw007",
+        "bip L Clavicle007",
+        "bip L UpperArm007",
+        "bip L Forearm007",
+        "bip L Hand007",
+        "bip L Finger036",
+        "bip L Finger037",
+        "bip L Finger038",
+        "bip L Finger039",
+        "bip R Clavicle007",
+        "bip R UpperArm007",
+        "bip R Forearm007",
+        "bip R Hand007",
+        "bip R Finger036",
+        "bip R Finger037",
+        "bip R Finger038",
+        "bip R Finger039",
+        "bip L Thigh007",
+        "bip L Calf007",
+        "bip L Foot007",
+        "bip L Toe007",
+        "bip R Thigh007",
+        "bip R Calf007",
+        "bip R Foot007",
+        "bip R Toe007"
+      ],
+      "bounds": [
+        [
+          -0.10185633599758148,
+          -0.058910224586725235,
+          -1.6136962175369263
+        ],
+        [
+          3.0163419246673584,
+          3.980910062789917,
+          2.0257339477539062
+        ]
+      ]
+    },
+    {
+      "name": "lpMale_zombie_D",
+      "type": "MESH",
+      "parent": "bip008",
+      "location": [
+        -102.63323211669922,
+        44.911582946777344,
+        -80.38410949707031
+      ],
+      "scale": [
+        0.9999998211860657,
+        0.9999998211860657,
+        1.0
+      ],
+      "vertices": 802,
+      "faces": 855,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis008",
+        "bip Spine016",
+        "bip Spine017",
+        "bip Neck008",
+        "bip Head008",
+        "bip jaw008",
+        "bip L Clavicle008",
+        "bip L UpperArm008",
+        "bip L Forearm008",
+        "bip L Hand008",
+        "bip L Finger040",
+        "bip L Finger041",
+        "bip L Finger042",
+        "bip L Finger043",
+        "bip R Clavicle008",
+        "bip R UpperArm008",
+        "bip R Forearm008",
+        "bip R Hand008",
+        "bip R Finger040",
+        "bip R Finger041",
+        "bip R Finger042",
+        "bip R Finger043",
+        "bip L Thigh008",
+        "bip L Calf008",
+        "bip L Foot008",
+        "bip L Toe008",
+        "bip R Thigh008",
+        "bip R Calf008",
+        "bip R Foot008",
+        "bip R Toe008"
+      ],
+      "bounds": [
+        [
+          -1.6519548892974854,
+          -2.1597461700439453,
+          -0.22335681319236755
+        ],
+        [
+          0.397748738527298,
+          -0.006013170350342989,
+          0.42868030071258545
+        ]
+      ]
+    },
+    {
+      "name": "lpMale_zombie_E",
+      "type": "MESH",
+      "parent": "bip009",
+      "location": [
+        -63.6639404296875,
+        -123.52613830566406,
+        -77.19893646240234
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "vertices": 911,
+      "faces": 972,
+      "materials": [
+        "peopleColors"
+      ],
+      "uvs": [
+        "UVChannel_1"
+      ],
+      "groups": [
+        "bip Pelvis009",
+        "bip Spine018",
+        "bip Spine019",
+        "bip Neck009",
+        "bip Head009",
+        "bip jaw009",
+        "bip L Clavicle009",
+        "bip L UpperArm009",
+        "bip L Forearm009",
+        "bip L Hand009",
+        "bip L Finger044",
+        "bip L Finger045",
+        "bip L Finger046",
+        "bip L Finger047",
+        "bip R Clavicle009",
+        "bip R UpperArm009",
+        "bip R Forearm009",
+        "bip R Hand009",
+        "bip R Finger044",
+        "bip R Finger045",
+        "bip R Finger046",
+        "bip R Finger047",
+        "bip L Thigh009",
+        "bip L Calf009",
+        "bip L Foot009",
+        "bip L Toe009",
+        "bip R Thigh009",
+        "bip R Calf009",
+        "bip R Foot009",
+        "bip R Toe009"
+      ],
+      "bounds": [
+        [
+          0.36903345584869385,
+          -2.1672186851501465,
+          -0.7254606485366821
+        ],
+        [
+          2.6516027450561523,
+          0.5212996006011963,
+          1.5322965383529663
+        ]
+      ]
+    },
+    {
+      "name": "rig_CharRoot",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        2.3772642612457275,
+        1.265313744544983,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot001",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        0.061816710978746414,
+        -2.1765694618225098,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot002",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        0.07272125035524368,
+        0.03147583082318306,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot003",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        -1.3641893863677979,
+        0.06670165807008743,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot004",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        1.4404940605163574,
+        -0.055671270936727524,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot005",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        -2.1699137687683105,
+        1.309552550315857,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot006",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        -0.5144368410110474,
+        1.1183563470840454,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot007",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        0.913425862789154,
+        1.1117810010910034,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot008",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        -0.6878698468208313,
+        -0.9280056357383728,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    },
+    {
+      "name": "rig_CharRoot009",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        0.9572106599807739,
+        -0.89658123254776,
+        0.0
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "bip Footsteps001|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps002|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps003|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps004|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps005|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps006|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps007|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps008|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps009|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip Footsteps|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip001|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip002|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip003|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip004|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip005|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip006|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip007|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip008|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip009|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "bip|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot001|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot002|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot003|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot004|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot005|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot006|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot007|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot008|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot009|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    },
+    {
+      "name": "rig_CharRoot|Take 001|BaseLayer",
+      "range": [
+        1.0,
+        222.0
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "Map #2",
+      "path": "C:\\Roblox\\ZombilkaFPS\\assets\\zombies\\source\\..\\..\\..\\..\\..\\images\\world_people_colors.png"
+    }
+  ],
+  "materials": [
+    {
+      "name": "peopleColors",
+      "nodes": [
+        {
+          "type": "BSDF_PRINCIPLED",
+          "image": null
+        },
+        {
+          "type": "OUTPUT_MATERIAL",
+          "image": null
+        },
+        {
+          "type": "NORMAL_MAP",
+          "image": null
+        },
+        {
+          "type": "TEX_IMAGE",
+          "image": "C:\\Roblox\\ZombilkaFPS\\assets\\zombies\\source\\..\\..\\..\\..\\..\\images\\world_people_colors.png"
+        }
+      ]
+    }
+  ]
+}

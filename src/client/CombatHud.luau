@@ -104,7 +104,7 @@ function CombatHud.new(playerGui)
 	self.Message = label(gui, UDim2.fromOffset(560, 40), UDim2.new(0.5, -280, 0, 110), 22)
 	self.Message.Name = "RunMessage"
 	local controls = label(gui, UDim2.fromOffset(480, 20), UDim2.new(0.5, -240, 1, -30), 12)
-	controls.Text = "SHIFT  БЕГ    C  ПОДКАТ    R  ПЕРЕЗАРЯДКА    O  НАСТРОЙКИ"
+	controls.Text = "SHIFT  БЕГ    CTRL / C  ПОДКАТ    R  ПЕРЕЗАРЯДКА"
 	self:SetHealth(100, 100)
 	return self
 end

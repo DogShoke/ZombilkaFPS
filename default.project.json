@@ -14,7 +14,10 @@
         "$className": "Folder",
 
         "FpsGlock": {
-          "$path": "assets/FpsGlock.rbxm"
+          "$path": "assets/FpsGlock_GameTextured.rbxmx"
+        },
+        "Zombies": {
+          "$path": "assets/zombies/roblox"
         }
       }
     },

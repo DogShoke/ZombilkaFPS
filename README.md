@@ -2,6 +2,10 @@
 
 New Roblox first-person zombie combat sandbox. Rojo 7.7.0 syncs `src/` through `default.project.json` into the open Studio place.
 
-Controls: WASD move, mouse look, Space jump, LeftShift sprint, RMB aim, LMB fire, R reload.
+Choose Glock, AKM or Mossberg before the run using the cards or 1/2/3. Zombies start spawning after selection. Death opens selection again.
 
-Tuning values are in `src/shared/Config.luau`. See `AI/IMPLEMENTATION.md` for the current systems, Studio test results, and placeholder assets.
+Controls: WASD move, mouse look, Space jump, Shift sprint, C/LeftCtrl slide, RMB aim, LMB fire (hold for AKM), R reload, E elevator.
+
+Mossberg reloads one shell at a time; firing cancels loading and keeps the shells already inserted. Each shotgun shot shows eight pellet tracers.
+
+Movement/world values are in `src/shared/Config.luau`; weapon values and poses are in `src/shared/Weapons.luau`. See `AI/IMPLEMENTATION.md` for Studio observations and `assets/weapons/README.md` for the textures, rigs and animations.

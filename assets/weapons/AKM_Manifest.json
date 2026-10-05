@@ -1,0 +1,41 @@
+{
+  "textures": {
+    "AKM_model": "AKM_BaseColor.png",
+    "ArmModel": "AKM_Arms_BaseColor.png"
+  },
+  "bones": [
+    "UpperArm.L",
+    "LowerArm.L",
+    "Hand.L",
+    "DoubleFingersBeginning",
+    "DoubleFingers.L",
+    "DoubleFingersTip.L",
+    "IndexBeginning.L",
+    "Index.L",
+    "IndexTip.L",
+    "ThumbBeginning.L",
+    "Thumb.L",
+    "ThumbTip.L",
+    "UpperArm.R.001",
+    "LowerArm.R.001",
+    "Hand.R.001",
+    "DoubleFingersBeginning.001",
+    "DoubleFingers.R.001",
+    "DoubleFingersTip.R.001",
+    "IndexBeginning.R.001",
+    "Index.R.001",
+    "IndexTip.R.001",
+    "ThumbBeginning.R.001",
+    "Thumb.R.001",
+    "ThumbTip.R.001",
+    "Root",
+    "Magazine",
+    "Trigger",
+    "Bolt"
+  ],
+  "clips": {
+    "Idle": 64,
+    "Reload": 63,
+    "Shoot": 5
+  }
+}

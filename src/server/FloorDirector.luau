@@ -36,11 +36,19 @@ function FloorDirector.Start(floors)
 		if character~=owner.Character then return end
 		root.Anchored=false character:PivotTo(CFrame.new(f.Origin+Vector3.new(0,3,49)))
 		Zombies.Configure(f.Zones)
-		setPhase("FloorIntro",Config.Run.IntroDuration)
+		if Config.Weapons[owner:GetAttribute("SelectedWeapon")] then
+			setPhase("FloorIntro",Config.Run.IntroDuration)
+		else setPhase("ChoosingWeapon") end
 	end
 	local function join(player)
 		if owner then return end
 		owner=player
+		state:SetAttribute("OwnerUserId",player.UserId)
+		player:GetAttributeChangedSignal("SelectedWeapon"):Connect(function()
+			if owner==player and phase=="ChoosingWeapon" and Config.Weapons[player:GetAttribute("SelectedWeapon")] then
+				setPhase("FloorIntro",Config.Run.IntroDuration)
+			end
+		end)
 		player.CharacterAdded:Connect(reset)
 		if player.Character then task.spawn(reset,player.Character) end
 	end

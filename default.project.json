@@ -18,6 +18,15 @@
         },
         "Zombies": {
           "$path": "assets/zombies/roblox"
+        },
+        "WeaponMotion": {
+          "$path": "assets/weapons/motion"
+        },
+        "FpsAKM": {
+          "$path": "assets/weapons/roblox/FpsAKM.rbxmx"
+        },
+        "FpsMossberg": {
+          "$path": "assets/weapons/roblox/FpsMossberg.rbxmx"
         }
       }
     },

@@ -2,6 +2,7 @@ local Debris = game:GetService("Debris")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Config = require(ReplicatedStorage.Shared.Config)
 local Spring = require(ReplicatedStorage.Shared.Spring)
+local WeaponMotion = require(script.Parent.WeaponMotion)
 
 local ViewmodelController = {}
 ViewmodelController.__index = ViewmodelController
@@ -37,10 +38,11 @@ local function loadTrack(model, animator, key, priority, looped)
 	return track
 end
 
-function ViewmodelController.new(camera)
-	local template = ReplicatedStorage:WaitForChild("Assets"):WaitForChild("FpsGlock")
+function ViewmodelController.new(camera, weaponId)
+	local weapon = Config.Weapons[weaponId]
+	local template = ReplicatedStorage:WaitForChild("Assets"):WaitForChild(weapon.Template)
 	local model = template:Clone()
-	model.Name = "FpsGlockViewmodel"
+	model.Name = weapon.Template .. "Viewmodel"
 	local root = model:FindFirstChild("RootPart") or model.PrimaryPart
 	assert(root and root:IsA("BasePart"), "FpsGlock needs a RootPart")
 	for _, item in ipairs(model:GetDescendants()) do
@@ -56,14 +58,15 @@ function ViewmodelController.new(camera)
 	model.Parent = camera
 	local barrel = root:FindFirstChild("Barrel", true)
 	local controller = model:FindFirstChildOfClass("AnimationController")
-	assert(controller, "FpsGlock needs an AnimationController")
+	if not controller then controller=Instance.new("AnimationController") controller.Parent=model end
 	local animator = controller:FindFirstChildOfClass("Animator") or Instance.new("Animator")
 	animator.Parent = controller
-	local tracks = {
+	local tracks = weaponId == "Glock" and {
 		Idle = loadTrack(model, animator, "Idle", Enum.AnimationPriority.Idle, true),
 		Shoot = loadTrack(model, animator, "Shoot", Enum.AnimationPriority.Action, false),
 		Reload = loadTrack(model, animator, "Reload", Enum.AnimationPriority.Action2, false),
-	}
+	} or {}
+	local motion = weapon.Motion and WeaponMotion.new(model,root,ReplicatedStorage.Assets.WeaponMotion:WaitForChild(weapon.Motion),weapon.RigBasis)
 	if tracks.Idle then tracks.Idle:Play(0.15) end
 	local muzzlePart, muzzleAttachment = invisibleAnchor("MuzzleCosmeticAnchor", model)
 	local emitter = Instance.new("ParticleEmitter")
@@ -84,7 +87,7 @@ function ViewmodelController.new(camera)
 	light.Color = Color3.fromRGB(255, 202, 118)
 	light.Parent = muzzlePart
 	return setmetatable({
-		Model = model, Root = root, Barrel = barrel, Tracks = tracks,
+		Model = model, Root = root, Barrel = barrel, Tracks = tracks, Weapon=weapon, Motion=motion,
 		MuzzlePart = muzzlePart, MuzzleAttachment = muzzleAttachment, MuzzleEmitter = emitter, Light = light,
 		SwayPos = Spring.new(Vector3.zero, Config.Feel.SwayFrequency),
 		SwayRot = Spring.new(Vector3.zero, Config.Feel.SwayFrequency),
@@ -100,21 +103,31 @@ function ViewmodelController:Destroy()
 	self.Model:Destroy()
 end
 
+function ViewmodelController:GetMuzzleCFrame()
+	local barrel = self.Barrel
+	if barrel then
+		return barrel.Parent:IsA("Bone") and barrel.Parent.TransformedWorldCFrame * barrel.CFrame or barrel.WorldCFrame
+	end
+	return self.Root.CFrame * CFrame.new(-1.25, 0.45, -1)
+end
+
 function ViewmodelController:Fire(ads, sprinting)
 	local feel = Config.Feel
-	local multiplier = 1 - ads * (1 - feel.AdsRecoilMultiplier)
+	local multiplier = (1 - ads * (1 - feel.AdsRecoilMultiplier)) * self.Weapon.RecoilMultiplier
 	self.RecoilPos.Position += feel.ViewmodelKick * multiplier * 0.7
 	self.RecoilRot.Position += feel.ViewmodelRotate * multiplier * 0.65
 	self.RecoilPos:Impulse(feel.ViewmodelKick * multiplier * 4)
 	self.RecoilRot:Impulse(feel.ViewmodelRotate * multiplier * 4)
 	if sprinting then self.sprintFireUntil = os.clock() + feel.SprintFireHold end
 	local shoot = self.Tracks.Shoot
+	if self.Motion then self.Motion:Play("Shoot",self.Weapon.FireInterval) end
 	if shoot then
 		if shoot.IsPlaying then shoot:Stop(0) end
 		shoot:Play(0.02)
 	end
 	self.flashSerial += 1
 	local serial = self.flashSerial
+	self.MuzzlePart.CFrame = self:GetMuzzleCFrame()
 	self.MuzzleEmitter:Emit(3)
 	self.Light.Brightness = 1.8
 	task.delay(Config.Vfx.MuzzleDuration, function()
@@ -123,6 +136,7 @@ function ViewmodelController:Fire(ads, sprinting)
 end
 
 function ViewmodelController:Reload(duration)
+	if self.Motion then self.Motion:Play(self.Weapon.ReloadMode=="Shell" and "ReloadShell" or "Reload",duration) return end
 	local reload = self.Tracks.Reload
 	if not reload then return end
 	self.reloadSerial = (self.reloadSerial or 0) + 1
@@ -144,25 +158,33 @@ function ViewmodelController:LandImpulse()
 	self.Land:Impulse(Config.Feel.LandingKick * 12)
 end
 
-function ViewmodelController:Tracer(hitPosition)
-	local startPosition = self.MuzzleAttachment.WorldPosition
+function ViewmodelController:CancelReload()
+	if self.Motion then self.Motion:Stop("ReloadShell") end
+	if self.Tracks.Reload then self.Tracks.Reload:Stop(0.1) end
+end
+
+function ViewmodelController:Tracer(hitPosition, muzzlePosition)
+	local style = self.Weapon.Tracer
+	local startPosition = muzzlePosition or self:GetMuzzleCFrame().Position
 	local delta = hitPosition - startPosition
 	if delta.Magnitude < 0.1 then return end
-	local endPosition = startPosition + delta.Unit * math.min(delta.Magnitude, Config.Vfx.TracerMaxLength)
+	local endPosition = startPosition + delta.Unit * math.min(delta.Magnitude, style and style.Length or Config.Vfx.TracerMaxLength)
+	local startPart, startAttachment = invisibleAnchor("TracerOrigin", workspace)
+	startPart.Position = startPosition
 	local endPart, endAttachment = invisibleAnchor("TracerEndpoint", workspace)
 	endPart.Position = endPosition
 	local beam = Instance.new("Beam")
 	beam.Name = "ShotStreak"
-	beam.Attachment0 = self.MuzzleAttachment
+	beam.Attachment0 = startAttachment
 	beam.Attachment1 = endAttachment
 	beam.FaceCamera = true
-	beam.Width0 = 0.026
-	beam.Width1 = 0.008
+	beam.Width0 = style and style.Width or 0.026
+	beam.Width1 = beam.Width0 * 0.3
 	beam.Color = ColorSequence.new(Color3.fromRGB(255, 231, 174))
 	beam.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.28), NumberSequenceKeypoint.new(1, 0.82) })
-	beam.Parent = self.MuzzlePart
-	Debris:AddItem(beam, Config.Vfx.TracerDuration)
-	Debris:AddItem(endPart, Config.Vfx.TracerDuration)
+	beam.Parent = startPart
+	Debris:AddItem(startPart, style and style.Duration or Config.Vfx.TracerDuration)
+	Debris:AddItem(endPart, style and style.Duration or Config.Vfx.TracerDuration)
 end
 
 function ViewmodelController:Impact(position, kind, info)
@@ -231,14 +253,15 @@ function ViewmodelController:Update(dt, camera, mouseDelta, horizontalSpeed, str
 	self.bobClock += dt * (feel.BobWalkFrequency + (feel.BobSprintFrequency - feel.BobWalkFrequency) * self.sprint) * movement
 	local bob = Vector3.new(math.cos(self.bobClock) * bobAmount * 0.55, math.abs(math.sin(self.bobClock)) * bobAmount, 0)
 	-- Camera -> base/ADS/sprint pose -> translational effects -> rotational effects. Bones are animation-owned.
-	local pose = feel.HipPose:Lerp(feel.SprintPose, self.sprint):Lerp(feel.AdsPose, self.ads)
+	local pose = (self.Weapon.HipPose or feel.HipPose):Lerp(self.Weapon.SprintPose or feel.SprintPose, self.sprint):Lerp(self.Weapon.AdsPose or feel.AdsPose, self.ads)
 	local motion = CFrame.new(swayPos + recoilPos + bob + Vector3.new(-self.strafe * feel.StrafeShift * (1 - self.ads * 0.7), -landing, 0))
 		* CFrame.Angles(swayRot.X + recoilRot.X, swayRot.Y + recoilRot.Y, swayRot.Z + recoilRot.Z + self.strafe * feel.StrafeRoll * (1 - self.ads * 0.7))
 	-- Camera -> base pose -> composable SlideOffset -> recoil/sway/bob. Animator owns bones.
 	local slideOffset = CFrame.identity:Lerp(feel.SlideOffset, slideBlend or 0)
-	self.Root.CFrame = camera.CFrame * pose * slideOffset * motion
-	local muzzlePosition = self.Barrel and self.Barrel.WorldPosition or (self.Root.CFrame * CFrame.new(-1.25, 0.45, -1)).Position
-	self.MuzzlePart.CFrame = CFrame.lookAt(muzzlePosition + camera.CFrame.LookVector * 0.25, muzzlePosition + camera.CFrame.LookVector * 1.25)
+	self.Root.CFrame = camera.CFrame * pose * slideOffset * motion * (self.Weapon.RigBasis or CFrame.identity)
+	if self.Motion then self.Motion:Update(dt) end
+	local muzzlePosition = self:GetMuzzleCFrame().Position
+	self.MuzzlePart.CFrame = CFrame.lookAt(muzzlePosition, muzzlePosition + camera.CFrame.LookVector)
 	if self.Model.Parent ~= camera then self.Model.Parent = camera end
 	return self.ads
 end

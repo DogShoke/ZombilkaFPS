@@ -1,4 +1,5 @@
 local Config = {}
+Config.Weapons = require(script.Parent.Weapons)
 
 Config.Movement = {
 	WalkSpeed = 16, SprintSpeed = 24, SprintJumpSpeed = 28, JumpPower = 50,

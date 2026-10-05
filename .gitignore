@@ -6,3 +6,9 @@
 /*.rbxl.lock
 
 sourcemap.json
+
+# Temporary weapon preparation / validation files
+/assets/weapons/*.blend1
+/assets/weapons/RojoTemplates.json
+/assets/weapons/exports/Weapons_QA.rbxlx
+/assets/weapons/tools/rojo/

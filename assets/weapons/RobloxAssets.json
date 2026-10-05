@@ -1,0 +1,11 @@
+{
+  "Glock": { "card": "140411000622881", "template": "assets/FpsGlock_GameTextured.rbxmx" },
+  "AKM": {
+    "gunMesh": "97813665347433", "armsMesh": "81900210100821",
+    "gunTexture": "72576583417054", "armsTexture": "118206410395088", "card": "96585576564677"
+  },
+  "Mossberg": {
+    "gunMesh": "134100363560315", "armsMesh": "128557637108035",
+    "gunTexture": "85431004415279", "armsTexture": "139285841259514", "card": "122432998430250"
+  }
+}

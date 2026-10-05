@@ -12,20 +12,25 @@ local CombatHud = require(script.CombatHud)
 local SlideController = require(script.SlideController)
 local JumpController = require(script.JumpController)
 local ZombieVisuals = require(script.ZombieVisuals)
+local WeaponSelection = require(script.WeaponSelection)
 local GuiService = game:GetService("GuiService")
 local remotes = ReplicatedStorage:WaitForChild("CombatRemotes")
 local fireRemote = remotes:WaitForChild("Fire")
 local reloadRemote = remotes:WaitForChild("Reload")
 local feedbackRemote = remotes:WaitForChild("Feedback")
+local selectRemote = remotes:WaitForChild("SelectWeapon")
 
 local player = Players.LocalPlayer
 local hud = CombatHud.new(player:WaitForChild("PlayerGui"))
+local selection = WeaponSelection.new(selectRemote)
+local weaponId, weapon, triggerHeld
 local cameraKick = Spring.new(Vector3.zero, Config.Feel.CameraRecoilFrequency)
 local rng = Random.new()
 local character, humanoid, root, viewmodel, stateConnection, descendantConnection, healthConnection
 local wantsSprint, wantsAds = false, false
-local ammo, reloading = Config.Pistol.MagazineSize, false
+local ammo, reloading = 0, false
 local lastLocalShot = -math.huge
+local shotSerial, pendingPelletMuzzles = 0, {}
 local localShotKick = 0
 local slide = SlideController.new()
 local jump = JumpController.new()
@@ -35,8 +40,20 @@ hud:SetRun(runState)
 runState.AttributeChanged:Connect(function() hud:SetRun(runState) end)
 local lastReloadSerial = 0
 local function blocked()
-	return GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true
+	return not weapon or selection.Active or GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true
 end
+local function equip(id)
+	if id==weaponId and viewmodel then return end
+	if viewmodel then viewmodel:Destroy() viewmodel=nil end
+	weaponId, weapon, triggerHeld = id, id and Config.Weapons[id], false
+	reloading=false lastLocalShot=-math.huge pendingPelletMuzzles={}
+	selection:Show(not weapon) hud.Gui.Enabled=weapon~=nil
+	if weapon and character and humanoid and humanoid.Health>0 then
+		ammo=weapon.MagazineSize hud:SetAmmo(ammo,false)
+		viewmodel=ViewmodelController.new(workspace.CurrentCamera,id)
+	end
+end
+player:GetAttributeChangedSignal("SelectedWeapon"):Connect(function() equip(player:GetAttribute("SelectedWeapon")) end)
 slide.GetExitSpeed = function()
 	if blocked() or UserInputService:GetFocusedTextBox() or not humanoid or humanoid.Health <= 0 then return 0 end
 	local heldSprint = UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) or UserInputService:IsKeyDown(Enum.KeyCode.RightShift)
@@ -63,7 +80,7 @@ local function setCharacter(newCharacter)
 	local newRoot = newCharacter:WaitForChild("HumanoidRootPart")
 	character, humanoid, root = newCharacter, newHumanoid, newRoot
 	wantsSprint, wantsAds = false, false
-	ammo, reloading = Config.Pistol.MagazineSize, false
+	ammo, reloading = 0, false
 	hud:SetAmmo(ammo, reloading)
 	hud:SetHealth(newHumanoid.Health, newHumanoid.MaxHealth)
 	cameraKick.Position, cameraKick.Velocity, cameraKick.Target = Vector3.zero, Vector3.zero, Vector3.zero
@@ -73,7 +90,7 @@ local function setCharacter(newCharacter)
 	jump:Bind(newCharacter)
 	UserInputService.MouseIconEnabled = false
 	UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
-	viewmodel = ViewmodelController.new(workspace.CurrentCamera)
+	equip(nil)
 	local function hide(part)
 		if part:IsA("BasePart") then part.LocalTransparencyModifier = 1 end
 	end
@@ -95,14 +112,16 @@ local function setCharacter(newCharacter)
 end
 
 local function shoot()
-	if blocked() or not humanoid or humanoid.Health <= 0 or not viewmodel or reloading then return end
+	if blocked() or not humanoid or humanoid.Health <= 0 or not viewmodel then return end
+	if reloading and (weapon.ReloadMode ~= "Shell" or ammo <= 0) then return end
 	if ammo <= 0 then
 		playSound("EmptyClick")
 		reloadRemote:FireServer()
 		return
 	end
 	local now = os.clock()
-	if now - lastLocalShot < Config.Pistol.FireInterval then return end
+	if now - lastLocalShot < weapon.FireInterval then return end
+	if reloading then reloading=false viewmodel:CancelReload() end
 	lastLocalShot = now
 	local camera = workspace.CurrentCamera
 	local origin = camera.CFrame.Position
@@ -110,12 +129,17 @@ local function shoot()
 	local params = RaycastParams.new()
 	params.FilterType = Enum.RaycastFilterType.Exclude
 	params.FilterDescendantsInstances = { character, viewmodel.Model }
-	local result = workspace:Raycast(origin, direction * Config.Pistol.Range, params)
-	local predictedEnd = result and result.Position or origin + direction * Config.Pistol.Range
+	local result = workspace:Raycast(origin, direction * weapon.Range, params)
+	local predictedEnd = result and result.Position or origin + direction * weapon.Range
 	local sprinting = wantsSprint and humanoid.MoveDirection.Magnitude > 0.1 and not wantsAds
+	shotSerial += 1
+	local serial = shotSerial
+	if weapon.Pellets > 1 then
+		pendingPelletMuzzles[serial] = viewmodel:GetMuzzleCFrame().Position
+		task.delay(2, function() pendingPelletMuzzles[serial] = nil end)
+	else viewmodel:Tracer(predictedEnd) end
 	viewmodel:Fire(viewmodel.ads, sprinting)
-	viewmodel:Tracer(predictedEnd)
-	local recoilMult = 1 - viewmodel.ads * (1 - Config.Feel.AdsRecoilMultiplier)
+	local recoilMult = (1 - viewmodel.ads * (1 - Config.Feel.AdsRecoilMultiplier)) * weapon.RecoilMultiplier
 	local yaw = rng:NextNumber(-Config.Feel.CameraYaw, Config.Feel.CameraYaw)
 	local recovery = Config.Feel.CameraRecoilRecoveryFraction
 	camera.CFrame *= CFrame.Angles(Config.Feel.CameraKick * (1 - recovery) * recoilMult, yaw * (1 - recovery) * recoilMult, 0)
@@ -125,11 +149,11 @@ local function shoot()
 	hud:SetAmmo(ammo, false)
 	playSound("Gunshot")
 	playSound("MechanicalShot")
-	fireRemote:FireServer(origin, direction)
+	fireRemote:FireServer(origin, direction, serial)
 end
 
 local function requestReload()
-	if blocked() or not humanoid or humanoid.Health <= 0 or reloading or ammo >= Config.Pistol.MagazineSize then return end
+	if blocked() or not humanoid or humanoid.Health <= 0 or reloading or ammo >= weapon.MagazineSize then return end
 
 	reloadRemote:FireServer()
 end
@@ -161,22 +185,34 @@ UserInputService.InputBegan:Connect(function(input, processed)
 	if input.KeyCode == Enum.KeyCode.R then requestReload()
 	elseif input.KeyCode == Enum.KeyCode.Space then slide:Cancel()
 	elseif input.UserInputType == Enum.UserInputType.MouseButton2 then slide:Cancel() wantsAds = true
-	elseif input.UserInputType == Enum.UserInputType.MouseButton1 then shoot() end
+	elseif input.UserInputType == Enum.UserInputType.MouseButton1 then triggerHeld=true shoot() end
 end)
 
 UserInputService.InputEnded:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton2 then wantsAds = false end
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then triggerHeld = false end
 end)
 
-feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c)
-	if kind == "ReloadStarted" then
-		if c ~= character or b <= lastReloadSerial then return end
+RunService.Heartbeat:Connect(function()
+	if blocked() or UserInputService:GetFocusedTextBox() then triggerHeld=false return end
+	if triggerHeld and weapon.Automatic then shoot() end
+end)
+
+feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c, d)
+	if kind == "Equipped" then
+		if c~=character then return end
+		equip(a) ammo=b hud:SetAmmo(ammo,false)
+	elseif kind == "SelectionRejected" then selection:Show(true)
+	elseif kind == "ReloadStarted" then
+		if c ~= character or d~=weaponId or b <= lastReloadSerial then return end
 		lastReloadSerial = b
 		reloading = true
 		hud:SetAmmo(ammo, true)
 		if viewmodel then viewmodel:Reload(a) end
 		playSound("Reload")
 	elseif kind == "Ammo" then
+		if c~=weaponId then return end
+		if reloading and not b and viewmodel then viewmodel:CancelReload() end
 		ammo, reloading = a, b
 		hud:SetAmmo(ammo, reloading)
 	elseif kind == "Shot" then
@@ -186,9 +222,15 @@ feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c)
 		elseif a == "World" and c then
 			playSound(impactSound(c.material))
 		end
-		if viewmodel and b and (a ~= "World" or (b - workspace.CurrentCamera.CFrame.Position).Magnitude < Config.Pistol.Range - 1) then
+		if viewmodel and weapon.Pellets==1 and b and (a ~= "World" or (b - workspace.CurrentCamera.CFrame.Position).Magnitude < weapon.Range - 1) then
 			viewmodel:Impact(b, a, c)
 		end
+	elseif kind == "PelletImpacts" and viewmodel then
+		if d~=weaponId then return end
+		local muzzle = pendingPelletMuzzles[c] or viewmodel:GetMuzzleCFrame().Position
+		if c then pendingPelletMuzzles[c] = nil end
+		for _,endpoint in ipairs(b) do viewmodel:Tracer(endpoint,muzzle) end
+		for _,hit in ipairs(a) do viewmodel:Impact(hit.position,hit.kind,hit.info) end
 	elseif kind == "Empty" then
 		playSound("EmptyClick")
 	end
@@ -196,7 +238,7 @@ end)
 
 -- Apply after camera/default controls, even while the character/viewmodel is being rebuilt.
 RunService:BindToRenderStep("ZombilkaFPSCursor", Enum.RenderPriority.Last.Value + 1, function()
-	local menuOpen = GuiService.MenuIsOpen
+	local menuOpen = GuiService.MenuIsOpen or selection.Active
 	UserInputService.MouseBehavior = menuOpen and Enum.MouseBehavior.Default or Enum.MouseBehavior.LockCenter
 	UserInputService.MouseIconEnabled = menuOpen
 end)
@@ -204,7 +246,7 @@ end)
 RunService:BindToRenderStep("ZombilkaFPSPresentation", Enum.RenderPriority.Camera.Value + 1, function(dt)
 	local camera = workspace.CurrentCamera
 	local slideBlend = slide:Present(dt)
-	if not camera or not humanoid or not root or not viewmodel then return end
+	if not camera or not humanoid or not root then return end
 	local inputBlocked = blocked() or UserInputService:GetFocusedTextBox() ~= nil or humanoid.Health <= 0
 	-- Read held keys every frame so slide completion never loses sprint intent.
 	wantsSprint = not inputBlocked and (UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) or UserInputService:IsKeyDown(Enum.KeyCode.RightShift))
@@ -215,6 +257,7 @@ RunService:BindToRenderStep("ZombilkaFPSPresentation", Enum.RenderPriority.Camer
 	local ads = wantsAds and not inputBlocked
 	if not slide.Active then humanoid.WalkSpeed = inputBlocked and 0 or sprinting and jump:GetSprintSpeed() or Config.Movement.WalkSpeed end
 	humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, not inputBlocked)
+	if not viewmodel then return end
 	local velocity = root.AssemblyLinearVelocity
 	local horizontalSpeed = Vector3.new(velocity.X, 0, velocity.Z).Magnitude
 	local strafe = humanoid.MoveDirection:Dot(camera.CFrame.RightVector)

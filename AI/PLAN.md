@@ -6,3 +6,5 @@
 4. Replace endless replenishment with FloorDirector wave budgets, death restart and guarded elevator travel.
 5. Adapt sanitized zombie rig to existing server AI; authored Animator locomotion/attack, reactions/death and verified audio.
 6. Multiple Studio playtests: reload, movement, wave boundary, both elevator transitions, zombie combat, respawn and Output. Inspect diff; document evidence and remaining subjective/art reviews.
+
+Weapon extension completed: inspect GLBs, freeze copied bind poses, bake four color maps, assemble shotgun/arms and author motions, export one-UV FBXs, upload textures/cards, capture imported rigs into rbxmx, add server selection/combat and client cards/motion, exercise reconstructed disk templates in Studio, correct axes/ADS/muzzle effects, document observations. Source-import copies are archived; temporary runtime targets/hooks are removed by Stop.

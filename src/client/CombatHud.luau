@@ -98,11 +98,12 @@ function CombatHud.new(playerGui)
 		self.HitLines[i] = line
 	end
 	self:SetAmmo(self.ammo, false)
-	self.RunLabel = label(gui, UDim2.fromOffset(320, 70), UDim2.fromOffset(30, 30), 16)
+	self.RunLabel = label(gui, UDim2.fromOffset(440, 100), UDim2.fromOffset(30, 30), 16)
 	self.RunLabel.Name = "RunLabel"
 	self.RunLabel.TextXAlignment = Enum.TextXAlignment.Left
 	self.Message = label(gui, UDim2.fromOffset(560, 40), UDim2.new(0.5, -280, 0, 110), 22)
 	self.Message.Name = "RunMessage"
+	self.Message.Size=UDim2.new(.9,0,0,64); self.Message.Position=UDim2.new(.05,0,0,105); self.Message.TextWrapped=true
 	local controls = label(gui, UDim2.fromOffset(480, 20), UDim2.new(0.5, -240, 1, -30), 12)
 	controls.Text = "SHIFT  БЕГ    CTRL / C  ПОДКАТ    R  ПЕРЕЗАРЯДКА"
 	self:SetHealth(100, 100)
@@ -126,6 +127,19 @@ function CombatHud:SetRun(state)
 	local phase = state:GetAttribute("State")
 	self.RunLabel.Text = string.format("ЭТАЖ %02d  /  %s\nВОЛНА %d / %d    ЗОМБИ %d", state:GetAttribute("Floor") or 1, state:GetAttribute("Theme") or "", state:GetAttribute("Wave") or 0, state:GetAttribute("Waves") or 3, state:GetAttribute("Remaining") or 0)
 	local messages = { FloorIntro = "ЗАЧИСТИТЕ ЭТАЖ", BetweenWaves = "СЛЕДУЮЩАЯ ВОЛНА", FloorCleared = "ЭТАЖ ЗАЧИЩЕН", ElevatorAvailable = "ЛИФТ ОТКРЫТ  ↑", ElevatorTravel = "ПОДЪЁМ  ↑", NextFloor = "ВЫЙДИТЕ ИЗ ЛИФТА" }
+	messages.PreparingFloor="ЛИФТ ГОТОВИТСЯ"; messages.GenerationFailed="ЛИФТ ВРЕМЕННО НЕДОСТУПЕН"
+	messages.WaveWarning="АТАКА: "..(state:GetAttribute("AttackDirections") or "")
+	local mode=state:GetAttribute("EncounterMode")
+	if phase=="WaveActive" then
+		local elapsed,total=state:GetAttribute("ObjectiveElapsed") or 0,state:GetAttribute("ObjectiveDuration") or 0
+		if mode=="Holdout" then messages.WaveActive=string.format("%s  %s  %d / %d",state:GetAttribute("Holding") and "УДЕРЖАНИЕ:" or "ВЕРНИТЕСЬ:",state:GetAttribute("DefenseLabel") or "ПОЗИЦИЯ",math.floor(elapsed),total)
+		elseif mode=="Survival" then messages.WaveActive=elapsed<total and string.format("ВЫЖИВИТЕ  %d СЕК",math.ceil(total-elapsed)) or "ЗАЧИСТИТЕ ОСТАТКИ"
+		else messages.WaveActive="ФРОНТ: "..(state:GetAttribute("AttackDirections") or "") end
+		local flank=state:GetAttribute("FallbackDirection")
+		if flank and flank~="" then messages.WaveActive..="  /  ФЛАНГ: "..flank end
+		local warning=state:GetAttribute("FlankWarning")
+		if warning and warning~="" then messages.WaveActive..="  /  СКОРО ФЛАНГ: "..warning end
+	end
 	self.Message.Text = state:GetAttribute("Paused") and "ПАУЗА" or messages[phase] or ""
 end
 

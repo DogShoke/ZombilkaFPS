@@ -1,0 +1,663 @@
+{
+  "Date": "2026-10-05",
+  "CleanStartup": {
+    "State": "ChoosingWeapon",
+    "GenerationVersion": 2,
+    "Wave": 0,
+    "Alive": 0,
+    "Pending": 0,
+    "Health": 100,
+    "FloorValidated": true,
+    "Console": "Empty",
+    "TemporaryQAObjects": 0,
+    "StudioSourceMatchesDisk": true
+  },
+  "Interception": {
+    "Status": "Observed",
+    "MaxPlayerSpeed": 24,
+    "InterceptMotionSamples": 33,
+    "Method": "Native AI samples during actual unanchored humanoid movement. Temporary client movement driver; no injected NPC position or velocity."
+  },
+  "GenerationVersion": 2,
+  "StudioPlace": "ZombilkaFPS.rbxl",
+  "Structural": {
+    "Obligations": "Passed",
+    "Macros": {
+      "WarehouseLanes": true,
+      "TwoFronts": true,
+      "Crossfire": true,
+      "HubAndWings": true,
+      "LoopDefense": true,
+      "SplitLevel": true
+    },
+    "Navigation": [
+      {
+        "BuildSeconds": 0.0066544000001158565,
+        "ValidationSeconds": 4.446035499997379,
+        "Seed": 123456,
+        "Macro": "LoopDefense",
+        "Checks": 41,
+        "Theme": "Office",
+        "Parts": 164
+      },
+      {
+        "BuildSeconds": 0.009667300000728574,
+        "ValidationSeconds": 4.232375699997647,
+        "Seed": 123456,
+        "Macro": "HubAndWings",
+        "Checks": 39,
+        "Theme": "Office",
+        "Parts": 214
+      },
+      {
+        "BuildSeconds": 0.007561799997347407,
+        "ValidationSeconds": 3.691392299999279,
+        "Seed": 123456,
+        "Macro": "TwoFronts",
+        "Checks": 34,
+        "Theme": "Office",
+        "Parts": 153
+      },
+      {
+        "BuildSeconds": 0.008307100000820355,
+        "ValidationSeconds": 4.184160900000279,
+        "Seed": 123456,
+        "Macro": "Crossfire",
+        "Checks": 39,
+        "Theme": "Office",
+        "Parts": 211
+      },
+      {
+        "BuildSeconds": 0.008395199998631142,
+        "ValidationSeconds": 6.196285799996986,
+        "Seed": 123456,
+        "Macro": "SplitLevel",
+        "Checks": 59,
+        "Theme": "Office",
+        "Parts": 242
+      },
+      {
+        "BuildSeconds": 0.006358800001180498,
+        "ValidationSeconds": 4.180700400000205,
+        "Seed": 123456,
+        "Macro": "WarehouseLanes",
+        "Checks": 39,
+        "Theme": "Office",
+        "Parts": 155
+      },
+      {
+        "BuildSeconds": 0.007698499997786712,
+        "ValidationSeconds": 4.391120399999636,
+        "Seed": 123456,
+        "Macro": "LoopDefense",
+        "Checks": 41,
+        "Theme": "Laboratory",
+        "Parts": 234
+      },
+      {
+        "BuildSeconds": 0.00855270000101882,
+        "ValidationSeconds": 4.190403399999923,
+        "Seed": 123456,
+        "Macro": "HubAndWings",
+        "Checks": 39,
+        "Theme": "Laboratory",
+        "Parts": 268
+      },
+      {
+        "BuildSeconds": 0.008852099999785423,
+        "ValidationSeconds": 3.6801797000007355,
+        "Seed": 123456,
+        "Macro": "TwoFronts",
+        "Checks": 34,
+        "Theme": "Laboratory",
+        "Parts": 215
+      },
+      {
+        "BuildSeconds": 0.00896900000225287,
+        "ValidationSeconds": 4.508012999998755,
+        "Seed": 123456,
+        "Macro": "Crossfire",
+        "Checks": 39,
+        "Theme": "Laboratory",
+        "Parts": 245
+      },
+      {
+        "BuildSeconds": 0.012761800000589574,
+        "ValidationSeconds": 6.181173099997977,
+        "Seed": 123456,
+        "Macro": "SplitLevel",
+        "Checks": 59,
+        "Theme": "Laboratory",
+        "Parts": 261
+      },
+      {
+        "BuildSeconds": 0.008785400001215748,
+        "ValidationSeconds": 4.187285800002428,
+        "Seed": 123456,
+        "Macro": "WarehouseLanes",
+        "Checks": 39,
+        "Theme": "Laboratory",
+        "Parts": 211
+      },
+      {
+        "BuildSeconds": 0.009206700000504497,
+        "ValidationSeconds": 4.384549200000038,
+        "Seed": 123456,
+        "Macro": "LoopDefense",
+        "Checks": 41,
+        "Theme": "Warehouse",
+        "Parts": 172
+      },
+      {
+        "BuildSeconds": 0.009069600000657374,
+        "ValidationSeconds": 4.187407000001258,
+        "Seed": 123456,
+        "Macro": "HubAndWings",
+        "Checks": 39,
+        "Theme": "Warehouse",
+        "Parts": 202
+      },
+      {
+        "BuildSeconds": 0.006972600000153761,
+        "ValidationSeconds": 3.6957241000018257,
+        "Seed": 123456,
+        "Macro": "TwoFronts",
+        "Checks": 34,
+        "Theme": "Warehouse",
+        "Parts": 157
+      },
+      {
+        "BuildSeconds": 0.00993410000228323,
+        "ValidationSeconds": 4.183472400000028,
+        "Seed": 123456,
+        "Macro": "Crossfire",
+        "Checks": 39,
+        "Theme": "Warehouse",
+        "Parts": 191
+      },
+      {
+        "BuildSeconds": 0.010286799999448704,
+        "ValidationSeconds": 6.190578999998252,
+        "Seed": 123456,
+        "Macro": "SplitLevel",
+        "Checks": 59,
+        "Theme": "Warehouse",
+        "Parts": 237
+      },
+      {
+        "BuildSeconds": 0.01082469999892055,
+        "ValidationSeconds": 4.176981499997055,
+        "Seed": 123456,
+        "Macro": "WarehouseLanes",
+        "Checks": 39,
+        "Theme": "Warehouse",
+        "Parts": 153
+      },
+      {
+        "BuildSeconds": 0.00826950000191573,
+        "ValidationSeconds": 4.388837800001056,
+        "Seed": 123456,
+        "Macro": "LoopDefense",
+        "Checks": 41,
+        "Theme": "Parking",
+        "Parts": 198
+      },
+      {
+        "BuildSeconds": 0.009918600000673905,
+        "ValidationSeconds": 4.189991400002327,
+        "Seed": 123456,
+        "Macro": "HubAndWings",
+        "Checks": 39,
+        "Theme": "Parking",
+        "Parts": 240
+      },
+      {
+        "BuildSeconds": 0.007475599999452243,
+        "ValidationSeconds": 3.6877263999995193,
+        "Seed": 123456,
+        "Macro": "TwoFronts",
+        "Checks": 34,
+        "Theme": "Parking",
+        "Parts": 163
+      },
+      {
+        "BuildSeconds": 0.009270000002288725,
+        "ValidationSeconds": 4.188156299998809,
+        "Seed": 123456,
+        "Macro": "Crossfire",
+        "Checks": 39,
+        "Theme": "Parking",
+        "Parts": 229
+      },
+      {
+        "BuildSeconds": 0.009616700001060963,
+        "ValidationSeconds": 6.185063900000387,
+        "Seed": 123456,
+        "Macro": "SplitLevel",
+        "Checks": 59,
+        "Theme": "Parking",
+        "Parts": 239
+      },
+      {
+        "BuildSeconds": 0.008846299999277107,
+        "ValidationSeconds": 4.1883782999975665,
+        "Seed": 123456,
+        "Macro": "WarehouseLanes",
+        "Checks": 39,
+        "Theme": "Parking",
+        "Parts": 185
+      },
+      {
+        "BuildSeconds": 0.009136100001342129,
+        "ValidationSeconds": 4.389261200001783,
+        "Seed": 246813,
+        "Macro": "LoopDefense",
+        "Checks": 41,
+        "Theme": "Office",
+        "Parts": 153
+      },
+      {
+        "BuildSeconds": 0.010549499998887768,
+        "ValidationSeconds": 4.186526599998615,
+        "Seed": 246813,
+        "Macro": "HubAndWings",
+        "Checks": 39,
+        "Theme": "Office",
+        "Parts": 175
+      },
+      {
+        "BuildSeconds": 0.007148699998651864,
+        "ValidationSeconds": 3.6878959000023315,
+        "Seed": 246813,
+        "Macro": "TwoFronts",
+        "Checks": 34,
+        "Theme": "Office",
+        "Parts": 134
+      },
+      {
+        "BuildSeconds": 0.009843200001341756,
+        "ValidationSeconds": 4.187741800000367,
+        "Seed": 246813,
+        "Macro": "Crossfire",
+        "Checks": 39,
+        "Theme": "Office",
+        "Parts": 172
+      },
+      {
+        "BuildSeconds": 0.008809799997834489,
+        "ValidationSeconds": 6.185683499999868,
+        "Seed": 246813,
+        "Macro": "SplitLevel",
+        "Checks": 59,
+        "Theme": "Office",
+        "Parts": 198
+      },
+      {
+        "BuildSeconds": 0.007677399997191969,
+        "ValidationSeconds": 4.1883641999993415,
+        "Seed": 246813,
+        "Macro": "WarehouseLanes",
+        "Checks": 39,
+        "Theme": "Office",
+        "Parts": 144
+      },
+      {
+        "BuildSeconds": 0.00943850000112434,
+        "ValidationSeconds": 4.3908846000013,
+        "Seed": 246813,
+        "Macro": "LoopDefense",
+        "Checks": 41,
+        "Theme": "Laboratory",
+        "Parts": 234
+      },
+      {
+        "BuildSeconds": 0.009962500000256114,
+        "ValidationSeconds": 4.185293700000329,
+        "Seed": 246813,
+        "Macro": "HubAndWings",
+        "Checks": 39,
+        "Theme": "Laboratory",
+        "Parts": 264
+      },
+      {
+        "BuildSeconds": 0.010382200001913588,
+        "ValidationSeconds": 3.6856465000018943,
+        "Seed": 246813,
+        "Macro": "TwoFronts",
+        "Checks": 34,
+        "Theme": "Laboratory",
+        "Parts": 219
+      },
+      {
+        "BuildSeconds": 0.010634600002958905,
+        "ValidationSeconds": 4.184920299998339,
+        "Seed": 246813,
+        "Macro": "Crossfire",
+        "Checks": 39,
+        "Theme": "Laboratory",
+        "Parts": 247
+      },
+      {
+        "BuildSeconds": 0.0118265999990399,
+        "ValidationSeconds": 6.1833564000007755,
+        "Seed": 246813,
+        "Macro": "SplitLevel",
+        "Checks": 59,
+        "Theme": "Laboratory",
+        "Parts": 301
+      },
+      {
+        "BuildSeconds": 0.008817699999781325,
+        "ValidationSeconds": 4.186080600000423,
+        "Seed": 246813,
+        "Macro": "WarehouseLanes",
+        "Checks": 39,
+        "Theme": "Laboratory",
+        "Parts": 211
+      },
+      {
+        "BuildSeconds": 0.007543299998360453,
+        "ValidationSeconds": 4.392150600000605,
+        "Seed": 246813,
+        "Macro": "LoopDefense",
+        "Checks": 41,
+        "Theme": "Warehouse",
+        "Parts": 172
+      },
+      {
+        "BuildSeconds": 0.008044300000619842,
+        "ValidationSeconds": 4.18760100000145,
+        "Seed": 246813,
+        "Macro": "HubAndWings",
+        "Checks": 39,
+        "Theme": "Warehouse",
+        "Parts": 202
+      },
+      {
+        "BuildSeconds": 0.007145600000512786,
+        "ValidationSeconds": 3.6896457000002556,
+        "Seed": 246813,
+        "Macro": "TwoFronts",
+        "Checks": 34,
+        "Theme": "Warehouse",
+        "Parts": 157
+      },
+      {
+        "BuildSeconds": 0.008595699997385964,
+        "ValidationSeconds": 4.187299100001837,
+        "Seed": 246813,
+        "Macro": "Crossfire",
+        "Checks": 39,
+        "Theme": "Warehouse",
+        "Parts": 191
+      },
+      {
+        "BuildSeconds": 0.009223799999745097,
+        "ValidationSeconds": 6.191354699996737,
+        "Seed": 246813,
+        "Macro": "SplitLevel",
+        "Checks": 59,
+        "Theme": "Warehouse",
+        "Parts": 237
+      },
+      {
+        "BuildSeconds": 0.011475299997982802,
+        "ValidationSeconds": 4.177932700000383,
+        "Seed": 246813,
+        "Macro": "WarehouseLanes",
+        "Checks": 39,
+        "Theme": "Warehouse",
+        "Parts": 153
+      },
+      {
+        "BuildSeconds": 0.008489299998473143,
+        "ValidationSeconds": 4.392162899999676,
+        "Seed": 246813,
+        "Macro": "LoopDefense",
+        "Checks": 41,
+        "Theme": "Parking",
+        "Parts": 198
+      },
+      {
+        "BuildSeconds": 0.009005199997773161,
+        "ValidationSeconds": 4.185397500001272,
+        "Seed": 246813,
+        "Macro": "HubAndWings",
+        "Checks": 39,
+        "Theme": "Parking",
+        "Parts": 220
+      },
+      {
+        "BuildSeconds": 0.007620899999892572,
+        "ValidationSeconds": 3.6888386999999057,
+        "Seed": 246813,
+        "Macro": "TwoFronts",
+        "Checks": 34,
+        "Theme": "Parking",
+        "Parts": 179
+      },
+      {
+        "BuildSeconds": 0.008981999999377877,
+        "ValidationSeconds": 4.186459599997761,
+        "Seed": 246813,
+        "Macro": "Crossfire",
+        "Checks": 39,
+        "Theme": "Parking",
+        "Parts": 213
+      },
+      {
+        "BuildSeconds": 0.012534200002846774,
+        "ValidationSeconds": 6.182424999999057,
+        "Seed": 246813,
+        "Macro": "SplitLevel",
+        "Checks": 59,
+        "Theme": "Parking",
+        "Parts": 239
+      },
+      {
+        "BuildSeconds": 0.008578300003136974,
+        "ValidationSeconds": 4.187588499997219,
+        "Seed": 246813,
+        "Macro": "WarehouseLanes",
+        "Checks": 39,
+        "Theme": "Parking",
+        "Parts": 185
+      }
+    ],
+    "Plans": 600,
+    "Modes": {
+      "ClearWaves": true,
+      "Holdout": true,
+      "Survival": true
+    },
+    "Examples": {
+      "WarehouseLanes": {
+        "Theme": "Laboratory",
+        "Floor": 196,
+        "Seed": 123456
+      },
+      "TwoFronts": {
+        "Theme": "Office",
+        "Floor": 199,
+        "Seed": 123456
+      },
+      "Crossfire": {
+        "Theme": "Warehouse",
+        "Floor": 197,
+        "Seed": 123456
+      },
+      "HubAndWings": {
+        "Theme": "Office",
+        "Floor": 195,
+        "Seed": 123456
+      },
+      "LoopDefense": {
+        "Theme": "Parking",
+        "Floor": 198,
+        "Seed": 123456
+      },
+      "SplitLevel": {
+        "Theme": "Laboratory",
+        "Floor": 200,
+        "Seed": 123456
+      }
+    },
+    "Themes": {
+      "Warehouse": true,
+      "Office": true,
+      "Parking": true,
+      "Laboratory": true
+    }
+  },
+  "GalleryNPC": [
+    {
+      "CorrectStair": true,
+      "Approach": "NorthRamp",
+      "Reached": true,
+      "Damage": 12
+    },
+    {
+      "CorrectStair": true,
+      "Approach": "SouthRamp",
+      "Reached": true,
+      "Damage": 12
+    }
+  ],
+  "GalleryPlayer": {
+    "North": {
+      "StartY": 375,
+      "EndY": 385,
+      "EndX": 84,
+      "EndZ": -0.811523
+    },
+    "South": {
+      "StartY": 375,
+      "EndY": 385,
+      "EndX": 84,
+      "EndZ": 0.895508
+    },
+    "Method": "Actual unanchored character navigation after weapon selection, positions read on server."
+  },
+  "Runtime": {
+    "RecoveryDebt": true,
+    "PendingGuard": true,
+    "Holdout": true,
+    "Survival": true,
+    "DeathReset": true,
+    "Transitions": [
+      {
+        "Macro": "HubAndWings",
+        "Seed": 1612735428,
+        "From": 1
+      },
+      {
+        "Macro": "LoopDefense",
+        "Seed": 1612840157,
+        "From": 2
+      },
+      {
+        "Macro": "TwoFronts",
+        "Seed": 1612944886,
+        "From": 3
+      },
+      {
+        "Macro": "HubAndWings",
+        "Seed": 1613049615,
+        "From": 4
+      },
+      {
+        "Macro": "TwoFronts",
+        "Seed": 1613154344,
+        "From": 5
+      }
+    ],
+    "NoSpawnDebt": true,
+    "Status": "Passed",
+    "Structure": {
+      "Plans": 600,
+      "Status": "Passed"
+    },
+    "Method": "Native server test, accelerated timings and forced floor-4 Holdout/floor-5 Survival. Actual director and AI; server damage used to clear obligations. No claim of normal-duration game balance."
+  },
+  "NoKillFlank": {
+    "Status": "Passed",
+    "Alive": 10,
+    "AttackOrigins": {
+      "East": true,
+      "South": true
+    },
+    "Defeated": 0,
+    "PendingObserved": 6,
+    "FloorComplete": false,
+    "TravelRejected": true,
+    "Floor": 6,
+    "Macro": "Crossfire",
+    "RunSeed": 1612628681,
+    "FloorSeed": 1613259073,
+    "Method": "Native server AI, no kills, player anchored facing away from sources to exercise capacity reservation."
+  },
+  "Fallback": {
+    "RunSeed": 123456,
+    "Floor": 20,
+    "InjectedRejections": 2,
+    "AcceptedAttempt": 3,
+    "Macro": "LoopDefense",
+    "Validated": true,
+    "LoadedTestFloors": 1,
+    "Method": "Two deliberately rejected navigation results; fallback still required real navigation."
+  },
+  "Performance": [
+    {
+      "PathWaitSeconds": 5.497424800007138,
+      "FrameMaxSeconds": 0.00803081039339304,
+      "Floor": 1,
+      "FrameMeanSeconds": 0.004165317550855934,
+      "PathCalls": 70,
+      "ThinkSteps": 756,
+      "Alive": 16,
+      "Speed": 14,
+      "ReachedEntry": 3,
+      "Health": 180,
+      "Version": "Original",
+      "Seed": 123456,
+      "CreationSeconds": 0.01573669999925187,
+      "SampleSeconds": 8.00399599999946,
+      "SpawnSeconds": 1.5676938999968115,
+      "Parts": 526
+    },
+    {
+      "PathWaitSeconds": 8.176324899985048,
+      "FrameMaxSeconds": 0.008666470646858215,
+      "Floor": 1,
+      "FrameMeanSeconds": 0.004170427780991304,
+      "PathCalls": 95,
+      "ThinkSteps": 740,
+      "Alive": 16,
+      "Speed": 14,
+      "ReachedEntry": 0,
+      "Health": 180,
+      "Version": "Defense2",
+      "Seed": 123456,
+      "CreationSeconds": 1.6669500999996671,
+      "SampleSeconds": 8.008827999998175,
+      "SpawnSeconds": 3.695442999996885,
+      "Parts": 157
+    }
+  ],
+  "PerformanceLimits": "Eight-second Studio server sample at 16 alive, 180 HP, speed 14. PathWaitSeconds is aggregate async wall wait, not exclusive CPU. Heartbeat timings are not client FPS. Original modules came from this repository's committed baseline. New creation includes navigation, baseline does not.",
+  "NavSummary": {
+    "Samples": 48,
+    "Paths": 2008,
+    "PartsMin": 134,
+    "PartsMax": 301,
+    "BuildSecondsMin": 0.006358800001180498,
+    "BuildSecondsMax": 0.012761800000589574,
+    "ValidationSecondsMin": 3.6801797000007355,
+    "ValidationSecondsMax": 6.196285799996986
+  },
+  "Build": {
+    "Tool": "Rojo 7.7.0",
+    "Status": "Passed"
+  },
+  "Remaining": "Human playtesting of readability, loop pressure, cover balance and repeated normal-length encounters is still needed. Low furniture is decorative with collision/query disabled; tall planned cover supplies physical cover."
+}

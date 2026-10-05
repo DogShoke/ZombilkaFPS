@@ -18,10 +18,25 @@ Config.Run = {
 	DoorDuration = 0.85, TravelDuration = 3.5, Tick = 0.1,
 	FloorHeight = 48, BaseHeight = 180, HalfExtent = 132,
 	Generation = {
+		Version = 2, Grid = 6, CorridorWidth = 24, ChokeWidth = 12,
+		Macros = { "LoopDefense", "HubAndWings", "TwoFronts", "Crossfire", "SplitLevel", "WarehouseLanes" },
+		EarlyMacros = { "LoopDefense", "HubAndWings", "TwoFronts" }, EarlyFloors = 3,
+		MaxAttempts = 2, NavigationSettle = 0.35, MaxValidationSeconds = 12, MaxParts = 700,
+		AgentRadius = 2, AgentHeight = 5,
 		HalfWidth = 132, HalfDepth = 144, CellSize = 48, RoomSize = 36,
 		DoorWidth = 14, CeilingHeight = 28, RoomWallHeight = 8,
 		UpperChance = 0.4, UpperHeight = 10, RampLength = 48, RampWidth = 14,
 		Themes = { "Office", "Laboratory", "Warehouse", "Parking" },
+	},
+	Encounters = {
+		Modes = { "ClearWaves", "Holdout", "Survival" }, SpecialModesFromFloor = 4,
+		WarningDuration = 3, HoldSeconds = 12, SurvivalSeconds = 18, HoldReinforcements = 3,
+		FlankAfter = 8, FlankReserve = 1,
+		PressureGrace = 1.5, SpawnFailureGrace = 3, FallbackAfter = 3,
+		SpawnWarningAfter = 10, StuckRepathAfter = 8, StuckRecoverAfter = 24,
+		MaxRequeues = 8,
+		Sectors = { "North", "West", "East", "South" },
+		SectorLabels = { North = "СЕВЕР", West = "ЗАПАД", East = "ВОСТОК", South = "ЮГ" },
 	},
 	Difficulty = {
 		ExtraPerWavePerFloor = 2, MaxExtraPerWave = 18,
@@ -67,6 +82,7 @@ Config.Vfx = {
 }
 Config.Zombies = {
 	VariantFolder = "CityZombies",
+	InterceptMinSpeed = 18, InterceptLookAhead = 4,
 	MaxAlive = 9, MinSpawnDistance = 32, MaxSpawnDistance = 360,
 	MaxHealth = 100, WalkSpeed = 11, AggroRange = 420, AttackRange = 4.4, PreferredMinDistance = 2.8,
 	AttackDamage = 12, AttackWindup = 0.48, AttackRecover = 0.38, AttackCooldown = 1.6,

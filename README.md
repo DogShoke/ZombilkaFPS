@@ -4,7 +4,7 @@ New Roblox first-person zombie combat sandbox. Rojo 7.7.0 syncs `src/` through `
 
 Choose Glock, AKM or Mossberg before the run using the cards or 1/2/3. Zombies start spawning after selection. Death opens selection again.
 
-Floors are generated endlessly from a run seed: offices, laboratories, warehouses and parking areas, with side rooms, multiple routes and occasional upper galleries. The footprint is 264×288 studs (about 3.1× the previous floor area). Only the current floor and a prepared destination are retained. Waves and zombie strength increase gradually, with at most 16 live zombies.
+Floors are generated endlessly from a versioned run seed: four themes and six combat layouts, alternate routes, two defense positions and reachable split-level galleries. The footprint is 264×288 studs. After three introductory floors, the final wave can require a holdout or timed survival followed by mandatory cleanup. Attack directions are announced; generated floors pass runtime navigation checks with bounded retries. Only the current floor and a prepared destination are retained, with at most 16 live zombies.
 
 Подробное описание текущего генератора, его ограничений и мест для изменений: [docs/LEVEL_GENERATION.md](docs/LEVEL_GENERATION.md).
 

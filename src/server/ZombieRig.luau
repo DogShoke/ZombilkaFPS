@@ -21,11 +21,11 @@ local function track(animator,key,priority,looped)
 	if not ok then return end
 	t.Priority=priority t.Looped=looped return t
 end
-function ZombieRig.Create(position,variant)
+function ZombieRig.Create(position,variant,tuning)
 	local model=Variants.Create(variant or 1) model.Name="Zombie" model:SetAttribute("IsZombie",true) model:SetAttribute("State","Spawn")
 	local root=model.HumanoidRootPart local h=model.Humanoid
 	model.PrimaryPart=root
-	h.MaxHealth=Config.Zombies.MaxHealth h.Health=h.MaxHealth h.WalkSpeed=Config.Zombies.WalkSpeed h.BreakJointsOnDeath=false h.DisplayDistanceType=Enum.HumanoidDisplayDistanceType.None
+	h.MaxHealth=tuning and tuning.Health or Config.Zombies.MaxHealth h.Health=h.MaxHealth h.WalkSpeed=tuning and tuning.Speed or Config.Zombies.WalkSpeed h.BreakJointsOnDeath=false h.DisplayDistanceType=Enum.HumanoidDisplayDistanceType.None
 	local colors=model:FindFirstChildOfClass("BodyColors") if colors then colors:Destroy() end
 	for _,p in model:GetDescendants() do if p:IsA("BasePart") then p.Anchored=false p.CanTouch=false p.CanCollide=p.Name=="Torso" p.CanQuery=model:GetAttribute("SkinnedZombie") and (p.Name=="Head" or p.Name=="Torso") or not model:GetAttribute("SkinnedZombie") and p~=root p.CollisionGroup="Zombies" end end
 	model.Parent=workspace model:PivotTo(CFrame.new(position+Vector3.new(0,3,0))) root:SetNetworkOwner(nil)

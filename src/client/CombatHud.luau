@@ -124,7 +124,7 @@ end
 
 function CombatHud:SetRun(state)
 	local phase = state:GetAttribute("State")
-	self.RunLabel.Text = string.format("ЭТАЖ %02d\nВОЛНА %d / %d    ЗОМБИ %d", state:GetAttribute("Floor") or 1, state:GetAttribute("Wave") or 0, state:GetAttribute("Waves") or 3, state:GetAttribute("Remaining") or 0)
+	self.RunLabel.Text = string.format("ЭТАЖ %02d  /  %s\nВОЛНА %d / %d    ЗОМБИ %d", state:GetAttribute("Floor") or 1, state:GetAttribute("Theme") or "", state:GetAttribute("Wave") or 0, state:GetAttribute("Waves") or 3, state:GetAttribute("Remaining") or 0)
 	local messages = { FloorIntro = "ЗАЧИСТИТЕ ЭТАЖ", BetweenWaves = "СЛЕДУЮЩАЯ ВОЛНА", FloorCleared = "ЭТАЖ ЗАЧИЩЕН", ElevatorAvailable = "ЛИФТ ОТКРЫТ  ↑", ElevatorTravel = "ПОДЪЁМ  ↑", NextFloor = "ВЫЙДИТЕ ИЗ ЛИФТА" }
 	self.Message.Text = state:GetAttribute("Paused") and "ПАУЗА" or messages[phase] or ""
 end

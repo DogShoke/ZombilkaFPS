@@ -36,93 +36,184 @@ local function plant(parent,o,x,z)
 	part(parent,"Stem",Vector3.new(0.25,3,0.25),o+Vector3.new(x,3,z),C.wood,nil,true)
 	for i=1,3 do local p=part(parent,"Leaves",Vector3.new(2.4,2,2.4),o+Vector3.new(x+math.sin(i*2)*0.6,3.5+i*0.6,z),Color3.fromRGB(60,94,69),nil,true) p.Shape=Enum.PartType.Ball end
 end
-local function buildFloor(run,index)
-	local model=Instance.new("Model") model.Name=string.format("Floor%02d",index) model:SetAttribute("Layout",index==1 and "OpenOffice" or "Executive") model.Parent=run
-	local geo,props,spawns,lobby=folder(model,"Geometry"),folder(model,"Props"),folder(model,"ZombieSpawns"),folder(model,"ElevatorLobby")
-	local o=Vector3.new(0,Config.Run.BaseHeight+(index-1)*Config.Run.FloorHeight,0)
-	part(geo,"Floor",Vector3.new(156,1,156),o-Vector3.new(0,0.5,0),C.floor,Enum.Material.Carpet)
-	part(geo,"Ceiling",Vector3.new(156,1,156),o+Vector3.new(0,16,0),Color3.fromRGB(109,121,126))
-	for _,x in {-78,78} do
-		local glass=part(geo,"WindowWall",Vector3.new(0.6,15,156),o+Vector3.new(x,7.5,0),Color3.fromRGB(95,140,158),Enum.Material.Glass) glass.Transparency=0.65
-		for z=-72,72,18 do part(geo,"WindowMullion",Vector3.new(0.9,16,0.6),o+Vector3.new(x,8,z),C.dark,Enum.Material.Metal) end
-	end
-	local glass=part(geo,"WindowWall",Vector3.new(156,15,0.6),o+Vector3.new(0,7.5,-78),Color3.fromRGB(95,140,158),Enum.Material.Glass) glass.Transparency=0.65
-	part(geo,"SouthWall",Vector3.new(156,16,1),o+Vector3.new(0,8,78),C.wall)
-	for x=-72,72,18 do part(geo,"WindowMullion",Vector3.new(0.6,16,0.9),o+Vector3.new(x,8,-78),C.dark,Enum.Material.Metal) end
-	for _,x in {-54,-18,18,54} do for _,z in {-54,-18,18,54} do
-		local p=part(geo,"CeilingLight",Vector3.new(9,0.15,1.2),o+Vector3.new(x,15.3,z),Color3.fromRGB(211,231,228),Enum.Material.Neon,true)
-		local light=Instance.new("SurfaceLight") light.Face=Enum.NormalId.Bottom light.Range=24 light.Angle=140 light.Brightness=1.8 light.Color=p.Color light.Shadows=false light.Parent=p
-	end end
-	for _,x in {-38,38} do for _,z in {-34,30} do part(geo,"Column",Vector3.new(3,16,3),o+Vector3.new(x,8,z),C.wall,Enum.Material.Concrete) end end
-	-- Wide central spine, perimeter loop and cross lanes remain free of furniture.
-	part(props,"LobbyRunner",Vector3.new(26,0.04,30),o+Vector3.new(0,0.02,42),C.teal,nil,true)
-	part(props,"ReceptionDesk",Vector3.new(19,3.5,4),o+Vector3.new(0,1.75,23),C.wood,Enum.Material.Wood)
-	sign(props,o+Vector3.new(0,12,25.1),"NORTHLINE  /  "..(index==1 and "ОПЕРАЦИИ" or "ДИРЕКЦИЯ"),22)
-	sign(props,o+Vector3.new(-49,9,45),"← КУХНЯ  /  ОФИС →",22)
-	if index==1 then
-		for _,x in {-53,-26,26,53} do for _,z in {-52,-23,6} do
-			desk(props,o,x,z,0)
-			part(props,"CubiclePartition",Vector3.new(10,4.1,0.3),o+Vector3.new(x,2.05,z-3),Color3.fromRGB(82,105,114))
-		end end
-	else
-		for _,x in {-46,46} do
-			part(props,"ConferenceTable",Vector3.new(16,0.5,26),o+Vector3.new(x,3,-28),C.wood,Enum.Material.Wood)
-			for _,z in {-36,-24,-12} do desk(props,o,x+(x<0 and -15 or 15),z,math.pi/2) end
-			-- Glass room boundaries leave two 14+ stud entrances per room.
-			for _,z in {-55,0} do local p=part(geo,"MeetingGlass",Vector3.new(27,10,0.3),o+Vector3.new(x,5,z),Color3.fromRGB(115,150,160),Enum.Material.Glass) p.Transparency=0.55 end
-			sign(props,o+Vector3.new(x,11,-54.7),x<0 and "ПЕРЕГОВОРНАЯ A" or "ПЕРЕГОВОРНАЯ B",22)
+local Layout = require(script.Parent.FloorLayout)
+local G = Config.Run.Generation
+local accents = { C.teal, Color3.fromRGB(89,125,185), Color3.fromRGB(203,148,65), Color3.fromRGB(129,111,163) }
+local roomLabels = { Workstations="РАБОЧАЯ ЗОНА", Meeting="ПЕРЕГОВОРНАЯ", BreakRoom="КОМНАТА ОТДЫХА", Archive="АРХИВ", Lab="ИССЛЕДОВАНИЯ", ServerRoom="СЕРВЕРНАЯ", Storage="ХРАНЕНИЕ", Workshop="ТЕХНИЧЕСКАЯ ЗОНА", ParkingBay="ПАРКОВКА" }
+local function furnish(parent, origin, room, accent)
+	local x,z,w,d=room.X,room.Z,room.Width,room.Depth
+	local o=origin+Vector3.new(x,0,z)
+	local function p(n,size,v,color,mat,cosmetic) return part(parent,n,size,o+v,color or C.dark,mat,cosmetic) end
+	if room.Kind=="Workstations" then
+		for _,dx in {-10,10} do desk(parent,o,dx,-d/2+9,0) end
+		if d>50 then for _,dx in {-10,10} do desk(parent,o,dx,d/2-10,math.pi) end end
+	elseif room.Kind=="Meeting" then
+		-- Offset the table so the two crossing door lanes stay open.
+		p("ConferenceTable",Vector3.new(8,.4,math.min(22,d-12)),Vector3.new(-10,2.8,0),C.wood,Enum.Material.Wood)
+		p("PresentationScreen",Vector3.new(8,4,.2),Vector3.new(10,5,-d/2+2),C.dark,nil,true)
+		p("PresentationGlow",Vector3.new(7.5,3.5,.04),Vector3.new(10,5,-d/2+2.13),accent,Enum.Material.Neon,true)
+	elseif room.Kind=="BreakRoom" then
+		p("KitchenCounter",Vector3.new(7,3,d-12),Vector3.new(-11,1.5,0),C.wall)
+		p("CounterTop",Vector3.new(7.3,.25,d-11.5),Vector3.new(-11,3.1,0),C.wood,Enum.Material.Wood)
+		p("VendingMachine",Vector3.new(5,7,4),Vector3.new(11,3.5,-d/2+5),accent,Enum.Material.Metal)
+		p("VendingDisplay",Vector3.new(3.5,4,.1),Vector3.new(11,4,-d/2+2.9),Color3.fromRGB(160,212,212),Enum.Material.Neon,true)
+		p("Bench",Vector3.new(5,2,10),Vector3.new(11,1,d/2-7),C.wood)
+	elseif room.Kind=="Lab" then
+		for _,dx in {-11,11} do
+			p("LabBench",Vector3.new(6,3,d-12),Vector3.new(dx,1.5,0),C.wall,Enum.Material.Metal)
+			p("LabWorktop",Vector3.new(6.4,.25,d-11.5),Vector3.new(dx,3.2,0),C.dark)
+			for dz=-d/2+8,d/2-8,12 do
+				p("SampleChamber",Vector3.new(2,2.5,2),Vector3.new(dx,4.6,dz),Color3.fromRGB(79,172,157),Enum.Material.Glass,true).Transparency=.3
+				p("SampleGlow",Vector3.new(.8,1.2,.8),Vector3.new(dx,4.1,dz),accent,Enum.Material.Neon,true)
+			end
 		end
-		for _,x in {-48,48} do desk(props,o,x,25,0) part(props,"OfficeDivider",Vector3.new(19,4.5,0.4),o+Vector3.new(x,2.25,19),C.teal) end
+	elseif room.Kind=="ServerRoom" then
+		for _,dx in {-11,11} do for dz=-d/2+7,d/2-7,10 do
+			p("ServerRack",Vector3.new(5,6,5),Vector3.new(dx,3,dz),C.dark,Enum.Material.Metal)
+			for y=2,5 do p("ServerLED",Vector3.new(3,.15,.1),Vector3.new(dx,y,dz+2.6),accent,Enum.Material.Neon,true) end
+		end end
+	elseif room.Kind=="ParkingBay" then
+		for _,dx in {-10,10} do
+			local cf=CFrame.new(o+Vector3.new(dx,0,0))*CFrame.Angles(0,room.Variant%2==0 and math.pi or 0,0)
+			local function car(n,size,v,color,cosmetic) local a=p(n,size,Vector3.zero,color,Enum.Material.Metal,cosmetic); a.CFrame=cf*CFrame.new(v); return a end
+			car("ParkedCar",Vector3.new(7,2.1,15),Vector3.new(0,1.8,0),room.Variant%2==0 and accent or Color3.fromRGB(92,100,104))
+			car("CarCabin",Vector3.new(6,1.8,7),Vector3.new(0,3.6,.5),C.dark)
+			car("Windshield",Vector3.new(5.6,1.3,.2),Vector3.new(0,3.5,-3.15),Color3.fromRGB(93,131,144),true)
+			for _,sx in {-1,1} do for _,sz in {-1,1} do
+				local wheel=car("Wheel",Vector3.new(.7,2.2,2.2),Vector3.new(sx*3.5,1.1,sz*4.8),Color3.fromRGB(20,24,27),true); wheel.Shape=Enum.PartType.Cylinder
+				car("CarLight",Vector3.new(1.4,.45,.12),Vector3.new(sx*2.1,2,-7.6),Color3.fromRGB(193,202,163),true)
+			end end
+			p("ParkingLine",Vector3.new(.12,.02,d-3),Vector3.new(dx+4.5,.025,0),Color3.fromRGB(207,206,182),nil,true)
+		end
+	else
+		for _,dx in {-11,11} do for dz=-d/2+7,d/2-7,12 do
+			local h=room.Kind=="Archive" and 6 or room.Kind=="Workshop" and 3 or 3+room.Variant%3
+			p(room.Kind=="Archive" and "ArchiveCabinet" or "StorageCrate",Vector3.new(6,h,6),Vector3.new(dx,h/2,dz),room.Kind=="Archive" and C.wall or C.wood,room.Kind=="Archive" and Enum.Material.Metal or Enum.Material.Wood)
+			p("BayStripe",Vector3.new(6.05,.3,6.05),Vector3.new(dx,h-.5,dz),accent,nil,true)
+		end end
 	end
-	-- Kitchen and copy/storage occupy opposite rear corners, with two approach routes.
-	for _,x in {-63,-55,-47} do part(props,"KitchenCabinet",Vector3.new(7.5,3,4),o+Vector3.new(x,1.5,69),C.wall) end
-	part(props,"KitchenCounter",Vector3.new(25,0.3,5),o+Vector3.new(-55,3.2,69),C.wood,Enum.Material.Wood)
-	part(props,"VendingMachine",Vector3.new(5,8,4),o+Vector3.new(-70,4,59),C.teal,Enum.Material.Metal)
-	part(props,"VendingDisplay",Vector3.new(3.6,4.6,0.1),o+Vector3.new(-70,4.5,56.9),Color3.fromRGB(144,193,194),Enum.Material.Neon,true)
-	sign(props,o+Vector3.new(-52,10,76.8),"ПЕРЕРЫВ",20)
-	for _,x in {47,56,65} do part(props,"StorageCabinet",Vector3.new(6,6,3),o+Vector3.new(x,3,69),Color3.fromRGB(114,130,133),Enum.Material.Metal) end
-	part(props,"Copier",Vector3.new(5,4,4),o+Vector3.new(65,2,54),C.wall)
-	sign(props,o+Vector3.new(55,10,76.8),"АРХИВ / ПЕЧАТЬ",23)
-	for _,v in {Vector2.new(-19,45),Vector2.new(19,45),Vector2.new(-70,-66),Vector2.new(70,-66)} do plant(props,o,v.X,v.Y) end
-	for i=1,12 do local p=part(props,"DiscardedPaper",Vector3.new(1.1,0.015,1.5),o+Vector3.new(-62+(i*17)%124,0.05,-62+(i*31)%124),Color3.fromRGB(190,198,182),nil,true) p.Orientation=Vector3.new(0,i*43,0) end
-	-- Accent bands and emergency beacons make the two end zones readable in combat.
-	for _,x in {-76.8,76.8} do
-		part(props,"EmergencyStrip",Vector3.new(0.16,0.3,26),o+Vector3.new(x,5.5,49),C.red,Enum.Material.Neon,true)
+end
+local function roomWalls(geo,props,o,r,accent)
+	if not r.Enclosed then return end
+	local height,door=G.RoomWallHeight,G.DoorWidth
+	for _,axis in {"X","Z"} do
+		local length=axis=="X" and r.Width or r.Depth
+		local offset=axis=="X" and r.Depth/2 or r.Width/2
+		local segment=(length-door)/2
+		for _,side in {-1,1} do for _,endSide in {-1,1} do
+			local along=endSide*(door/2+segment/2)
+			local v=axis=="X" and Vector3.new(r.X+along,height/2,r.Z+side*offset) or Vector3.new(r.X+side*offset,height/2,r.Z+along)
+			local size=axis=="X" and Vector3.new(segment,height,.5) or Vector3.new(.5,height,segment)
+			local wall=part(geo,"RoomWall",size,o+v,r.Glass and Color3.fromRGB(111,156,171) or C.wall,r.Glass and Enum.Material.Glass or Enum.Material.SmoothPlastic)
+			if r.Glass then wall.Transparency=.48 end
+			part(props,"RoomAccent",Vector3.new(size.X,.22,size.Z),o+v+Vector3.new(0,2.8,0),accent,nil,true)
+		end end
 	end
-	for _,x in {-54,54} do
-		part(geo,"UtilityPartition",Vector3.new(22,9,0.4),o+Vector3.new(x,4.5,45),C.wall)
-		part(props,"UtilityAccent",Vector3.new(22,0.5,0.1),o+Vector3.new(x,6.6,44.7),index==1 and C.teal or C.wood,nil,true)
+end
+local function gallery(geo,props,o,layout,accent,zones,probes)
+	local x=layout.UpperSide*84
+	part(geo,"Floor",Vector3.new(72,.7,64),o+Vector3.new(x,G.UpperHeight-.35,0),C.dark,Enum.Material.Metal)
+	for _,dx in {-36,36} do
+		part(geo,"GalleryRailing",Vector3.new(.35,3.1,64),o+Vector3.new(x+dx,G.UpperHeight+1.55,0),accent,Enum.Material.Metal)
 	end
-	for x=-72,72,12 do part(props,"CeilingSeam",Vector3.new(0.06,0.03,154),o+Vector3.new(x,15.47,0),Color3.fromRGB(82,97,106),nil,true) end
-	for z=-72,72,12 do part(props,"CeilingSeam",Vector3.new(154,0.03,0.06),o+Vector3.new(0,15.47,z),Color3.fromRGB(82,97,106),nil,true) end
-	local spawn=Instance.new("SpawnLocation") spawn.Name="PlayerSpawn" spawn.Size=Vector3.new(5,0.2,5) spawn.CFrame=CFrame.new(o+Vector3.new(0,0.1,49)) spawn.Anchored=true spawn.Transparency=1 spawn.CanCollide=false spawn.CanQuery=false spawn.Duration=0 spawn.Enabled=index==1 spawn.Parent=model
-	local points={Vector3.new(-65,0,-65),Vector3.new(0,0,-65),Vector3.new(65,0,-65),Vector3.new(-68,0,30),Vector3.new(68,0,30),Vector3.new(-30,0,62),Vector3.new(30,0,62),Vector3.new(0,0,-20)}
-	local zones={} for i,v in points do local p=part(spawns,"Zone"..i,Vector3.new(6,0.1,6),o+v,C.red,nil,true) p.Transparency=1 p:SetAttribute("SpawnZone",true) table.insert(zones,o+v) end
-	-- Cabin rear + side walls; aperture faces north into the lobby.
-	part(lobby,"CabinFloor",Vector3.new(18,0.12,18),o+Vector3.new(0,0.06,67),C.dark,Enum.Material.Metal)
-	part(lobby,"CabinBack",Vector3.new(18,14,0.6),o+Vector3.new(0,7,76),C.dark,Enum.Material.Metal)
-	for _,x in {-9,9} do part(lobby,"CabinSide",Vector3.new(0.6,14,18),o+Vector3.new(x,7,67),C.dark,Enum.Material.Metal) end
+	for _,sz in {-1,1} do
+		-- Two broad stairs, with one smooth collider for reliable NPC navigation.
+		local run,rise=G.RampLength,G.UpperHeight
+		local ramp=part(geo,"StairRamp",Vector3.new(G.RampWidth,.6,math.sqrt(run*run+rise*rise)),o+Vector3.new(x,rise/2,sz*(32+run/2)),C.dark,Enum.Material.Metal)
+		ramp.CFrame*=CFrame.Angles(sz*math.atan(rise/run),0,0)
+		for i=1,24 do
+			local t=(i-.5)/24
+			part(props,"StairTread",Vector3.new(G.RampWidth,rise/24,run/24),o+Vector3.new(x,rise*(1-t),sz*(32+run*t)),Color3.fromRGB(112,125,127),Enum.Material.Metal,true)
+		end
+		for _,dx in {-1,1} do
+			local rail=part(geo,"StairRailing",Vector3.new(.3,2.8,math.sqrt(run*run+rise*rise)),o+Vector3.new(x+dx*(G.RampWidth/2+.4),rise/2+1.8,sz*(32+run/2)),accent,Enum.Material.Metal)
+			rail.CFrame*=CFrame.Angles(sz*math.atan(rise/run),0,0)
+		end
+		for _,dx in {-1,1} do
+			part(geo,"GalleryRailing",Vector3.new((72-G.RampWidth)/2,3.1,.35),o+Vector3.new(x+dx*(G.RampWidth/2+(72-G.RampWidth)/4),rise+1.55,sz*32),accent,Enum.Material.Metal)
+		end
+		table.insert(probes,o+Vector3.new(x,0,sz*(32+run+5)))
+	end
+	furnish(props,o+Vector3.new(0,G.UpperHeight,0),{X=x,Z=0,Width=72,Depth=44,Kind=layout.Theme=="Laboratory" and "Lab" or "Workshop",Variant=2},accent)
+	for _,z in {-15,15} do table.insert(zones,o+Vector3.new(x,G.UpperHeight,z)) end
+	table.insert(probes,o+Vector3.new(x,G.UpperHeight,0))
+	sign(props,o+Vector3.new(x,G.UpperHeight+6,-31),"ГАЛЕРЕЯ  /  02",24,accent)
+end
+local function buildFloor(run,seed,number,slot)
+	local layout=Layout.Generate(seed,number)
+	local model=Instance.new("Model"); model.Name=string.format("Floor%03d",number); model.Parent=run
+	for k,v in {FloorNumber=number,Seed=layout.Seed,Theme=layout.Theme,ThemeLabel=layout.Label,Levels=layout.Upper and 2 or 1,Signature=layout.Signature,RoomCount=#layout.Rooms} do model:SetAttribute(k,v) end
+	local geo,props,spawns,lobby=folder(model,"Geometry"),folder(model,"Props"),folder(model,"ZombieSpawns"),folder(model,"ElevatorLobby")
+	local o=Vector3.new(0,Config.Run.BaseHeight+(slot-1)*Config.Run.FloorHeight,0)
+	local accent=accents[layout.AccentIndex]
+	local floorMat=layout.Theme=="Office" and Enum.Material.Carpet or Enum.Material.Concrete
+	part(geo,"Floor",Vector3.new(G.HalfWidth*2,1,G.HalfDepth*2),o-Vector3.new(0,.5,0),C.floor,floorMat)
+	part(geo,"Ceiling",Vector3.new(G.HalfWidth*2,1,G.HalfDepth*2),o+Vector3.new(0,G.CeilingHeight+.5,0),Color3.fromRGB(105,118,126))
+	for _,x in {-G.HalfWidth,G.HalfWidth} do
+		local p=part(geo,"WindowWall",Vector3.new(1,G.CeilingHeight,G.HalfDepth*2),o+Vector3.new(x,G.CeilingHeight/2,0),Color3.fromRGB(83,120,143),layout.Theme=="Parking" and Enum.Material.Metal or Enum.Material.Glass)
+		p.Transparency=layout.Theme=="Parking" and .15 or .6
+		for z=-120,120,24 do part(geo,"WindowMullion",Vector3.new(1.3,G.CeilingHeight,1),o+Vector3.new(x,G.CeilingHeight/2,z),C.dark,Enum.Material.Metal) end
+	end
+	for _,z in {-G.HalfDepth,G.HalfDepth} do part(geo,"EndWall",Vector3.new(G.HalfWidth*2,G.CeilingHeight,1),o+Vector3.new(0,G.CeilingHeight/2,z),C.wall) end
+	for x=-108,108,54 do for z=-108,108,54 do
+		local lamp=part(props,"CeilingLight",Vector3.new(12,.15,2),o+Vector3.new(x,G.CeilingHeight-.3,z),Color3.fromRGB(213,229,232),Enum.Material.Neon,true)
+		local light=Instance.new("SurfaceLight"); light.Face=Enum.NormalId.Bottom; light.Range=42; light.Angle=140; light.Brightness=1.5; light.Color=lamp.Color; light.Parent=lamp
+	end end
+	local zones,probes={},{}
+	for _,r in layout.Rooms do
+		roomWalls(geo,props,o,r,accent); furnish(props,o,r,accent)
+		sign(props,o+Vector3.new(r.X,10,r.Z-r.Depth/2+.4),roomLabels[r.Kind],24,accent)
+		table.insert(zones,o+Vector3.new(r.X,0,r.Z)); table.insert(probes,o+Vector3.new(r.X,0,r.Z))
+	end
+	-- Clear spine, crossing aisles and outer ring connect every room and both stairs.
+	for _,x in {-20,20} do for _,z in {-72,24,96} do
+		part(geo,"Column",Vector3.new(2.5,G.CeilingHeight,2.5),o+Vector3.new(x,G.CeilingHeight/2,z),C.wall,Enum.Material.Concrete)
+	end end
+	part(props,"SpineRunner",Vector3.new(20,.025,240),o+Vector3.new(0,.02,-12),accent:Lerp(C.floor,.75),nil,true)
+	for _,x in {-10,10} do part(props,"RouteStripe",Vector3.new(.2,.03,240),o+Vector3.new(x,.04,-12),accent,nil,true) end
+	if layout.Theme=="Office" then
+		for _,z in {-96,0,96} do for _,x in {-24,24} do plant(props,o,x,z) end end
+	end
+	for z=-108,84,48 do sign(props,o+Vector3.new(0,16,z),layout.Label.."  /  ЛИФТ ↓",24,accent) end
+	for _,z in {-120,-24,72} do table.insert(zones,o+Vector3.new(0,0,z)) end
+	for _,x in {-120,120} do for _,z in {-120,-24,72} do table.insert(zones,o+Vector3.new(x,0,z)) end end
+	if layout.Upper then gallery(geo,props,o,layout,accent,zones,probes) end
+	for i,v in zones do local p=part(spawns,"Zone"..i,Vector3.new(6,.1,6),v,C.red,nil,true); p.Transparency=1; p:SetAttribute("SpawnZone",true) end
+	local doorZ=G.HalfDepth-20; local cabinZ=G.HalfDepth-11
+	part(lobby,"CabinFloor",Vector3.new(18,.12,18),o+Vector3.new(0,.06,cabinZ),C.dark,Enum.Material.Metal)
+	part(lobby,"CabinBack",Vector3.new(18,14,.6),o+Vector3.new(0,7,cabinZ+9),C.dark,Enum.Material.Metal)
+	part(lobby,"CabinCeiling",Vector3.new(18,.6,18),o+Vector3.new(0,14,cabinZ),C.dark,Enum.Material.Metal)
+	for _,x in {-9,9} do part(lobby,"CabinSide",Vector3.new(.6,14,18),o+Vector3.new(x,7,cabinZ),C.dark,Enum.Material.Metal) end
 	local doors={}
-	for i,x in {-4.5,4.5} do local p=part(lobby,"Door"..i,Vector3.new(8.9,13,0.6),o+Vector3.new(x,6.5,58),Color3.fromRGB(113,128,135),Enum.Material.Metal) doors[i]={Part=p,Closed=p.CFrame,Open=p.CFrame*CFrame.new(i==1 and -8.7 or 8.7,0,0)} end
-	local indicator=part(lobby,"StatusLight",Vector3.new(15,0.35,0.3),o+Vector3.new(0,14,57.5),C.red,Enum.Material.Neon,true)
-	local title=sign(lobby,o+Vector3.new(0,11,75.6),"↑  ЭТАЖ "..index,12)
-	local button=part(lobby,"ElevatorButton",Vector3.new(1,1.6,0.25),o+Vector3.new(6,4,75.5),C.teal,Enum.Material.Neon,true)
-	local prompt=Instance.new("ProximityPrompt") prompt.Name="NextFloor" prompt.ActionText="На следующий этаж" prompt.ObjectText="ЛИФТ" prompt.HoldDuration=0.25 prompt.MaxActivationDistance=10 prompt.RequiresLineOfSight=false prompt.Enabled=false prompt.Parent=button
-	sign(lobby,o+Vector3.new(0,15,57.5),"ЛИФТ  ↑",14)
-	return {Model=model,Origin=o,Zones=zones,Spawn=spawn,Doors=doors,Indicator=indicator,Prompt=prompt,Title=title,Cabin=CFrame.new(o+Vector3.new(0,3,68))*CFrame.Angles(0,0,0)}
+	for i,x in {-4.5,4.5} do
+		local p=part(lobby,"Door"..i,Vector3.new(8.9,13,.6),o+Vector3.new(x,6.5,doorZ),Color3.fromRGB(113,128,135),Enum.Material.Metal)
+		doors[i]={Part=p,Closed=p.CFrame,Open=p.CFrame*CFrame.new(i==1 and -8.7 or 8.7,0,0)}
+	end
+	local indicator=part(lobby,"StatusLight",Vector3.new(15,.35,.3),o+Vector3.new(0,14,doorZ-.5),C.red,Enum.Material.Neon,true)
+	local title=sign(lobby,o+Vector3.new(0,11,cabinZ+8.6),"↑  ЭТАЖ "..number,12)
+	local button=part(lobby,"ElevatorButton",Vector3.new(1,1.6,.25),o+Vector3.new(6,4,cabinZ+8.5),accent,Enum.Material.Neon,true)
+	local prompt=Instance.new("ProximityPrompt"); prompt.Name="NextFloor"; prompt.ActionText="На следующий этаж"; prompt.ObjectText="ЛИФТ"; prompt.HoldDuration=.25; prompt.MaxActivationDistance=12; prompt.RequiresLineOfSight=false; prompt.Enabled=false; prompt.Parent=button
+	sign(lobby,o+Vector3.new(0,17,doorZ-.5),"ЛИФТ ↑  /  "..layout.Label,27,accent)
+	local spawn=Instance.new("SpawnLocation"); spawn.Name="PlayerSpawn"; spawn.Size=Vector3.new(5,.2,5); spawn.CFrame=CFrame.new(o+Vector3.new(0,.1,doorZ-14)); spawn.Anchored=true; spawn.Transparency=1; spawn.CanCollide=false; spawn.CanQuery=false; spawn.Duration=0; spawn.Enabled=false; spawn.Parent=model
+	return {Model=model,Origin=o,Zones=zones,Spawn=spawn,Doors=doors,Indicator=indicator,Prompt=prompt,Title=title,
+		Cabin=CFrame.new(o+Vector3.new(0,3,cabinZ)),Entry=CFrame.new(o+Vector3.new(0,3,doorZ-14)),ExitZ=doorZ-3,
+		Bounds={Origin=o,HalfWidth=G.HalfWidth-3,HalfDepth=G.HalfDepth-3},Probes=probes,Layout=layout,Slot=slot}
+end
+function OfficeMap.CreateFloor(map,number,slot)
+	return buildFloor(map.Run,map.Seed,number,slot)
 end
 function OfficeMap.Build()
-	local old=workspace:FindFirstChild("OfficeRun") if old then old:Destroy() end
-	for _,n in {"Baseplate","SpawnLocation","CombatArena"} do local x=workspace:FindFirstChild(n) if x then x:Destroy() end end
-	local run=folder(workspace,"OfficeRun")
-	local floors={buildFloor(run,1),buildFloor(run,2)}
-	local skyline=folder(run,"Skyline")
-	for i=1,22 do
-		local angle=i*math.pi*2/22 local distance=260+(i%3)*70 local height=100+(i*37)%145
-		local p=part(skyline,"DistantTower",Vector3.new(35+(i%4)*9,height,36),Vector3.new(math.cos(angle)*distance,height/2,math.sin(angle)*distance),Color3.fromRGB(34,48,64),Enum.Material.Concrete)
-		for y=25,height-8,28 do part(skyline,"LitStorey",Vector3.new(p.Size.X+0.1,0.6,36.1),Vector3.new(p.Position.X,y,p.Position.Z),Color3.fromRGB(112,144,153),Enum.Material.Neon,true) end
+	local old=workspace:FindFirstChild("OfficeRun"); if old then old:Destroy() end
+	for _,n in {"Baseplate","SpawnLocation","CombatArena"} do local x=workspace:FindFirstChild(n); if x then x:Destroy() end end
+	local map={Run=folder(workspace,"OfficeRun"),Seed=Random.new():NextInteger(1,2000000000)}
+	map.Current=OfficeMap.CreateFloor(map,1,1)
+	local skyline=folder(map.Run,"Skyline")
+	for i=1,18 do
+		local angle=i*math.pi*2/18; local distance=360+(i%3)*70; local height=130+(i*37)%150
+		local p=part(skyline,"DistantTower",Vector3.new(40+(i%4)*9,height,42),Vector3.new(math.cos(angle)*distance,height/2,math.sin(angle)*distance),Color3.fromRGB(34,48,64),Enum.Material.Concrete)
+		for y=25,height-8,36 do part(skyline,"LitStorey",Vector3.new(p.Size.X+.1,.6,42.1),Vector3.new(p.Position.X,y,p.Position.Z),Color3.fromRGB(112,144,153),Enum.Material.Neon,true) end
 	end
-	local lighting=game:GetService("Lighting") lighting.ClockTime=19.2 lighting.Brightness=3 lighting.Ambient=Color3.fromRGB(158,164,177) lighting.OutdoorAmbient=Color3.fromRGB(96,117,143) lighting.FogColor=Color3.fromRGB(39,58,78) lighting.FogStart=220 lighting.FogEnd=700
-	return floors
+	local lighting=game:GetService("Lighting"); lighting.ClockTime=19.2; lighting.Brightness=3; lighting.Ambient=Color3.fromRGB(158,164,177); lighting.OutdoorAmbient=Color3.fromRGB(96,117,143); lighting.FogColor=Color3.fromRGB(39,58,78); lighting.FogStart=310; lighting.FogEnd=850
+	return map
 end
 return OfficeMap

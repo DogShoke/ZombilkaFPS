@@ -16,7 +16,20 @@ Config.ZombieAnimationTuning = { RunSpeed = 11 }
 Config.Run = {
 	Waves = { 5, 7, 9 }, IntroDuration = 4, BetweenWaves = 4, SpawnInterval = 1.15,
 	DoorDuration = 0.85, TravelDuration = 3.5, Tick = 0.1,
-	FloorHeight = 32, BaseHeight = 180, HalfExtent = 78,
+	FloorHeight = 48, BaseHeight = 180, HalfExtent = 132,
+	Generation = {
+		HalfWidth = 132, HalfDepth = 144, CellSize = 48, RoomSize = 36,
+		DoorWidth = 14, CeilingHeight = 28, RoomWallHeight = 8,
+		UpperChance = 0.4, UpperHeight = 10, RampLength = 48, RampWidth = 14,
+		Themes = { "Office", "Laboratory", "Warehouse", "Parking" },
+	},
+	Difficulty = {
+		ExtraPerWavePerFloor = 2, MaxExtraPerWave = 18,
+		BaseAlive = 9, ExtraAliveEvery = 3, MaxAlive = 16,
+		HealthPerFloor = 4, MaxHealthMultiplier = 1.8,
+		SpeedPerFloor = 0.1, MaxSpeed = 14,
+		DamagePerFloor = 0.6, MaxDamage = 24,
+	},
 }
 Config.Camera = { MouseSensitivity = 1, HipFov = 70, AdsFov = 55, SprintFov = 77, FovResponse = 12, ElevatorShake = 0.025, ElevatorShakeFrequency = 18 }
 Config.Pistol = {
@@ -53,8 +66,8 @@ Config.Vfx = {
 	DamageFlashDuration = 0.28, BloodParticleCount = 6, HeadBloodParticleCount = 10, BloodParticleLifetime = 0.2,
 }
 Config.Zombies = {
-	MaxAlive = 9, MinSpawnDistance = 32, MaxSpawnDistance = 210,
-	MaxHealth = 100, WalkSpeed = 11, AggroRange = 180, AttackRange = 4.4, PreferredMinDistance = 2.8,
+	MaxAlive = 9, MinSpawnDistance = 32, MaxSpawnDistance = 360,
+	MaxHealth = 100, WalkSpeed = 11, AggroRange = 420, AttackRange = 4.4, PreferredMinDistance = 2.8,
 	AttackDamage = 12, AttackWindup = 0.48, AttackRecover = 0.38, AttackCooldown = 1.6,
 	AttackCoordinationInterval = 0.75,
 	ThinkInterval = 0.16, RepathInterval = 1.15, CorpseLifetime = 3.5,

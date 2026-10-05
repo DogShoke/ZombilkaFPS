@@ -12,6 +12,8 @@ local active, zones = {}, {}
 local nextPlayerWindup = setmetatable({}, { __mode = "k" })
 local rng = Random.new()
 local settings = Config.Zombies
+local bounds = { Origin=Vector3.zero, HalfWidth=settings.NavigationHalfExtent, HalfDepth=settings.NavigationHalfExtent }
+local floorTuning = { Health=settings.MaxHealth, Speed=settings.WalkSpeed, Damage=settings.AttackDamage, MaxAlive=settings.MaxAlive }
 
 
 local function setState(data, state, now)
@@ -54,8 +56,8 @@ local function separationFor(data)
 end
 
 local function clampArena(position)
-	local half = settings.NavigationHalfExtent
-	return Vector3.new(math.clamp(position.X, -half, half), position.Y, math.clamp(position.Z, -half, half))
+	local p=position-bounds.Origin
+	return bounds.Origin+Vector3.new(math.clamp(p.X,-bounds.HalfWidth,bounds.HalfWidth),p.Y,math.clamp(p.Z,-bounds.HalfDepth,bounds.HalfDepth))
 end
 
 local function directSight(data, target, now)
@@ -76,7 +78,8 @@ end
 
 local function navigate(data, destination, target, now)
 	local rig = data.rig
-	if directSight(data, target, now) then
+	-- Seeing an upper gallery does not mean a straight walk can reach it.
+	if math.abs(rig.root.Position.Y-destination.Y)<2.5 and directSight(data, target, now) then
 		data.waypoints = nil
 		rig.humanoid:MoveTo(destination)
 		return
@@ -99,7 +102,7 @@ local function navigate(data, destination, target, now)
 		waypoint = data.waypoints[data.waypointIndex]
 	end
 	if waypoint and waypoint.Action == Enum.PathWaypointAction.Jump then rig.humanoid.Jump = true end
-	rig.humanoid:MoveTo(waypoint and waypoint.Position or destination)
+	rig.humanoid:MoveTo(waypoint and waypoint.Position or rig.root.Position)
 end
 
 local function attackStep(data, target, distance, now)
@@ -115,7 +118,7 @@ local function attackStep(data, target, distance, now)
 		if now - data.stateSince >= settings.AttackWindup then
 			setState(data, "AttackRecover", now)
 			if target and target.humanoid == data.attackTarget and target.humanoid.Health > 0 and distance <= settings.AttackRange + 0.65 and directSight(data, target, now) then
-				target.humanoid:TakeDamage(settings.AttackDamage)
+				target.humanoid:TakeDamage(data.attackDamage)
 			end
 		end
 		return true
@@ -130,6 +133,7 @@ local function runAI(data)
 	local rig = data.rig
 	while rig.model.Parent and rig.humanoid.Health > 0 and data.state ~= "Dead" do
 		if Clock.Paused then task.wait(settings.ThinkInterval) continue end
+		if rig.root.Position.Y<bounds.Origin.Y-10 then rig.humanoid.Health=0 break end
 		local now = Clock.Now()
 		local target, distance = nearestTarget(rig.root.Position)
 		if data.state == "Spawn" and now - data.stateSince >= settings.SpawnFade then setState(data, "Idle", now) end
@@ -297,8 +301,17 @@ function ZombieService.Start(spawnZones)
 	for _, player in ipairs(Players:GetPlayers()) do preparePlayer(player) end
 end
 
-function ZombieService.Configure(spawnZones)
+function ZombieService.Configure(spawnZones, floorBounds, number)
 	zones = spawnZones
+	if floorBounds then bounds=floorBounds end
+	local d=Config.Run.Difficulty
+	local extra=math.max(0,(number or 1)-1)
+	floorTuning={
+		Health=settings.MaxHealth*math.min(1+extra*d.HealthPerFloor/settings.MaxHealth,d.MaxHealthMultiplier),
+		Speed=math.min(settings.WalkSpeed+extra*d.SpeedPerFloor,d.MaxSpeed),
+		Damage=math.min(settings.AttackDamage+extra*d.DamagePerFloor,d.MaxDamage),
+		MaxAlive=math.min(d.BaseAlive+math.floor(extra/d.ExtraAliveEvery),d.MaxAlive),
+	}
 end
 function ZombieService.Count()
 	local count = 0
@@ -325,13 +338,13 @@ function ZombieService.SetPaused(paused)
 	end
 end
 function ZombieService.Spawn()
-	if Clock.Paused or ZombieService.Count() >= settings.MaxAlive then return false end
+	if Clock.Paused or ZombieService.Count() >= floorTuning.MaxAlive then return false end
 	local point = chooseSpawn()
 	if not point then return false end
-	local rig = ZombieRig.Create(point, rng:NextInteger(1,10))
+	local rig = ZombieRig.Create(point, rng:NextInteger(1,10),floorTuning)
 	local angle, now = rng:NextNumber(-math.pi, math.pi), Clock.Now()
 	local data = {
-		rig=rig, state="Spawn", stateSince=now, approach=Vector3.new(math.cos(angle),0,math.sin(angle)),
+		rig=rig, attackDamage=floorTuning.Damage, state="Spawn", stateSince=now, approach=Vector3.new(math.cos(angle),0,math.sin(angle)),
 		nextAttack=now+0.7, nextPath=0, nextSight=0, nextHurtSound=0,
 		nextGroan=now+rng:NextNumber(settings.IdleGroanMin,settings.IdleGroanMax),
 		reactUntil=0, reactDuration=1, hitSide=0, reactionSerial=0,

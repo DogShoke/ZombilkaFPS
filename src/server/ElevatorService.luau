@@ -14,13 +14,13 @@ function ElevatorService.SetOpen(floor, open)
 		door.Tween:Play()
 		local tween=door.Tween
 		task.delay(Config.Run.DoorDuration,function()
-			if door.Tween==tween then door.Part.CanCollide=not open end
+			if door.Tween==tween and door.Part.Parent then door.Part.CanCollide=not open end
 		end)
 	end
 end
 function ElevatorService.Inside(floor, position)
-	local p=position-floor.Origin
-	return math.abs(p.X)<7.8 and p.Z>59 and p.Z<75.5 and p.Y>0 and p.Y<12
+	local p=floor.Cabin:PointToObjectSpace(position)
+	return math.abs(p.X)<7.8 and math.abs(p.Z)<7.8 and p.Y>-3 and p.Y<9
 end
 function ElevatorService.SetLabel(floor, number)
 	floor.Title.SurfaceGui.TextLabel.Text = "↑  ЭТАЖ "..string.format("%02d",number)

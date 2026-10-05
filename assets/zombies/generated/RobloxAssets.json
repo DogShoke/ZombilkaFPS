@@ -1,0 +1,16 @@
+{
+  "texture": "rbxassetid://101832083458462",
+  "meshes": {
+    "Zombie_Office": "rbxassetid://82480464458509",
+    "Zombie_Medic": "rbxassetid://101990319882584",
+    "Zombie_Firefighter": "rbxassetid://103942833893994",
+    "Zombie_Builder": "rbxassetid://133034091573487",
+    "Zombie_Courier": "rbxassetid://72326154071568",
+    "Zombie_Security": "rbxassetid://128947524301622",
+    "Zombie_Mechanic": "rbxassetid://90784561241035",
+    "Zombie_Chef": "rbxassetid://114025723681031",
+    "Zombie_Biker": "rbxassetid://95355973533732",
+    "Zombie_Punk": "rbxassetid://103658896844321"
+  },
+  "status": "Integrated with Rojo templates and runtime tested"
+}

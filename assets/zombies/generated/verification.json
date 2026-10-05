@@ -1,0 +1,22 @@
+{
+  "export": "exports/CityZombies_Roblox.fbx",
+  "blenderReimport": {
+    "rigs": 10,
+    "bones": 160,
+    "uniqueBoneNames": 160,
+    "unweightedVertices": 0,
+    "uvLayersPerMesh": 1
+  },
+  "robloxRuntime": {
+    "templateCount": 10,
+    "bonesPerTemplate": 16,
+    "allTenMoved": true,
+    "observedWalkSpeed": 11,
+    "observedThighAnglesDegrees": [5.7631, 8.8532],
+    "headOffsetStuds": [0, 2.086, 0.11549],
+    "normalWaveVariant": "Zombie_Security",
+    "bodyShotHealth": 75,
+    "headShotHealth": 25,
+    "observedZombieAttackDamage": 12
+  }
+}

@@ -12,3 +12,8 @@ sourcemap.json
 /assets/weapons/RojoTemplates.json
 /assets/weapons/exports/Weapons_QA.rbxlx
 /assets/weapons/tools/rojo/
+
+# Blender recovery copies of generated zombie sources
+/assets/zombies/generated/*.blend1
+/assets/zombies/generated/tools/rojo/
+/assets/zombies/generated/validation.rbxlx

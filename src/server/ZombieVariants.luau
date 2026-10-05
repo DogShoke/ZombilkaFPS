@@ -1,4 +1,5 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Config = require(ReplicatedStorage.Shared.Config)
 local LegacyAsset = require(script.Parent.ZombieAsset)
 local ZombieVariants = {}
 
@@ -9,7 +10,8 @@ local function weld(a, b)
 end
 
 function ZombieVariants.Create(index)
-	local folder = ReplicatedStorage.Assets:FindFirstChild("Zombies")
+	local folder = ReplicatedStorage.Assets:FindFirstChild(Config.Zombies.VariantFolder or "Zombies")
+		or ReplicatedStorage.Assets:FindFirstChild("Zombies")
 	local templates = {}
 	if folder then
 		for _, item in ipairs(folder:GetChildren()) do

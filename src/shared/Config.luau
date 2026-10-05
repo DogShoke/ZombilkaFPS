@@ -66,6 +66,7 @@ Config.Vfx = {
 	DamageFlashDuration = 0.28, BloodParticleCount = 6, HeadBloodParticleCount = 10, BloodParticleLifetime = 0.2,
 }
 Config.Zombies = {
+	VariantFolder = "CityZombies",
 	MaxAlive = 9, MinSpawnDistance = 32, MaxSpawnDistance = 360,
 	MaxHealth = 100, WalkSpeed = 11, AggroRange = 420, AttackRange = 4.4, PreferredMinDistance = 2.8,
 	AttackDamage = 12, AttackWindup = 0.48, AttackRecover = 0.38, AttackCooldown = 1.6,

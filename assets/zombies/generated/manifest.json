@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Zombie_Office",
+    "label": "Офисный работник",
+    "vertices": 692,
+    "triangles": 1138,
+    "bones": 16,
+    "height": 5.904
+  },
+  {
+    "name": "Zombie_Medic",
+    "label": "Медик",
+    "vertices": 694,
+    "triangles": 1150,
+    "bones": 16,
+    "height": 5.984
+  },
+  {
+    "name": "Zombie_Firefighter",
+    "label": "Пожарный",
+    "vertices": 716,
+    "triangles": 1178,
+    "bones": 16,
+    "height": 6.208
+  },
+  {
+    "name": "Zombie_Builder",
+    "label": "Строитель",
+    "vertices": 692,
+    "triangles": 1142,
+    "bones": 16,
+    "height": 6.208
+  },
+  {
+    "name": "Zombie_Courier",
+    "label": "Курьер",
+    "vertices": 686,
+    "triangles": 1134,
+    "bones": 16,
+    "height": 5.904
+  },
+  {
+    "name": "Zombie_Security",
+    "label": "Охранник",
+    "vertices": 684,
+    "triangles": 1130,
+    "bones": 16,
+    "height": 6.208
+  },
+  {
+    "name": "Zombie_Mechanic",
+    "label": "Механик",
+    "vertices": 668,
+    "triangles": 1102,
+    "bones": 16,
+    "height": 5.904
+  },
+  {
+    "name": "Zombie_Chef",
+    "label": "Повар",
+    "vertices": 696,
+    "triangles": 1136,
+    "bones": 16,
+    "height": 6.5280000000000005
+  },
+  {
+    "name": "Zombie_Biker",
+    "label": "Байкер",
+    "vertices": 684,
+    "triangles": 1126,
+    "bones": 16,
+    "height": 6.112
+  },
+  {
+    "name": "Zombie_Punk",
+    "label": "Панк",
+    "vertices": 694,
+    "triangles": 1146,
+    "bones": 16,
+    "height": 5.904
+  }
+]

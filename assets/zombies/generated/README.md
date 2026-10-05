@@ -1,0 +1,15 @@
+# Original faceted city zombies
+
+Ten original Blender models inspired by the user's visual references: office worker, medic, firefighter, builder, courier, security guard, mechanic, chef, biker and punk. No geometry, branding or textures were copied from the pictured asset pack.
+
+`CityZombies.blend` contains the editable models, sixteen deform bones per character, presentation poses, palette material, camera and lighting. `CityZombies_BaseColor.png` is the shared sRGB color atlas; every mesh has exactly one `BaseColor_UV` layer. Equal-color faces deliberately share palette coordinates. There are 1,102–1,178 triangles per character. Each vertex has one explicit bone weight; hard articulation preserves the faceted shapes.
+
+`exports/CityZombies_Roblox.fbx` includes all ten rigs in their neutral bind pose, with the color texture embedded, no leaf bones and no animation baking. Individual FBX files are also available. Source height is about 1.8–2 units; the authoring helper normalizes imported models to 5.9–6.5 studs, retaining the chef's taller hat. All 160 bone names are unique across the pack: Studio merged identically named bones in the initial combined export, so each rig now has a character prefix. That original export is not suitable for the game.
+
+`tools/build_city_zombies.py` reproduces the pack in a separate Blender scene, preserving unrelated scene objects. The exported FBX was reimported into a temporary Blender scene: all ten meshes retained one UV layer, matching armatures and zero unweighted vertices. `CityZombies_Preview.png` shows the posed source models.
+
+Roblox color atlas asset: `101832083458462`. Persistent mesh IDs are in `RobloxAssets.json`; game templates are in `roblox`, mapped to `ReplicatedStorage.Assets.CityZombies`. `Config.Zombies.VariantFolder` selects this pool, retaining the original supplied zombies as fallback assets.
+
+Direct mesh upload through Studio's `CreateAssetAsync` returned “CreateAssetAsync and CreateAssetVersionAsync are not available yet”, so the user imported the corrected FBX through Import 3D. `tools/prepare_studio_pack.luau` prepares clones, assigns the palette and normalizes the complete rig. The combined import's shared scene root also offsets bone positions from the individual meshes; the helper reads the uploaded meshes' own bind matrices through EditableMesh and reconstructs each 16-bone hierarchy under its MeshPart. Uploaded geometry and skin weights are unchanged. No EditableMesh usage is required during gameplay.
+
+Observed in Studio Play: all ten variants moved on the floor, a walking model reached 11 studs/s and its thigh angle changed from 5.76 to 8.85 degrees. The head hitbox is approximately `(0, 2.086, 0.115)` studs relative to the gameplay root. A normal wave spawned the new Security variant; a Glock body hit changed health 100→75, a head hit 75→25, and an AI attack removed 12 player health. Animation sides are derived from bind positions to handle differing FBX naming conventions. Runtime QA objects disappear when Play stops.

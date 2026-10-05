@@ -19,6 +19,9 @@
         "Zombies": {
           "$path": "assets/zombies/roblox"
         },
+        "CityZombies": {
+          "$path": "assets/zombies/generated/roblox"
+        },
         "WeaponMotion": {
           "$path": "assets/weapons/motion"
         },

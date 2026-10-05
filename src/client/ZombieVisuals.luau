@@ -20,7 +20,8 @@ local function attach(model)
 		if not item:IsA("Bone") then return end
 		local key = role(item.Name)
 		if key then
-			entry.bones[item] = { role = key, right = item.Name:find(" R ", 1, true) ~= nil,
+			-- FBX rigs can label sides in opposite conventions; animate their actual bind positions.
+			entry.bones[item] = { role = key, right = root.CFrame:PointToObjectSpace(item.WorldPosition).X > 0,
 				basis = root.CFrame:ToObjectSpace(item.WorldCFrame).Rotation }
 		end
 	end

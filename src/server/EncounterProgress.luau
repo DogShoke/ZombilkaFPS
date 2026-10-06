@@ -1,22 +1,25 @@
--- Server-owned finite obligations; recovering an enemy never counts as a kill.
-local Progress = {}
-function Progress.New(phase)
-	return {Budget=phase.Budget,Pending=phase.Budget,Alive=0,Defeated=0,Issued=0,Requeued=0,Elapsed=0,Mode=phase.Mode,Duration=phase.Duration or 0,LastPressure=-math.huge,Complete=false}
+-- Continuous encounters count confirmed kills, never recycled NPCs.
+local P={}
+function P.New(plan)
+ return {Mode=plan.Mode,Quota=plan.Quota,Duration=plan.Duration or 0,Alive=0,Defeated=0,Issued=0,Requeued=0,Elapsed=0,Complete=false,Section=1,SectionKills=0,DestroyedSources=0}
 end
-function Progress.Spawned(p) assert(p.Pending>0); p.Pending-=1; p.Alive+=1; p.Issued+=1 end
-function Progress.Defeated(p) assert(p.Alive>0); p.Alive-=1; p.Defeated+=1 end
-function Progress.Requeue(p) assert(p.Alive>0); p.Alive-=1; p.Pending+=1; p.Requeued+=1 end
-function Progress.EnsurePressure(p,batch)
-	if p.Mode=="Holdout" and p.Elapsed<p.Duration and p.Pending==0 and p.Alive==0 then
-		p.Budget+=batch; p.Pending+=batch
-	end
+function P.Spawned(p)p.Alive+=1;p.Issued+=1 end
+function P.Defeated(p)p.Alive=math.max(0,p.Alive-1);p.Defeated+=1;p.SectionKills+=1 end
+function P.Requeue(p)p.Alive=math.max(0,p.Alive-1);p.Requeued+=1 end
+function P.Step(p,dt,healthy,sections,sourceCount)
+ if p.Complete then return true,false end
+ -- A failed spawner is not free survival time.
+ if healthy then p.Elapsed+=dt end
+ local advanced=false
+ if p.Mode=="WideGauntlet"then
+  local section=sections[p.Section]
+  if p.SectionKills>=section.Quota then
+   if p.Section==#sections then p.Complete=true
+   else p.Section+=1;p.SectionKills=0;advanced=true end
+  end
+ elseif p.Mode=="SpawnerHunt"then p.Complete=p.DestroyedSources>=sourceCount and sourceCount>0
+ elseif p.Mode=="Survival"then p.Complete=p.Elapsed>=p.Duration and p.Defeated>=p.Quota
+ else p.Complete=p.Defeated>=p.Quota end
+ return p.Complete,advanced
 end
-function Progress.Step(p,dt,now,inside,spawnHealthy,grace,pressure)
-	if pressure then p.LastPressure=now end
-	if p.Mode=="Holdout" then
-		if inside and spawnHealthy and (pressure or (p.Pending>0 and now-p.LastPressure<=grace)) then p.Elapsed=math.min(p.Duration,p.Elapsed+dt) end
-	elseif p.Mode=="Survival" then p.Elapsed=math.min(p.Duration,p.Elapsed+dt) end
-	p.Complete=p.Pending==0 and p.Alive==0 and p.Defeated==p.Budget and (p.Mode=="ClearWaves" or p.Elapsed>=p.Duration)
-	return p.Complete
-end
-return Progress
+return P

@@ -1,0 +1,65 @@
+{
+  "fbx_reimport": [
+    {
+      "file": "DeskWorkstation",
+      "mesh": "DeskWorkstation.001",
+      "uv_layers": 1,
+      "materials": 1,
+      "triangles": 660,
+      "size_m": [
+        1.6,
+        0.75,
+        1.435
+      ]
+    },
+    {
+      "file": "OfficeChair",
+      "mesh": "OfficeChair.001",
+      "uv_layers": 1,
+      "materials": 1,
+      "triangles": 628,
+      "size_m": [
+        0.6925,
+        0.7282,
+        1.087
+      ]
+    },
+    {
+      "file": "Photocopier",
+      "mesh": "Photocopier.001",
+      "uv_layers": 1,
+      "materials": 1,
+      "triangles": 532,
+      "size_m": [
+        0.905,
+        0.8007,
+        1.4248
+      ]
+    },
+    {
+      "file": "LargePlant",
+      "mesh": "LargePlant.001",
+      "uv_layers": 1,
+      "materials": 1,
+      "triangles": 334,
+      "size_m": [
+        0.6669,
+        0.6606,
+        1.2192
+      ]
+    },
+    {
+      "file": "Keyboard",
+      "mesh": "Keyboard.001",
+      "uv_layers": 1,
+      "materials": 1,
+      "triangles": 3344,
+      "size_m": [
+        0.45,
+        0.15,
+        0.036
+      ]
+    }
+  ],
+  "runtime_tested": false
+}

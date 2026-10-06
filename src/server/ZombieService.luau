@@ -5,6 +5,7 @@ local PhysicsService = game:GetService("PhysicsService")
 local Config = require(game.ReplicatedStorage.Shared.Config)
 local Audio = require(game.ReplicatedStorage.Shared.Audio)
 local ZombieRig = require(script.Parent.ZombieRig)
+local GroundFX=require(script.Parent.GroundSpawnFX)
 
 local Clock = require(script.Parent.RunClock)
 local Progress = require(script.Parent.EncounterProgress)
@@ -16,9 +17,11 @@ local rng = Random.new()
 local settings = Config.Zombies
 local bounds = { Origin=Vector3.zero, HalfWidth=settings.NavigationHalfExtent, HalfDepth=settings.NavigationHalfExtent }
 local floorTuning = { Health=settings.MaxHealth, Speed=settings.WalkSpeed, Damage=settings.AttackDamage, MaxAlive=settings.MaxAlive }
-local epoch, phasePlan, phaseProgress, spawning = 0, nil, nil, false
+local epoch, phaseProgress, spawning = 0, nil, false
+local reservations={}
+local spawnEnabled=false
 local diagnostics = {Failures=0,Reason="",FallbackSector="",Blocked=false}
-local fallbackSector, fallbackReady
+
 local navigationNodes={}
 local spawnSerial=0
 local recover
@@ -105,7 +108,10 @@ local function navigate(data, destination, target, now)
 		end
 	end
 	local waypoint = data.waypoints and data.waypoints[data.waypointIndex]
-	if waypoint and (waypoint.Position - rig.root.Position).Magnitude < 3 then
+	-- Path positions sit on the floor; compare horizontal progress against the
+	-- humanoid root, which normally stays three studs above that surface.
+	local waypointDelta=waypoint and waypoint.Position-rig.root.Position
+	if waypointDelta and Vector3.new(waypointDelta.X,0,waypointDelta.Z).Magnitude<2.5 and math.abs(waypointDelta.Y)<4 then
 		data.waypointIndex += 1
 		waypoint = data.waypoints[data.waypointIndex]
 	end
@@ -162,7 +168,7 @@ local function runAI(data)
 		if rig.root.Position.Y<bounds.Origin.Y-10 then recover(data,"Fell below floor") break end
 		local now = Clock.Now()
 		local target, distance = nearestTarget(rig.root.Position)
-		if data.state == "Spawn" and now - data.stateSince >= settings.SpawnFade then setState(data, "Idle", now) end
+		if data.state == "Spawn" then task.wait(settings.ThinkInterval); continue end
 		if data.state == "HitReact" and now >= data.reactUntil then setState(data, "Chase", now) end
 		if data.state ~= "Spawn" and data.state ~= "HitReact" then
 			if not target then
@@ -185,10 +191,13 @@ local function runAI(data)
 						Audio.Play("ZombieAttack", rig.torso)
 					end
 				else
-					local offset=distance>settings.AttackRange and data.approach*settings.ApproachSpacing or Vector3.zero
+					-- Keep elevated destinations on their actual supporting surface:
+					-- a lateral surround offset can otherwise point outside a car roof.
+					local elevated=target.root.Position.Y>bounds.Origin.Y+5
+					local offset=distance>settings.AttackRange and not elevated and data.approach*settings.ApproachSpacing or Vector3.zero
 					local interception=interceptDestination(data,target,distance)
 					if data.rig.model:GetAttribute("Intercepting")~=(interception~=nil) then data.rig.model:SetAttribute("Intercepting",interception~=nil) end
-					local destination = interception or clampArena(target.root.Position + offset + separation)
+					local destination = interception or clampArena(target.root.Position + offset + (elevated and Vector3.zero or separation))
 					navigate(data, destination, target, now)
 				end
 			end
@@ -211,7 +220,11 @@ local function runAI(data)
 			data.lastPosition, data.lastMovedAt = rig.root.Position, now
 			data.stuckSince=now
 		end
-		if target and distance>settings.AttackRange+2 and now-data.stuckSince>E.StuckRecoverAfter then recover(data,"Navigation stalled") break end
+		if target then
+ if not data.bestDistance or distance<data.bestDistance-4 then data.bestDistance=distance;data.approachAt=now end
+ local unseen=not directSight(data,target,now)
+ if unseen and(now-data.stuckSince>E.StuckRecoverAfter or distance>E.LostDistance and now-(data.approachAt or now)>E.ApproachTimeout)then recover(data,"Cannot approach combat")break end
+end
 		if target and now-data.stuckSince>E.StuckRepathAfter then data.nextPath=0 end
 		ZombieRig.Pose(rig, data.state, now, math.clamp((data.reactUntil - now) / data.reactDuration, 0, 1), data.hitSide)
 		task.wait(settings.ThinkInterval)
@@ -243,7 +256,7 @@ recover=function(data,reason)
 	if data.epoch==epoch and data.progress then
 		Progress.Requeue(data.progress)
 		diagnostics.Reason=reason; diagnostics.Recovered=(diagnostics.Recovered or 0)+1
-		if data.progress.Requeued>=E.MaxRequeues then diagnostics.Blocked=true; warn("Zombie recovery limit: "..reason) end
+		if data.progress.Requeued%E.MaxRequeues==0 then warn("Repeated zombie recovery: "..reason) end
 	end
 	data.rig.model:Destroy()
 end
@@ -276,6 +289,7 @@ function ZombieService.React(model, headshot, shotDirection)
 end
 
 local function validSpawn(point)
+	if math.abs(point.X-bounds.Origin.X)>bounds.HalfWidth-4 or math.abs(point.Z-bounds.Origin.Z)>bounds.HalfDepth-4 then return false end
 	local nearestDistance
 	for _, player in ipairs(Players:GetPlayers()) do
 		local character = player.Character
@@ -300,35 +314,35 @@ local function validSpawn(point)
 	for _, data in pairs(active) do
 		if (data.rig.root.Position - point).Magnitude < settings.SpawnSeparation then return false end
 	end
+	for _,other in reservations do if (other-point).Magnitude<settings.SpawnSeparation then return false end end
 	return true
 end
 
 local function visibleSpawn(point)
-	local excluded={}
-	for _,p in Players:GetPlayers() do if p.Character then table.insert(excluded,p.Character) end end
-	for m in active do table.insert(excluded,m) end
-	local params=RaycastParams.new(); params.FilterType=Enum.RaycastFilterType.Exclude; params.FilterDescendantsInstances=excluded
-	for _,p in Players:GetPlayers() do
-		local head=p.Character and p.Character:FindFirstChild("Head")
-		if head then local toward=point+Vector3.new(0,3,0)-head.Position
-			if toward.Magnitude>0 and head.CFrame.LookVector:Dot(toward.Unit)>.2 and not workspace:Raycast(head.Position,toward,params) then return true end
-		end
-	end
-	return false
+ -- Announced emergence is allowed in sight. Avoid close points behind the player.
+ for _,p in Players:GetPlayers()do
+  local head=p.Character and p.Character:FindFirstChild("Head")
+  if head then local toward=point-head.Position
+   if toward.Magnitude<settings.RearSpawnDistance and toward.Magnitude>0 and head.CFrame.LookVector:Dot(toward.Unit)<-.3 then return true end
+  end
+ end
+ return false
 end
-local function chooseSpawn(directions)
+local function chooseSpawn(origin)
 	local candidates={}
-	for _, zone in ipairs(zones) do
-		if phasePlan and (not table.find(directions,zone.AttackDirection) or not table.find(zone.AllowedPhases,phasePlan.Id)) then continue end
+	for _, zone in ipairs(origin and {{Id="Burst",Position=origin,Radius=38,EntryKind="Source",Weight=1}}or zones) do
+
 		for _ = 1, 3 do
-			local point = zone.Position + Vector3.new(rng:NextNumber(-3, 3), 0, rng:NextNumber(-3, 3))
+			local angle=rng:NextNumber(0,math.pi*2)
+ local radius=zone.EntryKind=="Source"and (zone.Radius or 38)or rng:NextNumber(0,zone.Radius or 6)
+ local point=zone.Position+Vector3.new(math.cos(angle)*radius,0,math.sin(angle)*radius)
 			if validSpawn(point) and not visibleSpawn(point) then
 				local score = rng:NextNumber(0, 1)*(zone.Weight or 1)
 				for _, player in ipairs(Players:GetPlayers()) do
 					local head = player.Character and player.Character:FindFirstChild("Head")
 					if head then
 						local toward = point - head.Position
-						if toward.Magnitude > 0 then score -= math.max(0, head.CFrame.LookVector:Dot(toward.Unit)) * 1.2 end
+      if toward.Magnitude > 0 then score += math.max(0, head.CFrame.LookVector:Dot(toward.Unit)) * .6 - math.abs(toward.Magnitude-settings.PreferredSpawnDistance)/settings.MaxSpawnDistance end
 					end
 				end
 				table.insert(candidates,{Point=point,Score=score,Zone=zone})
@@ -373,7 +387,8 @@ function ZombieService.Start(spawnZones)
 end
 
 function ZombieService.Configure(spawnZones, floorBounds, number, nodes)
-	epoch+=1; spawning=false; phasePlan=nil; phaseProgress=nil
+	epoch+=1; spawning=false;  phaseProgress=nil;spawnEnabled=false
+ for marker in reservations do if marker.Parent then marker:Destroy()end end;reservations={}
 	zones = spawnZones
 	if floorBounds then bounds=floorBounds end
 	navigationNodes={}; spawnSerial=0
@@ -384,15 +399,12 @@ function ZombieService.Configure(spawnZones, floorBounds, number, nodes)
 		Health=settings.MaxHealth*math.min(1+extra*d.HealthPerFloor/settings.MaxHealth,d.MaxHealthMultiplier),
 		Speed=math.min(settings.WalkSpeed+extra*d.SpeedPerFloor,d.MaxSpeed),
 		Damage=math.min(settings.AttackDamage+extra*d.DamagePerFloor,d.MaxDamage),
-		MaxAlive=math.min(d.BaseAlive+math.floor(extra/d.ExtraAliveEvery),d.MaxAlive),
+		MaxAlive=Config.Run.Horde.AliveCap,
 	}
 end
-function ZombieService.BeginPhase(plan,progress)
-	phasePlan=table.clone(plan); phasePlan.Directions=table.clone(plan.Directions); phaseProgress=progress; fallbackSector=nil; fallbackReady=nil
+function ZombieService.BeginEncounter(progress)
+	phaseProgress=progress;spawnEnabled=true
 	diagnostics={Failures=0,Reason="",FallbackSector="",Blocked=false}
-end
-function ZombieService.ActivateDirection(sector)
-	if phasePlan and sector==phasePlan.ScheduledDirection and not table.find(phasePlan.Directions,sector) then table.insert(phasePlan.Directions,sector) end
 end
 function ZombieService.Diagnostics() return diagnostics end
 function ZombieService.HasPressure(position)
@@ -408,8 +420,9 @@ function ZombieService.Count()
 	return count
 end
 function ZombieService.Clear()
-	epoch+=1; phasePlan=nil; phaseProgress=nil; spawning=false
-	diagnostics={Failures=0,Reason="",FallbackSector="",Blocked=false}; fallbackSector=nil; fallbackReady=nil
+	epoch+=1;phaseProgress=nil;spawning=false;spawnEnabled=false
+	for marker in reservations do if marker.Parent then marker:Destroy()end end;reservations={}
+	diagnostics={Failures=0,Reason="",FallbackSector="",Blocked=false}
 	for model, data in pairs(active) do
 		data.state = "Dead"
 		model:Destroy()
@@ -425,44 +438,54 @@ function ZombieService.SetPaused(paused)
 		ZombieRig.Pause(data.rig, paused)
 	end
 end
-function ZombieService.Spawn(preferredSector)
-	if Clock.Paused or spawning or diagnostics.Blocked or not phaseProgress or phaseProgress.Pending<=0 or ZombieService.Count() >= floorTuning.MaxAlive then return false end
-	spawning=true
-	local token,progress=epoch,phaseProgress
-	local directions=preferredSector and table.find(phasePlan.Directions,preferredSector) and {preferredSector} or table.clone(phasePlan.Directions)
-	if fallbackSector and Clock.Now()>=(fallbackReady or math.huge) then table.insert(directions,fallbackSector) end
-	local ok,point,zone=pcall(chooseSpawn,directions)
-	if token~=epoch then return false end
-	spawning=false
-	if not ok or not point then
-		diagnostics.Failures+=1; diagnostics.Reason=ok and "No safe reachable spawn" or tostring(point)
-		diagnostics.Since=diagnostics.Since or Clock.Now()
-		if diagnostics.Failures>=E.FallbackAfter and #phasePlan.FallbackDirections>0 and (not fallbackSector or Clock.Now()>(fallbackReady or 0)+E.SpawnWarningAfter) then
-			diagnostics.FallbackIndex=((diagnostics.FallbackIndex or 0)%#phasePlan.FallbackDirections)+1
-			fallbackSector=phasePlan.FallbackDirections[diagnostics.FallbackIndex]; fallbackReady=Clock.Now()+E.WarningDuration
-			diagnostics.FallbackSector=fallbackSector; diagnostics.FallbackReady=fallbackReady
-		end
-		if diagnostics.Since and Clock.Now()-diagnostics.Since>E.SpawnWarningAfter and not diagnostics.Warned then
-			diagnostics.Warned=true; warn("Spawn delayed; obligations retained: "..diagnostics.Reason)
-		end
-		return false
-	end
-	diagnostics.Since=nil; diagnostics.Reason=""; diagnostics.Failures=0
-	local rig = ZombieRig.Create(point, rng:NextInteger(1,10),floorTuning)
-	spawnSerial+=1
-	Progress.Spawned(progress)
-	rig.model:SetAttribute("SpawnZone",zone.Id); rig.model:SetAttribute("AttackDirection",zone.AttackDirection)
-	local angle, now = rng:NextNumber(-math.pi, math.pi), Clock.Now()
-	local data = {
-		rig=rig, epoch=token, progress=progress, intercept=spawnSerial%3==0, stuckSince=now, attackDamage=floorTuning.Damage, state="Spawn", stateSince=now, approach=Vector3.new(math.cos(angle),0,math.sin(angle)),
-		nextAttack=now+0.7, nextPath=0, nextSight=0, nextHurtSound=0,
-		nextGroan=now+rng:NextNumber(settings.IdleGroanMin,settings.IdleGroanMax),
-		reactUntil=0, reactDuration=1, hitSide=0, reactionSerial=0,
-		lastPosition=rig.root.Position, lastMovedAt=now,
-	}
-	active[rig.model]=data
-	rig.humanoid.Died:Connect(function() onDeath(data) end)
-	task.spawn(runAI,data)
-	return true
+function ZombieService.SetZones(newZones)zones=newZones end
+function ZombieService.Pending()
+ local n=0;for _ in reservations do n+=1 end;return n
+end
+function ZombieService.StopSpawning()
+ spawnEnabled=false
+ for marker in reservations do if marker.Parent then marker:Destroy()end end;reservations={}
+end
+function ZombieService.Spawn(origin)
+ if not spawnEnabled or Clock.Paused or spawning or not phaseProgress or ZombieService.Count()+ZombieService.Pending()>=floorTuning.MaxAlive or ZombieService.Pending()>=Config.Run.Horde.MaxWarnings then return false end
+ spawning=true
+ local token,progress=epoch,phaseProgress
+ local ok,point,zone=pcall(chooseSpawn,origin)
+ if token~=epoch then return false end
+ spawning=false
+ if not spawnEnabled then return false end
+ if not ok or not point then
+  diagnostics.Failures+=1;diagnostics.Reason=ok and "No reachable safe emergence point"or tostring(point);diagnostics.Since=diagnostics.Since or Clock.Now()
+  return false
+ end
+ diagnostics.Since=nil;diagnostics.Reason="";diagnostics.Failures=0
+ local marker=GroundFX.Warning(point,workspace,E.WarningDuration);reservations[marker]=point
+ task.spawn(function()
+  local ready=Clock.Now()+E.WarningDuration
+  while Clock.Now()<ready and token==epoch and spawnEnabled and marker.Parent do task.wait(.05)end
+  if token~=epoch or not spawnEnabled or not marker.Parent then reservations[marker]=nil;if marker.Parent then marker:Destroy()end;return end
+  reservations[marker]=nil
+  -- Player may have moved toward the announced location; cancel, never spawn under them.
+  if not validSpawn(point)then marker:Destroy();return end
+  local rig=ZombieRig.Create(point,rng:NextInteger(1,10),floorTuning)
+  spawnSerial+=1;Progress.Spawned(progress)
+  rig.model:SetAttribute("SpawnZone",zone.Id);rig.model:SetAttribute("AttackDirection",zone.AttackDirection or "Source")
+  local angle,now=rng:NextNumber(-math.pi,math.pi),Clock.Now()
+  local data={rig=rig,epoch=token,progress=progress,intercept=spawnSerial%3==0,stuckSince=now,approachAt=now,attackDamage=floorTuning.Damage,state="Spawn",stateSince=now,approach=Vector3.new(math.cos(angle),0,math.sin(angle)),nextAttack=now+.7,nextPath=0,nextSight=0,nextHurtSound=0,nextGroan=now+rng:NextNumber(settings.IdleGroanMin,settings.IdleGroanMax),reactUntil=0,reactDuration=1,hitSide=0,reactionSerial=0,lastPosition=rig.root.Position,lastMovedAt=now}
+  active[rig.model]=data
+  rig.humanoid.Died:Connect(function()onDeath(data)end)
+  rig.root.Anchored=true;rig.humanoid.WalkSpeed=0
+  for _,p in rig.model:GetDescendants()do if p:IsA("BasePart")then p.CanCollide=false end end
+  local normal=CFrame.new(point+Vector3.new(0,3,0));local started=Clock.Now()
+  while Clock.Now()-started<E.EmergenceDuration and token==epoch and rig.model.Parent and rig.humanoid.Health>0 do
+   local t=math.clamp((Clock.Now()-started)/E.EmergenceDuration,0,1)
+   rig.model:PivotTo(normal*CFrame.new(0,-6*(1-t),0));task.wait(.03)
+  end
+  marker:Destroy()
+  if token~=epoch or not rig.model.Parent or rig.humanoid.Health<=0 then return end
+  rig.model:PivotTo(normal);rig.root.Anchored=false;rig.root:SetNetworkOwner(nil);rig.torso.CanCollide=true;rig.humanoid.WalkSpeed=floorTuning.Speed
+  setState(data,"Chase",Clock.Now());task.spawn(runAI,data)
+ end)
+ return true
 end
 return ZombieService

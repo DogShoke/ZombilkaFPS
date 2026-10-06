@@ -1,0 +1,682 @@
+{
+  "count": 52,
+  "units": "metres",
+  "assets": [
+    {
+      "name": "BarrierGateClosed",
+      "zone": "access",
+      "size_m": [
+        2.8,
+        0.45,
+        1.145
+      ],
+      "triangles": 280,
+      "file": "exports/BarrierGateClosed.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BarrierGateRaised",
+      "zone": "access",
+      "size_m": [
+        1.9715,
+        0.45,
+        3.0103
+      ],
+      "triangles": 280,
+      "file": "exports/BarrierGateRaised.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ParkingPaymentKiosk",
+      "zone": "access",
+      "size_m": [
+        0.51,
+        0.48,
+        1.76
+      ],
+      "triangles": 352,
+      "file": "exports/ParkingPaymentKiosk.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "TicketTerminal",
+      "zone": "access",
+      "size_m": [
+        0.51,
+        0.48,
+        1.76
+      ],
+      "triangles": 352,
+      "file": "exports/TicketTerminal.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SecurityBooth",
+      "zone": "access",
+      "size_m": [
+        2.083,
+        1.79,
+        2.5325
+      ],
+      "triangles": 1028,
+      "file": "exports/SecurityBooth.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ParkingHangingLight",
+      "zone": "security",
+      "size_m": [
+        1.3,
+        0.238,
+        0.63
+      ],
+      "triangles": 144,
+      "file": "exports/ParkingHangingLight.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BulletSecurityCamera",
+      "zone": "security",
+      "size_m": [
+        0.23,
+        0.675,
+        0.3175
+      ],
+      "triangles": 248,
+      "file": "exports/BulletSecurityCamera.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "DomeSecurityCamera",
+      "zone": "security",
+      "size_m": [
+        0.32,
+        0.32,
+        0.2358
+      ],
+      "triangles": 344,
+      "file": "exports/DomeSecurityCamera.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BollardYellow",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        1.05
+      ],
+      "triangles": 176,
+      "file": "exports/BollardYellow.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BollardWhite",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        0.95
+      ],
+      "triangles": 176,
+      "file": "exports/BollardWhite.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BollardShort",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        0.75
+      ],
+      "triangles": 176,
+      "file": "exports/BollardShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BollardBlack",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        0.8
+      ],
+      "triangles": 176,
+      "file": "exports/BollardBlack.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BollardRed",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        1.0
+      ],
+      "triangles": 176,
+      "file": "exports/BollardRed.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "TrafficCone",
+      "zone": "traffic",
+      "size_m": [
+        0.33,
+        0.33,
+        0.49
+      ],
+      "triangles": 132,
+      "file": "exports/TrafficCone.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BentTrafficCone",
+      "zone": "traffic",
+      "size_m": [
+        0.33,
+        0.33,
+        0.4895
+      ],
+      "triangles": 132,
+      "file": "exports/BentTrafficCone.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "WheelStopStriped",
+      "zone": "traffic",
+      "size_m": [
+        1.6,
+        0.296,
+        0.1745
+      ],
+      "triangles": 172,
+      "file": "exports/WheelStopStriped.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "WheelStopPlain",
+      "zone": "traffic",
+      "size_m": [
+        1.6,
+        0.28,
+        0.169
+      ],
+      "triangles": 100,
+      "file": "exports/WheelStopPlain.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SpeedBump",
+      "zone": "traffic",
+      "size_m": [
+        1.6,
+        0.296,
+        0.1745
+      ],
+      "triangles": 172,
+      "file": "exports/SpeedBump.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "HangingHeightLimiter",
+      "zone": "traffic",
+      "size_m": [
+        2.4,
+        0.134,
+        0.7439
+      ],
+      "triangles": 3956,
+      "file": "exports/HangingHeightLimiter.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ParkingColumn",
+      "zone": "structure",
+      "size_m": [
+        0.46,
+        0.46,
+        2.5
+      ],
+      "triangles": 132,
+      "file": "exports/ParkingColumn.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "EmergencyExitDoor",
+      "zone": "security",
+      "size_m": [
+        1.035,
+        0.185,
+        2.385
+      ],
+      "triangles": 568,
+      "file": "exports/EmergencyExitDoor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "FireCabinet",
+      "zone": "security",
+      "size_m": [
+        0.42,
+        0.264,
+        0.9
+      ],
+      "triangles": 204,
+      "file": "exports/FireCabinet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "OutdoorTrashBin",
+      "zone": "service",
+      "size_m": [
+        0.43,
+        0.4115,
+        0.96
+      ],
+      "triangles": 132,
+      "file": "exports/OutdoorTrashBin.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "Dumpster",
+      "zone": "service",
+      "size_m": [
+        1.5,
+        0.99,
+        1.1891
+      ],
+      "triangles": 848,
+      "file": "exports/Dumpster.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ToolTrolley",
+      "zone": "service",
+      "size_m": [
+        0.67,
+        0.495,
+        0.9225
+      ],
+      "triangles": 760,
+      "file": "exports/ToolTrolley.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ParkingPallet",
+      "zone": "service",
+      "size_m": [
+        1.08,
+        0.96,
+        0.18
+      ],
+      "triangles": 352,
+      "file": "exports/ParkingPallet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ElectricalServiceCabinet",
+      "zone": "service",
+      "size_m": [
+        1.3,
+        0.635,
+        1.15
+      ],
+      "triangles": 964,
+      "file": "exports/ElectricalServiceCabinet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "AirConditioningUnit",
+      "zone": "service",
+      "size_m": [
+        1.15,
+        0.49,
+        0.92
+      ],
+      "triangles": 640,
+      "file": "exports/AirConditioningUnit.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SedanWhite",
+      "zone": "vehicles",
+      "size_m": [
+        2.02,
+        4.229,
+        1.41
+      ],
+      "triangles": 1272,
+      "file": "exports/SedanWhite.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "HatchbackBlue",
+      "zone": "vehicles",
+      "size_m": [
+        2.02,
+        4.229,
+        1.41
+      ],
+      "triangles": 1272,
+      "file": "exports/HatchbackBlue.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SUVGrey",
+      "zone": "vehicles",
+      "size_m": [
+        2.02,
+        4.229,
+        1.773
+      ],
+      "triangles": 1328,
+      "file": "exports/SUVGrey.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ServiceVan",
+      "zone": "vehicles",
+      "size_m": [
+        2.14,
+        4.629,
+        1.91
+      ],
+      "triangles": 1190,
+      "file": "exports/ServiceVan.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "MotorcycleRed",
+      "zone": "vehicles",
+      "size_m": [
+        0.45,
+        1.92,
+        1.05
+      ],
+      "triangles": 1424,
+      "file": "exports/MotorcycleRed.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BicycleBlue",
+      "zone": "vehicles",
+      "size_m": [
+        0.44,
+        1.96,
+        1.03
+      ],
+      "triangles": 1172,
+      "file": "exports/BicycleBlue.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BicycleRack",
+      "zone": "traffic",
+      "size_m": [
+        1.5,
+        0.9,
+        0.685
+      ],
+      "triangles": 340,
+      "file": "exports/BicycleRack.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ParkingSign",
+      "zone": "signs",
+      "size_m": [
+        0.47,
+        0.26,
+        1.615
+      ],
+      "triangles": 400,
+      "file": "exports/ParkingSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SpeedLimitSign",
+      "zone": "signs",
+      "size_m": [
+        0.5,
+        0.26,
+        1.64
+      ],
+      "triangles": 732,
+      "file": "exports/SpeedLimitSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "DirectionSign",
+      "zone": "signs",
+      "size_m": [
+        0.47,
+        0.26,
+        1.615
+      ],
+      "triangles": 200,
+      "file": "exports/DirectionSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "AccessibleParkingSign",
+      "zone": "signs",
+      "size_m": [
+        0.68,
+        0.26,
+        1.615
+      ],
+      "triangles": 524,
+      "file": "exports/AccessibleParkingSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ConcreteBarrierShort",
+      "zone": "traffic",
+      "size_m": [
+        1.2,
+        0.65,
+        0.7
+      ],
+      "triangles": 100,
+      "file": "exports/ConcreteBarrierShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ConcreteBarrierLong",
+      "zone": "traffic",
+      "size_m": [
+        2.4,
+        0.65,
+        0.7
+      ],
+      "triangles": 100,
+      "file": "exports/ConcreteBarrierLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "PlasticBarrierOrange",
+      "zone": "traffic",
+      "size_m": [
+        2.0,
+        0.65,
+        0.7
+      ],
+      "triangles": 232,
+      "file": "exports/PlasticBarrierOrange.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "RoadGuardrail",
+      "zone": "traffic",
+      "size_m": [
+        2.7,
+        0.215,
+        0.9
+      ],
+      "triangles": 176,
+      "file": "exports/RoadGuardrail.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ChainBarrier",
+      "zone": "traffic",
+      "size_m": [
+        1.52,
+        0.22,
+        0.8974
+      ],
+      "triangles": 3824,
+      "file": "exports/ChainBarrier.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "EVChargerPedestal",
+      "zone": "service",
+      "size_m": [
+        0.518,
+        0.31,
+        1.45
+      ],
+      "triangles": 316,
+      "file": "exports/EVChargerPedestal.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "EVChargerWall",
+      "zone": "service",
+      "size_m": [
+        0.518,
+        0.31,
+        0.9
+      ],
+      "triangles": 316,
+      "file": "exports/EVChargerWall.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ServiceElevatorFront",
+      "zone": "structure",
+      "size_m": [
+        1.93,
+        0.3,
+        2.29
+      ],
+      "triangles": 444,
+      "file": "exports/ServiceElevatorFront.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "RoadArrowTile",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.074
+      ],
+      "triangles": 49,
+      "file": "exports/RoadArrowTile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "YellowHatchTile",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.076
+      ],
+      "triangles": 57,
+      "file": "exports/YellowHatchTile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "TyreTrackTile",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.078
+      ],
+      "triangles": 596,
+      "file": "exports/TyreTrackTile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ParkingEntryTunnel",
+      "zone": "structure",
+      "size_m": [
+        3.55,
+        3.3,
+        2.76
+      ],
+      "triangles": 337,
+      "file": "exports/ParkingEntryTunnel.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ParkingRampModule",
+      "zone": "structure",
+      "size_m": [
+        3.2,
+        3.2,
+        1.5492
+      ],
+      "triangles": 241,
+      "file": "exports/ParkingRampModule.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    }
+  ]
+}

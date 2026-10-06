@@ -1,0 +1,370 @@
+{
+  "checked": 52,
+  "runtime_tested": false,
+  "fbx_reimport": [
+    {
+      "name": "ConcreteSupportSquare",
+      "triangles": 132,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ConcreteSupportWide",
+      "triangles": 132,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ConcreteSupportRound",
+      "triangles": 164,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ConcreteIslandShort",
+      "triangles": 80,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ConcreteIslandLong",
+      "triangles": 80,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "JerseyBarrierShort",
+      "triangles": 52,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "JerseyBarrierLong",
+      "triangles": 52,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "JerseyBarrierWide",
+      "triangles": 52,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "StairFlight",
+      "triangles": 456,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "StairFlightTall",
+      "triangles": 528,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "StairLanding",
+      "triangles": 380,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ElevatorHallModule",
+      "triangles": 1492,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BuildingServiceDoor",
+      "triangles": 1680,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "InterLevelRamp",
+      "triangles": 348,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "StackedBoxesCover",
+      "triangles": 224,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "TyreStack",
+      "triangles": 960,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "CanisterCluster",
+      "triangles": 348,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ServiceFlatbedCart",
+      "triangles": 304,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "HandPalletJack",
+      "triangles": 376,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ServiceLockerTall",
+      "triangles": 1520,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WallElectricalBoard",
+      "triangles": 1672,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "CeilingLampShort",
+      "triangles": 144,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "CeilingLampLong",
+      "triangles": 144,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "VentDuctStraight",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "VentDuctElbow",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "CeilingCableBundle",
+      "triangles": 216,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "AmberWarningBeacon",
+      "triangles": 104,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SectionA1",
+      "triangles": 100,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SectionB2",
+      "triangles": 824,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SectionP3",
+      "triangles": 852,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ExitArrowSign",
+      "triangles": 196,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ElevatorArrowSign",
+      "triangles": 1032,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "StairsArrowSign",
+      "triangles": 1496,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "EntrySign",
+      "triangles": 560,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ExitSign",
+      "triangles": 172,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ServiceAreaSign",
+      "triangles": 1888,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BlueZoneFloor",
+      "triangles": 56,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "GreenZoneFloor",
+      "triangles": 56,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "YellowZoneFloor",
+      "triangles": 56,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "OilPuddle",
+      "triangles": 16,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BloodyFootprints",
+      "triangles": 264,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BloodStain",
+      "triangles": 16,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "TurningTyreTrackTile",
+      "triangles": 404,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "GarbageBagPile",
+      "triangles": 120,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SmallLitterPile",
+      "triangles": 288,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WreckedSedan",
+      "triangles": 1460,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "OverturnedMotorcycle",
+      "triangles": 1424,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BrokenBarrierGate",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "CrushedTrafficCone",
+      "triangles": 144,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "DamagedElectricalBoard",
+      "triangles": 304,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "InfectedParkingMeter",
+      "triangles": 512,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ScratchedMetalPanel",
+      "triangles": 184,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    }
+  ]
+}

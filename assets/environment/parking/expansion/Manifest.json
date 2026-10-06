@@ -1,0 +1,682 @@
+{
+  "count": 52,
+  "units": "metres",
+  "assets": [
+    {
+      "name": "ConcreteSupportSquare",
+      "zone": "structure",
+      "size_m": [
+        0.73,
+        0.73,
+        3.0
+      ],
+      "triangles": 132,
+      "file": "exports/ConcreteSupportSquare.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ConcreteSupportWide",
+      "zone": "structure",
+      "size_m": [
+        1.08,
+        1.08,
+        3.0
+      ],
+      "triangles": 132,
+      "file": "exports/ConcreteSupportWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ConcreteSupportRound",
+      "zone": "structure",
+      "size_m": [
+        0.851,
+        0.851,
+        3.0
+      ],
+      "triangles": 164,
+      "file": "exports/ConcreteSupportRound.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ConcreteIslandShort",
+      "zone": "cover",
+      "size_m": [
+        1.6,
+        0.7325,
+        0.32
+      ],
+      "triangles": 80,
+      "file": "exports/ConcreteIslandShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ConcreteIslandLong",
+      "zone": "cover",
+      "size_m": [
+        3.2,
+        0.7325,
+        0.32
+      ],
+      "triangles": 80,
+      "file": "exports/ConcreteIslandLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "JerseyBarrierShort",
+      "zone": "cover",
+      "size_m": [
+        1.4,
+        0.8,
+        0.95
+      ],
+      "triangles": 52,
+      "file": "exports/JerseyBarrierShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "JerseyBarrierLong",
+      "zone": "cover",
+      "size_m": [
+        2.8,
+        0.8,
+        0.95
+      ],
+      "triangles": 52,
+      "file": "exports/JerseyBarrierLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "JerseyBarrierWide",
+      "zone": "cover",
+      "size_m": [
+        4.0,
+        0.8,
+        0.95
+      ],
+      "triangles": 52,
+      "file": "exports/JerseyBarrierWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "StairFlight",
+      "zone": "structure",
+      "size_m": [
+        1.46,
+        2.8,
+        2.7252
+      ],
+      "triangles": 456,
+      "file": "exports/StairFlight.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "StairFlightTall",
+      "zone": "structure",
+      "size_m": [
+        1.66,
+        4.48,
+        3.8052
+      ],
+      "triangles": 528,
+      "file": "exports/StairFlightTall.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "StairLanding",
+      "zone": "structure",
+      "size_m": [
+        3.2,
+        1.8,
+        1.13
+      ],
+      "triangles": 380,
+      "file": "exports/StairLanding.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ElevatorHallModule",
+      "zone": "structure",
+      "size_m": [
+        3.84,
+        2.6,
+        2.7
+      ],
+      "triangles": 1492,
+      "file": "exports/ElevatorHallModule.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BuildingServiceDoor",
+      "zone": "structure",
+      "size_m": [
+        1.185,
+        0.15,
+        2.39
+      ],
+      "triangles": 1680,
+      "file": "exports/BuildingServiceDoor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "InterLevelRamp",
+      "zone": "structure",
+      "size_m": [
+        3.4,
+        6.0,
+        2.2194
+      ],
+      "triangles": 348,
+      "file": "exports/InterLevelRamp.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "StackedBoxesCover",
+      "zone": "cover",
+      "size_m": [
+        1.17,
+        0.6,
+        1.051
+      ],
+      "triangles": 224,
+      "file": "exports/StackedBoxesCover.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "TyreStack",
+      "zone": "cover",
+      "size_m": [
+        0.77,
+        0.77,
+        0.7872
+      ],
+      "triangles": 960,
+      "file": "exports/TyreStack.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "CanisterCluster",
+      "zone": "cover",
+      "size_m": [
+        0.82,
+        0.63,
+        0.605
+      ],
+      "triangles": 348,
+      "file": "exports/CanisterCluster.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ServiceFlatbedCart",
+      "zone": "cover",
+      "size_m": [
+        1.2,
+        0.7,
+        0.985
+      ],
+      "triangles": 304,
+      "file": "exports/ServiceFlatbedCart.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "HandPalletJack",
+      "zone": "cover",
+      "size_m": [
+        0.72,
+        1.4894,
+        1.189
+      ],
+      "triangles": 376,
+      "file": "exports/HandPalletJack.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ServiceLockerTall",
+      "zone": "technical",
+      "size_m": [
+        0.85,
+        0.5125,
+        1.85
+      ],
+      "triangles": 1520,
+      "file": "exports/ServiceLockerTall.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "WallElectricalBoard",
+      "zone": "technical",
+      "size_m": [
+        0.6,
+        0.217,
+        0.94
+      ],
+      "triangles": 1672,
+      "file": "exports/WallElectricalBoard.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "CeilingLampShort",
+      "zone": "atmosphere",
+      "size_m": [
+        1.4,
+        0.212,
+        0.45
+      ],
+      "triangles": 144,
+      "file": "exports/CeilingLampShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "CeilingLampLong",
+      "zone": "atmosphere",
+      "size_m": [
+        2.8,
+        0.212,
+        0.45
+      ],
+      "triangles": 144,
+      "file": "exports/CeilingLampLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "VentDuctStraight",
+      "zone": "technical",
+      "size_m": [
+        2.4,
+        0.46,
+        0.46
+      ],
+      "triangles": 176,
+      "file": "exports/VentDuctStraight.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "VentDuctElbow",
+      "zone": "technical",
+      "size_m": [
+        1.23,
+        1.21,
+        0.46
+      ],
+      "triangles": 176,
+      "file": "exports/VentDuctElbow.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "CeilingCableBundle",
+      "zone": "technical",
+      "size_m": [
+        0.23,
+        1.6,
+        0.07
+      ],
+      "triangles": 216,
+      "file": "exports/CeilingCableBundle.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "AmberWarningBeacon",
+      "zone": "technical",
+      "size_m": [
+        0.24,
+        0.24,
+        0.255
+      ],
+      "triangles": 104,
+      "file": "exports/AmberWarningBeacon.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SectionA1",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "triangles": 100,
+      "file": "exports/SectionA1.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SectionB2",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "triangles": 824,
+      "file": "exports/SectionB2.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SectionP3",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "triangles": 852,
+      "file": "exports/SectionP3.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ExitArrowSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 196,
+      "file": "exports/ExitArrowSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ElevatorArrowSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 1032,
+      "file": "exports/ElevatorArrowSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "StairsArrowSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 1496,
+      "file": "exports/StairsArrowSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "EntrySign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 560,
+      "file": "exports/EntrySign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ExitSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 172,
+      "file": "exports/ExitSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ServiceAreaSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 1888,
+      "file": "exports/ServiceAreaSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BlueZoneFloor",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "triangles": 56,
+      "file": "exports/BlueZoneFloor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "GreenZoneFloor",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "triangles": 56,
+      "file": "exports/GreenZoneFloor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "YellowZoneFloor",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "triangles": 56,
+      "file": "exports/YellowZoneFloor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "OilPuddle",
+      "zone": "atmosphere",
+      "size_m": [
+        1.427,
+        1.0223,
+        0.0
+      ],
+      "triangles": 16,
+      "file": "exports/OilPuddle.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BloodyFootprints",
+      "zone": "damaged",
+      "size_m": [
+        0.4438,
+        1.61,
+        0.01
+      ],
+      "triangles": 264,
+      "file": "exports/BloodyFootprints.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BloodStain",
+      "zone": "damaged",
+      "size_m": [
+        0.9233,
+        0.6615,
+        0.0
+      ],
+      "triangles": 16,
+      "file": "exports/BloodStain.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "TurningTyreTrackTile",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.038
+      ],
+      "triangles": 404,
+      "file": "exports/TurningTyreTrackTile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "GarbageBagPile",
+      "zone": "atmosphere",
+      "size_m": [
+        0.9919,
+        0.6618,
+        0.701
+      ],
+      "triangles": 120,
+      "file": "exports/GarbageBagPile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "SmallLitterPile",
+      "zone": "atmosphere",
+      "size_m": [
+        1.4276,
+        1.1311,
+        0.1
+      ],
+      "triangles": 288,
+      "file": "exports/SmallLitterPile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "WreckedSedan",
+      "zone": "damaged",
+      "size_m": [
+        2.02,
+        4.0966,
+        1.494
+      ],
+      "triangles": 1460,
+      "file": "exports/WreckedSedan.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "OverturnedMotorcycle",
+      "zone": "damaged",
+      "size_m": [
+        0.45,
+        1.92,
+        1.05
+      ],
+      "triangles": 1424,
+      "file": "exports/OverturnedMotorcycle.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "BrokenBarrierGate",
+      "zone": "damaged",
+      "size_m": [
+        1.8642,
+        0.6889,
+        1.105
+      ],
+      "triangles": 352,
+      "file": "exports/BrokenBarrierGate.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "CrushedTrafficCone",
+      "zone": "damaged",
+      "size_m": [
+        0.35,
+        0.35,
+        0.2762
+      ],
+      "triangles": 144,
+      "file": "exports/CrushedTrafficCone.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "DamagedElectricalBoard",
+      "zone": "damaged",
+      "size_m": [
+        0.8535,
+        0.5385,
+        0.88
+      ],
+      "triangles": 304,
+      "file": "exports/DamagedElectricalBoard.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "InfectedParkingMeter",
+      "zone": "damaged",
+      "size_m": [
+        0.5525,
+        0.4813,
+        1.66
+      ],
+      "triangles": 512,
+      "file": "exports/InfectedParkingMeter.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    },
+    {
+      "name": "ScratchedMetalPanel",
+      "zone": "damaged",
+      "size_m": [
+        0.8,
+        0.096,
+        0.92
+      ],
+      "triangles": 184,
+      "file": "exports/ScratchedMetalPanel.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio"
+    }
+  ]
+}

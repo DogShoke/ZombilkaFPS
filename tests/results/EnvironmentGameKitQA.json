@@ -1,0 +1,354 @@
+{
+  "Models": {
+    "Assets": 203,
+    "Cases": 609,
+    "FlatMeshes": [
+      "Keyboard",
+      "StickyNotes",
+      "Clipboard",
+      "CableBundle",
+      "ScatteredPaperPile",
+      "BlueZoneFloor",
+      "GreenZoneFloor",
+      "YellowZoneFloor",
+      "OilPuddle",
+      "BloodyFootprints",
+      "BloodStain",
+      "TurningTyreTrackTile"
+    ]
+  },
+  "Progress": "Passed",
+  "Macros": {
+    "Warehouse": true,
+    "SplitLevel": true,
+    "SpawnerHunt": true,
+    "OpenArena": true,
+    "CentralCover": true,
+    "TwoLane": true,
+    "WideGauntlet": true,
+    "Parking": true
+  },
+  "Navigation": [
+    {
+      "Seconds": 2.4600164000003133,
+      "Seed": 123456,
+      "Macro": "OpenArena",
+      "Checks": 22,
+      "Theme": "Office",
+      "Parts": 110
+    },
+    {
+      "Seconds": 2.489972299999863,
+      "Seed": 123456,
+      "Macro": "CentralCover",
+      "Checks": 22,
+      "Theme": "Office",
+      "Parts": 115
+    },
+    {
+      "Seconds": 2.589967500000057,
+      "Seed": 123456,
+      "Macro": "SplitLevel",
+      "Checks": 23,
+      "Theme": "Office",
+      "Parts": 101
+    },
+    {
+      "Seconds": 2.4856562000004487,
+      "Seed": 123456,
+      "Macro": "WideGauntlet",
+      "Checks": 22,
+      "Theme": "Office",
+      "Parts": 138
+    },
+    {
+      "Seconds": 2.48891519999961,
+      "Seed": 123456,
+      "Macro": "TwoLane",
+      "Checks": 22,
+      "Theme": "Office",
+      "Parts": 97
+    },
+    {
+      "Seconds": 2.4879674000003433,
+      "Seed": 123456,
+      "Macro": "SpawnerHunt",
+      "Checks": 22,
+      "Theme": "Office",
+      "Parts": 110
+    },
+    {
+      "Seconds": 2.4877524000003177,
+      "Seed": 123456,
+      "Macro": "Parking",
+      "Checks": 22,
+      "Theme": "Office",
+      "Parts": 134
+    },
+    {
+      "Seconds": 2.4860530000005383,
+      "Seed": 123456,
+      "Macro": "Warehouse",
+      "Checks": 22,
+      "Theme": "Office",
+      "Parts": 134
+    },
+    {
+      "Seconds": 2.495220099999642,
+      "Seed": 123456,
+      "Macro": "OpenArena",
+      "Checks": 22,
+      "Theme": "Laboratory",
+      "Parts": 90
+    },
+    {
+      "Seconds": 2.489265599999271,
+      "Seed": 123456,
+      "Macro": "CentralCover",
+      "Checks": 22,
+      "Theme": "Laboratory",
+      "Parts": 95
+    },
+    {
+      "Seconds": 2.5872627000007924,
+      "Seed": 123456,
+      "Macro": "SplitLevel",
+      "Checks": 23,
+      "Theme": "Laboratory",
+      "Parts": 83
+    },
+    {
+      "Seconds": 2.4943997000009404,
+      "Seed": 123456,
+      "Macro": "WideGauntlet",
+      "Checks": 22,
+      "Theme": "Laboratory",
+      "Parts": 110
+    },
+    {
+      "Seconds": 2.4906387999999424,
+      "Seed": 123456,
+      "Macro": "TwoLane",
+      "Checks": 22,
+      "Theme": "Laboratory",
+      "Parts": 83
+    },
+    {
+      "Seconds": 2.490782199998648,
+      "Seed": 123456,
+      "Macro": "SpawnerHunt",
+      "Checks": 22,
+      "Theme": "Laboratory",
+      "Parts": 90
+    },
+    {
+      "Seconds": 2.4894566999992094,
+      "Seed": 123456,
+      "Macro": "Parking",
+      "Checks": 22,
+      "Theme": "Laboratory",
+      "Parts": 106
+    },
+    {
+      "Seconds": 2.489513500000612,
+      "Seed": 123456,
+      "Macro": "Warehouse",
+      "Checks": 22,
+      "Theme": "Laboratory",
+      "Parts": 106
+    },
+    {
+      "Seconds": 2.489463399999295,
+      "Seed": 123456,
+      "Macro": "OpenArena",
+      "Checks": 22,
+      "Theme": "Warehouse",
+      "Parts": 98
+    },
+    {
+      "Seconds": 2.4895402000001923,
+      "Seed": 123456,
+      "Macro": "CentralCover",
+      "Checks": 22,
+      "Theme": "Warehouse",
+      "Parts": 103
+    },
+    {
+      "Seconds": 2.593608099999983,
+      "Seed": 123456,
+      "Macro": "SplitLevel",
+      "Checks": 23,
+      "Theme": "Warehouse",
+      "Parts": 95
+    },
+    {
+      "Seconds": 2.4851109999999608,
+      "Seed": 123456,
+      "Macro": "WideGauntlet",
+      "Checks": 22,
+      "Theme": "Warehouse",
+      "Parts": 126
+    },
+    {
+      "Seconds": 2.4891368000007787,
+      "Seed": 123456,
+      "Macro": "TwoLane",
+      "Checks": 22,
+      "Theme": "Warehouse",
+      "Parts": 91
+    },
+    {
+      "Seconds": 2.495062899999539,
+      "Seed": 123456,
+      "Macro": "SpawnerHunt",
+      "Checks": 22,
+      "Theme": "Warehouse",
+      "Parts": 98
+    },
+    {
+      "Seconds": 2.4877362999995967,
+      "Seed": 123456,
+      "Macro": "Parking",
+      "Checks": 22,
+      "Theme": "Warehouse",
+      "Parts": 122
+    },
+    {
+      "Seconds": 2.4884172000001854,
+      "Seed": 123456,
+      "Macro": "Warehouse",
+      "Checks": 22,
+      "Theme": "Warehouse",
+      "Parts": 122
+    },
+    {
+      "Seconds": 2.4905782000005274,
+      "Seed": 123456,
+      "Macro": "OpenArena",
+      "Checks": 22,
+      "Theme": "Parking",
+      "Parts": 90
+    },
+    {
+      "Seconds": 2.4904002000002947,
+      "Seed": 123456,
+      "Macro": "CentralCover",
+      "Checks": 22,
+      "Theme": "Parking",
+      "Parts": 95
+    },
+    {
+      "Seconds": 2.5910595000004832,
+      "Seed": 123456,
+      "Macro": "SplitLevel",
+      "Checks": 23,
+      "Theme": "Parking",
+      "Parts": 83
+    },
+    {
+      "Seconds": 2.4898181999997178,
+      "Seed": 123456,
+      "Macro": "WideGauntlet",
+      "Checks": 22,
+      "Theme": "Parking",
+      "Parts": 110
+    },
+    {
+      "Seconds": 2.4904174000002968,
+      "Seed": 123456,
+      "Macro": "TwoLane",
+      "Checks": 22,
+      "Theme": "Parking",
+      "Parts": 83
+    },
+    {
+      "Seconds": 2.4947456999998394,
+      "Seed": 123456,
+      "Macro": "SpawnerHunt",
+      "Checks": 22,
+      "Theme": "Parking",
+      "Parts": 90
+    },
+    {
+      "Seconds": 2.489796400001069,
+      "Seed": 123456,
+      "Macro": "Parking",
+      "Checks": 22,
+      "Theme": "Parking",
+      "Parts": 106
+    },
+    {
+      "Seconds": 2.486565100000007,
+      "Seed": 123456,
+      "Macro": "Warehouse",
+      "Checks": 22,
+      "Theme": "Parking",
+      "Parts": 106
+    }
+  ],
+  "Plans": 600,
+  "Modes": {
+    "KillQuota": true,
+    "SpawnerHunt": true,
+    "WideGauntlet": true,
+    "Survival": true
+  },
+  "Examples": {
+    "Warehouse": {
+      "Theme": "Warehouse",
+      "Floor": 194,
+      "Seed": 123456
+    },
+    "SplitLevel": {
+      "Theme": "Office",
+      "Floor": 195,
+      "Seed": 123456
+    },
+    "SpawnerHunt": {
+      "Theme": "Warehouse",
+      "Floor": 193,
+      "Seed": 123456
+    },
+    "OpenArena": {
+      "Theme": "Laboratory",
+      "Floor": 196,
+      "Seed": 123456
+    },
+    "CentralCover": {
+      "Theme": "Warehouse",
+      "Floor": 197,
+      "Seed": 123456
+    },
+    "TwoLane": {
+      "Theme": "Laboratory",
+      "Floor": 200,
+      "Seed": 123456
+    },
+    "WideGauntlet": {
+      "Theme": "Parking",
+      "Floor": 198,
+      "Seed": 123456
+    },
+    "Parking": {
+      "Theme": "Parking",
+      "Floor": 199,
+      "Seed": 123456
+    }
+  },
+  "Themes": {
+    "Warehouse": true,
+    "Office": true,
+    "Parking": true,
+    "Laboratory": true
+  },
+  "Date": "2026-10-06",
+  "FreshStartup": { "State": "ChoosingWeapon", "Health": 100, "Alive": 0, "Validated": true, "Fallback": false, "MeshCount": 59, "OldCoverCount": 0, "WhitePalette": true, "Upright": true, "Output": "Empty" },
+  "NavigationSamples": 32,
+  "PathQueries": 708,
+  "Limits": [
+    "One navigation seed across all four themes/eight macros; 600 plans use three seeds.",
+    "Studio screenshot showed HUD but no rendered 3D world; final visual appearance in Studio has not been observed.",
+    "No character rig, gameplay goals, source Blender files or place file were edited for this asset replacement.",
+    "Thin MeshParts may be clamped by Roblox; flat detail meshes have no collision/query."
+  ]
+}

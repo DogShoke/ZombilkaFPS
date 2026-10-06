@@ -1,0 +1,110 @@
+[
+  {
+    "Name": "ArenaCar",
+    "Triangles": 1124,
+    "Dimensions": [
+      2.0299999713897705,
+      4.105000019073486,
+      1.690000057220459
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  },
+  {
+    "Name": "ArenaContainer",
+    "Triangles": 3612,
+    "Dimensions": [
+      2.989999771118164,
+      4.890000343322754,
+      2.1600003242492676
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  },
+  {
+    "Name": "ArenaDeskBank",
+    "Triangles": 572,
+    "Dimensions": [
+      3.739999771118164,
+      1.1800000667572021,
+      1.5500000715255737
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  },
+  {
+    "Name": "ArenaRack",
+    "Triangles": 704,
+    "Dimensions": [
+      2.950000047683716,
+      1.2000000476837158,
+      2.755000114440918
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  },
+  {
+    "Name": "ArenaBarrier",
+    "Triangles": 352,
+    "Dimensions": [
+      3.799999952316284,
+      1.149999976158142,
+      1.1200000047683716
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  },
+  {
+    "Name": "ArenaLabBank",
+    "Triangles": 484,
+    "Dimensions": [
+      3.619999885559082,
+      1.5999999046325684,
+      2.2699999809265137
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  },
+  {
+    "Name": "CoffeeSpawner_Export",
+    "Triangles": 4704,
+    "Dimensions": [
+      3.1588234901428223,
+      2.2396726608276367,
+      3.7849998474121094
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  },
+  {
+    "Name": "GroundCracks_Export",
+    "Triangles": 672,
+    "Dimensions": [
+      3.3287720680236816,
+      3.1913392543792725,
+      0.2855411171913147
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  },
+  {
+    "Name": "GroundDebris_Export",
+    "Triangles": 100,
+    "Dimensions": [
+      0.7563986778259277,
+      0.683233916759491,
+      0.1599999964237213
+    ],
+    "UVMaps": [
+      "UVMap"
+    ]
+  }
+]

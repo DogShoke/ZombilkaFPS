@@ -1,0 +1,314 @@
+{
+  "checked": 44,
+  "runtime_tested": false,
+  "fbx_reimport": [
+    {
+      "name": "PartitionShort",
+      "triangles": 308,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "PartitionWide",
+      "triangles": 308,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "PartitionCorner",
+      "triangles": 616,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WorkstationBank2",
+      "triangles": 836,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WorkstationBank4",
+      "triangles": 1672,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "UnderDeskPedestal",
+      "triangles": 308,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ReceptionCompact",
+      "triangles": 264,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ReceptionWide",
+      "triangles": 264,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "TripodTurnstile",
+      "triangles": 260,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SecuritySwingGate",
+      "triangles": 308,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "AccessScannerArch",
+      "triangles": 264,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SecurityDesk",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "FridgeCompact",
+      "triangles": 264,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "FridgeWide",
+      "triangles": 264,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "Microwave",
+      "triangles": 304,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "KitchenSinkCabinet",
+      "triangles": 540,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "KitchenCounterWide",
+      "triangles": 264,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "CounterCoffeeMachine",
+      "triangles": 248,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SnackVending",
+      "triangles": 1144,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "DrinkVending",
+      "triangles": 1048,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ArchiveCabinetWide",
+      "triangles": 220,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ArchiveCabinetBank",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ServerRackCompact",
+      "triangles": 1284,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ServerRackTwin",
+      "triangles": 2524,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "UPSUnit",
+      "triangles": 396,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "CableBundle",
+      "triangles": 172,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "VentilationCabinet",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ElectricalPanel",
+      "triangles": 880,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WarehouseTrolley",
+      "triangles": 272,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WoodPallet",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BoxSmall",
+      "triangles": 56,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BoxLarge",
+      "triangles": 56,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ConferenceTableLong",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WallTelevision",
+      "triangles": 88,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "Projector",
+      "triangles": 152,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ConferencePhone",
+      "triangles": 220,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ExecutiveChair",
+      "triangles": 672,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "TaskChairTeal",
+      "triangles": 628,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "OverturnedDesk",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BrokenChair",
+      "triangles": 540,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "BrokenMonitor",
+      "triangles": 212,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "FallenArchiveCabinet",
+      "triangles": 220,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "ScatteredPaperPile",
+      "triangles": 384,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BrokenOfficeDoor",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    }
+  ]
+}

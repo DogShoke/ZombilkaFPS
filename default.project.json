@@ -22,6 +22,12 @@
         "CityZombies": {
           "$path": "assets/zombies/generated/roblox"
         },
+        "ArenaKit": {
+          "$path": "assets/environment/roblox"
+        },
+        "EnvironmentKit": {
+          "$path": "assets/environment/gamekit/roblox"
+        },
         "WeaponMotion": {
           "$path": "assets/weapons/motion"
         },

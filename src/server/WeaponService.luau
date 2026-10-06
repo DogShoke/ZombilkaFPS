@@ -2,6 +2,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Config = require(ReplicatedStorage.Shared.Config)
 local ZombieService = require(script.Parent.ZombieService)
+local SpawnSources = require(script.Parent.SpawnSources)
 local WeaponService = {}
 local states, reloadSerial, rng = {}, 0, Random.new()
 local remotes = Instance.new("Folder")
@@ -50,7 +51,7 @@ local function fire(player, origin, direction, shotId)
 	if state.reloading then state.reloading = false state.reloadToken = nil end
 	state.lastShot, state.ammo = now, state.ammo - 1 sendAmmo(player)
 	local params = RaycastParams.new() params.FilterDescendantsInstances = {character} params.IgnoreWater = true
-	local targets, impacts, endpoints = {}, {}, {}
+	local targets, sources, impacts, endpoints = {}, {}, {}, {}
 	local shotKind, shotPosition, shotInfo = "World", origin + direction * weapon.Range, nil
 	for pellet = 1, weapon.Pellets do
 		local rayDirection = spreadDirection(direction, weapon.SpreadDegrees)
@@ -60,6 +61,11 @@ local function fire(player, origin, direction, shotId)
 		local model = result.Instance:FindFirstAncestorOfClass("Model")
 		local target = model and model:FindFirstChildOfClass("Humanoid")
 		local kind = "World"
+		local source=SpawnSources.Target(result.Instance)
+		if source then
+			sources[source]=(sources[source]or 0)+weapon.Damage
+			kind="World"
+		end
 		if target and target.Health > 0 and model:GetAttribute("IsZombie") then
 			local headshot = result.Instance.Name == "Head"
 			local falloff = weapon.FalloffStart and 1 - math.clamp((result.Distance - weapon.FalloffStart) / (weapon.Range - weapon.FalloffStart), 0, 1) * (1 - weapon.MinDamageMultiplier) or 1
@@ -76,6 +82,9 @@ local function fire(player, origin, direction, shotId)
 		if entry.damage >= entry.humanoid.Health then model:SetAttribute("FatalHeadshot", entry.headshot) end
 		ZombieService.React(model, entry.headshot, direction)
 		entry.humanoid:TakeDamage(entry.damage)
+	end
+	for model,damage in sources do
+		feedbackRemote:FireClient(player,"SourceHit",SpawnSources.Damage(model,player,damage))
 	end
 	feedbackRemote:FireClient(player, "Shot", shotKind, shotPosition, shotInfo)
 	if weapon.Pellets > 1 then

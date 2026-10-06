@@ -17,3 +17,5 @@ sourcemap.json
 /assets/zombies/generated/*.blend1
 /assets/zombies/generated/tools/rojo/
 /assets/zombies/generated/validation.rbxlx
+/assets/environment/*.blend1
+/assets/environment/**/*.blend1

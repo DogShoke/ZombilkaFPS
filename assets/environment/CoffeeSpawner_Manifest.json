@@ -1,0 +1,47 @@
+[
+  {
+    "Name": "CoffeeSpawner",
+    "Vertices": 4152,
+    "Triangles": 4704,
+    "UVMaps": [
+      "UVMap"
+    ],
+    "Dimensions": [
+      3.1588234901428223,
+      2.2396726608276367,
+      3.7849998474121094
+    ],
+    "BlenderForward": "-Y",
+    "RobloxTargetHeight": 8
+  },
+  {
+    "Name": "GroundCracks",
+    "Vertices": 384,
+    "Triangles": 672,
+    "UVMaps": [
+      "UVMap"
+    ],
+    "Dimensions": [
+      3.3287720680236816,
+      3.1913392543792725,
+      0.2855411171913147
+    ],
+    "BlenderForward": "-Y",
+    "RobloxTargetHeight": null
+  },
+  {
+    "Name": "GroundDebris",
+    "Vertices": 60,
+    "Triangles": 100,
+    "UVMaps": [
+      "UVMap"
+    ],
+    "Dimensions": [
+      0.7563986778259277,
+      0.683233916759491,
+      0.1599999964237213
+    ],
+    "BlenderForward": "-Y",
+    "RobloxTargetHeight": null
+  }
+]

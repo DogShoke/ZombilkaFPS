@@ -4,7 +4,7 @@ New Roblox first-person zombie combat sandbox. Rojo 7.7.0 syncs `src/` through `
 
 Choose Glock, AKM or Mossberg before the run using the cards or 1/2/3. Zombies start spawning after selection. Death opens selection again.
 
-Floors are generated endlessly from a versioned run seed: four themes and six combat layouts, alternate routes, two defense positions and reachable split-level galleries. The footprint is 264×288 studs. After three introductory floors, the final wave can require a holdout or timed survival followed by mandatory cleanup. Attack directions are announced; generated floors pass runtime navigation checks with bounded retries. Only the current floor and a prepared destination are retained, with at most 16 live zombies.
+Current milestone: one authored Office OpenArena on the fixed 5×5 grid, 36-stud cells and 180×180 footprint. Seed selects complete desk/reception/server/lounge tile variants; individual props never scatter. The central landmark, small raised tile with two ramps, clear entrance and four corner spawn edges keep fixed roles. Other layouts are temporarily disabled in ordinary Play; later floors repeat this topology with different modules. Existing KillQuota, continuous horde, ground emergence, 16-enemy cap and elevator remain. Actual tile bounds, collisions, entrance views and navigation are validated. See docs/LEVEL_GENERATION.md and src/server/OfficeTiles.luau to edit the prototype.
 
 Подробное описание текущего генератора, его ограничений и мест для изменений: [docs/LEVEL_GENERATION.md](docs/LEVEL_GENERATION.md).
 

@@ -123,24 +123,27 @@ function CombatHud:SetAmmo(ammo, reloading)
 	self.ReloadLabel.Text = reloading and "ПЕРЕЗАРЯДКА" or ""
 end
 
+function CombatHud:SourceHit(result)
+ if result=="Hit"or result=="Broken"or result=="Destroyed"then self:Hit(false)end
+ local messages={Range=string.format("ПОДОЙДИТЕ БЛИЖЕ: ДО %d STUDS",Config.Run.Encounters.SourceDamageRange),Shield="ЗАЩИТА ВОССТАНАВЛИВАЕТСЯ",Broken="СЛОЙ ПРОБИТ — НОВЫЙ ВЫБРОС ЗОМБИ",Destroyed="АВТОМАТ РАЗРУШЕН"}
+ if messages[result]then self.sourceMessage=messages[result];self.sourceUntil=os.clock()+1.5 end
+end
 function CombatHud:SetRun(state)
-	local phase = state:GetAttribute("State")
-	self.RunLabel.Text = string.format("ЭТАЖ %02d  /  %s\nВОЛНА %d / %d    ЗОМБИ %d", state:GetAttribute("Floor") or 1, state:GetAttribute("Theme") or "", state:GetAttribute("Wave") or 0, state:GetAttribute("Waves") or 3, state:GetAttribute("Remaining") or 0)
-	local messages = { FloorIntro = "ЗАЧИСТИТЕ ЭТАЖ", BetweenWaves = "СЛЕДУЮЩАЯ ВОЛНА", FloorCleared = "ЭТАЖ ЗАЧИЩЕН", ElevatorAvailable = "ЛИФТ ОТКРЫТ  ↑", ElevatorTravel = "ПОДЪЁМ  ↑", NextFloor = "ВЫЙДИТЕ ИЗ ЛИФТА" }
-	messages.PreparingFloor="ЛИФТ ГОТОВИТСЯ"; messages.GenerationFailed="ЛИФТ ВРЕМЕННО НЕДОСТУПЕН"
-	messages.WaveWarning="АТАКА: "..(state:GetAttribute("AttackDirections") or "")
-	local mode=state:GetAttribute("EncounterMode")
-	if phase=="WaveActive" then
-		local elapsed,total=state:GetAttribute("ObjectiveElapsed") or 0,state:GetAttribute("ObjectiveDuration") or 0
-		if mode=="Holdout" then messages.WaveActive=string.format("%s  %s  %d / %d",state:GetAttribute("Holding") and "УДЕРЖАНИЕ:" or "ВЕРНИТЕСЬ:",state:GetAttribute("DefenseLabel") or "ПОЗИЦИЯ",math.floor(elapsed),total)
-		elseif mode=="Survival" then messages.WaveActive=elapsed<total and string.format("ВЫЖИВИТЕ  %d СЕК",math.ceil(total-elapsed)) or "ЗАЧИСТИТЕ ОСТАТКИ"
-		else messages.WaveActive="ФРОНТ: "..(state:GetAttribute("AttackDirections") or "") end
-		local flank=state:GetAttribute("FallbackDirection")
-		if flank and flank~="" then messages.WaveActive..="  /  ФЛАНГ: "..flank end
-		local warning=state:GetAttribute("FlankWarning")
-		if warning and warning~="" then messages.WaveActive..="  /  СКОРО ФЛАНГ: "..warning end
-	end
-	self.Message.Text = state:GetAttribute("Paused") and "ПАУЗА" or messages[phase] or ""
+ local phase,mode=state:GetAttribute("State"),state:GetAttribute("EncounterMode")
+ local kills,quota=state:GetAttribute("Defeated")or 0,state:GetAttribute("KillQuota")or 0
+ local alive=state:GetAttribute("Alive")or 0
+ local names={KillQuota="КВОТА УБИЙСТВ",SpawnerHunt="КОФЕЙНОЕ ЗАРАЖЕНИЕ",WideGauntlet="ШИРОКИЙ ПРОРЫВ",Survival="ВЫЖИВАНИЕ"}
+ self.RunLabel.Text=string.format("ЭТАЖ %02d / %s\n%s   ЗОМБИ %d",state:GetAttribute("Floor")or 1,state:GetAttribute("Theme")or "",names[mode]or "",alive)
+ local messages={FloorIntro="ГОТОВЬТЕСЬ: "..(names[mode]or ""),PreparingFloor="ЦЕЛЬ ВЫПОЛНЕНА / ГОТОВИТСЯ ЛИФТ",ElevatorAvailable="ЛИФТ ОТКРЫТ ↑  ОСТАВШИЕСЯ ЗОМБИ ОПАСНЫ",ElevatorTravel="ПОДЪЁМ ↑",NextFloor="ВЫЙДИТЕ ИЗ ЛИФТА",GenerationFailed="ЛИФТ ПОКА НЕДОСТУПЕН"}
+ if phase=="EncounterActive"then
+  if mode=="SpawnerHunt"then
+   local count,total=state:GetAttribute("SourcesDestroyed")or 0,state:GetAttribute("SourcesTotal")or 0
+   messages.EncounterActive=count<total and string.format("РАЗРУШЬТЕ АВТОМАТЫ ВБЛИЗИ: %d / %d",count,total)or "ПОСЛЕДНИЙ ВЫБРОС — ЛИФТ СКОРО ОТКРОЕТСЯ"
+  elseif mode=="WideGauntlet"then messages.EncounterActive=string.format("СЕКТОР %d / %d  УБИЙСТВА %d / %d",state:GetAttribute("Section")or 1,state:GetAttribute("Sections")or 3,state:GetAttribute("SectionKills")or 0,state:GetAttribute("SectionQuota")or 0)
+  elseif mode=="Survival"then messages.EncounterActive=string.format("ВЫЖИВИТЕ %d СЕК  /  УБИЙСТВА %d / %d",math.max(0,math.ceil((state:GetAttribute("ObjectiveDuration")or 0)-(state:GetAttribute("ObjectiveElapsed")or 0))),math.min(kills,quota),quota)
+  else messages.EncounterActive=string.format("УНИЧТОЖЬТЕ ЗОМБИ: %d / %d",math.min(kills,quota),quota)end
+ end
+ self.Message.Text=state:GetAttribute("Paused")and "ПАУЗА"or self.sourceUntil and os.clock()<self.sourceUntil and self.sourceMessage or messages[phase]or ""
 end
 
 function CombatHud:Hit(headshot)

@@ -1,5 +1,4 @@
 local Config = require(game.ReplicatedStorage.Shared.Config)
-local ChairAsset = require(script.Parent.OfficeChairAsset)
 local OfficeMap = {}
 local C = { floor=Color3.fromRGB(49,59,66), wall=Color3.fromRGB(188,196,191), dark=Color3.fromRGB(25,35,43), wood=Color3.fromRGB(137,106,72), teal=Color3.fromRGB(48,157,156), red=Color3.fromRGB(218,81,61) }
 local function folder(parent,name)
@@ -16,231 +15,72 @@ local g=Instance.new("SurfaceGui") g.LightInfluence=0 g.Face=Enum.NormalId.Front
 	local t=Instance.new("TextLabel") t.Size=UDim2.fromScale(1,1) t.BackgroundTransparency=1 t.Text=text t.Font=Enum.Font.GothamMedium t.TextScaled=true t.TextColor3=color or Color3.fromRGB(213,232,225) t.Parent=g
 	return p
 end
-local function desk(parent,o,x,z,angle)
-	local cf=CFrame.new(o+Vector3.new(x,0,z))*CFrame.Angles(0,angle or 0,0)
-	local function p(n,size,v,c,mat,cosmetic) local a=part(parent,n,size,Vector3.zero,c,mat,cosmetic) a.CFrame=cf*CFrame.new(v) return a end
-	p("Desk",Vector3.new(8,0.35,4),Vector3.new(0,2.9,0),C.wood,Enum.Material.Wood)
-	for _,dx in {-3.4,3.4} do p("DeskLeg",Vector3.new(0.4,2.8,3),Vector3.new(dx,1.4,0),C.dark,Enum.Material.Metal,true) end
-	p("Monitor",Vector3.new(2.6,1.65,0.2),Vector3.new(0,4,-0.9),C.dark,nil,true)
-	p("Screen",Vector3.new(2.3,1.3,0.04),Vector3.new(0,4,-0.77),Color3.fromRGB(47,91,105),Enum.Material.Neon,true)
-	p("Keyboard",Vector3.new(2,0.12,0.7),Vector3.new(0,3.15,0.6),C.dark,nil,true)
-	local chair=ChairAsset() chair.Name="OfficeChair" chair.Parent=parent
-	local box,size=chair:GetBoundingBox()
-	chair:ScaleTo(0.8)
-	box,size=chair:GetBoundingBox()
-	chair:PivotTo(cf*CFrame.new(0,size.Y/2,3.4)*(chair:GetPivot():ToObjectSpace(box)):Inverse())
-	for _,a in chair:GetDescendants() do if a:IsA("BasePart") then a.Anchored=true a.CanCollide=false a.CanQuery=false a.CanTouch=false end end
-end
-local function plant(parent,o,x,z)
-	part(parent,"Planter",Vector3.new(3,2.2,3),o+Vector3.new(x,1.1,z),C.dark)
-	part(parent,"Stem",Vector3.new(0.25,3,0.25),o+Vector3.new(x,3,z),C.wood,nil,true)
-	for i=1,3 do local p=part(parent,"Leaves",Vector3.new(2.4,2,2.4),o+Vector3.new(x+math.sin(i*2)*0.6,3.5+i*0.6,z),Color3.fromRGB(60,94,69),nil,true) p.Shape=Enum.PartType.Ball end
-end
-local Layout = require(script.Parent.FloorLayout)
-local Geometry = require(script.Parent.FloorGeometry)
-local G = Config.Run.Generation
-local accents = { C.teal, Color3.fromRGB(89,125,185), Color3.fromRGB(203,148,65), Color3.fromRGB(129,111,163) }
-local roomLabels = { Workstations="РАБОЧАЯ ЗОНА", Meeting="ПЕРЕГОВОРНАЯ", BreakRoom="КОМНАТА ОТДЫХА", Archive="АРХИВ", Lab="ИССЛЕДОВАНИЯ", ServerRoom="СЕРВЕРНАЯ", Storage="ХРАНЕНИЕ", Workshop="ТЕХНИЧЕСКАЯ ЗОНА", ParkingBay="ПАРКОВКА" }
-local function furnish(parent, origin, room, accent)
-	local x,z,w,d=room.X,room.Z,room.Width,room.Depth
-	local o=origin+Vector3.new(x,0,z)
-	local function p(n,size,v,color,mat,cosmetic) return part(parent,n,size,o+v,color or C.dark,mat,cosmetic) end
-	if room.Kind=="Workstations" then
-		for _,dx in {-10,10} do desk(parent,o,dx,-d/2+9,0) end
-		if d>50 then for _,dx in {-10,10} do desk(parent,o,dx,d/2-10,math.pi) end end
-	elseif room.Kind=="Meeting" then
-		-- Offset the table so the two crossing door lanes stay open.
-		p("ConferenceTable",Vector3.new(8,.4,math.min(22,d-12)),Vector3.new(-10,2.8,0),C.wood,Enum.Material.Wood)
-		p("PresentationScreen",Vector3.new(8,4,.2),Vector3.new(10,5,-d/2+2),C.dark,nil,true)
-		p("PresentationGlow",Vector3.new(7.5,3.5,.04),Vector3.new(10,5,-d/2+2.13),accent,Enum.Material.Neon,true)
-	elseif room.Kind=="BreakRoom" then
-		p("KitchenCounter",Vector3.new(7,3,d-12),Vector3.new(-11,1.5,0),C.wall)
-		p("CounterTop",Vector3.new(7.3,.25,d-11.5),Vector3.new(-11,3.1,0),C.wood,Enum.Material.Wood)
-		p("VendingMachine",Vector3.new(5,7,4),Vector3.new(11,3.5,-d/2+5),accent,Enum.Material.Metal)
-		p("VendingDisplay",Vector3.new(3.5,4,.1),Vector3.new(11,4,-d/2+2.9),Color3.fromRGB(160,212,212),Enum.Material.Neon,true)
-		p("Bench",Vector3.new(5,2,10),Vector3.new(11,1,d/2-7),C.wood)
-	elseif room.Kind=="Lab" then
-		for _,dx in {-11,11} do
-			p("LabBench",Vector3.new(6,3,d-12),Vector3.new(dx,1.5,0),C.wall,Enum.Material.Metal)
-			p("LabWorktop",Vector3.new(6.4,.25,d-11.5),Vector3.new(dx,3.2,0),C.dark)
-			for dz=-d/2+8,d/2-8,12 do
-				p("SampleChamber",Vector3.new(2,2.5,2),Vector3.new(dx,4.6,dz),Color3.fromRGB(79,172,157),Enum.Material.Glass,true).Transparency=.3
-				p("SampleGlow",Vector3.new(.8,1.2,.8),Vector3.new(dx,4.1,dz),accent,Enum.Material.Neon,true)
-			end
-		end
-	elseif room.Kind=="ServerRoom" then
-		for _,dx in {-11,11} do for dz=-d/2+7,d/2-7,10 do
-			p("ServerRack",Vector3.new(5,6,5),Vector3.new(dx,3,dz),C.dark,Enum.Material.Metal)
-			for y=2,5 do p("ServerLED",Vector3.new(3,.15,.1),Vector3.new(dx,y,dz+2.6),accent,Enum.Material.Neon,true) end
-		end end
-	elseif room.Kind=="ParkingBay" then
-		for _,dx in {-10,10} do
-			local cf=CFrame.new(o+Vector3.new(dx,0,0))*CFrame.Angles(0,room.Variant%2==0 and math.pi or 0,0)
-			local function car(n,size,v,color,cosmetic) local a=p(n,size,Vector3.zero,color,Enum.Material.Metal,cosmetic); a.CFrame=cf*CFrame.new(v); return a end
-			car("ParkedCar",Vector3.new(7,2.1,15),Vector3.new(0,1.8,0),room.Variant%2==0 and accent or Color3.fromRGB(92,100,104))
-			car("CarCabin",Vector3.new(6,1.8,7),Vector3.new(0,3.6,.5),C.dark)
-			car("Windshield",Vector3.new(5.6,1.3,.2),Vector3.new(0,3.5,-3.15),Color3.fromRGB(93,131,144),true)
-			for _,sx in {-1,1} do for _,sz in {-1,1} do
-				local wheel=car("Wheel",Vector3.new(.7,2.2,2.2),Vector3.new(sx*3.5,1.1,sz*4.8),Color3.fromRGB(20,24,27),true); wheel.Shape=Enum.PartType.Cylinder
-				car("CarLight",Vector3.new(1.4,.45,.12),Vector3.new(sx*2.1,2,-7.6),Color3.fromRGB(193,202,163),true)
-			end end
-			p("ParkingLine",Vector3.new(.12,.02,d-3),Vector3.new(dx+4.5,.025,0),Color3.fromRGB(207,206,182),nil,true)
-		end
-	else
-		for _,dx in {-11,11} do for dz=-d/2+7,d/2-7,12 do
-			local h=room.Kind=="Archive" and 6 or room.Kind=="Workshop" and 3 or 3+room.Variant%3
-			p(room.Kind=="Archive" and "ArchiveCabinet" or "StorageCrate",Vector3.new(6,h,6),Vector3.new(dx,h/2,dz),room.Kind=="Archive" and C.wall or C.wood,room.Kind=="Archive" and Enum.Material.Metal or Enum.Material.Wood)
-			p("BayStripe",Vector3.new(6.05,.3,6.05),Vector3.new(dx,h-.5,dz),accent,nil,true)
-		end end
-	end
-end
-local function roomWalls(geo,props,o,r,accent)
-	if not r.Enclosed then return end
-	local height,door=G.RoomWallHeight,G.DoorWidth
-	for _,axis in {"X","Z"} do
-		local length=axis=="X" and r.Width or r.Depth
-		local offset=axis=="X" and r.Depth/2 or r.Width/2
-		local segment=(length-door)/2
-		for _,side in {-1,1} do for _,endSide in {-1,1} do
-			local along=endSide*(door/2+segment/2)
-			local v=axis=="X" and Vector3.new(r.X+along,height/2,r.Z+side*offset) or Vector3.new(r.X+side*offset,height/2,r.Z+along)
-			local size=axis=="X" and Vector3.new(segment,height,.5) or Vector3.new(.5,height,segment)
-			local wall=part(geo,"RoomWall",size,o+v,r.Glass and Color3.fromRGB(111,156,171) or C.wall,r.Glass and Enum.Material.Glass or Enum.Material.SmoothPlastic)
-			if r.Glass then wall.Transparency=.48 end
-			part(props,"RoomAccent",Vector3.new(size.X,.22,size.Z),o+v+Vector3.new(0,2.8,0),accent,nil,true)
-		end end
-	end
-end
-local function gallery(geo,props,o,layout,accent,zones,probes)
-	local x=layout.UpperSide*84
-	part(geo,"Floor",Vector3.new(72,.7,64),o+Vector3.new(x,G.UpperHeight-.35,0),C.dark,Enum.Material.Metal)
-	for _,dx in {-36,36} do
-		part(geo,"GalleryRailing",Vector3.new(.35,3.1,64),o+Vector3.new(x+dx,G.UpperHeight+1.55,0),accent,Enum.Material.Metal)
-	end
-	for _,sz in {-1,1} do
-		-- Two broad stairs, with one smooth collider for reliable NPC navigation.
-		local run,rise=G.RampLength,G.UpperHeight
-		local ramp=part(geo,"StairRamp",Vector3.new(G.RampWidth,.6,math.sqrt(run*run+rise*rise)),o+Vector3.new(x,rise/2,sz*(32+run/2)),C.dark,Enum.Material.Metal)
-		ramp.CFrame*=CFrame.Angles(sz*math.atan(rise/run),0,0)
-		for i=1,24 do
-			local t=(i-.5)/24
-			part(props,"StairTread",Vector3.new(G.RampWidth,rise/24,run/24),o+Vector3.new(x,rise*(1-t),sz*(32+run*t)),Color3.fromRGB(112,125,127),Enum.Material.Metal,true)
-		end
-		for _,dx in {-1,1} do
-			local rail=part(geo,"StairRailing",Vector3.new(.3,2.8,math.sqrt(run*run+rise*rise)),o+Vector3.new(x+dx*(G.RampWidth/2+.4),rise/2+1.8,sz*(32+run/2)),accent,Enum.Material.Metal)
-			rail.CFrame*=CFrame.Angles(sz*math.atan(rise/run),0,0)
-		end
-		for _,dx in {-1,1} do
-			part(geo,"GalleryRailing",Vector3.new((72-G.RampWidth)/2,3.1,.35),o+Vector3.new(x+dx*(G.RampWidth/2+(72-G.RampWidth)/4),rise+1.55,sz*32),accent,Enum.Material.Metal)
-		end
-		table.insert(probes,o+Vector3.new(x,0,sz*(32+run+5)))
-	end
-	for _,z in {-15,15} do table.insert(zones,o+Vector3.new(x,G.UpperHeight,z)) end
-	table.insert(probes,o+Vector3.new(x,G.UpperHeight,0))
-	sign(props,o+Vector3.new(x,G.UpperHeight+6,-31),"ГАЛЕРЕЯ  /  02",24,accent)
-end
+local Layout=require(script.Parent.FloorLayout)
+local Geometry=require(script.Parent.FloorGeometry)
+local ArenaAssets=require(script.Parent.ArenaAssets)
+local Tiles=require(script.Parent.OfficeTiles)
+local G=Config.Run.Generation
+local accents={C.teal,Color3.fromRGB(89,125,185),Color3.fromRGB(203,148,65),Color3.fromRGB(129,111,163)}
 local function buildFloor(run,layout,slot,greybox)
-	local number=layout.Number
-	local started=os.clock()
-	local model=Instance.new("Model"); model.Name=string.format("Floor%03d",number); model.Parent=run
-	for k,v in {FloorNumber=number,Seed=layout.Seed,RunSeed=layout.RunSeed,GenerationVersion=layout.GenerationVersion,Macro=layout.Macro,Theme=layout.Theme,ThemeLabel=layout.Label,Levels=layout.Upper and 2 or 1,Signature=layout.Signature,RoomCount=#layout.Rooms,Attempt=layout.Attempt} do model:SetAttribute(k,v) end
-	local geo,props,spawns,lobby=folder(model,"Geometry"),folder(model,"Props"),folder(model,"ZombieSpawns"),folder(model,"ElevatorLobby")
-	local o=Vector3.new(0,Config.Run.BaseHeight+(slot-1)*Config.Run.FloorHeight,0)
-	local accent=accents[layout.AccentIndex]
-	local floorMat=layout.Theme=="Office" and Enum.Material.Carpet or Enum.Material.Concrete
-	part(geo,"Floor",Vector3.new(G.HalfWidth*2,1,G.HalfDepth*2),o-Vector3.new(0,.5,0),C.floor,floorMat)
-	part(geo,"Ceiling",Vector3.new(G.HalfWidth*2,1,G.HalfDepth*2),o+Vector3.new(0,G.CeilingHeight+.5,0),Color3.fromRGB(105,118,126))
-	for _,x in {-G.HalfWidth,G.HalfWidth} do
-		local p=part(geo,"WindowWall",Vector3.new(1,G.CeilingHeight,G.HalfDepth*2),o+Vector3.new(x,G.CeilingHeight/2,0),Color3.fromRGB(83,120,143),layout.Theme=="Parking" and Enum.Material.Metal or Enum.Material.Glass)
-		p.Transparency=layout.Theme=="Parking" and .15 or .6
-		for z=-120,120,24 do part(geo,"WindowMullion",Vector3.new(1.3,G.CeilingHeight,1),o+Vector3.new(x,G.CeilingHeight/2,z),C.dark,Enum.Material.Metal) end
-	end
-	for _,z in {-G.HalfDepth,G.HalfDepth} do part(geo,"EndWall",Vector3.new(G.HalfWidth*2,G.CeilingHeight,1),o+Vector3.new(0,G.CeilingHeight/2,z),C.wall) end
-	Geometry.BuildWalls(layout,o,geo,part,greybox and Color3.fromRGB(120,125,130) or C.wall)
-	for _,n in layout.Nodes do
-		local lamp=part(props,"CeilingLight",Vector3.new(12,.15,2),o+Vector3.new(n.X,G.CeilingHeight-.3,n.Z),Color3.fromRGB(213,229,232),Enum.Material.Neon,true)
-		local light=Instance.new("SurfaceLight"); light.Face=Enum.NormalId.Bottom; light.Range=42; light.Angle=140; light.Brightness=1.5; light.Color=lamp.Color; light.Parent=lamp
-	end
-	local zones,probes,defenses={},{},{}
-	for _,n in layout.Nodes do table.insert(probes,o+Vector3.new(n.X,n.Y,n.Z)) end
-	if layout.Upper then gallery(geo,props,o,layout,accent,{},probes) end
-	if not greybox then
-		for _,r in layout.Rooms do
-			local group=folder(props,"Interior_"..r.Id)
-			local interior=table.clone(r); interior.Depth=math.min(r.Width,r.Depth)
-			furnish(group,o+Vector3.new(0,r.Y,0),interior,accent)
-			local center=CFrame.new(o+Vector3.new(r.X,r.Y,r.Z))
-			local turn=CFrame.Angles(0,(r.Variant-1)*math.pi/2,0)
-			for _,p in group:GetDescendants() do if p:IsA("BasePart") then
-				p.CFrame=center*turn*center:ToObjectSpace(p.CFrame)
-				-- Walkable furniture is presentation; tall planned cover below owns collision.
-				p.CanCollide=false; p.CanQuery=false
-			end end
-			sign(props,o+Vector3.new(r.X,r.Y+11,r.Z-r.Depth/2+1),roomLabels[r.Kind],24,accent)
-		end
-	end
-	local function coverAllowed(x,z,n)
-		for _,e in layout.Edges do for i=2,#e.Points do
-			local a,b=e.Points[i-1],e.Points[i]
-			if math.abs(x-(a.X+b.X)/2)<math.abs(a.X-b.X)/2+e.Width/2+5 and math.abs(z-(a.Z+b.Z)/2)<math.abs(a.Z-b.Z)/2+e.Width/2+5 then return false end
-		end end
-		return math.abs(x-n.X)>10 and math.abs(z-n.Z)>10
-	end
-	for _,n in layout.Nodes do
-		if n.Id~="Entry" then
-			for _,sx in {-1,1} do for _,sz in {-1,1} do
-				local x,z=n.X+sx*(n.Width/2-7),n.Z+sz*(n.Depth/2-7)
-				if coverAllowed(x,z,n) then
-					local cover=part(geo,"DefenseCover",Vector3.new(10,9,10),o+Vector3.new(x,n.Y+4.5,z),C.dark,Enum.Material.Metal)
-					cover:SetAttribute("NodeId",n.Id)
-					if n.Id==layout.Landmarks[1].NodeId and not model:GetAttribute("LandmarkBuilt") then
-						model:SetAttribute("LandmarkBuilt",true)
-						cover.Name="LandmarkCore"
-						if layout.Theme=="Office" then
-							cover.Color=Color3.fromRGB(91,120,104)
-							part(props,"AtriumLeaves",Vector3.new(11,4,11),cover.Position+Vector3.new(0,6,0),Color3.fromRGB(70,109,78),nil,true).Shape=Enum.PartType.Ball
-						elseif layout.Theme=="Laboratory" then
-							cover.Material=Enum.Material.Glass; cover.Transparency=.4; cover.Color=accent
-							part(props,"QuarantineSample",Vector3.new(4,7,4),cover.Position,accent,Enum.Material.Neon,true).Shape=Enum.PartType.Cylinder
-						elseif layout.Theme=="Warehouse" then
-							cover.Color=Color3.fromRGB(176,118,51)
-							for y=-3,3,3 do part(props,"LoadingStripe",Vector3.new(10.1,.4,10.1),cover.Position+Vector3.new(0,y,0),accent,nil,true) end
-						else
-							cover.Color=Color3.fromRGB(159,76,54)
-							part(props,"CrashedVanWindow",Vector3.new(10.1,3,10.1),cover.Position+Vector3.new(0,1,0),Color3.fromRGB(47,70,79),nil,true)
-						end
-					end
-				end
-			end end
-		end
-	end
-	for _,d in layout.DefenseZones do
-		local copy=table.clone(d); copy.Position=o+d.Position; table.insert(defenses,copy)
-		part(props,"DefenseArea_"..d.Id,Vector3.new(d.Width,.035,d.Depth),copy.Position+Vector3.new(0,.04,0),accent,nil,true).Transparency=.72
-		sign(props,copy.Position+Vector3.new(0,6,-d.Depth/2+1),"ПОЗИЦИЯ  /  "..(#defenses),20,accent)
-	end
-	for _,s in layout.SpawnZones do
-		local copy=table.clone(s); copy.Position=o+s.Position; table.insert(zones,copy)
-		local p=part(spawns,s.Id,Vector3.new(6,.1,6),copy.Position,C.red,nil,true); p.Transparency=1
-		for k,v in {SpawnZone=true,NodeId=s.NodeId,AttackDirection=s.AttackDirection,EntryKind=s.EntryKind} do p:SetAttribute(k,v) end
-	end
-	local signals={}
-	for _,n in layout.Nodes do
-		if n.Id~="Entry" and n.Id~="Upper" then
-			local sector=math.abs(n.X)>math.abs(n.Z) and (n.X<0 and "West" or "East") or (n.Z<0 and "North" or "South")
-			local beacon=part(props,"AttackBeacon_"..n.Id,Vector3.new(2,1,2),o+Vector3.new(n.X,n.Y+12,n.Z),accent,Enum.Material.Neon,true)
-			table.insert(signals,{Part=beacon,Sector=sector})
-			sign(props,o+Vector3.new(n.X,n.Y+14,n.Z),Config.Run.Encounters.SectorLabels[sector].."  /  ПОДХОД",24,accent)
-		end
-	end
-	local landmarkNode
-	for _,n in layout.Nodes do if n.Id==layout.Landmarks[1].NodeId then landmarkNode=n break end end
-	local landmarkNames={Office="АТРИУМ",Laboratory="КАРАНТИН",Warehouse="ПОГРУЗКА",Parking="АВАРИЙНАЯ ЗОНА"}
-	local lp=o+Vector3.new(landmarkNode.X,landmarkNode.Y,landmarkNode.Z)
-	part(props,"LandmarkRing",Vector3.new(18,.05,18),lp+Vector3.new(0,.07,0),accent,Enum.Material.Neon,true).Transparency=.55
-	part(props,"LandmarkCanopy",Vector3.new(18,1,18),lp+Vector3.new(0,18,0),accent,Enum.Material.Metal,true)
-	sign(props,lp+Vector3.new(0,17,-8),landmarkNames[layout.Theme],18,Color3.new(1,1,1))
-	local doorZ=G.HalfDepth-20; local cabinZ=G.HalfDepth-11
+ local started=os.clock();local number=layout.Number
+ local model=Instance.new("Model");model.Name=string.format("Floor%03d",number);model.Parent=run
+ for k,v in {FloorNumber=number,Seed=layout.Seed,RunSeed=layout.RunSeed,GenerationVersion=layout.GenerationVersion,Macro=layout.Macro,Theme=layout.Theme,ThemeLabel=layout.Label,Levels=layout.Upper and 2 or 1,Signature=layout.Signature,Attempt=layout.Attempt,OpenSpaceFraction=layout.OpenSpaceFraction}do model:SetAttribute(k,v)end
+ local geo,props,spawns,lobby=folder(model,"Geometry"),folder(model,"Props"),folder(model,"ZombieSpawns"),folder(model,"ElevatorLobby")
+ local o=Vector3.new(0,Config.Run.BaseHeight+(slot-1)*Config.Run.FloorHeight,0)
+ local accent=accents[layout.AccentIndex]
+ part(geo,"Floor",Vector3.new(layout.HalfWidth*2,1,layout.HalfDepth*2),o-Vector3.new(0,.5,0),C.floor,layout.Theme=="Office"and Enum.Material.Carpet or Enum.Material.Concrete)
+ part(geo,"Ceiling",Vector3.new(layout.HalfWidth*2,1,layout.HalfDepth*2),o+Vector3.new(0,G.CeilingHeight+.5,0),Color3.fromRGB(105,118,126))
+ -- Only the exterior enclosure: no graph-complement room walls.
+ for _,x in {-layout.HalfWidth,layout.HalfWidth}do
+  local wall=part(geo,"WindowWall",Vector3.new(1,G.CeilingHeight,layout.HalfDepth*2),o+Vector3.new(x,G.CeilingHeight/2,0),Color3.fromRGB(83,120,143),Enum.Material.Glass);wall.Transparency=.5
+ end
+ for _,z in {-layout.HalfDepth,layout.HalfDepth}do part(geo,"EndWall",Vector3.new(layout.HalfWidth*2,G.CeilingHeight,1),o+Vector3.new(0,G.CeilingHeight/2,z),C.wall)end
+ for _,x in {-layout.HalfWidth*.65,0,layout.HalfWidth*.65}do for _,z in {-layout.HalfDepth*.72,-layout.HalfDepth*.24,layout.HalfDepth*.24,layout.HalfDepth*.72}do
+  local lamp
+  if greybox then lamp=part(props,"CeilingLight",Vector3.new(14,.15,2),o+Vector3.new(x,G.CeilingHeight-.3,z),Color3.fromRGB(213,229,232),Enum.Material.Neon,true)
+  else
+   local name=layout.Theme=="Parking"and "ParkingHangingLight"or "CeilingLampLong"
+   local height=game.ReplicatedStorage.Assets.EnvironmentKit[name].PrimaryPart.Size.Y*G.StudsPerMeter
+   local fixture=ArenaAssets.Place(name,props,CFrame.new(o+Vector3.new(x,G.CeilingHeight-height-.05,z)),nil,false,G.StudsPerMeter)
+   lamp=fixture.PrimaryPart
+  end
+  local light=Instance.new("SurfaceLight");light.Face=Enum.NormalId.Bottom;light.Range=65;light.Angle=140;light.Brightness=1.8;light.Parent=lamp
+ end end
+ local zones,probes,defenses={},{},{}
+ for _,n in layout.Nodes do table.insert(probes,o+Vector3.new(n.X,n.Y,n.Z))end
+ for _,cell in layout.Cells do
+  local module=Tiles.Get(cell.Role,cell.Module)
+  local group=folder(props,cell.Id);local base=o+Vector3.new(cell.X,cell.Y,cell.Z)
+  for k,v in {Module=cell.Module,Purpose=cell.Purpose,Role=cell.Role,Row=cell.Row,Column=cell.Column,CellX=cell.X,CellZ=cell.Z}do group:SetAttribute(k,v)end
+  if module.Elevation then
+   local e=module.Elevation;local center=o+Vector3.new(cell.X,0,cell.Z)
+   local platform=part(geo,"Floor",Vector3.new(e.Width,.6,e.Depth),center+Vector3.new(0,e.Height-.3,0),C.dark,Enum.Material.Metal);platform:SetAttribute("TileId",cell.Id)
+   for _,side in {-1,1}do
+    local ramp=part(geo,"StairRamp",Vector3.new(e.RampWidth,.4,math.sqrt(e.RampLength^2+e.Height^2)),center+Vector3.new(0,e.Height/2,side*(e.Depth/2+e.RampLength/2)),C.dark,Enum.Material.Metal)
+    ramp:SetAttribute("TileId",cell.Id)
+    ramp.CFrame*=CFrame.Angles(side*math.atan(e.Height/e.RampLength),0,0)
+   end
+   for _,side in {-1,1}do local rail=part(geo,"GalleryRailing",Vector3.new(.25,2.8,e.Depth),center+Vector3.new(side*e.Width/2,e.Height+1.4,0),accent,Enum.Material.Metal);rail:SetAttribute("TileId",cell.Id)end
+  end
+  local transform=CFrame.new(base)
+  for _,slot in module.Slots do
+   local model=ArenaAssets.Place(slot[1],group,transform*CFrame.new(slot[2],slot[6]or 0,slot[3])*CFrame.Angles(0,math.rad(slot[4]),0),nil,slot[5],G.StudsPerMeter)
+   model:SetAttribute("GameplayObstacle",slot[5])
+  end
+  if #module.Slots>0 or module.FloorPatch then part(group,"TileFloor",Vector3.new(cell.Width,.025,cell.Depth),base+Vector3.new(0,.015,0),Color3.fromRGB(62,72,77),Enum.Material.Carpet,true)end
+  if module.Sign then sign(group,base+Vector3.new(0,11,-8),module.Sign,20,accent)end
+  if module.Cracks then ArenaAssets.Place("GroundCracks",group,transform*CFrame.new(0,.025,0),.12,false)end
+ end
+ for _,d in layout.DefenseZones do local copy=table.clone(d);copy.Position=o+d.Position;table.insert(defenses,copy)end
+ for _,s in layout.SpawnZones do local copy=table.clone(s);copy.Position=o+s.Position;table.insert(zones,copy)end
+ local gates={}
+ for _,s in layout.Sections do if s.GateZ then
+  local gate=part(geo,"SectionGate"..s.Id,Vector3.new(layout.HalfWidth*2-2,G.CeilingHeight,.8),o+Vector3.new(0,G.CeilingHeight/2,s.GateZ),accent,Enum.Material.ForceField);gate.Transparency=.45;gate.CanCollide=false;gate.CanQuery=false
+  table.insert(gates,{Part=gate,Id=s.Id})
+  sign(props,o+Vector3.new(0,9,s.GateZ+1),"ПРОРЫВ  /  СЕКТОР "..(s.Id+1),30,accent)
+ end end
+ sign(props,o+Vector3.new(0,16,-16),layout.MacroLabel,30,accent)
+	local doorZ=layout.HalfDepth-20; local cabinZ=layout.HalfDepth-11
 	part(lobby,"CabinFloor",Vector3.new(18,.12,18),o+Vector3.new(0,.06,cabinZ),C.dark,Enum.Material.Metal)
 	part(lobby,"CabinBack",Vector3.new(18,14,.6),o+Vector3.new(0,7,cabinZ+9),C.dark,Enum.Material.Metal)
 	part(lobby,"CabinCeiling",Vector3.new(18,.6,18),o+Vector3.new(0,14,cabinZ),C.dark,Enum.Material.Metal)
@@ -256,23 +96,13 @@ local function buildFloor(run,layout,slot,greybox)
 	local prompt=Instance.new("ProximityPrompt"); prompt.Name="NextFloor"; prompt.ActionText="На следующий этаж"; prompt.ObjectText="ЛИФТ"; prompt.HoldDuration=.25; prompt.MaxActivationDistance=12; prompt.RequiresLineOfSight=false; prompt.Enabled=false; prompt.Parent=button
 	sign(lobby,o+Vector3.new(0,17,doorZ-.5),"ЛИФТ ↑  /  "..layout.Label,27,accent)
 	local spawn=Instance.new("SpawnLocation"); spawn.Name="PlayerSpawn"; spawn.Size=Vector3.new(5,.2,5); spawn.CFrame=CFrame.new(o+Vector3.new(0,.1,doorZ-14)); spawn.Anchored=true; spawn.Transparency=1; spawn.CanCollide=false; spawn.CanQuery=false; spawn.Duration=0; spawn.Enabled=false; spawn.Parent=model
-	local partCount=0; for _,p in model:GetDescendants() do if p:IsA("BasePart") then partCount+=1 end end
-	model:SetAttribute("PartCount",partCount); model:SetAttribute("BuildSeconds",os.clock()-started)
-	return {Model=model,Origin=o,Zones=zones,DefenseZones=defenses,Signals=signals,Spawn=spawn,Doors=doors,Indicator=indicator,Prompt=prompt,Title=title,
-		Cabin=CFrame.new(o+Vector3.new(0,3,cabinZ)),Entry=CFrame.new(o+Vector3.new(0,3,doorZ-14)),ExitZ=doorZ-3,
-		Bounds={Origin=o,HalfWidth=G.HalfWidth-3,HalfDepth=G.HalfDepth-3},Probes=probes,Layout=layout,Slot=slot}
+
+ local count=0;for _,p in model:GetDescendants()do if p:IsA("BasePart")then count+=1 end end
+ model:SetAttribute("PartCount",count);model:SetAttribute("BuildSeconds",os.clock()-started)
+ return {Model=model,Origin=o,Zones=zones,DefenseZones=defenses,Signals={},Gates=gates,Spawn=spawn,Doors=doors,Indicator=indicator,Prompt=prompt,Title=title,Cabin=CFrame.new(o+Vector3.new(0,3,cabinZ)),Entry=CFrame.new(o+Vector3.new(0,3,doorZ-14)),ExitZ=doorZ-3,Bounds={Origin=o,HalfWidth=layout.HalfWidth-3,HalfDepth=layout.HalfDepth-3},Probes=probes,Layout=layout,Slot=slot}
 end
-function OfficeMap.SetDirections(floor,directions)
-	for _,s in floor.Signals do s.Part.Color=table.find(directions,s.Sector) and C.red or C.teal end
-end
-function OfficeMap.SetObjective(floor,defenseId)
-	for _,d in floor.DefenseZones do
-		local area=floor.Model.Props:FindFirstChild("DefenseArea_"..d.Id)
-		local active=d.Id==defenseId
-		area.Material=active and Enum.Material.Neon or Enum.Material.SmoothPlastic
-		area.Color=active and Color3.fromRGB(94,219,142) or C.teal
-		area.Transparency=active and .35 or .9
-	end
+function OfficeMap.SetSection(floor,section)
+ for _,g in floor.Gates do local locked=g.Id>=section;g.Part.CanCollide=locked;g.Part.CanQuery=locked;g.Part.Transparency=locked and .45 or 1 end
 end
 function OfficeMap.CreateFloor(map,number,slot,options)
 	options=options or {}
@@ -280,12 +110,12 @@ function OfficeMap.CreateFloor(map,number,slot,options)
 	for attempt=1,G.MaxAttempts+1 do
 		local fallback=attempt>G.MaxAttempts
 		local override=options.Override
-		if fallback then override={Macro="LoopDefense",Fixed=true}; if options.Override then override.Theme=options.Override.Theme end end
+		if fallback then override={Macro="OpenArena",Fixed=true}; if options.Override then override.Theme=options.Override.Theme end end
 		local plan=Layout.Generate(map.Seed,number,attempt,override)
 		local valid,reason=Layout.Validate(plan)
 		if valid then
 			local staging=folder(map.Run,"PreparingFloor")
-			local built,floor=pcall(buildFloor,staging,plan,slot,options.Greybox or fallback)
+			local built,floor=pcall(buildFloor,staging,plan,slot,options.Greybox)
 			if not built then
 				staging:Destroy(); table.insert(failures,"Build failed: "..tostring(floor)); continue
 			end

@@ -1,4 +1,9 @@
 local Players = game:GetService("Players")
+-- Navigation validation can take several seconds. Spawn only after a safe floor exists.
+Players.CharacterAutoLoads = false
+-- Publish the state container before navigation validation delays client startup.
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local runState = Instance.new("Folder"); runState.Name = "RunState"; runState.Parent = ReplicatedStorage
 -- The avatar body is hidden; avoid loading catalog faces/moods into the FPS camera rig.
 local Config = require(game.ReplicatedStorage.Shared.Config)
 local function configureMovement(character)
@@ -22,3 +27,9 @@ local map = OfficeMap.Build()
 ZombieService.Start(map.Current.Zones)
 WeaponService.Start()
 FloorDirector.Start(map)
+map.Current.Spawn.Enabled = true
+for _,player in Players:GetPlayers()do player.RespawnLocation=map.Current.Spawn end
+Players.CharacterAutoLoads = true
+for _,player in Players:GetPlayers()do
+ if not player.Character then task.spawn(function()if player.Parent==Players and not player.Character then player:LoadCharacterAsync()end end)end
+end

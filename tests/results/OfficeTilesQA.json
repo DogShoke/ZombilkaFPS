@@ -1,0 +1,420 @@
+{
+  "Version": 5,
+  "Milestone": "One authored Office OpenArena, fixed 5x5 grid, cell36, footprint180x180",
+  "Plans": 80,
+  "VariantSampleCount": 12,
+  "PathQueries": 456,
+  "Navigation": {
+    "Plans": 80,
+    "Samples": [
+      {
+        "Variant": "EdgeLane,Clear,Clear,Clear,EdgeLane,Carpet,Reception,Clear,ServerStation,Carpet,Clear,Carpet,OfficeReception,Carpet,Clear,Carpet,DeskIsland,Clear,RaisedWorkstation,Carpet,EdgeLane,Clear,ElevatorLanding,Clear,CrackedEdge",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109775:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.023865792182492712,
+          "RunSeed": 1,
+          "Levels": 2,
+          "HullFootprintFraction": 0.009504659295739713,
+          "Theme": "Office",
+          "ValidationSeconds": 4.077309299998888,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.010155500000109896,
+          "GenerationVersion": 5,
+          "PartCount": 99,
+          "Seed": 109775,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 15,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 1
+      },
+      {
+        "Variant": "EdgeLane,Carpet,Clear,Carpet,EdgeLane,Carpet,BreakArea,Clear,DeskIsland,Clear,Clear,Clear,OfficeReception,Carpet,Clear,Carpet,BreakArea,Carpet,RaisedWorkstation,Clear,EdgeLane,Carpet,ElevatorLanding,Carpet,CrackedEdge",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109776:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.02459979554348098,
+          "RunSeed": 2,
+          "Levels": 2,
+          "HullFootprintFraction": 0.010238662656727985,
+          "Theme": "Office",
+          "ValidationSeconds": 4.088151799998741,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.008385100001760293,
+          "GenerationVersion": 5,
+          "PartCount": 101,
+          "Seed": 109776,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 15,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 2
+      },
+      {
+        "Variant": "CrackedEdge,Clear,Carpet,Carpet,EdgeLane,Carpet,BreakArea,Carpet,Reception,Carpet,Clear,Clear,OfficeReception,Clear,Clear,Clear,DeskIsland,Clear,RaisedWorkstation,Clear,EdgeLane,Clear,ElevatorLanding,Clear,EdgeLane",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109777:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.024556604533645766,
+          "RunSeed": 3,
+          "Levels": 2,
+          "HullFootprintFraction": 0.010195471646892773,
+          "Theme": "Office",
+          "ValidationSeconds": 4.091782200001035,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.00689060000149766,
+          "GenerationVersion": 5,
+          "PartCount": 97,
+          "Seed": 109777,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 14,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 3
+      },
+      {
+        "Variant": "CrackedEdge,Carpet,Carpet,Clear,EdgeLane,Carpet,BreakArea,Clear,DeskIsland,Clear,Carpet,Carpet,ReceptionLounge,Clear,Clear,Clear,DeskIsland,Clear,RaisedWorkstation,Clear,CrackedEdge,Clear,ElevatorLanding,Carpet,CrackedEdge",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109778:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.025830158263125028,
+          "RunSeed": 4,
+          "Levels": 2,
+          "HullFootprintFraction": 0.01146902537637203,
+          "Theme": "Office",
+          "ValidationSeconds": 4.08230999999796,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.01481950000015786,
+          "GenerationVersion": 5,
+          "PartCount": 106,
+          "Seed": 109778,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 15,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 4
+      },
+      {
+        "Variant": "EdgeLane,Carpet,Clear,Carpet,EdgeLane,Clear,ServerStation,Carpet,Reception,Clear,Carpet,Clear,OfficeReception,Clear,Carpet,Carpet,Reception,Carpet,RaisedWorkstation,Carpet,EdgeLane,Clear,ElevatorLanding,Clear,EdgeLane",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109779:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.022817722638555814,
+          "RunSeed": 5,
+          "Levels": 2,
+          "HullFootprintFraction": 0.008456589751802815,
+          "Theme": "Office",
+          "ValidationSeconds": 4.089170999999624,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.008152100002916995,
+          "GenerationVersion": 5,
+          "PartCount": 95,
+          "Seed": 109779,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 14,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 5
+      },
+      {
+        "Variant": "CrackedEdge,Clear,Carpet,Carpet,EdgeLane,Carpet,BreakArea,Clear,ServerStation,Clear,Clear,Clear,ReceptionLounge,Carpet,Clear,Carpet,BreakArea,Clear,RaisedWorkstation,Carpet,CrackedEdge,Carpet,ElevatorLanding,Carpet,EdgeLane",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109780:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.023129588843768614,
+          "RunSeed": 6,
+          "Levels": 2,
+          "HullFootprintFraction": 0.008768455957015616,
+          "Theme": "Office",
+          "ValidationSeconds": 4.089050200000202,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.00759950000065146,
+          "GenerationVersion": 5,
+          "PartCount": 100,
+          "Seed": 109780,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 15,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 6
+      },
+      {
+        "Variant": "EdgeLane,Carpet,Clear,Clear,CrackedEdge,Clear,DeskIsland,Carpet,DeskIsland,Carpet,Carpet,Clear,ReceptionLounge,Carpet,Carpet,Clear,Reception,Clear,RaisedWorkstation,Clear,CrackedEdge,Clear,ElevatorLanding,Carpet,CrackedEdge",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109781:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.025786967253289814,
+          "RunSeed": 7,
+          "Levels": 2,
+          "HullFootprintFraction": 0.011425834366536816,
+          "Theme": "Office",
+          "ValidationSeconds": 4.085267700000259,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.010106599998835009,
+          "GenerationVersion": 5,
+          "PartCount": 106,
+          "Seed": 109781,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 15,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 7
+      },
+      {
+        "Variant": "CrackedEdge,Clear,Clear,Carpet,EdgeLane,Carpet,DeskIsland,Carpet,DeskIsland,Carpet,Clear,Carpet,OfficeReception,Clear,Clear,Clear,ServerStation,Carpet,RaisedWorkstation,Clear,CrackedEdge,Clear,ElevatorLanding,Carpet,CrackedEdge",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109782:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.024913861726429596,
+          "RunSeed": 8,
+          "Levels": 2,
+          "HullFootprintFraction": 0.010552728839676598,
+          "Theme": "Office",
+          "ValidationSeconds": 4.089416599999822,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.010680100000172388,
+          "GenerationVersion": 5,
+          "PartCount": 107,
+          "Seed": 109782,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 14,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 8
+      },
+      {
+        "Variant": "EdgeLane,Clear,Carpet,Clear,CrackedEdge,Clear,DeskIsland,Clear,Reception,Clear,Carpet,Clear,ReceptionLounge,Carpet,Carpet,Carpet,Reception,Clear,RaisedWorkstation,Carpet,EdgeLane,Clear,ElevatorLanding,Clear,EdgeLane",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109783:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.02473889770935292,
+          "RunSeed": 9,
+          "Levels": 2,
+          "HullFootprintFraction": 0.010377764822599927,
+          "Theme": "Office",
+          "ValidationSeconds": 4.0876745999994455,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.00899099999878672,
+          "GenerationVersion": 5,
+          "PartCount": 98,
+          "Seed": 109783,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 14,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 9
+      },
+      {
+        "Variant": "CrackedEdge,Carpet,Clear,Carpet,EdgeLane,Carpet,DeskIsland,Carpet,BreakArea,Clear,Clear,Clear,ReceptionLounge,Clear,Carpet,Clear,DeskIsland,Carpet,RaisedWorkstation,Carpet,CrackedEdge,Carpet,ElevatorLanding,Clear,EdgeLane",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:109784:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.025830158263125024,
+          "RunSeed": 10,
+          "Levels": 2,
+          "HullFootprintFraction": 0.01146902537637203,
+          "Theme": "Office",
+          "ValidationSeconds": 4.086978400002408,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.010382700002082856,
+          "GenerationVersion": 5,
+          "PartCount": 107,
+          "Seed": 109784,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 15,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 10
+      },
+      {
+        "Variant": "CrackedEdge,Clear,Carpet,Carpet,CrackedEdge,Clear,DeskIsland,Clear,ServerStation,Clear,Clear,Carpet,ReceptionLounge,Carpet,Clear,Carpet,BreakArea,Carpet,RaisedWorkstation,Carpet,CrackedEdge,Carpet,ElevatorLanding,Carpet,CrackedEdge",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:233230:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.02413446737787029,
+          "RunSeed": 123456,
+          "Levels": 2,
+          "HullFootprintFraction": 0.009773334491117294,
+          "Theme": "Office",
+          "ValidationSeconds": 4.090049200000067,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.008029700002225582,
+          "GenerationVersion": 5,
+          "PartCount": 107,
+          "Seed": 233230,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 15,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 123456
+      },
+      {
+        "Variant": "EdgeLane,Carpet,Clear,Clear,EdgeLane,Carpet,DeskIsland,Clear,DeskIsland,Clear,Clear,Carpet,ReceptionLounge,Carpet,Clear,Clear,DeskIsland,Clear,RaisedWorkstation,Carpet,CrackedEdge,Clear,ElevatorLanding,Carpet,CrackedEdge",
+        "Attributes": {
+          "Validated": true,
+          "Signature": "tiles5:Office:OpenArena:1097428:1",
+          "FloorNumber": 1,
+          "CombatStructureFraction": 0.0268350367972267,
+          "RunSeed": 987654,
+          "Levels": 2,
+          "HullFootprintFraction": 0.012473903910473707,
+          "Theme": "Office",
+          "ValidationSeconds": 4.087805800001661,
+          "Macro": "OpenArena",
+          "FallbackReason": "",
+          "Fallback": false,
+          "ThemeLabel": "ОФИСЫ",
+          "BuildSeconds": 0.00825299999996787,
+          "GenerationVersion": 5,
+          "PartCount": 109,
+          "Seed": 1097428,
+          "NavigationChecks": 38,
+          "VisibleCombatPoints": 15,
+          "Attempt": 1,
+          "OpenSpaceFraction": 0.914074074074074
+        },
+        "Seed": 987654
+      }
+    ],
+    "Failed": [],
+    "Variants": {
+      "ServerStation": true,
+      "ReceptionLounge": true,
+      "OfficeReception": true,
+      "DeskIsland": true,
+      "BreakArea": true,
+      "Reception": true
+    }
+  },
+  "Physical": {
+    "Success": true,
+    "Error": "",
+    "Report": {
+      "PlayerRotation": true,
+      "AroundLandmark": {
+        "Seconds": 4.058308200001193,
+        "RootY": 423,
+        "Waypoints": 14
+      },
+      "Collision": {
+        "Start": 12.8447265625,
+        "Stopped": 6.856440544128418,
+        "Surface": 5.84499979019165,
+        "Prop": "ReceptionWide"
+      },
+      "Ramps": [
+        {
+          "Seconds": 2.5954490000003716,
+          "RootY": 428.9999694824219,
+          "Waypoints": 9
+        },
+        {
+          "Seconds": 1.696783699997468,
+          "RootY": 428.9957275390625,
+          "Waypoints": 6
+        }
+      ]
+    }
+  },
+  "NormalHorde": {
+    "Success": true,
+    "Error": "",
+    "Report": {
+      "State": "EncounterActive",
+      "Warnings": 5,
+      "DamageReachedPlayer": true,
+      "FirstDamage": 15.785721500000363,
+      "Peak": 5,
+      "FirstWarning": 3.691394699999364
+    }
+  },
+  "HardModules": {
+    "Tested": [
+      "ArchiveBlock",
+      "ServerBlock"
+    ],
+    "FitWithin24": true,
+    "NoJumpPaths": true,
+    "Waypoints": [
+      11,
+      11
+    ]
+  },
+  "Visual": {
+    "Seeds": [
+      123456,
+      1,
+      4,
+      8
+    ],
+    "Observed": "Entrance view shows reception and clear side routes; overview shows coherent desk/reception/server/lounge variants, upright textured assets and compact raised tile with both ramps; fixed topology is unchanged",
+    "RechecksAfterStructuralBounds": [
+      1,
+      4,
+      8
+    ]
+  },
+  "Limits": [
+    "This is one prototype; other layouts disabled in ordinary Play by user choice",
+    "No HordeDirector redesign; normal first-warning3.69sec / first-melee15.79sec observed in one start",
+    "Technical movement/path checks do not prove normal-length combat is fun",
+    "Hard modules are library fixtures; no H cell added to initial grid",
+    "No commit, merge or push"
+  ]
+}

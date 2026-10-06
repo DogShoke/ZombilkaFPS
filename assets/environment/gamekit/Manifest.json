@@ -1,0 +1,5124 @@
+{
+  "count": 203,
+  "assets": [
+    {
+      "name": "OfficeDesk",
+      "triangles": 176,
+      "size_m": [
+        1.6,
+        0.75,
+        0.8025
+      ],
+      "file": "exports/OfficeDesk.fbx",
+      "group": "office",
+      "export_name": "Game_OfficeDesk",
+      "dimensions_xyz_m": [
+        1.6,
+        0.75,
+        0.8025
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.6,
+        0.75,
+        0.8025
+      ]
+    },
+    {
+      "name": "DeskWorkstation",
+      "triangles": 660,
+      "size_m": [
+        1.6,
+        0.75,
+        1.435
+      ],
+      "file": "exports/DeskWorkstation.fbx",
+      "group": "office",
+      "export_name": "Game_DeskWorkstation",
+      "dimensions_xyz_m": [
+        1.6,
+        0.75,
+        1.435
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.6,
+        0.75,
+        1.435
+      ]
+    },
+    {
+      "name": "DualMonitorDesk",
+      "triangles": 528,
+      "size_m": [
+        2.0,
+        0.85,
+        1.445
+      ],
+      "file": "exports/DualMonitorDesk.fbx",
+      "group": "office",
+      "export_name": "Game_DualMonitorDesk",
+      "dimensions_xyz_m": [
+        2.0,
+        0.85,
+        1.445
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        0.85,
+        1.445
+      ]
+    },
+    {
+      "name": "MeetingTable",
+      "triangles": 176,
+      "size_m": [
+        2.4,
+        1.0,
+        0.8025
+      ],
+      "file": "exports/MeetingTable.fbx",
+      "group": "office",
+      "export_name": "Game_MeetingTable",
+      "dimensions_xyz_m": [
+        2.4,
+        1.0,
+        0.8025
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.4,
+        1.0,
+        0.8025
+      ]
+    },
+    {
+      "name": "RoundTable",
+      "triangles": 228,
+      "size_m": [
+        1.2,
+        1.2,
+        0.785
+      ],
+      "file": "exports/RoundTable.fbx",
+      "group": "office",
+      "export_name": "Game_RoundTable",
+      "dimensions_xyz_m": [
+        1.2,
+        1.2,
+        0.785
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        1.2,
+        0.785
+      ]
+    },
+    {
+      "name": "VisitorChair",
+      "triangles": 440,
+      "size_m": [
+        0.605,
+        0.495,
+        1.11
+      ],
+      "file": "exports/VisitorChair.fbx",
+      "group": "office",
+      "export_name": "Game_VisitorChair",
+      "dimensions_xyz_m": [
+        0.605,
+        0.495,
+        1.11
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.605,
+        0.495,
+        1.11
+      ]
+    },
+    {
+      "name": "OfficeChair",
+      "triangles": 628,
+      "size_m": [
+        0.6925,
+        0.7282,
+        1.087
+      ],
+      "file": "exports/OfficeChair.fbx",
+      "group": "office",
+      "export_name": "Game_OfficeChair",
+      "dimensions_xyz_m": [
+        0.69253,
+        0.72817,
+        1.087
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.69253,
+        0.72817,
+        1.087
+      ]
+    },
+    {
+      "name": "TwoSeatSofa",
+      "triangles": 396,
+      "size_m": [
+        1.93,
+        0.8,
+        1.08
+      ],
+      "file": "exports/TwoSeatSofa.fbx",
+      "group": "office",
+      "export_name": "Game_TwoSeatSofa",
+      "dimensions_xyz_m": [
+        1.93,
+        0.8,
+        1.08
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.93,
+        0.8,
+        1.08
+      ]
+    },
+    {
+      "name": "CoffeeTable",
+      "triangles": 264,
+      "size_m": [
+        1.15,
+        0.6,
+        0.455
+      ],
+      "file": "exports/CoffeeTable.fbx",
+      "group": "office",
+      "export_name": "Game_CoffeeTable",
+      "dimensions_xyz_m": [
+        1.14999,
+        0.6,
+        0.455
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.15,
+        0.6,
+        0.455
+      ]
+    },
+    {
+      "name": "ReceptionDesk",
+      "triangles": 308,
+      "size_m": [
+        2.22,
+        0.885,
+        1.1925
+      ],
+      "file": "exports/ReceptionDesk.fbx",
+      "group": "office",
+      "export_name": "Game_ReceptionDesk",
+      "dimensions_xyz_m": [
+        2.22,
+        0.885,
+        1.1925
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.22,
+        0.885,
+        1.1925
+      ]
+    },
+    {
+      "name": "TallPartition",
+      "triangles": 308,
+      "size_m": [
+        1.62,
+        0.4,
+        1.64
+      ],
+      "file": "exports/TallPartition.fbx",
+      "group": "office",
+      "export_name": "Game_TallPartition",
+      "dimensions_xyz_m": [
+        1.62,
+        0.4,
+        1.64
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.62,
+        0.4,
+        1.64
+      ]
+    },
+    {
+      "name": "DeskPartition",
+      "triangles": 308,
+      "size_m": [
+        1.62,
+        0.4,
+        1.09
+      ],
+      "file": "exports/DeskPartition.fbx",
+      "group": "office",
+      "export_name": "Game_DeskPartition",
+      "dimensions_xyz_m": [
+        1.62,
+        0.4,
+        1.09
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.62,
+        0.4,
+        1.09
+      ]
+    },
+    {
+      "name": "TallCabinet",
+      "triangles": 220,
+      "size_m": [
+        0.9,
+        0.5125,
+        1.7
+      ],
+      "file": "exports/TallCabinet.fbx",
+      "group": "office",
+      "export_name": "Game_TallCabinet",
+      "dimensions_xyz_m": [
+        0.89999,
+        0.5125,
+        1.7
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.9,
+        0.5125,
+        1.7
+      ]
+    },
+    {
+      "name": "LowCabinet",
+      "triangles": 264,
+      "size_m": [
+        1.05,
+        0.5375,
+        0.8675
+      ],
+      "file": "exports/LowCabinet.fbx",
+      "group": "office",
+      "export_name": "Game_LowCabinet",
+      "dimensions_xyz_m": [
+        1.05,
+        0.5375,
+        0.8675
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.05,
+        0.5375,
+        0.8675
+      ]
+    },
+    {
+      "name": "FilingCabinet",
+      "triangles": 572,
+      "size_m": [
+        0.46,
+        0.591,
+        1.25
+      ],
+      "file": "exports/FilingCabinet.fbx",
+      "group": "office",
+      "export_name": "Game_FilingCabinet",
+      "dimensions_xyz_m": [
+        0.46001,
+        0.591,
+        1.25
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.46,
+        0.591,
+        1.25
+      ]
+    },
+    {
+      "name": "ThreeDoorLocker",
+      "triangles": 704,
+      "size_m": [
+        0.43,
+        0.5125,
+        1.88
+      ],
+      "file": "exports/ThreeDoorLocker.fbx",
+      "group": "office",
+      "export_name": "Game_ThreeDoorLocker",
+      "dimensions_xyz_m": [
+        0.42999,
+        0.5125,
+        1.88
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.43,
+        0.5125,
+        1.88
+      ]
+    },
+    {
+      "name": "MetalShelf",
+      "triangles": 352,
+      "size_m": [
+        1.005,
+        0.45,
+        1.6625
+      ],
+      "file": "exports/MetalShelf.fbx",
+      "group": "office",
+      "export_name": "Game_MetalShelf",
+      "dimensions_xyz_m": [
+        1.005,
+        0.45,
+        1.6625
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.005,
+        0.45,
+        1.6625
+      ]
+    },
+    {
+      "name": "Bookcase",
+      "triangles": 308,
+      "size_m": [
+        1.025,
+        0.37,
+        1.665
+      ],
+      "file": "exports/Bookcase.fbx",
+      "group": "office",
+      "export_name": "Game_Bookcase",
+      "dimensions_xyz_m": [
+        1.025,
+        0.37,
+        1.665
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.025,
+        0.37,
+        1.665
+      ]
+    },
+    {
+      "name": "ServerRack",
+      "triangles": 860,
+      "size_m": [
+        0.6,
+        0.7725,
+        1.82
+      ],
+      "file": "exports/ServerRack.fbx",
+      "group": "office",
+      "export_name": "Game_ServerRack",
+      "dimensions_xyz_m": [
+        0.6,
+        0.7725,
+        1.82
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.6,
+        0.7725,
+        1.82
+      ]
+    },
+    {
+      "name": "Photocopier",
+      "triangles": 532,
+      "size_m": [
+        0.905,
+        0.8007,
+        1.4248
+      ],
+      "file": "exports/Photocopier.fbx",
+      "group": "office",
+      "export_name": "Game_Photocopier",
+      "dimensions_xyz_m": [
+        0.905,
+        0.80072,
+        1.42482
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.905,
+        0.80072,
+        1.42482
+      ]
+    },
+    {
+      "name": "DesktopPrinter",
+      "triangles": 188,
+      "size_m": [
+        0.47,
+        0.555,
+        0.3145
+      ],
+      "file": "exports/DesktopPrinter.fbx",
+      "group": "office",
+      "export_name": "Game_DesktopPrinter",
+      "dimensions_xyz_m": [
+        0.47,
+        0.555,
+        0.3145
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.47,
+        0.555,
+        0.3145
+      ]
+    },
+    {
+      "name": "PaperShredder",
+      "triangles": 132,
+      "size_m": [
+        0.36,
+        0.336,
+        0.556
+      ],
+      "file": "exports/PaperShredder.fbx",
+      "group": "office",
+      "export_name": "Game_PaperShredder",
+      "dimensions_xyz_m": [
+        0.36,
+        0.336,
+        0.556
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.36,
+        0.336,
+        0.556
+      ]
+    },
+    {
+      "name": "WaterCooler",
+      "triangles": 396,
+      "size_m": [
+        0.354,
+        0.447,
+        1.415
+      ],
+      "file": "exports/WaterCooler.fbx",
+      "group": "office",
+      "export_name": "Game_WaterCooler",
+      "dimensions_xyz_m": [
+        0.354,
+        0.447,
+        1.415
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.354,
+        0.447,
+        1.415
+      ]
+    },
+    {
+      "name": "WasteBin",
+      "triangles": 396,
+      "size_m": [
+        0.355,
+        0.355,
+        0.4925
+      ],
+      "file": "exports/WasteBin.fbx",
+      "group": "office",
+      "export_name": "Game_WasteBin",
+      "dimensions_xyz_m": [
+        0.355,
+        0.355,
+        0.4925
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.355,
+        0.355,
+        0.4925
+      ]
+    },
+    {
+      "name": "RecycleBin",
+      "triangles": 432,
+      "size_m": [
+        0.355,
+        0.355,
+        0.4925
+      ],
+      "file": "exports/RecycleBin.fbx",
+      "group": "office",
+      "export_name": "Game_RecycleBin",
+      "dimensions_xyz_m": [
+        0.355,
+        0.355,
+        0.4925
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.355,
+        0.355,
+        0.4925
+      ]
+    },
+    {
+      "name": "OfficeDoor",
+      "triangles": 396,
+      "size_m": [
+        0.935,
+        0.125,
+        2.09
+      ],
+      "file": "exports/OfficeDoor.fbx",
+      "group": "office",
+      "export_name": "Game_OfficeDoor",
+      "dimensions_xyz_m": [
+        0.935,
+        0.125,
+        2.09
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.935,
+        0.125,
+        2.09
+      ]
+    },
+    {
+      "name": "OfficeWindow",
+      "triangles": 264,
+      "size_m": [
+        1.835,
+        0.09,
+        1.24
+      ],
+      "file": "exports/OfficeWindow.fbx",
+      "group": "office",
+      "export_name": "Game_OfficeWindow",
+      "dimensions_xyz_m": [
+        1.83501,
+        0.09,
+        1.24
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.835,
+        0.09,
+        1.24
+      ]
+    },
+    {
+      "name": "Whiteboard",
+      "triangles": 396,
+      "size_m": [
+        1.635,
+        0.2,
+        1.09
+      ],
+      "file": "exports/Whiteboard.fbx",
+      "group": "office",
+      "export_name": "Game_Whiteboard",
+      "dimensions_xyz_m": [
+        1.63499,
+        0.2,
+        1.09
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.635,
+        0.2,
+        1.09
+      ]
+    },
+    {
+      "name": "NoticeBoard",
+      "triangles": 436,
+      "size_m": [
+        0.835,
+        0.089,
+        1.04
+      ],
+      "file": "exports/NoticeBoard.fbx",
+      "group": "office",
+      "export_name": "Game_NoticeBoard",
+      "dimensions_xyz_m": [
+        0.83501,
+        0.089,
+        1.04
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.835,
+        0.089,
+        1.04
+      ]
+    },
+    {
+      "name": "WallClock",
+      "triangles": 448,
+      "size_m": [
+        0.4,
+        0.4,
+        0.0785
+      ],
+      "file": "exports/WallClock.fbx",
+      "group": "office",
+      "export_name": "Game_WallClock",
+      "dimensions_xyz_m": [
+        0.39999,
+        0.0785,
+        0.4
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.4,
+        0.4,
+        0.0785
+      ]
+    },
+    {
+      "name": "FireExtinguisher",
+      "triangles": 188,
+      "size_m": [
+        0.2266,
+        0.188,
+        0.5988
+      ],
+      "file": "exports/FireExtinguisher.fbx",
+      "group": "office",
+      "export_name": "Game_FireExtinguisher",
+      "dimensions_xyz_m": [
+        0.22659,
+        0.188,
+        0.59876
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.22658,
+        0.188,
+        0.59876
+      ]
+    },
+    {
+      "name": "LargePlant",
+      "triangles": 334,
+      "size_m": [
+        0.6669,
+        0.6606,
+        1.2192
+      ],
+      "file": "exports/LargePlant.fbx",
+      "group": "office",
+      "export_name": "Game_LargePlant",
+      "dimensions_xyz_m": [
+        0.66685,
+        0.66063,
+        1.2192
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.66686,
+        0.66063,
+        1.2192
+      ]
+    },
+    {
+      "name": "SmallPlant",
+      "triangles": 334,
+      "size_m": [
+        0.3056,
+        0.3028,
+        0.5588
+      ],
+      "file": "exports/SmallPlant.fbx",
+      "group": "office",
+      "export_name": "Game_SmallPlant",
+      "dimensions_xyz_m": [
+        0.30564,
+        0.30279,
+        0.5588
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.30564,
+        0.30279,
+        0.5588
+      ]
+    },
+    {
+      "name": "PlantCluster",
+      "triangles": 1002,
+      "size_m": [
+        0.8501,
+        0.2477,
+        0.4572
+      ],
+      "file": "exports/PlantCluster.fbx",
+      "group": "office",
+      "export_name": "Game_PlantCluster",
+      "dimensions_xyz_m": [
+        0.85007,
+        0.24773,
+        0.4572
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.85007,
+        0.24774,
+        0.4572
+      ]
+    },
+    {
+      "name": "CoatStand",
+      "triangles": 200,
+      "size_m": [
+        0.44,
+        0.44,
+        1.675
+      ],
+      "file": "exports/CoatStand.fbx",
+      "group": "office",
+      "export_name": "Game_CoatStand",
+      "dimensions_xyz_m": [
+        0.44,
+        0.44,
+        1.675
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.44,
+        0.44,
+        1.675
+      ]
+    },
+    {
+      "name": "HangingLight",
+      "triangles": 144,
+      "size_m": [
+        1.1,
+        0.25,
+        0.548
+      ],
+      "file": "exports/HangingLight.fbx",
+      "group": "office",
+      "export_name": "Game_HangingLight",
+      "dimensions_xyz_m": [
+        1.1,
+        0.25,
+        0.548
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.1,
+        0.25,
+        0.548
+      ]
+    },
+    {
+      "name": "CeilingLight",
+      "triangles": 88,
+      "size_m": [
+        0.6,
+        0.6,
+        0.081
+      ],
+      "file": "exports/CeilingLight.fbx",
+      "group": "office",
+      "export_name": "Game_CeilingLight",
+      "dimensions_xyz_m": [
+        0.6,
+        0.6,
+        0.081
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.6,
+        0.6,
+        0.081
+      ]
+    },
+    {
+      "name": "Monitor",
+      "triangles": 176,
+      "size_m": [
+        0.69,
+        0.22,
+        0.625
+      ],
+      "file": "exports/Monitor.fbx",
+      "group": "office",
+      "export_name": "Game_Monitor",
+      "dimensions_xyz_m": [
+        0.69,
+        0.22,
+        0.625
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.69,
+        0.22,
+        0.625
+      ]
+    },
+    {
+      "name": "DualMonitor",
+      "triangles": 352,
+      "size_m": [
+        1.43,
+        0.22,
+        0.625
+      ],
+      "file": "exports/DualMonitor.fbx",
+      "group": "office",
+      "export_name": "Game_DualMonitor",
+      "dimensions_xyz_m": [
+        1.43,
+        0.22,
+        0.625
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.43,
+        0.22,
+        0.625
+      ]
+    },
+    {
+      "name": "ComputerTower",
+      "triangles": 160,
+      "size_m": [
+        0.2,
+        0.45,
+        0.48
+      ],
+      "file": "exports/ComputerTower.fbx",
+      "group": "office",
+      "export_name": "Game_ComputerTower",
+      "dimensions_xyz_m": [
+        0.2,
+        0.45,
+        0.48
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.2,
+        0.45,
+        0.48
+      ]
+    },
+    {
+      "name": "Laptop",
+      "triangles": 144,
+      "size_m": [
+        0.34,
+        0.2451,
+        0.2578
+      ],
+      "file": "exports/Laptop.fbx",
+      "group": "office",
+      "export_name": "Game_Laptop",
+      "dimensions_xyz_m": [
+        0.34,
+        0.24507,
+        0.25779
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.34,
+        0.24507,
+        0.25779
+      ]
+    },
+    {
+      "name": "Keyboard",
+      "triangles": 3344,
+      "size_m": [
+        0.45,
+        0.15,
+        0.036
+      ],
+      "file": "exports/Keyboard.fbx",
+      "group": "office",
+      "export_name": "Game_Keyboard",
+      "dimensions_xyz_m": [
+        0.45,
+        0.15,
+        0.036
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.45,
+        0.15,
+        0.036
+      ]
+    },
+    {
+      "name": "Mouse",
+      "triangles": 88,
+      "size_m": [
+        0.062,
+        0.105,
+        0.053
+      ],
+      "file": "exports/Mouse.fbx",
+      "group": "office",
+      "export_name": "Game_Mouse",
+      "dimensions_xyz_m": [
+        0.062,
+        0.105,
+        0.053
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.062,
+        0.105,
+        0.053
+      ]
+    },
+    {
+      "name": "DeskLamp",
+      "triangles": 144,
+      "size_m": [
+        0.18,
+        0.2369,
+        0.4733
+      ],
+      "file": "exports/DeskLamp.fbx",
+      "group": "office",
+      "export_name": "Game_DeskLamp",
+      "dimensions_xyz_m": [
+        0.17999,
+        0.23689,
+        0.47328
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.18,
+        0.23688,
+        0.47328
+      ]
+    },
+    {
+      "name": "PaperTrayStack",
+      "triangles": 564,
+      "size_m": [
+        0.275,
+        0.3325,
+        0.188
+      ],
+      "file": "exports/PaperTrayStack.fbx",
+      "group": "office",
+      "export_name": "Game_PaperTrayStack",
+      "dimensions_xyz_m": [
+        0.27499,
+        0.3325,
+        0.188
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.275,
+        0.3325,
+        0.188
+      ]
+    },
+    {
+      "name": "BinderSet",
+      "triangles": 168,
+      "size_m": [
+        0.188,
+        0.249,
+        0.3
+      ],
+      "file": "exports/BinderSet.fbx",
+      "group": "office",
+      "export_name": "Game_BinderSet",
+      "dimensions_xyz_m": [
+        0.188,
+        0.249,
+        0.3
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.188,
+        0.249,
+        0.3
+      ]
+    },
+    {
+      "name": "CardboardBox",
+      "triangles": 144,
+      "size_m": [
+        0.42,
+        0.3615,
+        0.3475
+      ],
+      "file": "exports/CardboardBox.fbx",
+      "group": "office",
+      "export_name": "Game_CardboardBox",
+      "dimensions_xyz_m": [
+        0.42,
+        0.3615,
+        0.3475
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.42,
+        0.3615,
+        0.3475
+      ]
+    },
+    {
+      "name": "ArchiveBox",
+      "triangles": 132,
+      "size_m": [
+        0.42,
+        0.3615,
+        0.341
+      ],
+      "file": "exports/ArchiveBox.fbx",
+      "group": "office",
+      "export_name": "Game_ArchiveBox",
+      "dimensions_xyz_m": [
+        0.42001,
+        0.3615,
+        0.341
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.42,
+        0.3615,
+        0.341
+      ]
+    },
+    {
+      "name": "DarkStorageBox",
+      "triangles": 132,
+      "size_m": [
+        0.42,
+        0.3615,
+        0.341
+      ],
+      "file": "exports/DarkStorageBox.fbx",
+      "group": "office",
+      "export_name": "Game_DarkStorageBox",
+      "dimensions_xyz_m": [
+        0.42,
+        0.3615,
+        0.341
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.42,
+        0.3615,
+        0.341
+      ]
+    },
+    {
+      "name": "CoffeeCup",
+      "triangles": 132,
+      "size_m": [
+        0.078,
+        0.078,
+        0.1105
+      ],
+      "file": "exports/CoffeeCup.fbx",
+      "group": "office",
+      "export_name": "Game_CoffeeCup",
+      "dimensions_xyz_m": [
+        0.078,
+        0.078,
+        0.1105
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.078,
+        0.078,
+        0.1105
+      ]
+    },
+    {
+      "name": "PenHolder",
+      "triangles": 104,
+      "size_m": [
+        0.09,
+        0.09,
+        0.1694
+      ],
+      "file": "exports/PenHolder.fbx",
+      "group": "office",
+      "export_name": "Game_PenHolder",
+      "dimensions_xyz_m": [
+        0.09,
+        0.09,
+        0.16937
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.09,
+        0.09,
+        0.16937
+      ]
+    },
+    {
+      "name": "Stapler",
+      "triangles": 88,
+      "size_m": [
+        0.1006,
+        0.035,
+        0.0623
+      ],
+      "file": "exports/Stapler.fbx",
+      "group": "office",
+      "export_name": "Game_Stapler",
+      "dimensions_xyz_m": [
+        0.10058,
+        0.035,
+        0.06233
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.10058,
+        0.035,
+        0.06233
+      ]
+    },
+    {
+      "name": "StickyNotes",
+      "triangles": 44,
+      "size_m": [
+        0.08,
+        0.08,
+        0.02
+      ],
+      "file": "exports/StickyNotes.fbx",
+      "group": "office",
+      "export_name": "Game_StickyNotes",
+      "dimensions_xyz_m": [
+        0.08,
+        0.08,
+        0.02
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.08,
+        0.08,
+        0.02
+      ]
+    },
+    {
+      "name": "Clipboard",
+      "triangles": 100,
+      "size_m": [
+        0.23,
+        0.32,
+        0.029
+      ],
+      "file": "exports/Clipboard.fbx",
+      "group": "office",
+      "export_name": "Game_Clipboard",
+      "dimensions_xyz_m": [
+        0.23,
+        0.32,
+        0.029
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.23,
+        0.32,
+        0.029
+      ]
+    },
+    {
+      "name": "DeskCalendar",
+      "triangles": 244,
+      "size_m": [
+        0.16,
+        0.0823,
+        0.2368
+      ],
+      "file": "exports/DeskCalendar.fbx",
+      "group": "office",
+      "export_name": "Game_DeskCalendar",
+      "dimensions_xyz_m": [
+        0.16,
+        0.08225,
+        0.23684
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.16,
+        0.08225,
+        0.23684
+      ]
+    },
+    {
+      "name": "PartitionShort",
+      "zone": "open_space",
+      "size_m": [
+        1.34,
+        0.44,
+        1.34
+      ],
+      "triangles": 308,
+      "file": "exports/PartitionShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_PartitionShort",
+      "dimensions_xyz_m": [
+        1.34,
+        0.44,
+        1.34
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.34,
+        0.44,
+        1.34
+      ]
+    },
+    {
+      "name": "PartitionWide",
+      "zone": "open_space",
+      "size_m": [
+        2.54,
+        0.44,
+        1.64
+      ],
+      "triangles": 308,
+      "file": "exports/PartitionWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_PartitionWide",
+      "dimensions_xyz_m": [
+        2.53999,
+        0.44,
+        1.64
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.54,
+        0.44,
+        1.64
+      ]
+    },
+    {
+      "name": "PartitionCorner",
+      "zone": "open_space",
+      "size_m": [
+        1.89,
+        1.49,
+        1.64
+      ],
+      "triangles": 616,
+      "file": "exports/PartitionCorner.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_PartitionCorner",
+      "dimensions_xyz_m": [
+        1.89,
+        1.49,
+        1.64
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.89,
+        1.49,
+        1.64
+      ]
+    },
+    {
+      "name": "WorkstationBank2",
+      "zone": "open_space",
+      "size_m": [
+        2.84,
+        0.74,
+        1.435
+      ],
+      "triangles": 836,
+      "file": "exports/WorkstationBank2.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_WorkstationBank2",
+      "dimensions_xyz_m": [
+        2.84,
+        0.74,
+        1.435
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.84,
+        0.74,
+        1.435
+      ]
+    },
+    {
+      "name": "WorkstationBank4",
+      "zone": "open_space",
+      "size_m": [
+        2.84,
+        1.48,
+        1.435
+      ],
+      "triangles": 1672,
+      "file": "exports/WorkstationBank4.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_WorkstationBank4",
+      "dimensions_xyz_m": [
+        2.84,
+        1.48,
+        1.435
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.84,
+        1.48,
+        1.435
+      ]
+    },
+    {
+      "name": "UnderDeskPedestal",
+      "zone": "open_space",
+      "size_m": [
+        0.4,
+        0.551,
+        0.63
+      ],
+      "triangles": 308,
+      "file": "exports/UnderDeskPedestal.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_UnderDeskPedestal",
+      "dimensions_xyz_m": [
+        0.39999,
+        0.551,
+        0.63
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.4,
+        0.551,
+        0.63
+      ]
+    },
+    {
+      "name": "ReceptionCompact",
+      "zone": "reception",
+      "size_m": [
+        1.94,
+        0.82,
+        1.19
+      ],
+      "triangles": 264,
+      "file": "exports/ReceptionCompact.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ReceptionCompact",
+      "dimensions_xyz_m": [
+        1.94,
+        0.82,
+        1.19
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.94,
+        0.82,
+        1.19
+      ]
+    },
+    {
+      "name": "ReceptionWide",
+      "zone": "reception",
+      "size_m": [
+        3.34,
+        0.97,
+        1.19
+      ],
+      "triangles": 264,
+      "file": "exports/ReceptionWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ReceptionWide",
+      "dimensions_xyz_m": [
+        3.34,
+        0.97,
+        1.19
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        3.34,
+        0.97,
+        1.19
+      ]
+    },
+    {
+      "name": "TripodTurnstile",
+      "zone": "reception",
+      "size_m": [
+        0.7736,
+        0.85,
+        1.048
+      ],
+      "triangles": 260,
+      "file": "exports/TripodTurnstile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_TripodTurnstile",
+      "dimensions_xyz_m": [
+        0.77364,
+        0.85,
+        1.048
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.77363,
+        0.85,
+        1.048
+      ]
+    },
+    {
+      "name": "SecuritySwingGate",
+      "zone": "reception",
+      "size_m": [
+        1.42,
+        0.85,
+        1.048
+      ],
+      "triangles": 308,
+      "file": "exports/SecuritySwingGate.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_SecuritySwingGate",
+      "dimensions_xyz_m": [
+        1.42,
+        0.85,
+        1.048
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.42,
+        0.85,
+        1.048
+      ]
+    },
+    {
+      "name": "AccessScannerArch",
+      "zone": "reception",
+      "size_m": [
+        1.28,
+        0.399,
+        2.23
+      ],
+      "triangles": 264,
+      "file": "exports/AccessScannerArch.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_AccessScannerArch",
+      "dimensions_xyz_m": [
+        1.28,
+        0.399,
+        2.23
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.28,
+        0.399,
+        2.23
+      ]
+    },
+    {
+      "name": "SecurityDesk",
+      "zone": "reception",
+      "size_m": [
+        1.1,
+        0.6,
+        1.435
+      ],
+      "triangles": 352,
+      "file": "exports/SecurityDesk.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_SecurityDesk",
+      "dimensions_xyz_m": [
+        1.1,
+        0.6,
+        1.435
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.1,
+        0.6,
+        1.435
+      ]
+    },
+    {
+      "name": "FridgeCompact",
+      "zone": "kitchen",
+      "size_m": [
+        0.65,
+        0.7635,
+        1.88
+      ],
+      "triangles": 264,
+      "file": "exports/FridgeCompact.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_FridgeCompact",
+      "dimensions_xyz_m": [
+        0.65,
+        0.7635,
+        1.88
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.65,
+        0.7635,
+        1.88
+      ]
+    },
+    {
+      "name": "FridgeWide",
+      "zone": "kitchen",
+      "size_m": [
+        0.95,
+        0.7635,
+        1.88
+      ],
+      "triangles": 264,
+      "file": "exports/FridgeWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_FridgeWide",
+      "dimensions_xyz_m": [
+        0.95,
+        0.7635,
+        1.88
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.95,
+        0.7635,
+        1.88
+      ]
+    },
+    {
+      "name": "Microwave",
+      "zone": "kitchen",
+      "size_m": [
+        0.54,
+        0.4475,
+        0.32
+      ],
+      "triangles": 304,
+      "file": "exports/Microwave.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_Microwave",
+      "dimensions_xyz_m": [
+        0.54,
+        0.4475,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.54,
+        0.4475,
+        0.32
+      ]
+    },
+    {
+      "name": "KitchenSinkCabinet",
+      "zone": "kitchen",
+      "size_m": [
+        1.25,
+        0.5375,
+        1.179
+      ],
+      "triangles": 540,
+      "file": "exports/KitchenSinkCabinet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_KitchenSinkCabinet",
+      "dimensions_xyz_m": [
+        1.25,
+        0.5375,
+        1.179
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.25,
+        0.5375,
+        1.179
+      ]
+    },
+    {
+      "name": "KitchenCounterWide",
+      "zone": "kitchen",
+      "size_m": [
+        1.85,
+        0.5375,
+        0.9275
+      ],
+      "triangles": 264,
+      "file": "exports/KitchenCounterWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_KitchenCounterWide",
+      "dimensions_xyz_m": [
+        1.85,
+        0.5375,
+        0.9275
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.85,
+        0.5375,
+        0.9275
+      ]
+    },
+    {
+      "name": "CounterCoffeeMachine",
+      "zone": "kitchen",
+      "size_m": [
+        0.32,
+        0.57,
+        0.5
+      ],
+      "triangles": 248,
+      "file": "exports/CounterCoffeeMachine.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_CounterCoffeeMachine",
+      "dimensions_xyz_m": [
+        0.32001,
+        0.57,
+        0.5
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.32,
+        0.57,
+        0.5
+      ]
+    },
+    {
+      "name": "SnackVending",
+      "zone": "kitchen",
+      "size_m": [
+        0.92,
+        0.9,
+        2.0
+      ],
+      "triangles": 1144,
+      "file": "exports/SnackVending.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_SnackVending",
+      "dimensions_xyz_m": [
+        0.92,
+        0.9,
+        2.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.92,
+        0.9,
+        2.0
+      ]
+    },
+    {
+      "name": "DrinkVending",
+      "zone": "kitchen",
+      "size_m": [
+        0.92,
+        0.9,
+        2.0
+      ],
+      "triangles": 1048,
+      "file": "exports/DrinkVending.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_DrinkVending",
+      "dimensions_xyz_m": [
+        0.92,
+        0.9,
+        2.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.92,
+        0.9,
+        2.0
+      ]
+    },
+    {
+      "name": "ArchiveCabinetWide",
+      "zone": "archive",
+      "size_m": [
+        1.6,
+        0.5125,
+        1.9
+      ],
+      "triangles": 220,
+      "file": "exports/ArchiveCabinetWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ArchiveCabinetWide",
+      "dimensions_xyz_m": [
+        1.60001,
+        0.5125,
+        1.9
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.6,
+        0.5125,
+        1.9
+      ]
+    },
+    {
+      "name": "ArchiveCabinetBank",
+      "zone": "archive",
+      "size_m": [
+        2.4,
+        0.5125,
+        1.9
+      ],
+      "triangles": 352,
+      "file": "exports/ArchiveCabinetBank.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ArchiveCabinetBank",
+      "dimensions_xyz_m": [
+        2.39999,
+        0.5125,
+        1.9
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.4,
+        0.5125,
+        1.9
+      ]
+    },
+    {
+      "name": "ServerRackCompact",
+      "zone": "server_room",
+      "size_m": [
+        0.65,
+        0.895,
+        2.1
+      ],
+      "triangles": 1284,
+      "file": "exports/ServerRackCompact.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ServerRackCompact",
+      "dimensions_xyz_m": [
+        0.64999,
+        0.895,
+        2.1
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.65,
+        0.895,
+        2.1
+      ]
+    },
+    {
+      "name": "ServerRackTwin",
+      "zone": "server_room",
+      "size_m": [
+        1.3,
+        0.895,
+        2.1
+      ],
+      "triangles": 2524,
+      "file": "exports/ServerRackTwin.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ServerRackTwin",
+      "dimensions_xyz_m": [
+        1.3,
+        0.895,
+        2.1
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.3,
+        0.895,
+        2.1
+      ]
+    },
+    {
+      "name": "UPSUnit",
+      "zone": "server_room",
+      "size_m": [
+        0.36,
+        0.568,
+        0.52
+      ],
+      "triangles": 396,
+      "file": "exports/UPSUnit.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_UPSUnit",
+      "dimensions_xyz_m": [
+        0.35999,
+        0.568,
+        0.52
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.36,
+        0.568,
+        0.52
+      ]
+    },
+    {
+      "name": "CableBundle",
+      "zone": "server_room",
+      "size_m": [
+        0.45,
+        0.27,
+        0.04
+      ],
+      "triangles": 172,
+      "file": "exports/CableBundle.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_CableBundle",
+      "dimensions_xyz_m": [
+        0.45,
+        0.27,
+        0.04
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.45,
+        0.27,
+        0.04
+      ]
+    },
+    {
+      "name": "VentilationCabinet",
+      "zone": "server_room",
+      "size_m": [
+        0.7,
+        0.6325,
+        2.0
+      ],
+      "triangles": 352,
+      "file": "exports/VentilationCabinet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_VentilationCabinet",
+      "dimensions_xyz_m": [
+        0.7,
+        0.6325,
+        2.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.7,
+        0.6325,
+        2.0
+      ]
+    },
+    {
+      "name": "ElectricalPanel",
+      "zone": "technical",
+      "size_m": [
+        0.55,
+        0.161,
+        0.72
+      ],
+      "triangles": 880,
+      "file": "exports/ElectricalPanel.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ElectricalPanel",
+      "dimensions_xyz_m": [
+        0.55,
+        0.161,
+        0.72
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.55,
+        0.161,
+        0.72
+      ]
+    },
+    {
+      "name": "WarehouseTrolley",
+      "zone": "archive",
+      "size_m": [
+        0.9922,
+        0.6,
+        0.923
+      ],
+      "triangles": 272,
+      "file": "exports/WarehouseTrolley.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_WarehouseTrolley",
+      "dimensions_xyz_m": [
+        0.99217,
+        0.6,
+        0.923
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.99217,
+        0.6,
+        0.923
+      ]
+    },
+    {
+      "name": "WoodPallet",
+      "zone": "archive",
+      "size_m": [
+        1.1,
+        1.03,
+        0.17
+      ],
+      "triangles": 352,
+      "file": "exports/WoodPallet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_WoodPallet",
+      "dimensions_xyz_m": [
+        1.1,
+        1.03,
+        0.17
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.1,
+        1.03,
+        0.17
+      ]
+    },
+    {
+      "name": "BoxSmall",
+      "zone": "archive",
+      "size_m": [
+        0.3575,
+        0.273,
+        0.2638
+      ],
+      "triangles": 56,
+      "file": "exports/BoxSmall.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_BoxSmall",
+      "dimensions_xyz_m": [
+        0.3575,
+        0.273,
+        0.2638
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.3575,
+        0.273,
+        0.2638
+      ]
+    },
+    {
+      "name": "BoxLarge",
+      "zone": "archive",
+      "size_m": [
+        0.77,
+        0.588,
+        0.5653
+      ],
+      "triangles": 56,
+      "file": "exports/BoxLarge.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_BoxLarge",
+      "dimensions_xyz_m": [
+        0.77,
+        0.588,
+        0.5653
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.77,
+        0.588,
+        0.5653
+      ]
+    },
+    {
+      "name": "ConferenceTableLong",
+      "zone": "meeting",
+      "size_m": [
+        3.6,
+        1.2,
+        0.8025
+      ],
+      "triangles": 176,
+      "file": "exports/ConferenceTableLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ConferenceTableLong",
+      "dimensions_xyz_m": [
+        3.6,
+        1.2,
+        0.8025
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        3.6,
+        1.2,
+        0.8025
+      ]
+    },
+    {
+      "name": "WallTelevision",
+      "zone": "meeting",
+      "size_m": [
+        1.5,
+        0.0875,
+        1.0
+      ],
+      "triangles": 88,
+      "file": "exports/WallTelevision.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_WallTelevision",
+      "dimensions_xyz_m": [
+        1.5,
+        0.0875,
+        1.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.5,
+        0.0875,
+        1.0
+      ]
+    },
+    {
+      "name": "Projector",
+      "zone": "meeting",
+      "size_m": [
+        0.3,
+        0.28,
+        0.1645
+      ],
+      "triangles": 152,
+      "file": "exports/Projector.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_Projector",
+      "dimensions_xyz_m": [
+        0.3,
+        0.28,
+        0.1645
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.3,
+        0.28,
+        0.1645
+      ]
+    },
+    {
+      "name": "ConferencePhone",
+      "zone": "meeting",
+      "size_m": [
+        0.22,
+        0.19,
+        0.066
+      ],
+      "triangles": 220,
+      "file": "exports/ConferencePhone.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ConferencePhone",
+      "dimensions_xyz_m": [
+        0.22,
+        0.19,
+        0.066
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.22,
+        0.19,
+        0.066
+      ]
+    },
+    {
+      "name": "ExecutiveChair",
+      "zone": "meeting",
+      "size_m": [
+        0.6925,
+        0.7282,
+        1.277
+      ],
+      "triangles": 672,
+      "file": "exports/ExecutiveChair.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ExecutiveChair",
+      "dimensions_xyz_m": [
+        0.69254,
+        0.72817,
+        1.277
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.69253,
+        0.72817,
+        1.277
+      ]
+    },
+    {
+      "name": "TaskChairTeal",
+      "zone": "open_space",
+      "size_m": [
+        0.6925,
+        0.7282,
+        1.087
+      ],
+      "triangles": 628,
+      "file": "exports/TaskChairTeal.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_TaskChairTeal",
+      "dimensions_xyz_m": [
+        0.69254,
+        0.72817,
+        1.087
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.69253,
+        0.72817,
+        1.087
+      ]
+    },
+    {
+      "name": "OverturnedDesk",
+      "zone": "damaged",
+      "size_m": [
+        1.1787,
+        0.75,
+        1.7284
+      ],
+      "triangles": 176,
+      "file": "exports/OverturnedDesk.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_OverturnedDesk",
+      "dimensions_xyz_m": [
+        1.17865,
+        0.75,
+        1.72843
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.17865,
+        0.75,
+        1.72843
+      ]
+    },
+    {
+      "name": "BrokenChair",
+      "zone": "damaged",
+      "size_m": [
+        0.7543,
+        1.1187,
+        0.9182
+      ],
+      "triangles": 540,
+      "file": "exports/BrokenChair.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_BrokenChair",
+      "dimensions_xyz_m": [
+        0.7543,
+        1.11872,
+        0.91824
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.7543,
+        1.11872,
+        0.91824
+      ]
+    },
+    {
+      "name": "BrokenMonitor",
+      "zone": "damaged",
+      "size_m": [
+        0.7501,
+        0.22,
+        0.6992
+      ],
+      "triangles": 212,
+      "file": "exports/BrokenMonitor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_BrokenMonitor",
+      "dimensions_xyz_m": [
+        0.75011,
+        0.22,
+        0.69923
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.75011,
+        0.22,
+        0.69923
+      ]
+    },
+    {
+      "name": "FallenArchiveCabinet",
+      "zone": "damaged",
+      "size_m": [
+        1.4,
+        1.8,
+        0.5125
+      ],
+      "triangles": 220,
+      "file": "exports/FallenArchiveCabinet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_FallenArchiveCabinet",
+      "dimensions_xyz_m": [
+        1.4,
+        1.8,
+        0.5125
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.4,
+        1.8,
+        0.5125
+      ]
+    },
+    {
+      "name": "ScatteredPaperPile",
+      "zone": "damaged",
+      "size_m": [
+        1.843,
+        1.5153,
+        0.011
+      ],
+      "triangles": 384,
+      "file": "exports/ScatteredPaperPile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_ScatteredPaperPile",
+      "dimensions_xyz_m": [
+        1.84297,
+        1.51533,
+        0.011
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.84297,
+        1.51533,
+        0.011
+      ]
+    },
+    {
+      "name": "BrokenOfficeDoor",
+      "zone": "damaged",
+      "size_m": [
+        1.0297,
+        0.3216,
+        2.095
+      ],
+      "triangles": 352,
+      "file": "exports/BrokenOfficeDoor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "office/zones",
+      "export_name": "Game_BrokenOfficeDoor",
+      "dimensions_xyz_m": [
+        1.02966,
+        0.32162,
+        2.095
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.02966,
+        0.32162,
+        2.095
+      ]
+    },
+    {
+      "name": "BarrierGateClosed",
+      "zone": "access",
+      "size_m": [
+        2.8,
+        0.45,
+        1.145
+      ],
+      "triangles": 280,
+      "file": "exports/BarrierGateClosed.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BarrierGateClosed",
+      "dimensions_xyz_m": [
+        2.8,
+        0.45,
+        1.145
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.8,
+        0.45,
+        1.145
+      ]
+    },
+    {
+      "name": "BarrierGateRaised",
+      "zone": "access",
+      "size_m": [
+        1.9715,
+        0.45,
+        3.0103
+      ],
+      "triangles": 280,
+      "file": "exports/BarrierGateRaised.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BarrierGateRaised",
+      "dimensions_xyz_m": [
+        1.97155,
+        0.45,
+        3.01028
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.97154,
+        0.45,
+        3.01028
+      ]
+    },
+    {
+      "name": "ParkingPaymentKiosk",
+      "zone": "access",
+      "size_m": [
+        0.51,
+        0.48,
+        1.76
+      ],
+      "triangles": 352,
+      "file": "exports/ParkingPaymentKiosk.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ParkingPaymentKiosk",
+      "dimensions_xyz_m": [
+        0.51,
+        0.48,
+        1.76
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.51,
+        0.48,
+        1.76
+      ]
+    },
+    {
+      "name": "TicketTerminal",
+      "zone": "access",
+      "size_m": [
+        0.51,
+        0.48,
+        1.76
+      ],
+      "triangles": 352,
+      "file": "exports/TicketTerminal.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_TicketTerminal",
+      "dimensions_xyz_m": [
+        0.51,
+        0.48,
+        1.76
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.51,
+        0.48,
+        1.76
+      ]
+    },
+    {
+      "name": "SecurityBooth",
+      "zone": "access",
+      "size_m": [
+        2.083,
+        1.79,
+        2.5325
+      ],
+      "triangles": 1028,
+      "file": "exports/SecurityBooth.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_SecurityBooth",
+      "dimensions_xyz_m": [
+        2.083,
+        1.79,
+        2.5325
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.083,
+        1.79,
+        2.5325
+      ]
+    },
+    {
+      "name": "ParkingHangingLight",
+      "zone": "security",
+      "size_m": [
+        1.3,
+        0.238,
+        0.63
+      ],
+      "triangles": 144,
+      "file": "exports/ParkingHangingLight.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ParkingHangingLight",
+      "dimensions_xyz_m": [
+        1.3,
+        0.238,
+        0.63
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.3,
+        0.238,
+        0.63
+      ]
+    },
+    {
+      "name": "BulletSecurityCamera",
+      "zone": "security",
+      "size_m": [
+        0.23,
+        0.675,
+        0.3175
+      ],
+      "triangles": 248,
+      "file": "exports/BulletSecurityCamera.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BulletSecurityCamera",
+      "dimensions_xyz_m": [
+        0.23,
+        0.675,
+        0.3175
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.23,
+        0.675,
+        0.3175
+      ]
+    },
+    {
+      "name": "DomeSecurityCamera",
+      "zone": "security",
+      "size_m": [
+        0.32,
+        0.32,
+        0.2358
+      ],
+      "triangles": 344,
+      "file": "exports/DomeSecurityCamera.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_DomeSecurityCamera",
+      "dimensions_xyz_m": [
+        0.32001,
+        0.32,
+        0.2358
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.32,
+        0.32,
+        0.2358
+      ]
+    },
+    {
+      "name": "BollardYellow",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        1.05
+      ],
+      "triangles": 176,
+      "file": "exports/BollardYellow.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BollardYellow",
+      "dimensions_xyz_m": [
+        0.24001,
+        0.24,
+        1.05
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.24,
+        0.24,
+        1.05
+      ]
+    },
+    {
+      "name": "BollardWhite",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        0.95
+      ],
+      "triangles": 176,
+      "file": "exports/BollardWhite.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BollardWhite",
+      "dimensions_xyz_m": [
+        0.24001,
+        0.24,
+        0.95
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.24,
+        0.24,
+        0.95
+      ]
+    },
+    {
+      "name": "BollardShort",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        0.75
+      ],
+      "triangles": 176,
+      "file": "exports/BollardShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BollardShort",
+      "dimensions_xyz_m": [
+        0.24001,
+        0.24,
+        0.75
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.24,
+        0.24,
+        0.75
+      ]
+    },
+    {
+      "name": "BollardBlack",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        0.8
+      ],
+      "triangles": 176,
+      "file": "exports/BollardBlack.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BollardBlack",
+      "dimensions_xyz_m": [
+        0.24001,
+        0.24,
+        0.8
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.24,
+        0.24,
+        0.8
+      ]
+    },
+    {
+      "name": "BollardRed",
+      "zone": "traffic",
+      "size_m": [
+        0.24,
+        0.24,
+        1.0
+      ],
+      "triangles": 176,
+      "file": "exports/BollardRed.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BollardRed",
+      "dimensions_xyz_m": [
+        0.23999,
+        0.24,
+        1.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.24,
+        0.24,
+        1.0
+      ]
+    },
+    {
+      "name": "TrafficCone",
+      "zone": "traffic",
+      "size_m": [
+        0.33,
+        0.33,
+        0.49
+      ],
+      "triangles": 132,
+      "file": "exports/TrafficCone.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_TrafficCone",
+      "dimensions_xyz_m": [
+        0.33,
+        0.33,
+        0.49
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.33,
+        0.33,
+        0.49
+      ]
+    },
+    {
+      "name": "BentTrafficCone",
+      "zone": "traffic",
+      "size_m": [
+        0.33,
+        0.33,
+        0.4895
+      ],
+      "triangles": 132,
+      "file": "exports/BentTrafficCone.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BentTrafficCone",
+      "dimensions_xyz_m": [
+        0.33,
+        0.33,
+        0.4895
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.33,
+        0.33,
+        0.4895
+      ]
+    },
+    {
+      "name": "WheelStopStriped",
+      "zone": "traffic",
+      "size_m": [
+        1.6,
+        0.296,
+        0.1745
+      ],
+      "triangles": 172,
+      "file": "exports/WheelStopStriped.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_WheelStopStriped",
+      "dimensions_xyz_m": [
+        1.6,
+        0.296,
+        0.1745
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.6,
+        0.296,
+        0.1745
+      ]
+    },
+    {
+      "name": "WheelStopPlain",
+      "zone": "traffic",
+      "size_m": [
+        1.6,
+        0.28,
+        0.169
+      ],
+      "triangles": 100,
+      "file": "exports/WheelStopPlain.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_WheelStopPlain",
+      "dimensions_xyz_m": [
+        1.6,
+        0.28,
+        0.169
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.6,
+        0.28,
+        0.169
+      ]
+    },
+    {
+      "name": "SpeedBump",
+      "zone": "traffic",
+      "size_m": [
+        1.6,
+        0.296,
+        0.1745
+      ],
+      "triangles": 172,
+      "file": "exports/SpeedBump.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_SpeedBump",
+      "dimensions_xyz_m": [
+        1.6,
+        0.296,
+        0.1745
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.6,
+        0.296,
+        0.1745
+      ]
+    },
+    {
+      "name": "HangingHeightLimiter",
+      "zone": "traffic",
+      "size_m": [
+        2.4,
+        0.134,
+        0.7439
+      ],
+      "triangles": 3956,
+      "file": "exports/HangingHeightLimiter.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_HangingHeightLimiter",
+      "dimensions_xyz_m": [
+        2.4,
+        0.134,
+        0.74387
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.4,
+        0.134,
+        0.74387
+      ]
+    },
+    {
+      "name": "ParkingColumn",
+      "zone": "structure",
+      "size_m": [
+        0.46,
+        0.46,
+        2.5
+      ],
+      "triangles": 132,
+      "file": "exports/ParkingColumn.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ParkingColumn",
+      "dimensions_xyz_m": [
+        0.46,
+        0.46,
+        2.5
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.46,
+        0.46,
+        2.5
+      ]
+    },
+    {
+      "name": "EmergencyExitDoor",
+      "zone": "security",
+      "size_m": [
+        1.035,
+        0.185,
+        2.385
+      ],
+      "triangles": 568,
+      "file": "exports/EmergencyExitDoor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_EmergencyExitDoor",
+      "dimensions_xyz_m": [
+        1.035,
+        0.185,
+        2.385
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.035,
+        0.185,
+        2.385
+      ]
+    },
+    {
+      "name": "FireCabinet",
+      "zone": "security",
+      "size_m": [
+        0.42,
+        0.264,
+        0.9
+      ],
+      "triangles": 204,
+      "file": "exports/FireCabinet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_FireCabinet",
+      "dimensions_xyz_m": [
+        0.42,
+        0.264,
+        0.9
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.42,
+        0.264,
+        0.9
+      ]
+    },
+    {
+      "name": "OutdoorTrashBin",
+      "zone": "service",
+      "size_m": [
+        0.43,
+        0.4115,
+        0.96
+      ],
+      "triangles": 132,
+      "file": "exports/OutdoorTrashBin.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_OutdoorTrashBin",
+      "dimensions_xyz_m": [
+        0.42999,
+        0.4115,
+        0.96
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.43,
+        0.4115,
+        0.96
+      ]
+    },
+    {
+      "name": "Dumpster",
+      "zone": "service",
+      "size_m": [
+        1.5,
+        0.99,
+        1.1891
+      ],
+      "triangles": 848,
+      "file": "exports/Dumpster.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_Dumpster",
+      "dimensions_xyz_m": [
+        1.5,
+        0.99,
+        1.1891
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.5,
+        0.99,
+        1.1891
+      ]
+    },
+    {
+      "name": "ToolTrolley",
+      "zone": "service",
+      "size_m": [
+        0.67,
+        0.495,
+        0.9225
+      ],
+      "triangles": 760,
+      "file": "exports/ToolTrolley.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ToolTrolley",
+      "dimensions_xyz_m": [
+        0.67,
+        0.495,
+        0.9225
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.67,
+        0.495,
+        0.9225
+      ]
+    },
+    {
+      "name": "ParkingPallet",
+      "zone": "service",
+      "size_m": [
+        1.08,
+        0.96,
+        0.18
+      ],
+      "triangles": 352,
+      "file": "exports/ParkingPallet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ParkingPallet",
+      "dimensions_xyz_m": [
+        1.08,
+        0.96,
+        0.18
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.08,
+        0.96,
+        0.18
+      ]
+    },
+    {
+      "name": "ElectricalServiceCabinet",
+      "zone": "service",
+      "size_m": [
+        1.3,
+        0.635,
+        1.15
+      ],
+      "triangles": 964,
+      "file": "exports/ElectricalServiceCabinet.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ElectricalServiceCabinet",
+      "dimensions_xyz_m": [
+        1.3,
+        0.635,
+        1.15
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.3,
+        0.635,
+        1.15
+      ]
+    },
+    {
+      "name": "AirConditioningUnit",
+      "zone": "service",
+      "size_m": [
+        1.15,
+        0.49,
+        0.92
+      ],
+      "triangles": 640,
+      "file": "exports/AirConditioningUnit.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_AirConditioningUnit",
+      "dimensions_xyz_m": [
+        1.14999,
+        0.49,
+        0.92
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.15,
+        0.49,
+        0.92
+      ]
+    },
+    {
+      "name": "SedanWhite",
+      "zone": "vehicles",
+      "size_m": [
+        2.02,
+        4.229,
+        1.41
+      ],
+      "triangles": 1272,
+      "file": "exports/SedanWhite.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_SedanWhite",
+      "dimensions_xyz_m": [
+        2.01999,
+        4.229,
+        1.41
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.02,
+        4.229,
+        1.41
+      ]
+    },
+    {
+      "name": "HatchbackBlue",
+      "zone": "vehicles",
+      "size_m": [
+        2.02,
+        4.229,
+        1.41
+      ],
+      "triangles": 1272,
+      "file": "exports/HatchbackBlue.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_HatchbackBlue",
+      "dimensions_xyz_m": [
+        2.02,
+        4.229,
+        1.41
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.02,
+        4.229,
+        1.41
+      ]
+    },
+    {
+      "name": "SUVGrey",
+      "zone": "vehicles",
+      "size_m": [
+        2.02,
+        4.229,
+        1.773
+      ],
+      "triangles": 1328,
+      "file": "exports/SUVGrey.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_SUVGrey",
+      "dimensions_xyz_m": [
+        2.02,
+        4.229,
+        1.773
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.02,
+        4.229,
+        1.773
+      ]
+    },
+    {
+      "name": "ServiceVan",
+      "zone": "vehicles",
+      "size_m": [
+        2.14,
+        4.629,
+        1.91
+      ],
+      "triangles": 1190,
+      "file": "exports/ServiceVan.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ServiceVan",
+      "dimensions_xyz_m": [
+        2.14,
+        4.629,
+        1.91
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.14,
+        4.629,
+        1.91
+      ]
+    },
+    {
+      "name": "MotorcycleRed",
+      "zone": "vehicles",
+      "size_m": [
+        0.45,
+        1.92,
+        1.05
+      ],
+      "triangles": 1424,
+      "file": "exports/MotorcycleRed.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_MotorcycleRed",
+      "dimensions_xyz_m": [
+        0.45,
+        1.92,
+        1.05
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.45,
+        1.92,
+        1.05
+      ]
+    },
+    {
+      "name": "BicycleBlue",
+      "zone": "vehicles",
+      "size_m": [
+        0.44,
+        1.96,
+        1.03
+      ],
+      "triangles": 1172,
+      "file": "exports/BicycleBlue.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BicycleBlue",
+      "dimensions_xyz_m": [
+        0.44,
+        1.96001,
+        1.03
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.44,
+        1.96,
+        1.03
+      ]
+    },
+    {
+      "name": "BicycleRack",
+      "zone": "traffic",
+      "size_m": [
+        1.5,
+        0.9,
+        0.685
+      ],
+      "triangles": 340,
+      "file": "exports/BicycleRack.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_BicycleRack",
+      "dimensions_xyz_m": [
+        1.5,
+        0.89999,
+        0.685
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.5,
+        0.9,
+        0.685
+      ]
+    },
+    {
+      "name": "ParkingSign",
+      "zone": "signs",
+      "size_m": [
+        0.47,
+        0.26,
+        1.615
+      ],
+      "triangles": 400,
+      "file": "exports/ParkingSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ParkingSign",
+      "dimensions_xyz_m": [
+        0.47,
+        0.25999,
+        1.615
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.47,
+        0.26,
+        1.615
+      ]
+    },
+    {
+      "name": "SpeedLimitSign",
+      "zone": "signs",
+      "size_m": [
+        0.5,
+        0.26,
+        1.64
+      ],
+      "triangles": 732,
+      "file": "exports/SpeedLimitSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_SpeedLimitSign",
+      "dimensions_xyz_m": [
+        0.5,
+        0.25999,
+        1.64
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.5,
+        0.26,
+        1.64
+      ]
+    },
+    {
+      "name": "DirectionSign",
+      "zone": "signs",
+      "size_m": [
+        0.47,
+        0.26,
+        1.615
+      ],
+      "triangles": 200,
+      "file": "exports/DirectionSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_DirectionSign",
+      "dimensions_xyz_m": [
+        0.47,
+        0.25999,
+        1.615
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.47,
+        0.26,
+        1.615
+      ]
+    },
+    {
+      "name": "AccessibleParkingSign",
+      "zone": "signs",
+      "size_m": [
+        0.68,
+        0.26,
+        1.615
+      ],
+      "triangles": 524,
+      "file": "exports/AccessibleParkingSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_AccessibleParkingSign",
+      "dimensions_xyz_m": [
+        0.67999,
+        0.25999,
+        1.615
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.68,
+        0.26,
+        1.615
+      ]
+    },
+    {
+      "name": "ConcreteBarrierShort",
+      "zone": "traffic",
+      "size_m": [
+        1.2,
+        0.65,
+        0.7
+      ],
+      "triangles": 100,
+      "file": "exports/ConcreteBarrierShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ConcreteBarrierShort",
+      "dimensions_xyz_m": [
+        1.2,
+        0.64999,
+        0.7
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.65,
+        0.7
+      ]
+    },
+    {
+      "name": "ConcreteBarrierLong",
+      "zone": "traffic",
+      "size_m": [
+        2.4,
+        0.65,
+        0.7
+      ],
+      "triangles": 100,
+      "file": "exports/ConcreteBarrierLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ConcreteBarrierLong",
+      "dimensions_xyz_m": [
+        2.39999,
+        0.64999,
+        0.7
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.4,
+        0.65,
+        0.7
+      ]
+    },
+    {
+      "name": "PlasticBarrierOrange",
+      "zone": "traffic",
+      "size_m": [
+        2.0,
+        0.65,
+        0.7
+      ],
+      "triangles": 232,
+      "file": "exports/PlasticBarrierOrange.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_PlasticBarrierOrange",
+      "dimensions_xyz_m": [
+        2.0,
+        0.64999,
+        0.7
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        0.65,
+        0.7
+      ]
+    },
+    {
+      "name": "RoadGuardrail",
+      "zone": "traffic",
+      "size_m": [
+        2.7,
+        0.215,
+        0.9
+      ],
+      "triangles": 176,
+      "file": "exports/RoadGuardrail.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_RoadGuardrail",
+      "dimensions_xyz_m": [
+        2.7,
+        0.215,
+        0.9
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.7,
+        0.215,
+        0.9
+      ]
+    },
+    {
+      "name": "ChainBarrier",
+      "zone": "traffic",
+      "size_m": [
+        1.52,
+        0.22,
+        0.8974
+      ],
+      "triangles": 3824,
+      "file": "exports/ChainBarrier.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ChainBarrier",
+      "dimensions_xyz_m": [
+        1.52,
+        0.22,
+        0.89736
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.52,
+        0.22,
+        0.89736
+      ]
+    },
+    {
+      "name": "EVChargerPedestal",
+      "zone": "service",
+      "size_m": [
+        0.518,
+        0.31,
+        1.45
+      ],
+      "triangles": 316,
+      "file": "exports/EVChargerPedestal.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_EVChargerPedestal",
+      "dimensions_xyz_m": [
+        0.51799,
+        0.31,
+        1.45
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.518,
+        0.31,
+        1.45
+      ]
+    },
+    {
+      "name": "EVChargerWall",
+      "zone": "service",
+      "size_m": [
+        0.518,
+        0.31,
+        0.9
+      ],
+      "triangles": 316,
+      "file": "exports/EVChargerWall.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_EVChargerWall",
+      "dimensions_xyz_m": [
+        0.51799,
+        0.31,
+        0.9
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.51799,
+        0.31,
+        0.9
+      ]
+    },
+    {
+      "name": "ServiceElevatorFront",
+      "zone": "structure",
+      "size_m": [
+        1.93,
+        0.3,
+        2.29
+      ],
+      "triangles": 444,
+      "file": "exports/ServiceElevatorFront.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ServiceElevatorFront",
+      "dimensions_xyz_m": [
+        1.93,
+        0.3,
+        2.29
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.93,
+        0.3,
+        2.29
+      ]
+    },
+    {
+      "name": "RoadArrowTile",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.074
+      ],
+      "triangles": 49,
+      "file": "exports/RoadArrowTile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_RoadArrowTile",
+      "dimensions_xyz_m": [
+        2.0,
+        2.0,
+        0.074
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        2.0,
+        0.074
+      ]
+    },
+    {
+      "name": "YellowHatchTile",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.076
+      ],
+      "triangles": 57,
+      "file": "exports/YellowHatchTile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_YellowHatchTile",
+      "dimensions_xyz_m": [
+        2.0,
+        2.0,
+        0.076
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        2.0,
+        0.076
+      ]
+    },
+    {
+      "name": "TyreTrackTile",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.078
+      ],
+      "triangles": 596,
+      "file": "exports/TyreTrackTile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_TyreTrackTile",
+      "dimensions_xyz_m": [
+        2.0,
+        2.0,
+        0.078
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        2.0,
+        0.078
+      ]
+    },
+    {
+      "name": "ParkingEntryTunnel",
+      "zone": "structure",
+      "size_m": [
+        3.55,
+        3.3,
+        2.76
+      ],
+      "triangles": 337,
+      "file": "exports/ParkingEntryTunnel.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ParkingEntryTunnel",
+      "dimensions_xyz_m": [
+        3.55,
+        3.3,
+        2.76
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        3.55,
+        3.3,
+        2.76
+      ]
+    },
+    {
+      "name": "ParkingRampModule",
+      "zone": "structure",
+      "size_m": [
+        3.2,
+        3.2,
+        1.5492
+      ],
+      "triangles": 241,
+      "file": "exports/ParkingRampModule.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking",
+      "export_name": "Game_ParkingRampModule",
+      "dimensions_xyz_m": [
+        3.2,
+        3.2,
+        1.54917
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        3.2,
+        3.2,
+        1.54917
+      ]
+    },
+    {
+      "name": "ConcreteSupportSquare",
+      "zone": "structure",
+      "size_m": [
+        0.73,
+        0.73,
+        3.0
+      ],
+      "triangles": 132,
+      "file": "exports/ConcreteSupportSquare.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ConcreteSupportSquare",
+      "dimensions_xyz_m": [
+        0.73,
+        0.73,
+        3.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.73,
+        0.73,
+        3.0
+      ]
+    },
+    {
+      "name": "ConcreteSupportWide",
+      "zone": "structure",
+      "size_m": [
+        1.08,
+        1.08,
+        3.0
+      ],
+      "triangles": 132,
+      "file": "exports/ConcreteSupportWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ConcreteSupportWide",
+      "dimensions_xyz_m": [
+        1.08,
+        1.08,
+        3.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.08,
+        1.08,
+        3.0
+      ]
+    },
+    {
+      "name": "ConcreteSupportRound",
+      "zone": "structure",
+      "size_m": [
+        0.851,
+        0.851,
+        3.0
+      ],
+      "triangles": 164,
+      "file": "exports/ConcreteSupportRound.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ConcreteSupportRound",
+      "dimensions_xyz_m": [
+        0.851,
+        0.851,
+        3.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.851,
+        0.851,
+        3.0
+      ]
+    },
+    {
+      "name": "ConcreteIslandShort",
+      "zone": "cover",
+      "size_m": [
+        1.6,
+        0.7325,
+        0.32
+      ],
+      "triangles": 80,
+      "file": "exports/ConcreteIslandShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ConcreteIslandShort",
+      "dimensions_xyz_m": [
+        1.60001,
+        0.7325,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.6,
+        0.7325,
+        0.32
+      ]
+    },
+    {
+      "name": "ConcreteIslandLong",
+      "zone": "cover",
+      "size_m": [
+        3.2,
+        0.7325,
+        0.32
+      ],
+      "triangles": 80,
+      "file": "exports/ConcreteIslandLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ConcreteIslandLong",
+      "dimensions_xyz_m": [
+        3.2,
+        0.7325,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        3.2,
+        0.7325,
+        0.32
+      ]
+    },
+    {
+      "name": "JerseyBarrierShort",
+      "zone": "cover",
+      "size_m": [
+        1.4,
+        0.8,
+        0.95
+      ],
+      "triangles": 52,
+      "file": "exports/JerseyBarrierShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_JerseyBarrierShort",
+      "dimensions_xyz_m": [
+        1.39999,
+        0.8,
+        0.95
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.4,
+        0.8,
+        0.95
+      ]
+    },
+    {
+      "name": "JerseyBarrierLong",
+      "zone": "cover",
+      "size_m": [
+        2.8,
+        0.8,
+        0.95
+      ],
+      "triangles": 52,
+      "file": "exports/JerseyBarrierLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_JerseyBarrierLong",
+      "dimensions_xyz_m": [
+        2.8,
+        0.8,
+        0.95
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.8,
+        0.8,
+        0.95
+      ]
+    },
+    {
+      "name": "JerseyBarrierWide",
+      "zone": "cover",
+      "size_m": [
+        4.0,
+        0.8,
+        0.95
+      ],
+      "triangles": 52,
+      "file": "exports/JerseyBarrierWide.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_JerseyBarrierWide",
+      "dimensions_xyz_m": [
+        4.0,
+        0.8,
+        0.95
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        4.0,
+        0.8,
+        0.95
+      ]
+    },
+    {
+      "name": "StairFlight",
+      "zone": "structure",
+      "size_m": [
+        1.46,
+        2.8,
+        2.7252
+      ],
+      "triangles": 456,
+      "file": "exports/StairFlight.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_StairFlight",
+      "dimensions_xyz_m": [
+        1.45999,
+        2.8,
+        2.72524
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.46,
+        2.8,
+        2.72524
+      ]
+    },
+    {
+      "name": "StairFlightTall",
+      "zone": "structure",
+      "size_m": [
+        1.66,
+        4.48,
+        3.8052
+      ],
+      "triangles": 528,
+      "file": "exports/StairFlightTall.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_StairFlightTall",
+      "dimensions_xyz_m": [
+        1.66,
+        4.48,
+        3.80523
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.66,
+        4.48,
+        3.80523
+      ]
+    },
+    {
+      "name": "StairLanding",
+      "zone": "structure",
+      "size_m": [
+        3.2,
+        1.8,
+        1.13
+      ],
+      "triangles": 380,
+      "file": "exports/StairLanding.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_StairLanding",
+      "dimensions_xyz_m": [
+        3.2,
+        1.8,
+        1.13
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        3.2,
+        1.8,
+        1.13
+      ]
+    },
+    {
+      "name": "ElevatorHallModule",
+      "zone": "structure",
+      "size_m": [
+        3.84,
+        2.6,
+        2.7
+      ],
+      "triangles": 1492,
+      "file": "exports/ElevatorHallModule.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ElevatorHallModule",
+      "dimensions_xyz_m": [
+        3.84,
+        2.60001,
+        2.7
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        3.84,
+        2.6,
+        2.7
+      ]
+    },
+    {
+      "name": "BuildingServiceDoor",
+      "zone": "structure",
+      "size_m": [
+        1.185,
+        0.15,
+        2.39
+      ],
+      "triangles": 1680,
+      "file": "exports/BuildingServiceDoor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_BuildingServiceDoor",
+      "dimensions_xyz_m": [
+        1.185,
+        0.15,
+        2.39
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.185,
+        0.15,
+        2.39
+      ]
+    },
+    {
+      "name": "InterLevelRamp",
+      "zone": "structure",
+      "size_m": [
+        3.4,
+        6.0,
+        2.2194
+      ],
+      "triangles": 348,
+      "file": "exports/InterLevelRamp.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_InterLevelRamp",
+      "dimensions_xyz_m": [
+        3.4,
+        6.0,
+        2.21942
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        3.4,
+        6.0,
+        2.21942
+      ]
+    },
+    {
+      "name": "StackedBoxesCover",
+      "zone": "cover",
+      "size_m": [
+        1.17,
+        0.6,
+        1.051
+      ],
+      "triangles": 224,
+      "file": "exports/StackedBoxesCover.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_StackedBoxesCover",
+      "dimensions_xyz_m": [
+        1.17,
+        0.6,
+        1.051
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.17,
+        0.6,
+        1.051
+      ]
+    },
+    {
+      "name": "TyreStack",
+      "zone": "cover",
+      "size_m": [
+        0.77,
+        0.77,
+        0.7872
+      ],
+      "triangles": 960,
+      "file": "exports/TyreStack.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_TyreStack",
+      "dimensions_xyz_m": [
+        0.77,
+        0.77,
+        0.78722
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.77,
+        0.77,
+        0.78722
+      ]
+    },
+    {
+      "name": "CanisterCluster",
+      "zone": "cover",
+      "size_m": [
+        0.82,
+        0.63,
+        0.605
+      ],
+      "triangles": 348,
+      "file": "exports/CanisterCluster.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_CanisterCluster",
+      "dimensions_xyz_m": [
+        0.82,
+        0.63,
+        0.605
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.82,
+        0.63,
+        0.605
+      ]
+    },
+    {
+      "name": "ServiceFlatbedCart",
+      "zone": "cover",
+      "size_m": [
+        1.2,
+        0.7,
+        0.985
+      ],
+      "triangles": 304,
+      "file": "exports/ServiceFlatbedCart.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ServiceFlatbedCart",
+      "dimensions_xyz_m": [
+        1.2,
+        0.7,
+        0.985
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.7,
+        0.985
+      ]
+    },
+    {
+      "name": "HandPalletJack",
+      "zone": "cover",
+      "size_m": [
+        0.72,
+        1.4894,
+        1.189
+      ],
+      "triangles": 376,
+      "file": "exports/HandPalletJack.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_HandPalletJack",
+      "dimensions_xyz_m": [
+        0.72,
+        1.48943,
+        1.189
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.72,
+        1.48943,
+        1.189
+      ]
+    },
+    {
+      "name": "ServiceLockerTall",
+      "zone": "technical",
+      "size_m": [
+        0.85,
+        0.5125,
+        1.85
+      ],
+      "triangles": 1520,
+      "file": "exports/ServiceLockerTall.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ServiceLockerTall",
+      "dimensions_xyz_m": [
+        0.85001,
+        0.5125,
+        1.85
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.85,
+        0.5125,
+        1.85
+      ]
+    },
+    {
+      "name": "WallElectricalBoard",
+      "zone": "technical",
+      "size_m": [
+        0.6,
+        0.217,
+        0.94
+      ],
+      "triangles": 1672,
+      "file": "exports/WallElectricalBoard.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_WallElectricalBoard",
+      "dimensions_xyz_m": [
+        0.60001,
+        0.217,
+        0.94
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.6,
+        0.217,
+        0.94
+      ]
+    },
+    {
+      "name": "CeilingLampShort",
+      "zone": "atmosphere",
+      "size_m": [
+        1.4,
+        0.212,
+        0.45
+      ],
+      "triangles": 144,
+      "file": "exports/CeilingLampShort.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_CeilingLampShort",
+      "dimensions_xyz_m": [
+        1.39999,
+        0.212,
+        0.45
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.4,
+        0.212,
+        0.45
+      ]
+    },
+    {
+      "name": "CeilingLampLong",
+      "zone": "atmosphere",
+      "size_m": [
+        2.8,
+        0.212,
+        0.45
+      ],
+      "triangles": 144,
+      "file": "exports/CeilingLampLong.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_CeilingLampLong",
+      "dimensions_xyz_m": [
+        2.8,
+        0.212,
+        0.45
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.8,
+        0.212,
+        0.45
+      ]
+    },
+    {
+      "name": "VentDuctStraight",
+      "zone": "technical",
+      "size_m": [
+        2.4,
+        0.46,
+        0.46
+      ],
+      "triangles": 176,
+      "file": "exports/VentDuctStraight.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_VentDuctStraight",
+      "dimensions_xyz_m": [
+        2.39999,
+        0.46001,
+        0.46
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.4,
+        0.46,
+        0.46
+      ]
+    },
+    {
+      "name": "VentDuctElbow",
+      "zone": "technical",
+      "size_m": [
+        1.23,
+        1.21,
+        0.46
+      ],
+      "triangles": 176,
+      "file": "exports/VentDuctElbow.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_VentDuctElbow",
+      "dimensions_xyz_m": [
+        1.23,
+        1.21,
+        0.46
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.23,
+        1.21,
+        0.46
+      ]
+    },
+    {
+      "name": "CeilingCableBundle",
+      "zone": "technical",
+      "size_m": [
+        0.23,
+        1.6,
+        0.07
+      ],
+      "triangles": 216,
+      "file": "exports/CeilingCableBundle.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_CeilingCableBundle",
+      "dimensions_xyz_m": [
+        0.23,
+        1.60001,
+        0.07
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.23,
+        1.6,
+        0.07
+      ]
+    },
+    {
+      "name": "AmberWarningBeacon",
+      "zone": "technical",
+      "size_m": [
+        0.24,
+        0.24,
+        0.255
+      ],
+      "triangles": 104,
+      "file": "exports/AmberWarningBeacon.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_AmberWarningBeacon",
+      "dimensions_xyz_m": [
+        0.24,
+        0.24001,
+        0.255
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.24,
+        0.24,
+        0.255
+      ]
+    },
+    {
+      "name": "SectionA1",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "triangles": 100,
+      "file": "exports/SectionA1.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_SectionA1",
+      "dimensions_xyz_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.07,
+        0.88
+      ]
+    },
+    {
+      "name": "SectionB2",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "triangles": 824,
+      "file": "exports/SectionB2.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_SectionB2",
+      "dimensions_xyz_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.07,
+        0.88
+      ]
+    },
+    {
+      "name": "SectionP3",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "triangles": 852,
+      "file": "exports/SectionP3.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_SectionP3",
+      "dimensions_xyz_m": [
+        1.2,
+        0.07,
+        0.88
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.07,
+        0.88
+      ]
+    },
+    {
+      "name": "ExitArrowSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 196,
+      "file": "exports/ExitArrowSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ExitArrowSign",
+      "dimensions_xyz_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.058,
+        0.32
+      ]
+    },
+    {
+      "name": "ElevatorArrowSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 1032,
+      "file": "exports/ElevatorArrowSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ElevatorArrowSign",
+      "dimensions_xyz_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.058,
+        0.32
+      ]
+    },
+    {
+      "name": "StairsArrowSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 1496,
+      "file": "exports/StairsArrowSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_StairsArrowSign",
+      "dimensions_xyz_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.058,
+        0.32
+      ]
+    },
+    {
+      "name": "EntrySign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 560,
+      "file": "exports/EntrySign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_EntrySign",
+      "dimensions_xyz_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.058,
+        0.32
+      ]
+    },
+    {
+      "name": "ExitSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 172,
+      "file": "exports/ExitSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ExitSign",
+      "dimensions_xyz_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.058,
+        0.32
+      ]
+    },
+    {
+      "name": "ServiceAreaSign",
+      "zone": "wayfinding",
+      "size_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "triangles": 1888,
+      "file": "exports/ServiceAreaSign.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ServiceAreaSign",
+      "dimensions_xyz_m": [
+        1.2,
+        0.058,
+        0.32
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.2,
+        0.058,
+        0.32
+      ]
+    },
+    {
+      "name": "BlueZoneFloor",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "triangles": 56,
+      "file": "exports/BlueZoneFloor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_BlueZoneFloor",
+      "dimensions_xyz_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        2.0,
+        0.048
+      ]
+    },
+    {
+      "name": "GreenZoneFloor",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "triangles": 56,
+      "file": "exports/GreenZoneFloor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_GreenZoneFloor",
+      "dimensions_xyz_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        2.0,
+        0.048
+      ]
+    },
+    {
+      "name": "YellowZoneFloor",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "triangles": 56,
+      "file": "exports/YellowZoneFloor.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_YellowZoneFloor",
+      "dimensions_xyz_m": [
+        2.0,
+        2.0,
+        0.048
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        2.0,
+        0.048
+      ]
+    },
+    {
+      "name": "OilPuddle",
+      "zone": "atmosphere",
+      "size_m": [
+        1.427,
+        1.0223,
+        0.0
+      ],
+      "triangles": 16,
+      "file": "exports/OilPuddle.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_OilPuddle",
+      "dimensions_xyz_m": [
+        1.42699,
+        1.02229,
+        0.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.42698,
+        1.02229,
+        0.0
+      ]
+    },
+    {
+      "name": "BloodyFootprints",
+      "zone": "damaged",
+      "size_m": [
+        0.4438,
+        1.61,
+        0.01
+      ],
+      "triangles": 264,
+      "file": "exports/BloodyFootprints.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_BloodyFootprints",
+      "dimensions_xyz_m": [
+        0.44379,
+        1.60999,
+        0.01
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.44379,
+        1.60998,
+        0.01
+      ]
+    },
+    {
+      "name": "BloodStain",
+      "zone": "damaged",
+      "size_m": [
+        0.9233,
+        0.6615,
+        0.0
+      ],
+      "triangles": 16,
+      "file": "exports/BloodStain.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_BloodStain",
+      "dimensions_xyz_m": [
+        0.92334,
+        0.66148,
+        0.0
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.92334,
+        0.66148,
+        0.0
+      ]
+    },
+    {
+      "name": "TurningTyreTrackTile",
+      "zone": "markings",
+      "size_m": [
+        2.0,
+        2.0,
+        0.038
+      ],
+      "triangles": 404,
+      "file": "exports/TurningTyreTrackTile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_TurningTyreTrackTile",
+      "dimensions_xyz_m": [
+        2.0,
+        2.0,
+        0.038
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.0,
+        2.0,
+        0.038
+      ]
+    },
+    {
+      "name": "GarbageBagPile",
+      "zone": "atmosphere",
+      "size_m": [
+        0.9919,
+        0.6618,
+        0.701
+      ],
+      "triangles": 120,
+      "file": "exports/GarbageBagPile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_GarbageBagPile",
+      "dimensions_xyz_m": [
+        0.99193,
+        0.66183,
+        0.701
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.99193,
+        0.66183,
+        0.701
+      ]
+    },
+    {
+      "name": "SmallLitterPile",
+      "zone": "atmosphere",
+      "size_m": [
+        1.4276,
+        1.1311,
+        0.1
+      ],
+      "triangles": 288,
+      "file": "exports/SmallLitterPile.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_SmallLitterPile",
+      "dimensions_xyz_m": [
+        1.42761,
+        1.13107,
+        0.1
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.42761,
+        1.13106,
+        0.1
+      ]
+    },
+    {
+      "name": "WreckedSedan",
+      "zone": "damaged",
+      "size_m": [
+        2.02,
+        4.0966,
+        1.494
+      ],
+      "triangles": 1460,
+      "file": "exports/WreckedSedan.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_WreckedSedan",
+      "dimensions_xyz_m": [
+        2.02,
+        4.09663,
+        1.494
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        2.02,
+        4.09662,
+        1.494
+      ]
+    },
+    {
+      "name": "OverturnedMotorcycle",
+      "zone": "damaged",
+      "size_m": [
+        0.45,
+        1.92,
+        1.05
+      ],
+      "triangles": 1424,
+      "file": "exports/OverturnedMotorcycle.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_OverturnedMotorcycle",
+      "dimensions_xyz_m": [
+        0.45,
+        1.92,
+        1.05
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.45,
+        1.92,
+        1.05
+      ]
+    },
+    {
+      "name": "BrokenBarrierGate",
+      "zone": "damaged",
+      "size_m": [
+        1.8642,
+        0.6889,
+        1.105
+      ],
+      "triangles": 352,
+      "file": "exports/BrokenBarrierGate.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_BrokenBarrierGate",
+      "dimensions_xyz_m": [
+        1.86419,
+        0.68893,
+        1.105
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        1.86419,
+        0.68894,
+        1.105
+      ]
+    },
+    {
+      "name": "CrushedTrafficCone",
+      "zone": "damaged",
+      "size_m": [
+        0.35,
+        0.35,
+        0.2762
+      ],
+      "triangles": 144,
+      "file": "exports/CrushedTrafficCone.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_CrushedTrafficCone",
+      "dimensions_xyz_m": [
+        0.35,
+        0.35001,
+        0.27616
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.35,
+        0.35,
+        0.27616
+      ]
+    },
+    {
+      "name": "DamagedElectricalBoard",
+      "zone": "damaged",
+      "size_m": [
+        0.8535,
+        0.5385,
+        0.88
+      ],
+      "triangles": 304,
+      "file": "exports/DamagedElectricalBoard.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_DamagedElectricalBoard",
+      "dimensions_xyz_m": [
+        0.85346,
+        0.53848,
+        0.88
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.85346,
+        0.53849,
+        0.88
+      ]
+    },
+    {
+      "name": "InfectedParkingMeter",
+      "zone": "damaged",
+      "size_m": [
+        0.5525,
+        0.4813,
+        1.66
+      ],
+      "triangles": 512,
+      "file": "exports/InfectedParkingMeter.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_InfectedParkingMeter",
+      "dimensions_xyz_m": [
+        0.55245,
+        0.48132,
+        1.66
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.55245,
+        0.48132,
+        1.66
+      ]
+    },
+    {
+      "name": "ScratchedMetalPanel",
+      "zone": "damaged",
+      "size_m": [
+        0.8,
+        0.096,
+        0.92
+      ],
+      "triangles": 184,
+      "file": "exports/ScratchedMetalPanel.fbx",
+      "placement": "floor origin, front -Y",
+      "collision": "add simple proxy in Studio",
+      "group": "parking/expansion",
+      "export_name": "Game_ScratchedMetalPanel",
+      "dimensions_xyz_m": [
+        0.8,
+        0.096,
+        0.92
+      ],
+      "grounded": true,
+      "source_dimensions_local_m": [
+        0.8,
+        0.096,
+        0.92
+      ]
+    }
+  ],
+  "units": "metres",
+  "palette": "OfficePalette.png",
+  "blender_up": "Z",
+  "fbx_up": "Y",
+  "front_blender": "-Y",
+  "source_scenes_preserved": true
+}

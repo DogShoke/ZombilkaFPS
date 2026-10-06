@@ -1,0 +1,673 @@
+{
+  "Date": "2026-10-06",
+  "GenerationVersion": 3,
+  "Structural": {
+    "Progress": "Passed",
+    "Macros": {
+      "Warehouse": true,
+      "SplitLevel": true,
+      "SpawnerHunt": true,
+      "OpenArena": true,
+      "CentralCover": true,
+      "TwoLane": true,
+      "WideGauntlet": true,
+      "Parking": true
+    },
+    "Navigation": [
+      {
+        "Seconds": 2.4884085999997296,
+        "Seed": 123456,
+        "Macro": "OpenArena",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 79
+      },
+      {
+        "Seconds": 2.490746500000114,
+        "Seed": 123456,
+        "Macro": "CentralCover",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 81
+      },
+      {
+        "Seconds": 2.5946742000000995,
+        "Seed": 123456,
+        "Macro": "SplitLevel",
+        "Checks": 23,
+        "Theme": "Office",
+        "Parts": 76
+      },
+      {
+        "Seconds": 2.4918227999996816,
+        "Seed": 123456,
+        "Macro": "WideGauntlet",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 99
+      },
+      {
+        "Seconds": 2.4948873000003005,
+        "Seed": 123456,
+        "Macro": "TwoLane",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 69
+      },
+      {
+        "Seconds": 2.4972678000003725,
+        "Seed": 123456,
+        "Macro": "SpawnerHunt",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 79
+      },
+      {
+        "Seconds": 2.4900250999999116,
+        "Seed": 123456,
+        "Macro": "Parking",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 95
+      },
+      {
+        "Seconds": 2.491392499999165,
+        "Seed": 123456,
+        "Macro": "Warehouse",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 95
+      },
+      {
+        "Seconds": 2.49413419999928,
+        "Seed": 123456,
+        "Macro": "OpenArena",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 63
+      },
+      {
+        "Seconds": 2.497783000000709,
+        "Seed": 123456,
+        "Macro": "CentralCover",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 65
+      },
+      {
+        "Seconds": 2.5927544999995007,
+        "Seed": 123456,
+        "Macro": "SplitLevel",
+        "Checks": 23,
+        "Theme": "Laboratory",
+        "Parts": 60
+      },
+      {
+        "Seconds": 2.495398600000044,
+        "Seed": 123456,
+        "Macro": "WideGauntlet",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 75
+      },
+      {
+        "Seconds": 2.492768299999625,
+        "Seed": 123456,
+        "Macro": "TwoLane",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 57
+      },
+      {
+        "Seconds": 2.4956653999997798,
+        "Seed": 123456,
+        "Macro": "SpawnerHunt",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 63
+      },
+      {
+        "Seconds": 2.5938825000002907,
+        "Seed": 123456,
+        "Macro": "Parking",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 71
+      },
+      {
+        "Seconds": 2.5961393000006865,
+        "Seed": 123456,
+        "Macro": "Warehouse",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 71
+      },
+      {
+        "Seconds": 2.791258799999923,
+        "Seed": 123456,
+        "Macro": "OpenArena",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 71
+      },
+      {
+        "Seconds": 2.495202199999767,
+        "Seed": 123456,
+        "Macro": "CentralCover",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 73
+      },
+      {
+        "Seconds": 2.595277200000055,
+        "Seed": 123456,
+        "Macro": "SplitLevel",
+        "Checks": 23,
+        "Theme": "Warehouse",
+        "Parts": 72
+      },
+      {
+        "Seconds": 2.492256099999395,
+        "Seed": 123456,
+        "Macro": "WideGauntlet",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 91
+      },
+      {
+        "Seconds": 2.494210899999416,
+        "Seed": 123456,
+        "Macro": "TwoLane",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 65
+      },
+      {
+        "Seconds": 2.4929026999998314,
+        "Seed": 123456,
+        "Macro": "SpawnerHunt",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 71
+      },
+      {
+        "Seconds": 2.5591676000003645,
+        "Seed": 123456,
+        "Macro": "Parking",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 87
+      },
+      {
+        "Seconds": 2.5290561000001617,
+        "Seed": 123456,
+        "Macro": "Warehouse",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 87
+      },
+      {
+        "Seconds": 2.491552800000136,
+        "Seed": 123456,
+        "Macro": "OpenArena",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 63
+      },
+      {
+        "Seconds": 2.4984513999997944,
+        "Seed": 123456,
+        "Macro": "CentralCover",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 65
+      },
+      {
+        "Seconds": 2.603609800000413,
+        "Seed": 123456,
+        "Macro": "SplitLevel",
+        "Checks": 23,
+        "Theme": "Parking",
+        "Parts": 60
+      },
+      {
+        "Seconds": 2.486026999999922,
+        "Seed": 123456,
+        "Macro": "WideGauntlet",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 75
+      },
+      {
+        "Seconds": 2.593200300000717,
+        "Seed": 123456,
+        "Macro": "TwoLane",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 57
+      },
+      {
+        "Seconds": 2.7722297000000253,
+        "Seed": 123456,
+        "Macro": "SpawnerHunt",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 63
+      },
+      {
+        "Seconds": 2.6619911999996475,
+        "Seed": 123456,
+        "Macro": "Parking",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 71
+      },
+      {
+        "Seconds": 2.95890320000035,
+        "Seed": 123456,
+        "Macro": "Warehouse",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 71
+      },
+      {
+        "Seconds": 2.5379767000003994,
+        "Seed": 246813,
+        "Macro": "OpenArena",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 79
+      },
+      {
+        "Seconds": 2.7010553000000073,
+        "Seed": 246813,
+        "Macro": "CentralCover",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 81
+      },
+      {
+        "Seconds": 2.6153369000003295,
+        "Seed": 246813,
+        "Macro": "SplitLevel",
+        "Checks": 23,
+        "Theme": "Office",
+        "Parts": 76
+      },
+      {
+        "Seconds": 2.8682761000000028,
+        "Seed": 246813,
+        "Macro": "WideGauntlet",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 99
+      },
+      {
+        "Seconds": 2.581626199999846,
+        "Seed": 246813,
+        "Macro": "TwoLane",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 69
+      },
+      {
+        "Seconds": 2.493614300000445,
+        "Seed": 246813,
+        "Macro": "SpawnerHunt",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 79
+      },
+      {
+        "Seconds": 2.5976785000002565,
+        "Seed": 246813,
+        "Macro": "Parking",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 95
+      },
+      {
+        "Seconds": 2.8544221000001926,
+        "Seed": 246813,
+        "Macro": "Warehouse",
+        "Checks": 22,
+        "Theme": "Office",
+        "Parts": 95
+      },
+      {
+        "Seconds": 3.5362345999992613,
+        "Seed": 246813,
+        "Macro": "OpenArena",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 69
+      },
+      {
+        "Seconds": 2.6079689999996845,
+        "Seed": 246813,
+        "Macro": "CentralCover",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 71
+      },
+      {
+        "Seconds": 2.738476599999558,
+        "Seed": 246813,
+        "Macro": "SplitLevel",
+        "Checks": 23,
+        "Theme": "Laboratory",
+        "Parts": 68
+      },
+      {
+        "Seconds": 2.689451999999619,
+        "Seed": 246813,
+        "Macro": "WideGauntlet",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 87
+      },
+      {
+        "Seconds": 2.581569199999649,
+        "Seed": 246813,
+        "Macro": "TwoLane",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 63
+      },
+      {
+        "Seconds": 2.491877299999942,
+        "Seed": 246813,
+        "Macro": "SpawnerHunt",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 69
+      },
+      {
+        "Seconds": 2.5388130999999703,
+        "Seed": 246813,
+        "Macro": "Parking",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 83
+      },
+      {
+        "Seconds": 2.569092400000045,
+        "Seed": 246813,
+        "Macro": "Warehouse",
+        "Checks": 22,
+        "Theme": "Laboratory",
+        "Parts": 83
+      },
+      {
+        "Seconds": 2.614113200000247,
+        "Seed": 246813,
+        "Macro": "OpenArena",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 65
+      },
+      {
+        "Seconds": 2.5152846000000864,
+        "Seed": 246813,
+        "Macro": "CentralCover",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 67
+      },
+      {
+        "Seconds": 2.770531099999971,
+        "Seed": 246813,
+        "Macro": "SplitLevel",
+        "Checks": 23,
+        "Theme": "Warehouse",
+        "Parts": 64
+      },
+      {
+        "Seconds": 2.55145900000025,
+        "Seed": 246813,
+        "Macro": "WideGauntlet",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 79
+      },
+      {
+        "Seconds": 2.497981299999992,
+        "Seed": 246813,
+        "Macro": "TwoLane",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 59
+      },
+      {
+        "Seconds": 2.5122582000003604,
+        "Seed": 246813,
+        "Macro": "SpawnerHunt",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 65
+      },
+      {
+        "Seconds": 2.517102399999203,
+        "Seed": 246813,
+        "Macro": "Parking",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 75
+      },
+      {
+        "Seconds": 2.5957652999995844,
+        "Seed": 246813,
+        "Macro": "Warehouse",
+        "Checks": 22,
+        "Theme": "Warehouse",
+        "Parts": 75
+      },
+      {
+        "Seconds": 2.488329099999646,
+        "Seed": 246813,
+        "Macro": "OpenArena",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 69
+      },
+      {
+        "Seconds": 2.7576208000000406,
+        "Seed": 246813,
+        "Macro": "CentralCover",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 71
+      },
+      {
+        "Seconds": 2.706492199999957,
+        "Seed": 246813,
+        "Macro": "SplitLevel",
+        "Checks": 23,
+        "Theme": "Parking",
+        "Parts": 68
+      },
+      {
+        "Seconds": 2.7502257000005557,
+        "Seed": 246813,
+        "Macro": "WideGauntlet",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 87
+      },
+      {
+        "Seconds": 2.493625300000531,
+        "Seed": 246813,
+        "Macro": "TwoLane",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 63
+      },
+      {
+        "Seconds": 2.5475396000001638,
+        "Seed": 246813,
+        "Macro": "SpawnerHunt",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 69
+      },
+      {
+        "Seconds": 2.538454399999864,
+        "Seed": 246813,
+        "Macro": "Parking",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 83
+      },
+      {
+        "Seconds": 2.549867599999743,
+        "Seed": 246813,
+        "Macro": "Warehouse",
+        "Checks": 22,
+        "Theme": "Parking",
+        "Parts": 83
+      }
+    ],
+    "Plans": 600,
+    "Modes": {
+      "KillQuota": true,
+      "SpawnerHunt": true,
+      "WideGauntlet": true,
+      "Survival": true
+    },
+    "Examples": {
+      "Warehouse": {
+        "Theme": "Warehouse",
+        "Floor": 194,
+        "Seed": 123456
+      },
+      "SplitLevel": {
+        "Theme": "Office",
+        "Floor": 195,
+        "Seed": 123456
+      },
+      "SpawnerHunt": {
+        "Theme": "Warehouse",
+        "Floor": 193,
+        "Seed": 123456
+      },
+      "OpenArena": {
+        "Theme": "Laboratory",
+        "Floor": 196,
+        "Seed": 123456
+      },
+      "CentralCover": {
+        "Theme": "Warehouse",
+        "Floor": 197,
+        "Seed": 123456
+      },
+      "TwoLane": {
+        "Theme": "Laboratory",
+        "Floor": 200,
+        "Seed": 123456
+      },
+      "WideGauntlet": {
+        "Theme": "Parking",
+        "Floor": 198,
+        "Seed": 123456
+      },
+      "Parking": {
+        "Theme": "Parking",
+        "Floor": 199,
+        "Seed": 123456
+      }
+    },
+    "Themes": {
+      "Warehouse": true,
+      "Office": true,
+      "Parking": true,
+      "Laboratory": true
+    }
+  },
+  "RuntimeSequence": {
+    "Gauntlet": true,
+    "AliveCompletion": true,
+    "Cap": 7,
+    "Survival": true,
+    "RemainingDanger": true,
+    "DeathReset": true,
+    "Transitions": [
+      {
+        "Mode": "KillQuota",
+        "Floor": 1,
+        "Alive": 1
+      },
+      {
+        "Mode": "SpawnerHunt",
+        "Floor": 2,
+        "Alive": 4
+      },
+      {
+        "Mode": "WideGauntlet",
+        "Floor": 3,
+        "Alive": 1
+      },
+      {
+        "Mode": "Survival",
+        "Floor": 4,
+        "Alive": 2
+      },
+      {
+        "Mode": "Survival",
+        "Floor": 5,
+        "Alive": 1
+      }
+    ],
+    "BurstEnemies": 21
+  },
+  "Gallery": {
+    "Report": "{\"Approaches\":[{\"MaxY\":611.108154296875,\"Side\":-1,\"Closest\":1.833491325378418,\"Reached\":true,\"Damage\":true},{\"MaxY\":611.1183471679688,\"Side\":1,\"Closest\":3.07114315032959,\"Reached\":true,\"Damage\":true}]}",
+    "AwaitingPlayer": true,
+    "Y": 600,
+    "X": -84,
+    "PlayerSouth": "-84, 611, 0.853515625",
+    "Status": "Passed",
+    "PlayerNorth": "-84, 611, -0.88671875",
+    "Error": "",
+    "Ready": true
+  },
+  "EarlierHorde": {
+    "Status": "Passed",
+    "Error": "",
+    "Report": "{\"NoWaves\":true,\"Issued\":6,\"Alive\":6,\"MinDistance\":65.78451538085938,\"Pressure\":1,\"Reached\":true,\"RootMin\":-3,\"Emerging\":94,\"Warnings\":6,\"FirstQuota\":true,\"Unsafe\":0}"
+  },
+  "EarlierSource": {
+    "Status": "Passed",
+    "Error": "",
+    "ReadyForShot": true,
+    "Report": "{\"FarRejected\":true,\"Layers\":3,\"Destroyed\":true,\"Duration\":12.302518999999848,\"BurstRequests\":12,\"ShieldRejected\":true,\"WeaponHit\":true}"
+  },
+  "Conditions": {
+    "Sequence": "Accelerated intro, quotas, survival and travel; forced floors 2/3/4; server damage clears enemies; source immunity remains six seconds.",
+    "Gallery": "Independent services, actual native NPC AI and player navigation; high test health.",
+    "Limits": "Normal-duration balance, visual readability and player FPS are not established by these automated checks.",
+    "Perches": "Roof probes used high health and independent native AI. Some short probes timed out; after correcting waypoint height comparison and elevated surround destinations, a follow-up observed actual damage on both car and desk. Arrival/attack timing still varies."
+  },
+  "Cap": {
+    "Status": "Passed",
+    "Error": "",
+    "Report": "{\"Alive\":16,\"MaxReserved\":16,\"Attempts\":80}"
+  },
+  "Fallback": {
+    "Status": "Passed",
+    "Report": "{\"Greyboxes\":0,\"Meshes\":20,\"Validated\":true,\"Attempts\":3}"
+  },
+  "GalleryRetest": {
+    "Y": 600,
+    "X": -84,
+    "Report": "{\"Approaches\":[{\"MaxY\":611.0855102539063,\"Side\":-1,\"Closest\":1.1734318733215333,\"Reached\":true,\"Damage\":true},{\"MaxY\":611.1198120117188,\"Side\":1,\"Closest\":1.5793099403381348,\"Reached\":true,\"Damage\":true}]}",
+    "Status": "Passed",
+    "AwaitingPlayer": true,
+    "Error": "",
+    "Ready": true
+  },
+  "Perches": {
+    "Status": "Passed",
+    "Error": "",
+    "Report": "[{\"MaxY\":610.2600708007813,\"Damage\":true,\"Prop\":\"ArenaCar\"},{\"MaxY\":610.151123046875,\"Damage\":true,\"Prop\":\"ArenaDeskBank\"}]"
+  }
+}

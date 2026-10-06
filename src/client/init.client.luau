@@ -1,4 +1,5 @@
 local Players = game:GetService("Players")
+require(script.ArenaEffects).Start()
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 local ContextActionService = game:GetService("ContextActionService")
@@ -199,6 +200,7 @@ RunService.Heartbeat:Connect(function()
 end)
 
 feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c, d)
+	if kind=="SourceHit"then hud:SourceHit(a);return end
 	if kind == "Equipped" then
 		if c~=character then return end
 		equip(a) ammo=b hud:SetAmmo(ammo,false)

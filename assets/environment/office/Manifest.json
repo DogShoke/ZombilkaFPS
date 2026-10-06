@@ -1,0 +1,557 @@
+{
+  "assets": [
+    {
+      "name": "OfficeDesk",
+      "triangles": 176,
+      "size_m": [
+        1.6,
+        0.75,
+        0.8025
+      ],
+      "file": "exports/OfficeDesk.fbx"
+    },
+    {
+      "name": "DeskWorkstation",
+      "triangles": 660,
+      "size_m": [
+        1.6,
+        0.75,
+        1.435
+      ],
+      "file": "exports/DeskWorkstation.fbx"
+    },
+    {
+      "name": "DualMonitorDesk",
+      "triangles": 528,
+      "size_m": [
+        2.0,
+        0.85,
+        1.445
+      ],
+      "file": "exports/DualMonitorDesk.fbx"
+    },
+    {
+      "name": "MeetingTable",
+      "triangles": 176,
+      "size_m": [
+        2.4,
+        1.0,
+        0.8025
+      ],
+      "file": "exports/MeetingTable.fbx"
+    },
+    {
+      "name": "RoundTable",
+      "triangles": 228,
+      "size_m": [
+        1.2,
+        1.2,
+        0.785
+      ],
+      "file": "exports/RoundTable.fbx"
+    },
+    {
+      "name": "VisitorChair",
+      "triangles": 440,
+      "size_m": [
+        0.605,
+        0.495,
+        1.11
+      ],
+      "file": "exports/VisitorChair.fbx"
+    },
+    {
+      "name": "OfficeChair",
+      "triangles": 628,
+      "size_m": [
+        0.6925,
+        0.7282,
+        1.087
+      ],
+      "file": "exports/OfficeChair.fbx"
+    },
+    {
+      "name": "TwoSeatSofa",
+      "triangles": 396,
+      "size_m": [
+        1.93,
+        0.8,
+        1.08
+      ],
+      "file": "exports/TwoSeatSofa.fbx"
+    },
+    {
+      "name": "CoffeeTable",
+      "triangles": 264,
+      "size_m": [
+        1.15,
+        0.6,
+        0.455
+      ],
+      "file": "exports/CoffeeTable.fbx"
+    },
+    {
+      "name": "ReceptionDesk",
+      "triangles": 308,
+      "size_m": [
+        2.22,
+        0.885,
+        1.1925
+      ],
+      "file": "exports/ReceptionDesk.fbx"
+    },
+    {
+      "name": "TallPartition",
+      "triangles": 308,
+      "size_m": [
+        1.62,
+        0.4,
+        1.64
+      ],
+      "file": "exports/TallPartition.fbx"
+    },
+    {
+      "name": "DeskPartition",
+      "triangles": 308,
+      "size_m": [
+        1.62,
+        0.4,
+        1.09
+      ],
+      "file": "exports/DeskPartition.fbx"
+    },
+    {
+      "name": "TallCabinet",
+      "triangles": 220,
+      "size_m": [
+        0.9,
+        0.5125,
+        1.7
+      ],
+      "file": "exports/TallCabinet.fbx"
+    },
+    {
+      "name": "LowCabinet",
+      "triangles": 264,
+      "size_m": [
+        1.05,
+        0.5375,
+        0.8675
+      ],
+      "file": "exports/LowCabinet.fbx"
+    },
+    {
+      "name": "FilingCabinet",
+      "triangles": 572,
+      "size_m": [
+        0.46,
+        0.591,
+        1.25
+      ],
+      "file": "exports/FilingCabinet.fbx"
+    },
+    {
+      "name": "ThreeDoorLocker",
+      "triangles": 704,
+      "size_m": [
+        0.43,
+        0.5125,
+        1.88
+      ],
+      "file": "exports/ThreeDoorLocker.fbx"
+    },
+    {
+      "name": "MetalShelf",
+      "triangles": 352,
+      "size_m": [
+        1.005,
+        0.45,
+        1.6625
+      ],
+      "file": "exports/MetalShelf.fbx"
+    },
+    {
+      "name": "Bookcase",
+      "triangles": 308,
+      "size_m": [
+        1.025,
+        0.37,
+        1.665
+      ],
+      "file": "exports/Bookcase.fbx"
+    },
+    {
+      "name": "ServerRack",
+      "triangles": 860,
+      "size_m": [
+        0.6,
+        0.7725,
+        1.82
+      ],
+      "file": "exports/ServerRack.fbx"
+    },
+    {
+      "name": "Photocopier",
+      "triangles": 532,
+      "size_m": [
+        0.905,
+        0.8007,
+        1.4248
+      ],
+      "file": "exports/Photocopier.fbx"
+    },
+    {
+      "name": "DesktopPrinter",
+      "triangles": 188,
+      "size_m": [
+        0.47,
+        0.555,
+        0.3145
+      ],
+      "file": "exports/DesktopPrinter.fbx"
+    },
+    {
+      "name": "PaperShredder",
+      "triangles": 132,
+      "size_m": [
+        0.36,
+        0.336,
+        0.556
+      ],
+      "file": "exports/PaperShredder.fbx"
+    },
+    {
+      "name": "WaterCooler",
+      "triangles": 396,
+      "size_m": [
+        0.354,
+        0.447,
+        1.415
+      ],
+      "file": "exports/WaterCooler.fbx"
+    },
+    {
+      "name": "WasteBin",
+      "triangles": 396,
+      "size_m": [
+        0.355,
+        0.355,
+        0.4925
+      ],
+      "file": "exports/WasteBin.fbx"
+    },
+    {
+      "name": "RecycleBin",
+      "triangles": 432,
+      "size_m": [
+        0.355,
+        0.355,
+        0.4925
+      ],
+      "file": "exports/RecycleBin.fbx"
+    },
+    {
+      "name": "OfficeDoor",
+      "triangles": 396,
+      "size_m": [
+        0.935,
+        0.125,
+        2.09
+      ],
+      "file": "exports/OfficeDoor.fbx"
+    },
+    {
+      "name": "OfficeWindow",
+      "triangles": 264,
+      "size_m": [
+        1.835,
+        0.09,
+        1.24
+      ],
+      "file": "exports/OfficeWindow.fbx"
+    },
+    {
+      "name": "Whiteboard",
+      "triangles": 396,
+      "size_m": [
+        1.635,
+        0.2,
+        1.09
+      ],
+      "file": "exports/Whiteboard.fbx"
+    },
+    {
+      "name": "NoticeBoard",
+      "triangles": 436,
+      "size_m": [
+        0.835,
+        0.089,
+        1.04
+      ],
+      "file": "exports/NoticeBoard.fbx"
+    },
+    {
+      "name": "WallClock",
+      "triangles": 448,
+      "size_m": [
+        0.4,
+        0.4,
+        0.0785
+      ],
+      "file": "exports/WallClock.fbx"
+    },
+    {
+      "name": "FireExtinguisher",
+      "triangles": 188,
+      "size_m": [
+        0.2266,
+        0.188,
+        0.5988
+      ],
+      "file": "exports/FireExtinguisher.fbx"
+    },
+    {
+      "name": "LargePlant",
+      "triangles": 334,
+      "size_m": [
+        0.6669,
+        0.6606,
+        1.2192
+      ],
+      "file": "exports/LargePlant.fbx"
+    },
+    {
+      "name": "SmallPlant",
+      "triangles": 334,
+      "size_m": [
+        0.3056,
+        0.3028,
+        0.5588
+      ],
+      "file": "exports/SmallPlant.fbx"
+    },
+    {
+      "name": "PlantCluster",
+      "triangles": 1002,
+      "size_m": [
+        0.8501,
+        0.2477,
+        0.4572
+      ],
+      "file": "exports/PlantCluster.fbx"
+    },
+    {
+      "name": "CoatStand",
+      "triangles": 200,
+      "size_m": [
+        0.44,
+        0.44,
+        1.675
+      ],
+      "file": "exports/CoatStand.fbx"
+    },
+    {
+      "name": "HangingLight",
+      "triangles": 144,
+      "size_m": [
+        1.1,
+        0.25,
+        0.548
+      ],
+      "file": "exports/HangingLight.fbx"
+    },
+    {
+      "name": "CeilingLight",
+      "triangles": 88,
+      "size_m": [
+        0.6,
+        0.6,
+        0.081
+      ],
+      "file": "exports/CeilingLight.fbx"
+    },
+    {
+      "name": "Monitor",
+      "triangles": 176,
+      "size_m": [
+        0.69,
+        0.22,
+        0.625
+      ],
+      "file": "exports/Monitor.fbx"
+    },
+    {
+      "name": "DualMonitor",
+      "triangles": 352,
+      "size_m": [
+        1.43,
+        0.22,
+        0.625
+      ],
+      "file": "exports/DualMonitor.fbx"
+    },
+    {
+      "name": "ComputerTower",
+      "triangles": 160,
+      "size_m": [
+        0.2,
+        0.45,
+        0.48
+      ],
+      "file": "exports/ComputerTower.fbx"
+    },
+    {
+      "name": "Laptop",
+      "triangles": 144,
+      "size_m": [
+        0.34,
+        0.2451,
+        0.2578
+      ],
+      "file": "exports/Laptop.fbx"
+    },
+    {
+      "name": "Keyboard",
+      "triangles": 3344,
+      "size_m": [
+        0.45,
+        0.15,
+        0.036
+      ],
+      "file": "exports/Keyboard.fbx"
+    },
+    {
+      "name": "Mouse",
+      "triangles": 88,
+      "size_m": [
+        0.062,
+        0.105,
+        0.053
+      ],
+      "file": "exports/Mouse.fbx"
+    },
+    {
+      "name": "DeskLamp",
+      "triangles": 144,
+      "size_m": [
+        0.18,
+        0.2369,
+        0.4733
+      ],
+      "file": "exports/DeskLamp.fbx"
+    },
+    {
+      "name": "PaperTrayStack",
+      "triangles": 564,
+      "size_m": [
+        0.275,
+        0.3325,
+        0.188
+      ],
+      "file": "exports/PaperTrayStack.fbx"
+    },
+    {
+      "name": "BinderSet",
+      "triangles": 168,
+      "size_m": [
+        0.188,
+        0.249,
+        0.3
+      ],
+      "file": "exports/BinderSet.fbx"
+    },
+    {
+      "name": "CardboardBox",
+      "triangles": 144,
+      "size_m": [
+        0.42,
+        0.3615,
+        0.3475
+      ],
+      "file": "exports/CardboardBox.fbx"
+    },
+    {
+      "name": "ArchiveBox",
+      "triangles": 132,
+      "size_m": [
+        0.42,
+        0.3615,
+        0.341
+      ],
+      "file": "exports/ArchiveBox.fbx"
+    },
+    {
+      "name": "DarkStorageBox",
+      "triangles": 132,
+      "size_m": [
+        0.42,
+        0.3615,
+        0.341
+      ],
+      "file": "exports/DarkStorageBox.fbx"
+    },
+    {
+      "name": "CoffeeCup",
+      "triangles": 132,
+      "size_m": [
+        0.078,
+        0.078,
+        0.1105
+      ],
+      "file": "exports/CoffeeCup.fbx"
+    },
+    {
+      "name": "PenHolder",
+      "triangles": 104,
+      "size_m": [
+        0.09,
+        0.09,
+        0.1694
+      ],
+      "file": "exports/PenHolder.fbx"
+    },
+    {
+      "name": "Stapler",
+      "triangles": 88,
+      "size_m": [
+        0.1006,
+        0.035,
+        0.0623
+      ],
+      "file": "exports/Stapler.fbx"
+    },
+    {
+      "name": "StickyNotes",
+      "triangles": 44,
+      "size_m": [
+        0.08,
+        0.08,
+        0.02
+      ],
+      "file": "exports/StickyNotes.fbx"
+    },
+    {
+      "name": "Clipboard",
+      "triangles": 100,
+      "size_m": [
+        0.23,
+        0.32,
+        0.029
+      ],
+      "file": "exports/Clipboard.fbx"
+    },
+    {
+      "name": "DeskCalendar",
+      "triangles": 244,
+      "size_m": [
+        0.16,
+        0.0823,
+        0.2368
+      ],
+      "file": "exports/DeskCalendar.fbx"
+    }
+  ],
+  "count": 55,
+  "units": "metres",
+  "palette": "OfficePalette.png"
+}

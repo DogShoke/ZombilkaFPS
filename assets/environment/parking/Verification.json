@@ -1,0 +1,370 @@
+{
+  "checked": 52,
+  "runtime_tested": false,
+  "fbx_reimport": [
+    {
+      "name": "BarrierGateClosed",
+      "triangles": 280,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BarrierGateRaised",
+      "triangles": 280,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ParkingPaymentKiosk",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "TicketTerminal",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SecurityBooth",
+      "triangles": 1028,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ParkingHangingLight",
+      "triangles": 144,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BulletSecurityCamera",
+      "triangles": 248,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "DomeSecurityCamera",
+      "triangles": 344,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "BollardYellow",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BollardWhite",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BollardShort",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BollardBlack",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BollardRed",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "TrafficCone",
+      "triangles": 132,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BentTrafficCone",
+      "triangles": 132,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WheelStopStriped",
+      "triangles": 172,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "WheelStopPlain",
+      "triangles": 100,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SpeedBump",
+      "triangles": 172,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "HangingHeightLimiter",
+      "triangles": 3956,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "ParkingColumn",
+      "triangles": 132,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "EmergencyExitDoor",
+      "triangles": 568,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "FireCabinet",
+      "triangles": 204,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "OutdoorTrashBin",
+      "triangles": 132,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "Dumpster",
+      "triangles": 848,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ToolTrolley",
+      "triangles": 760,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ParkingPallet",
+      "triangles": 352,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ElectricalServiceCabinet",
+      "triangles": 964,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "AirConditioningUnit",
+      "triangles": 640,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SedanWhite",
+      "triangles": 1272,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "HatchbackBlue",
+      "triangles": 1272,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SUVGrey",
+      "triangles": 1328,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ServiceVan",
+      "triangles": 1190,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "MotorcycleRed",
+      "triangles": 1424,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BicycleBlue",
+      "triangles": 1172,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "BicycleRack",
+      "triangles": 340,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ParkingSign",
+      "triangles": 400,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "SpeedLimitSign",
+      "triangles": 732,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "DirectionSign",
+      "triangles": 200,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "AccessibleParkingSign",
+      "triangles": 524,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ConcreteBarrierShort",
+      "triangles": 100,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ConcreteBarrierLong",
+      "triangles": 100,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "PlasticBarrierOrange",
+      "triangles": 232,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "RoadGuardrail",
+      "triangles": 176,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ChainBarrier",
+      "triangles": 3824,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "EVChargerPedestal",
+      "triangles": 316,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "EVChargerWall",
+      "triangles": 316,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ServiceElevatorFront",
+      "triangles": 444,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    },
+    {
+      "name": "RoadArrowTile",
+      "triangles": 49,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "YellowHatchTile",
+      "triangles": 57,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "TyreTrackTile",
+      "triangles": 596,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ParkingEntryTunnel",
+      "triangles": 337,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": -0.0
+    },
+    {
+      "name": "ParkingRampModule",
+      "triangles": 241,
+      "uv_layers": 1,
+      "materials": 1,
+      "min_z": 0.0
+    }
+  ]
+}

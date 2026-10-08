@@ -134,7 +134,8 @@ function CombatHud:SetRun(state)
  local alive=state:GetAttribute("Alive")or 0
  local names={KillQuota="КВОТА УБИЙСТВ",SpawnerHunt="КОФЕЙНОЕ ЗАРАЖЕНИЕ",WideGauntlet="ШИРОКИЙ ПРОРЫВ",Survival="ВЫЖИВАНИЕ"}
  self.RunLabel.Text=string.format("ЭТАЖ %02d / %s\n%s   ЗОМБИ %d",state:GetAttribute("Floor")or 1,state:GetAttribute("Theme")or "",names[mode]or "",alive)
- local messages={FloorIntro="ГОТОВЬТЕСЬ: "..(names[mode]or ""),PreparingFloor="ЦЕЛЬ ВЫПОЛНЕНА / ГОТОВИТСЯ ЛИФТ",ElevatorAvailable="ЛИФТ ОТКРЫТ ↑  ОСТАВШИЕСЯ ЗОМБИ ОПАСНЫ",ElevatorTravel="ПОДЪЁМ ↑",NextFloor="ВЫЙДИТЕ ИЗ ЛИФТА",GenerationFailed="ЛИФТ ПОКА НЕДОСТУПЕН"}
+ self.RunLabel.Text..=string.format("\nТАЛАНТЫ %d   КРЕДИТЫ %d   ПЕРЕБРОСЫ %d",state:GetAttribute("BoonCount")or 0,state:GetAttribute("Credits")or 0,state:GetAttribute("Rerolls")or 0)
+ local messages={FloorIntro="ГОТОВЬТЕСЬ: "..(names[mode]or ""),PreparingFloor="ЦЕЛЬ ВЫПОЛНЕНА / ГОТОВЯТСЯ ЛИФТЫ",ElevatorAvailable="ВЫБЕРИ ЛИФТ С НАГРАДОЙ ↑  ОСТАВШИЕСЯ ЗОМБИ ОПАСНЫ",ElevatorTravel="ПОДЪЁМ ↑",RewardInterlude="ВЫБЕРИ ОДИН ТАЛАНТ",ShopInterlude="БЕЗОПАСНОЕ СНАБЖЕНИЕ",NextFloor="ВЫЙДИТЕ ИЗ ЛИФТА",GenerationFailed="ЛИФТ ПОКА НЕДОСТУПЕН"}
  if phase=="EncounterActive"then
   if mode=="SpawnerHunt"then
    local count,total=state:GetAttribute("SourcesDestroyed")or 0,state:GetAttribute("SourcesTotal")or 0

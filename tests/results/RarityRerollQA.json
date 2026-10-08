@@ -1,0 +1,2417 @@
+{
+  "Date": "2026-10-08",
+  "Milestone": 4,
+  "Studio": "ZombilkaFPS.rbxl",
+  "UnitSuites": {
+    "QA_RewardOffers": {
+      "Report": {
+        "Failed": [],
+        "Cases": [
+          {
+            "Name": "Nine catalog entries have compatible finite scalars and numeric descriptions",
+            "Passed": true
+          },
+          {
+            "Name": "Seeded routes contain three distinct active patrons and fresh opaque IDs",
+            "Passed": true
+          },
+          {
+            "Name": "Route selection rejects stale epoch, wrong floor, unknown and duplicate IDs",
+            "Passed": true
+          },
+          {
+            "Name": "Open preserves advertised patron and publishes three eligible distinct cards",
+            "Passed": true
+          },
+          {
+            "Name": "Invalid claims preserve offer; valid claim grants exactly one boon",
+            "Passed": true
+          },
+          {
+            "Name": "Replacement offers and replacement runs invalidate old claims",
+            "Passed": true
+          },
+          {
+            "Name": "Repeated patron encounters upgrade to three and replace maxed cards",
+            "Passed": true
+          },
+          {
+            "Name": "Fallback supply claims clamp healing and health and consume once",
+            "Passed": true
+          },
+          {
+            "Name": "Clear invalidates selection and offer and removes replicated build",
+            "Passed": true
+          }
+        ],
+        "HookCalls": {
+          "Stats": 31,
+          "Health": 31,
+          "Refill": 1
+        },
+        "Assertions": 2146,
+        "RouteSamples": 100
+      },
+      "Error": "",
+      "Success": true,
+      "Complete": true
+    },
+    "QA_RunSession": {
+      "Report": {
+        "Failed": [],
+        "Assertions": 53,
+        "Cases": [
+          {
+            "Name": "Begin initializes a run and rejects an active restart",
+            "Passed": true
+          },
+          {
+            "Name": "Finish invalidates callbacks and produces results exactly once",
+            "Passed": true
+          },
+          {
+            "Name": "Result snapshots are deep copies at every boundary",
+            "Passed": true
+          },
+          {
+            "Name": "Temporary state resets while end results remain available",
+            "Passed": true
+          },
+          {
+            "Name": "Floor completion is deduplicated and scoped to epoch",
+            "Passed": true
+          },
+          {
+            "Name": "Real defeats credit kills; technical requeues and stale callbacks do not",
+            "Passed": true
+          },
+          {
+            "Name": "Run duration cannot become negative",
+            "Passed": true
+          }
+        ]
+      },
+      "Error": "",
+      "Success": true,
+      "Complete": true
+    },
+    "QA_RewardProbability": {
+      "Report": {
+        "Bands": [
+          {
+            "Floor": 1,
+            "Samples": 20000,
+            "Counts": {
+              "Epic": 1953,
+              "Common": 12021,
+              "Heroic": 0,
+              "Rare": 6026
+            },
+            "Tolerance": 0.015
+          },
+          {
+            "Floor": 3,
+            "Samples": 20000,
+            "Counts": {
+              "Epic": 3375,
+              "Common": 9738,
+              "Heroic": 403,
+              "Rare": 6484
+            },
+            "Tolerance": 0.015
+          },
+          {
+            "Floor": 6,
+            "Samples": 20000,
+            "Counts": {
+              "Epic": 4481,
+              "Common": 8110,
+              "Heroic": 1023,
+              "Rare": 6386
+            },
+            "Tolerance": 0.015
+          },
+          {
+            "Floor": 9,
+            "Samples": 20000,
+            "Counts": {
+              "Epic": 5642,
+              "Common": 6496,
+              "Heroic": 1440,
+              "Rare": 6422
+            },
+            "Tolerance": 0.015
+          }
+        ],
+        "Cases": [
+          {
+            "Name": "All four rarity bands match seeded frequency targets",
+            "Passed": true
+          },
+          {
+            "Name": "Seed streams reproduce rolls and respect eligibility/minimum rarity",
+            "Passed": true
+          },
+          {
+            "Name": "Synthetic eight-patron pool preserves primary mass and outside support",
+            "Passed": true
+          },
+          {
+            "Name": "Before four patrons, unseen IDs receive twice the individual weight",
+            "Passed": true
+          },
+          {
+            "Name": "Pity floors, guarantees, caps and supplies-only exclusion",
+            "Passed": true
+          },
+          {
+            "Name": "Reroll rejects invalid transactions, failed generation and dead/foreign players",
+            "Passed": true
+          },
+          {
+            "Name": "Reroll commits one charge and revision, rejects replays and honors two-use cap",
+            "Passed": true
+          },
+          {
+            "Name": "Pity observes all revisions but commits only once on accepted menu",
+            "Passed": true
+          },
+          {
+            "Name": "Exhausted supply menus never spend rerolls or change pity",
+            "Passed": true
+          },
+          {
+            "Name": "Owned rarity is preserved and maxed talents leave the pool",
+            "Passed": true
+          },
+          {
+            "Name": "All 108 boon rarity/level combinations have finite values and bounded gun formulas",
+            "Passed": true
+          }
+        ],
+        "PatronSamples": [
+          {
+            "FirstCounts": {
+              "A": 5578,
+              "H": 1836,
+              "C": 5572,
+              "B": 5696,
+              "E": 1893,
+              "D": 5626,
+              "G": 1900,
+              "F": 1899
+            },
+            "Mode": "PrimaryFour",
+            "PrimaryFraction": 0.7490666666666667,
+            "Samples": 30000
+          },
+          {
+            "NewFraction": 0.8548,
+            "Mode": "BeforeFour",
+            "Samples": 20000
+          }
+        ],
+        "Assertions": 121497,
+        "Failed": [],
+        "ScalarCombinations": 108
+      },
+      "Error": "",
+      "Success": true,
+      "Complete": true
+    }
+  },
+  "Heroic3Server": {
+    "TestRarity": "Heroic",
+    "Stage": "Check weiss_coagulation",
+    "Success": true,
+    "Cleaned": true,
+    "ResetSnapshot": "{\"RunActive\":true,\"Head\":true,\"Root\":true,\"Epoch\":7,\"State\":\"ChoosingWeapon\",\"Character\":\"Workspace.OTEC_ROBLOXA67\",\"Health\":100,\"CharacterParent\":\"Workspace\",\"History\":[{\"Time\":18196.0374618,\"State\":\"ResettingRun\"},{\"Time\":18199.7362178,\"State\":\"RunEnded\"},{\"Time\":18200.345884,\"State\":\"ChoosingWeapon\"},{\"Time\":18200.6624304,\"State\":\"FloorIntro\"},{\"Time\":18200.8580741,\"State\":\"EncounterActive\"},{\"Time\":18214.3268695,\"State\":\"ResettingRun\"},{\"Time\":18218.0525665,\"State\":\"RunEnded\"},{\"Time\":18218.3928427,\"State\":\"ChoosingWeapon\"},{\"Time\":18218.7044949,\"State\":\"FloorIntro\"},{\"Time\":18218.8923957,\"State\":\"EncounterActive\"},{\"Time\":18232.8531297,\"State\":\"ResettingRun\"},{\"Time\":18236.5557687,\"State\":\"RunEnded\"},{\"Time\":18236.8980389,\"State\":\"ChoosingWeapon\"}]}",
+    "Report": {
+      "TestRarity": "Heroic",
+      "Cases": [
+        {
+          "Rarity": "Heroic",
+          "Collateral": [
+            36,
+            36
+          ],
+          "Boon": "volta_arc_discharge",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "Glock",
+          "Expected": {
+            "Cooldown": 0.9,
+            "Damage": 36
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": true,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "StunNearExpectedEnd": true,
+          "Boon": "volta_static_shock",
+          "Weapon": "Glock",
+          "Expected": {
+            "Cooldown": 1.5,
+            "Duration": 0.75
+          },
+          "Kills": 0,
+          "Success": true,
+          "StunAfterOrdinaryReact": true,
+          "Damage": [
+            {
+              "Modified": 50,
+              "Ratio": 1,
+              "Base": 50,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "StunObservedAt": 0.67,
+          "Hits": [
+            {
+              "Headshot": true,
+              "Push": false,
+              "Arc": false,
+              "Shock": true,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "volta_high_voltage",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "Glock",
+          "Expected": {
+            "PerStack": 0.04,
+            "Stacks": 5,
+            "Duration": 3
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 26,
+              "Ratio": 1.04,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Capacity": 18,
+          "Boon": "bravo_belt_feed",
+          "Weapon": "Glock",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [],
+          "Level": 3,
+          "Expected": {
+            "Fraction": 0.5
+          },
+          "ReloadedAmmo": 18,
+          "Hits": []
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "bravo_first_salvo",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "Glock",
+          "Expected": {
+            "Shots": 3,
+            "Bonus": 0.48
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 37,
+              "Ratio": 1.48,
+              "Base": 25,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 37,
+              "Ratio": 1.48,
+              "Base": 25,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 37,
+              "Ratio": 1.48,
+              "Base": 25,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Coverage": "Native target released synchronously after actual ray hit; production AfterDirectHit push and velocity preserved",
+          "Rarity": "Heroic",
+          "Boon": "bravo_large_caliber",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "Glock",
+          "Expected": {
+            "Speed": 12,
+            "Cooldown": 1.2
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": true,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 12
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_adrenaline",
+          "Weapon": "Glock",
+          "Kills": 0,
+          "Success": true,
+          "Expected": {
+            "Bonus": 0.8
+          },
+          "Damage": [
+            {
+              "Modified": 40,
+              "Ratio": 1.6,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "Health": 25,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Coverage": "Actual Humanoid/production OnFloorStart hook; no additional physical floor transition in this case",
+          "Rarity": "Heroic",
+          "Boon": "weiss_field_protocol",
+          "Weapon": "Glock",
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "FloorStartHeal": 14,
+          "Level": 3,
+          "Expected": {
+            "MaxHealth": 28,
+            "Heal": 14
+          },
+          "MaxHealth": 128,
+          "Hits": []
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_coagulation",
+          "Weapon": "Glock",
+          "Expected": {
+            "Cooldown": 1.2,
+            "Heal": 8
+          },
+          "Kills": 1,
+          "Success": true,
+          "BoundedHealScalar": true,
+          "Damage": [
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "Health": 58,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Collateral": [
+            36,
+            36
+          ],
+          "Boon": "volta_arc_discharge",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "AKM",
+          "Expected": {
+            "Cooldown": 0.9,
+            "Damage": 36
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": true,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "StunNearExpectedEnd": true,
+          "Boon": "volta_static_shock",
+          "Weapon": "AKM",
+          "Expected": {
+            "Cooldown": 1.5,
+            "Duration": 0.75
+          },
+          "Kills": 0,
+          "Success": true,
+          "StunAfterOrdinaryReact": true,
+          "Damage": [
+            {
+              "Modified": 36,
+              "Ratio": 1,
+              "Base": 36,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "StunObservedAt": 0.67,
+          "Hits": [
+            {
+              "Headshot": true,
+              "Push": false,
+              "Arc": false,
+              "Shock": true,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "volta_high_voltage",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "AKM",
+          "Expected": {
+            "PerStack": 0.04,
+            "Stacks": 5,
+            "Duration": 3
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 18.72,
+              "Ratio": 1.04,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Capacity": 45,
+          "Boon": "bravo_belt_feed",
+          "Weapon": "AKM",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [],
+          "Level": 3,
+          "Expected": {
+            "Fraction": 0.5
+          },
+          "ReloadedAmmo": 45,
+          "Hits": []
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "bravo_first_salvo",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "AKM",
+          "Expected": {
+            "Shots": 3,
+            "Bonus": 0.48
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 26.64,
+              "Ratio": 1.48,
+              "Base": 18,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 26.64,
+              "Ratio": 1.48,
+              "Base": 18,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 26.64,
+              "Ratio": 1.48,
+              "Base": 18,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Coverage": "Native target released synchronously after actual ray hit; production AfterDirectHit push and velocity preserved",
+          "Rarity": "Heroic",
+          "Boon": "bravo_large_caliber",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "AKM",
+          "Expected": {
+            "Speed": 12,
+            "Cooldown": 1.2
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": true,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 11.999999046325684
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_adrenaline",
+          "Weapon": "AKM",
+          "Kills": 0,
+          "Success": true,
+          "Expected": {
+            "Bonus": 0.8
+          },
+          "Damage": [
+            {
+              "Modified": 28.8,
+              "Ratio": 1.6,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "Health": 25,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Coverage": "Actual Humanoid/production OnFloorStart hook; no additional physical floor transition in this case",
+          "Rarity": "Heroic",
+          "Boon": "weiss_field_protocol",
+          "Weapon": "AKM",
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "FloorStartHeal": 14,
+          "Level": 3,
+          "Expected": {
+            "MaxHealth": 28,
+            "Heal": 14
+          },
+          "MaxHealth": 128,
+          "Hits": []
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_coagulation",
+          "Weapon": "AKM",
+          "Expected": {
+            "Cooldown": 1.2,
+            "Heal": 8
+          },
+          "Kills": 1,
+          "Success": true,
+          "BoundedHealScalar": true,
+          "Damage": [
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "Health": 58,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Collateral": [
+            36,
+            36
+          ],
+          "Boon": "volta_arc_discharge",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "Mossberg",
+          "Expected": {
+            "Cooldown": 0.9,
+            "Damage": 36
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 72,
+              "Ratio": 1,
+              "Base": 72,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": true,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "StunNearExpectedEnd": true,
+          "Boon": "volta_static_shock",
+          "Weapon": "Mossberg",
+          "Expected": {
+            "Cooldown": 1.5,
+            "Duration": 0.75
+          },
+          "Kills": 0,
+          "Success": true,
+          "StunAfterOrdinaryReact": true,
+          "Damage": [
+            {
+              "Modified": 48,
+              "Ratio": 1,
+              "Base": 48,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "StunObservedAt": 0.67,
+          "Hits": [
+            {
+              "Headshot": true,
+              "Push": false,
+              "Arc": false,
+              "Shock": true,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "volta_high_voltage",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "Mossberg",
+          "Expected": {
+            "PerStack": 0.04,
+            "Stacks": 5,
+            "Duration": 3
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 60,
+              "Ratio": 1,
+              "Base": 60,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 87.36,
+              "Ratio": 1.04,
+              "Base": 84,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Capacity": 9,
+          "Boon": "bravo_belt_feed",
+          "Weapon": "Mossberg",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [],
+          "Level": 3,
+          "Expected": {
+            "Fraction": 0.5
+          },
+          "ReloadedAmmo": 9,
+          "Hits": []
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "bravo_first_salvo",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "Mossberg",
+          "Expected": {
+            "Shots": 3,
+            "Bonus": 0.48
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 88.8,
+              "Ratio": 1.48,
+              "Base": 60,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 106.56,
+              "Ratio": 1.48,
+              "Base": 72,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 142.07999999999998,
+              "Ratio": 1.4799999999999998,
+              "Base": 96,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 96,
+              "Ratio": 1,
+              "Base": 96,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Coverage": "Native target released synchronously after actual ray hit; production AfterDirectHit push and velocity preserved",
+          "Rarity": "Heroic",
+          "Boon": "bravo_large_caliber",
+          "Kills": 0,
+          "Success": true,
+          "Weapon": "Mossberg",
+          "Expected": {
+            "Speed": 12,
+            "Cooldown": 1.2
+          },
+          "Level": 3,
+          "Damage": [
+            {
+              "Modified": 72,
+              "Ratio": 1,
+              "Base": 72,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": true,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 12.000000953674316
+            }
+          ]
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_adrenaline",
+          "Weapon": "Mossberg",
+          "Kills": 0,
+          "Success": true,
+          "Expected": {
+            "Bonus": 0.8
+          },
+          "Damage": [
+            {
+              "Modified": 153.60000000000002,
+              "Ratio": 1.6000000000000003,
+              "Base": 96,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "Health": 25,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        },
+        {
+          "Coverage": "Actual Humanoid/production OnFloorStart hook; no additional physical floor transition in this case",
+          "Rarity": "Heroic",
+          "Boon": "weiss_field_protocol",
+          "Weapon": "Mossberg",
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "FloorStartHeal": 14,
+          "Level": 3,
+          "Expected": {
+            "MaxHealth": 28,
+            "Heal": 14
+          },
+          "MaxHealth": 128,
+          "Hits": []
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_coagulation",
+          "Weapon": "Mossberg",
+          "Expected": {
+            "Cooldown": 1.2,
+            "Heal": 8
+          },
+          "Kills": 1,
+          "Success": true,
+          "BoundedHealScalar": true,
+          "Damage": [
+            {
+              "Modified": 60,
+              "Ratio": 1,
+              "Base": 60,
+              "Model": "Zombie"
+            }
+          ],
+          "Level": 3,
+          "Health": 58,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "Arc": false,
+              "Shock": false,
+              "State": "HitReact",
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ]
+        }
+      ],
+      "Resets": [
+        {
+          "RunActive": true,
+          "Head": true,
+          "Root": true,
+          "Epoch": 3,
+          "State": "ChoosingWeapon",
+          "Character": "Workspace.OTEC_ROBLOXA67",
+          "Health": 100,
+          "CharacterParent": "Workspace",
+          "History": [
+            {
+              "Time": 18196.0374618,
+              "State": "ResettingRun"
+            },
+            {
+              "Time": 18199.7362178,
+              "State": "RunEnded"
+            },
+            {
+              "Time": 18200.345884,
+              "State": "ChoosingWeapon"
+            }
+          ]
+        },
+        {
+          "RunActive": true,
+          "Head": true,
+          "Root": true,
+          "Epoch": 5,
+          "State": "ChoosingWeapon",
+          "Character": "Workspace.OTEC_ROBLOXA67",
+          "Health": 100,
+          "CharacterParent": "Workspace",
+          "History": [
+            {
+              "Time": 18196.0374618,
+              "State": "ResettingRun"
+            },
+            {
+              "Time": 18199.7362178,
+              "State": "RunEnded"
+            },
+            {
+              "Time": 18200.345884,
+              "State": "ChoosingWeapon"
+            },
+            {
+              "Time": 18200.6624304,
+              "State": "FloorIntro"
+            },
+            {
+              "Time": 18200.8580741,
+              "State": "EncounterActive"
+            },
+            {
+              "Time": 18214.3268695,
+              "State": "ResettingRun"
+            },
+            {
+              "Time": 18218.0525665,
+              "State": "RunEnded"
+            },
+            {
+              "Time": 18218.3928427,
+              "State": "ChoosingWeapon"
+            }
+          ]
+        },
+        {
+          "RunActive": true,
+          "Head": true,
+          "Root": true,
+          "Epoch": 7,
+          "State": "ChoosingWeapon",
+          "Character": "Workspace.OTEC_ROBLOXA67",
+          "Health": 100,
+          "CharacterParent": "Workspace",
+          "History": [
+            {
+              "Time": 18196.0374618,
+              "State": "ResettingRun"
+            },
+            {
+              "Time": 18199.7362178,
+              "State": "RunEnded"
+            },
+            {
+              "Time": 18200.345884,
+              "State": "ChoosingWeapon"
+            },
+            {
+              "Time": 18200.6624304,
+              "State": "FloorIntro"
+            },
+            {
+              "Time": 18200.8580741,
+              "State": "EncounterActive"
+            },
+            {
+              "Time": 18214.3268695,
+              "State": "ResettingRun"
+            },
+            {
+              "Time": 18218.0525665,
+              "State": "RunEnded"
+            },
+            {
+              "Time": 18218.3928427,
+              "State": "ChoosingWeapon"
+            },
+            {
+              "Time": 18218.7044949,
+              "State": "FloorIntro"
+            },
+            {
+              "Time": 18218.8923957,
+              "State": "EncounterActive"
+            },
+            {
+              "Time": 18232.8531297,
+              "State": "ResettingRun"
+            },
+            {
+              "Time": 18236.5557687,
+              "State": "RunEnded"
+            },
+            {
+              "Time": 18236.8980389,
+              "State": "ChoosingWeapon"
+            }
+          ]
+        }
+      ],
+      "TestLevel": 3,
+      "Coverage": "Real WeaponService select/fire/reload remotes; native ZombieService spawned models. QA anchors targets and accelerates spawn only."
+    },
+    "TestLevel": 3,
+    "Complete": true
+  },
+  "Heroic3Client": {
+    "TestRarity": "Heroic",
+    "Stage": "Mossberg / weiss_coagulation",
+    "Success": true,
+    "Error": "",
+    "ResetSnapshot": "{\"RunActive\":true,\"Head\":true,\"Root\":true,\"Epoch\":7,\"State\":\"ChoosingWeapon\",\"Character\":\"Workspace.OTEC_ROBLOXA67\",\"Health\":100,\"CharacterParent\":\"Workspace\",\"History\":[{\"Time\":18196.0374618,\"State\":\"ResettingRun\"},{\"Time\":18199.7362178,\"State\":\"RunEnded\"},{\"Time\":18200.345884,\"State\":\"ChoosingWeapon\"},{\"Time\":18200.6624304,\"State\":\"FloorIntro\"},{\"Time\":18200.8580741,\"State\":\"EncounterActive\"},{\"Time\":18214.3268695,\"State\":\"ResettingRun\"},{\"Time\":18218.0525665,\"State\":\"RunEnded\"},{\"Time\":18218.3928427,\"State\":\"ChoosingWeapon\"},{\"Time\":18218.7044949,\"State\":\"FloorIntro\"},{\"Time\":18218.8923957,\"State\":\"EncounterActive\"},{\"Time\":18232.8531297,\"State\":\"ResettingRun\"},{\"Time\":18236.5557687,\"State\":\"RunEnded\"},{\"Time\":18236.8980389,\"State\":\"ChoosingWeapon\"}]}",
+    "Report": {
+      "TestRarity": "Heroic",
+      "Cases": [
+        {
+          "Rarity": "Heroic",
+          "Collateral": [
+            36,
+            36
+          ],
+          "Boon": "volta_arc_discharge",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": true,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Cooldown": 0.9,
+            "Damage": 36
+          },
+          "Level": 3,
+          "Weapon": "Glock"
+        },
+        {
+          "Rarity": "Heroic",
+          "StunNearExpectedEnd": true,
+          "Boon": "volta_static_shock",
+          "StunObservedAt": 0.67,
+          "Hits": [
+            {
+              "Headshot": true,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": true,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Kills": 0,
+          "Success": true,
+          "StunAfterOrdinaryReact": true,
+          "Level": 3,
+          "Expected": {
+            "Cooldown": 1.5,
+            "Duration": 0.75
+          },
+          "Damage": [
+            {
+              "Modified": 50,
+              "Ratio": 1,
+              "Base": 50,
+              "Model": "Zombie"
+            }
+          ],
+          "Weapon": "Glock"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "volta_high_voltage",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 26,
+              "Ratio": 1.04,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "PerStack": 0.04,
+            "Stacks": 5,
+            "Duration": 3
+          },
+          "Level": 3,
+          "Weapon": "Glock"
+        },
+        {
+          "Rarity": "Heroic",
+          "Capacity": 18,
+          "Boon": "bravo_belt_feed",
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "Hits": [],
+          "Expected": {
+            "Fraction": 0.5
+          },
+          "Level": 3,
+          "ReloadedAmmo": 18,
+          "Weapon": "Glock"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "bravo_first_salvo",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 37,
+              "Ratio": 1.48,
+              "Base": 25,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 37,
+              "Ratio": 1.48,
+              "Base": 25,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 37,
+              "Ratio": 1.48,
+              "Base": 25,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Bonus": 0.48,
+            "Shots": 3
+          },
+          "Level": 3,
+          "Weapon": "Glock"
+        },
+        {
+          "Coverage": "Native target released synchronously after actual ray hit; production AfterDirectHit push and velocity preserved",
+          "Rarity": "Heroic",
+          "Boon": "bravo_large_caliber",
+          "Kills": 0,
+          "Success": true,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": true,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 12
+            }
+          ],
+          "Damage": [
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Expected": {
+            "Speed": 12,
+            "Cooldown": 1.2
+          },
+          "Level": 3,
+          "Weapon": "Glock"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_adrenaline",
+          "Damage": [
+            {
+              "Modified": 40,
+              "Ratio": 1.6,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "Kills": 0,
+          "Health": 25,
+          "Success": true,
+          "Level": 3,
+          "Expected": {
+            "Bonus": 0.8
+          },
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Weapon": "Glock"
+        },
+        {
+          "Coverage": "Actual Humanoid/production OnFloorStart hook; no additional physical floor transition in this case",
+          "Rarity": "Heroic",
+          "Boon": "weiss_field_protocol",
+          "Hits": [],
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "FloorStartHeal": 14,
+          "Expected": {
+            "MaxHealth": 28,
+            "Heal": 14
+          },
+          "Level": 3,
+          "MaxHealth": 128,
+          "Weapon": "Glock"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_coagulation",
+          "Damage": [
+            {
+              "Modified": 25,
+              "Ratio": 1,
+              "Base": 25,
+              "Model": "Zombie"
+            }
+          ],
+          "BoundedHealScalar": true,
+          "Kills": 1,
+          "Health": 58,
+          "Level": 3,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Cooldown": 1.2,
+            "Heal": 8
+          },
+          "Success": true,
+          "Weapon": "Glock"
+        },
+        {
+          "Rarity": "Heroic",
+          "Collateral": [
+            36,
+            36
+          ],
+          "Boon": "volta_arc_discharge",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": true,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Cooldown": 0.9,
+            "Damage": 36
+          },
+          "Level": 3,
+          "Weapon": "AKM"
+        },
+        {
+          "Rarity": "Heroic",
+          "StunNearExpectedEnd": true,
+          "Boon": "volta_static_shock",
+          "StunObservedAt": 0.67,
+          "Hits": [
+            {
+              "Headshot": true,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": true,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Kills": 0,
+          "Success": true,
+          "StunAfterOrdinaryReact": true,
+          "Level": 3,
+          "Expected": {
+            "Cooldown": 1.5,
+            "Duration": 0.75
+          },
+          "Damage": [
+            {
+              "Modified": 36,
+              "Ratio": 1,
+              "Base": 36,
+              "Model": "Zombie"
+            }
+          ],
+          "Weapon": "AKM"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "volta_high_voltage",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 18.72,
+              "Ratio": 1.04,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "PerStack": 0.04,
+            "Stacks": 5,
+            "Duration": 3
+          },
+          "Level": 3,
+          "Weapon": "AKM"
+        },
+        {
+          "Rarity": "Heroic",
+          "Capacity": 45,
+          "Boon": "bravo_belt_feed",
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "Hits": [],
+          "Expected": {
+            "Fraction": 0.5
+          },
+          "Level": 3,
+          "ReloadedAmmo": 45,
+          "Weapon": "AKM"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "bravo_first_salvo",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 26.64,
+              "Ratio": 1.48,
+              "Base": 18,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 26.64,
+              "Ratio": 1.48,
+              "Base": 18,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 26.64,
+              "Ratio": 1.48,
+              "Base": 18,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Bonus": 0.48,
+            "Shots": 3
+          },
+          "Level": 3,
+          "Weapon": "AKM"
+        },
+        {
+          "Coverage": "Native target released synchronously after actual ray hit; production AfterDirectHit push and velocity preserved",
+          "Rarity": "Heroic",
+          "Boon": "bravo_large_caliber",
+          "Kills": 0,
+          "Success": true,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": true,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 11.999999046325684
+            }
+          ],
+          "Damage": [
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Expected": {
+            "Speed": 12,
+            "Cooldown": 1.2
+          },
+          "Level": 3,
+          "Weapon": "AKM"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_adrenaline",
+          "Damage": [
+            {
+              "Modified": 28.8,
+              "Ratio": 1.6,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "Kills": 0,
+          "Health": 25,
+          "Success": true,
+          "Level": 3,
+          "Expected": {
+            "Bonus": 0.8
+          },
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Weapon": "AKM"
+        },
+        {
+          "Coverage": "Actual Humanoid/production OnFloorStart hook; no additional physical floor transition in this case",
+          "Rarity": "Heroic",
+          "Boon": "weiss_field_protocol",
+          "Hits": [],
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "FloorStartHeal": 14,
+          "Expected": {
+            "MaxHealth": 28,
+            "Heal": 14
+          },
+          "Level": 3,
+          "MaxHealth": 128,
+          "Weapon": "AKM"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_coagulation",
+          "Damage": [
+            {
+              "Modified": 18,
+              "Ratio": 1,
+              "Base": 18,
+              "Model": "Zombie"
+            }
+          ],
+          "BoundedHealScalar": true,
+          "Kills": 1,
+          "Health": 58,
+          "Level": 3,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Cooldown": 1.2,
+            "Heal": 8
+          },
+          "Success": true,
+          "Weapon": "AKM"
+        },
+        {
+          "Rarity": "Heroic",
+          "Collateral": [
+            36,
+            36
+          ],
+          "Boon": "volta_arc_discharge",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 72,
+              "Ratio": 1,
+              "Base": 72,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": true,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Cooldown": 0.9,
+            "Damage": 36
+          },
+          "Level": 3,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Rarity": "Heroic",
+          "StunNearExpectedEnd": true,
+          "Boon": "volta_static_shock",
+          "StunObservedAt": 0.67,
+          "Hits": [
+            {
+              "Headshot": true,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": true,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Kills": 0,
+          "Success": true,
+          "StunAfterOrdinaryReact": true,
+          "Level": 3,
+          "Expected": {
+            "Cooldown": 1.5,
+            "Duration": 0.75
+          },
+          "Damage": [
+            {
+              "Modified": 48,
+              "Ratio": 1,
+              "Base": 48,
+              "Model": "Zombie"
+            }
+          ],
+          "Weapon": "Mossberg"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "volta_high_voltage",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 60,
+              "Ratio": 1,
+              "Base": 60,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 87.36,
+              "Ratio": 1.04,
+              "Base": 84,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "PerStack": 0.04,
+            "Stacks": 5,
+            "Duration": 3
+          },
+          "Level": 3,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Rarity": "Heroic",
+          "Capacity": 9,
+          "Boon": "bravo_belt_feed",
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "Hits": [],
+          "Expected": {
+            "Fraction": 0.5
+          },
+          "Level": 3,
+          "ReloadedAmmo": 9,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "bravo_first_salvo",
+          "Kills": 0,
+          "Success": true,
+          "Damage": [
+            {
+              "Modified": 88.8,
+              "Ratio": 1.48,
+              "Base": 60,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 106.56,
+              "Ratio": 1.48,
+              "Base": 72,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 142.07999999999998,
+              "Ratio": 1.4799999999999998,
+              "Base": 96,
+              "Model": "Zombie"
+            },
+            {
+              "Modified": 96,
+              "Ratio": 1,
+              "Base": 96,
+              "Model": "Zombie"
+            }
+          ],
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            },
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Bonus": 0.48,
+            "Shots": 3
+          },
+          "Level": 3,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Coverage": "Native target released synchronously after actual ray hit; production AfterDirectHit push and velocity preserved",
+          "Rarity": "Heroic",
+          "Boon": "bravo_large_caliber",
+          "Kills": 0,
+          "Success": true,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": true,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 12.000000953674316
+            }
+          ],
+          "Damage": [
+            {
+              "Modified": 72,
+              "Ratio": 1,
+              "Base": 72,
+              "Model": "Zombie"
+            }
+          ],
+          "Expected": {
+            "Speed": 12,
+            "Cooldown": 1.2
+          },
+          "Level": 3,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_adrenaline",
+          "Damage": [
+            {
+              "Modified": 153.60000000000002,
+              "Ratio": 1.6000000000000003,
+              "Base": 96,
+              "Model": "Zombie"
+            }
+          ],
+          "Kills": 0,
+          "Health": 25,
+          "Success": true,
+          "Level": 3,
+          "Expected": {
+            "Bonus": 0.8
+          },
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Weapon": "Mossberg"
+        },
+        {
+          "Coverage": "Actual Humanoid/production OnFloorStart hook; no additional physical floor transition in this case",
+          "Rarity": "Heroic",
+          "Boon": "weiss_field_protocol",
+          "Hits": [],
+          "Damage": [],
+          "Kills": 0,
+          "Success": true,
+          "FloorStartHeal": 14,
+          "Expected": {
+            "MaxHealth": 28,
+            "Heal": 14
+          },
+          "Level": 3,
+          "MaxHealth": 128,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Rarity": "Heroic",
+          "Boon": "weiss_coagulation",
+          "Damage": [
+            {
+              "Modified": 60,
+              "Ratio": 1,
+              "Base": 60,
+              "Model": "Zombie"
+            }
+          ],
+          "BoundedHealScalar": true,
+          "Kills": 1,
+          "Health": 58,
+          "Level": 3,
+          "Hits": [
+            {
+              "Headshot": false,
+              "Push": false,
+              "State": "HitReact",
+              "Arc": false,
+              "Shock": false,
+              "YVelocity": 0,
+              "BeforeYVelocity": 0,
+              "HorizontalVelocity": 0
+            }
+          ],
+          "Expected": {
+            "Cooldown": 1.2,
+            "Heal": 8
+          },
+          "Success": true,
+          "Weapon": "Mossberg"
+        }
+      ],
+      "TestLevel": 3
+    },
+    "TestLevel": 3,
+    "Complete": true
+  },
+  "RerollNative": {
+    "Report": {
+      "FirstBalance": 2,
+      "FinalRevision": 3,
+      "FirstRevision": 2,
+      "DeathReset": true,
+      "OutsideRejected": true,
+      "StaleAndDuplicateRejected": true,
+      "Token": "a8481750-9476-4220-9ba8-afc6314b7097",
+      "Coverage": "Native Director-bound run, actual GUI reroll/claim, accelerated real NPC deaths; QA-only starting charges",
+      "InitialRevision": 1,
+      "FinalBalance": 1,
+      "Build": {
+        "DescriptionRu": "Попадание в голову останавливает цель на 0.35 с. Не чаще раза в 1,5 с. Дробины считаются одним попаданием.",
+        "Rarity": "Common",
+        "NameRu": "Статический шок",
+        "Id": "volta_static_shock",
+        "Level": 1,
+        "RarityRu": "ОБЫЧНЫЙ",
+        "Patron": "Volta"
+      }
+    },
+    "Success": true,
+    "Error": "",
+    "Stage": "Complete",
+    "Complete": true
+  },
+  "NarrowLayout": {
+    "Scroll": 800,
+    "ThirdCardFullyVisible": true,
+    "Canvas": 1546
+  },
+  "Visual": {
+    "Desktop": "Observed three readable rarity-colored cards, count3/0of2 and reroll button; free cursor, CombatHud disabled",
+    "Narrow": "400x620 isolated production GUI; card3 fully visible at scroll800, canvas1546; no-credit reason visible at max scroll",
+    "StaleRealRemotes": "Sent old revision RerollBoon and ClaimBoon after first GUI reroll; balance stayed2 and no boon. Sent third real reroll after cap, balance1."
+  },
+  "Limits": [
+    "QA grants starting rerolls3 and accelerates real NPC deaths; production starting balance0 pending shops/research.",
+    "Primary-four weighting uses synthetic eight-ID pool; only three implemented patrons currently enabled.",
+    "108 scalar contracts cover all rarities/levels; native27 cases use Heroic3; Common1 native27 cases recorded in prior milestone.",
+    "No DataStore save/rejoin or normal floor1–12 balance claimed."
+  ]
+}

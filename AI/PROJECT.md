@@ -1,5 +1,19 @@
 # Zombilka FPS
 
+Current source (2026-10-08): Office/OpenArena5×5, 180×180, continuous horde and
+KillQuota only. The multi-theme/three-wave paragraphs below are historical.
+Roguelike milestone1 is verified: server RunSession ledger, death ends the run,
+actual validated Floor1 rebuild, results screen and explicit new-run selection.
+FloorDirector owns physical phases; WeaponService owns ammo/action cancellation.
+Roguelike milestones2/3 are verified in Studio: three labeled patron elevators,
+server-authoritative rewards and nine level1–3 effects for Volta/Bravo/Weiss.
+Milestones4/5 verified: authored four-rarity tables, funded rerolls/pity/softweights,
+bounded credits, safe vending and rare Zavkhoz shop. Other five patrons, research,
+DataStore and normalfloor1–12balance remain pending.
+Continue using AI/ROGUELIKE_PROGRESS.md for the exact verification checkpoint.
+
+## Historical notes (obsolete behavior below)
+
 New single-player first-person zombie shooter. Seeded procedural floors replace the two fixed office layouts. Offices, laboratories, warehouses and parking areas have three waves, guarded elevator travel, loop routes and occasional upper galleries while preserving the authored weapons.
 
 Rojo maps `src/shared` to `ReplicatedStorage.Shared`, `src/client` to `StarterPlayerScripts.Client`, and `src/server` to `ServerScriptService.Server`. Repository source is authoritative. Office geometry and sanitized visual asset snapshots are built from code; `assets/FpsGlock.rbxm` remains unchanged.

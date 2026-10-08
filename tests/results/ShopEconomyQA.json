@@ -1,0 +1,546 @@
+{
+  "Date": "2026-10-08",
+  "Milestone": 5,
+  "Studio": "ZombilkaFPS.rbxl",
+  "UnitSuites": {
+    "ShopTransactions": {
+      "Report": {
+        "PremiumSeeds": {
+          "rareboon": 1,
+          "rarity": 1,
+          "upgrade": 1
+        },
+        "Cases": [
+          {
+            "Name": "Vending exposes three priced finite items with authoritative display state",
+            "Passed": true
+          },
+          {
+            "Name": "Current identity rejects wrong owner, epoch, token and revision",
+            "Passed": true
+          },
+          {
+            "Name": "Opening rejects invalid kinds, floor data and foreign owner",
+            "Passed": true
+          },
+          {
+            "Name": "Dead or missing characters cannot purchase or consume stock",
+            "Passed": true
+          },
+          {
+            "Name": "Insufficient balance and full-health healing are rejected without charge",
+            "Passed": true
+          },
+          {
+            "Name": "Healing clamps missing HP and duplicate/stale purchases spend once",
+            "Passed": true
+          },
+          {
+            "Name": "Reroll carry cap and total health cap reject useless purchases",
+            "Passed": true
+          },
+          {
+            "Name": "Run-only max-health supply grants once and combined bonus never exceeds cap",
+            "Passed": true
+          },
+          {
+            "Name": "Closing is free; reopening retains stock and invalidates prior session packets",
+            "Passed": true
+          },
+          {
+            "Name": "Clear and run replacement invalidate every old session",
+            "Passed": true
+          },
+          {
+            "Name": "Merchant has bounded inventory and a finite free supply even without funds",
+            "Passed": true
+          },
+          {
+            "Name": "Merchant stock is seeded, compatible and stable across reopening",
+            "Passed": true
+          },
+          {
+            "Name": "Merchant routes begin at configured floor and replace exactly one patron choice",
+            "Passed": true
+          },
+          {
+            "Name": "Owned-level merchant upgrade preserves rarity and rejects stale target state",
+            "Passed": true
+          },
+          {
+            "Name": "Random merchant boon is compatible Rare/Epic and never downgrades owned rarity",
+            "Passed": true
+          },
+          {
+            "Name": "Rarity merchant upgrade raises one tier and preserves level",
+            "Passed": true
+          }
+        ],
+        "HookCalls": {
+          "Stats": 11,
+          "Health": 11,
+          "Refill": 1
+        },
+        "Assertions": 247,
+        "Failed": []
+      },
+      "Error": "",
+      "Success": true,
+      "Complete": true
+    },
+    "RewardProbability": {
+      "Report": {
+        "Bands": [
+          {
+            "Floor": 1,
+            "Samples": 20000,
+            "Counts": {
+              "Epic": 1953,
+              "Common": 12021,
+              "Heroic": 0,
+              "Rare": 6026
+            },
+            "Tolerance": 0.015
+          },
+          {
+            "Floor": 3,
+            "Samples": 20000,
+            "Counts": {
+              "Epic": 3375,
+              "Common": 9738,
+              "Heroic": 403,
+              "Rare": 6484
+            },
+            "Tolerance": 0.015
+          },
+          {
+            "Floor": 6,
+            "Samples": 20000,
+            "Counts": {
+              "Epic": 4481,
+              "Common": 8110,
+              "Heroic": 1023,
+              "Rare": 6386
+            },
+            "Tolerance": 0.015
+          },
+          {
+            "Floor": 9,
+            "Samples": 20000,
+            "Counts": {
+              "Epic": 5642,
+              "Common": 6496,
+              "Heroic": 1440,
+              "Rare": 6422
+            },
+            "Tolerance": 0.015
+          }
+        ],
+        "Cases": [
+          {
+            "Name": "All four rarity bands match seeded frequency targets",
+            "Passed": true
+          },
+          {
+            "Name": "Seed streams reproduce rolls and respect eligibility/minimum rarity",
+            "Passed": true
+          },
+          {
+            "Name": "Synthetic eight-patron pool preserves primary mass and outside support",
+            "Passed": true
+          },
+          {
+            "Name": "Before four patrons, unseen IDs receive twice the individual weight",
+            "Passed": true
+          },
+          {
+            "Name": "Pity floors, guarantees, caps and supplies-only exclusion",
+            "Passed": true
+          },
+          {
+            "Name": "Reroll rejects invalid transactions, failed generation and dead/foreign players",
+            "Passed": true
+          },
+          {
+            "Name": "Reroll commits one charge and revision, rejects replays and honors two-use cap",
+            "Passed": true
+          },
+          {
+            "Name": "Pity observes all revisions but commits only once on accepted menu",
+            "Passed": true
+          },
+          {
+            "Name": "Exhausted supply menus never spend rerolls or change pity",
+            "Passed": true
+          },
+          {
+            "Name": "Owned rarity is preserved and maxed talents leave the pool",
+            "Passed": true
+          },
+          {
+            "Name": "All 108 boon rarity/level combinations have finite values and bounded gun formulas",
+            "Passed": true
+          }
+        ],
+        "PatronSamples": [
+          {
+            "FirstCounts": {
+              "A": 5578,
+              "H": 1836,
+              "C": 5572,
+              "B": 5696,
+              "E": 1893,
+              "D": 5626,
+              "G": 1900,
+              "F": 1899
+            },
+            "Mode": "PrimaryFour",
+            "PrimaryFraction": 0.7490666666666667,
+            "Samples": 30000
+          },
+          {
+            "NewFraction": 0.8548,
+            "Mode": "BeforeFour",
+            "Samples": 20000
+          }
+        ],
+        "Assertions": 121497,
+        "Failed": [],
+        "ScalarCombinations": 108
+      },
+      "Error": "",
+      "Success": true,
+      "Complete": true
+    },
+    "RewardOffers": {
+      "Report": {
+        "Failed": [],
+        "Cases": [
+          {
+            "Name": "Nine catalog entries have compatible finite scalars and numeric descriptions",
+            "Passed": true
+          },
+          {
+            "Name": "Seeded routes contain three distinct active patrons and fresh opaque IDs",
+            "Passed": true
+          },
+          {
+            "Name": "Route selection rejects stale epoch, wrong floor, unknown and duplicate IDs",
+            "Passed": true
+          },
+          {
+            "Name": "Open preserves advertised patron and publishes three eligible distinct cards",
+            "Passed": true
+          },
+          {
+            "Name": "Invalid claims preserve offer; valid claim grants exactly one boon",
+            "Passed": true
+          },
+          {
+            "Name": "Replacement offers and replacement runs invalidate old claims",
+            "Passed": true
+          },
+          {
+            "Name": "Repeated patron encounters upgrade to three and replace maxed cards",
+            "Passed": true
+          },
+          {
+            "Name": "Fallback supply claims clamp healing and health and consume once",
+            "Passed": true
+          },
+          {
+            "Name": "Clear invalidates selection and offer and removes replicated build",
+            "Passed": true
+          }
+        ],
+        "HookCalls": {
+          "Stats": 31,
+          "Health": 31,
+          "Refill": 1
+        },
+        "Assertions": 2146,
+        "RouteSamples": 100
+      },
+      "Error": "",
+      "Success": true,
+      "Complete": true
+    },
+    "RunSession": {
+      "Report": {
+        "Failed": [],
+        "Assertions": 127,
+        "Cases": [
+          {
+            "Name": "Begin initializes a run and rejects an active restart",
+            "Passed": true
+          },
+          {
+            "Name": "Finish invalidates callbacks and produces results exactly once",
+            "Passed": true
+          },
+          {
+            "Name": "Result snapshots are deep copies at every boundary",
+            "Passed": true
+          },
+          {
+            "Name": "Temporary state resets while end results remain available",
+            "Passed": true
+          },
+          {
+            "Name": "Floor completion is deduplicated and scoped to epoch",
+            "Passed": true
+          },
+          {
+            "Name": "Real defeats credit kills; technical requeues and stale callbacks do not",
+            "Passed": true
+          },
+          {
+            "Name": "Run duration cannot become negative",
+            "Passed": true
+          },
+          {
+            "Name": "Genuine kill credits are capped by floor budget and never paid for requeues",
+            "Passed": true
+          },
+          {
+            "Name": "Credit operations reject malformed values and insufficient funds atomically",
+            "Passed": true
+          },
+          {
+            "Name": "Floor budgets reject invalid inputs and stale callbacks",
+            "Passed": true
+          },
+          {
+            "Name": "Credit carry cap clips actual earnings and cannot reopen completed rewards",
+            "Passed": true
+          }
+        ]
+      },
+      "Error": "",
+      "Success": true,
+      "Complete": true
+    }
+  },
+  "Vending": {
+    "Report": {
+      "Coverage": "Native Director ledger; accelerated actual NPC deaths; real GUI and vending prompt. Not normal balance.",
+      "Merchant": false,
+      "PurchasedReroll": true,
+      "HealBefore": 55.0050048828125,
+      "HealExpected": 90.0050048828125,
+      "FirstCredits": 90,
+      "ReopenPreservesStock": true,
+      "HealedHealth": 91.00861358642578,
+      "DeathReset": true,
+      "HealAfter": 90.0050048828125,
+      "Result": {
+        "ClearedFloors": 2,
+        "HighestFloor": 3,
+        "ResearchEarned": 0,
+        "PatronsJson": "{\"Volta\":true}",
+        "CreditsEarned": 159,
+        "Kills": 33,
+        "BoonsJson": "{\"volta_arc_discharge\":{\"Id\":\"volta_arc_discharge\",\"Level\":1,\"Rarity\":\"Common\",\"Patron\":\"Volta\"},\"volta_static_shock\":{\"Id\":\"volta_static_shock\",\"Level\":1,\"Rarity\":\"Common\",\"Patron\":\"Volta\"}}",
+        "CreditsSpent": 125,
+        "Duration": 95.10798519861419,
+        "Reason": "Death",
+        "RunId": "edd14ec9-326b-48e2-92dd-34ff80706d48",
+        "ResearchStatus": "Unavailable"
+      },
+      "NextCombat": true
+    },
+    "Success": true,
+    "Error": "",
+    "Stage": "Complete",
+    "Complete": true
+  },
+  "Merchant": {
+    "Report": {
+      "Coverage": "Native Director ledger; accelerated actual NPC deaths; real GUI and vending prompt. Not normal balance.",
+      "Merchant": true,
+      "Stock": [
+        {
+          "Reason": "",
+          "DescriptionRu": "Бесплатно: восстановить до 10 HP и заполнить магазин. Один набор на этот склад.",
+          "NameRu": "Припасы от Завхоза",
+          "Available": true,
+          "Price": 0,
+          "Kind": "Supply",
+          "Id": "free_supply",
+          "Sold": false
+        },
+        {
+          "DescriptionRu": "РЕДКИЙ · УРОВЕНЬ 1\nПодтверждённое убийство восстанавливает 3 HP. Не чаще раза в 1,2 с, только до максимального здоровья.",
+          "Rarity": "Rare",
+          "NameRu": "Редкая разработка: Коагуляция",
+          "Price": 230,
+          "Reason": "НЕДОСТАТОЧНО КРЕДИТОВ",
+          "Available": false,
+          "BoonId": "weiss_coagulation",
+          "Kind": "RareBoon",
+          "Level": 1,
+          "Id": "rareboon",
+          "Sold": false
+        },
+        {
+          "Reason": "",
+          "DescriptionRu": "Один переброс талантов на этот забег. Лимит — 3 заряда.",
+          "NameRu": "Дополнительный переброс",
+          "Available": true,
+          "Price": 60,
+          "Kind": "Reroll",
+          "Id": "reroll",
+          "Sold": false
+        },
+        {
+          "Reason": "НЕДОСТАТОЧНО КРЕДИТОВ",
+          "DescriptionRu": "Максимальное здоровье +10 на этот забег. Общий бонус ограничен 60 HP.",
+          "NameRu": "Запас прочности",
+          "Available": false,
+          "Price": 110,
+          "Kind": "Health",
+          "Id": "health",
+          "Sold": false
+        },
+        {
+          "Reason": "ЗДОРОВЬЕ ПОЛНОЕ",
+          "DescriptionRu": "Восстановить до 0 HP (35% максимального здоровья).",
+          "NameRu": "Медицинский набор",
+          "Available": false,
+          "Price": 65,
+          "Kind": "Heal",
+          "Id": "heal",
+          "Sold": false
+        }
+      ],
+      "DeathReset": true,
+      "PatronChoices": 2,
+      "FirstCredits": 90,
+      "ZeroPurchaseExit": true,
+      "Result": {
+        "ClearedFloors": 1,
+        "HighestFloor": 2,
+        "ResearchEarned": 0,
+        "PatronsJson": "[]",
+        "CreditsEarned": 90,
+        "Kills": 30,
+        "BoonsJson": "[]",
+        "CreditsSpent": 0,
+        "Duration": 129.05671618017368,
+        "Reason": "Death",
+        "RunId": "628d093c-623b-4ce6-8d87-e65f2d3d5b18",
+        "ResearchStatus": "Unavailable"
+      },
+      "NextCombat": true
+    },
+    "Merchant": true,
+    "Success": true,
+    "Error": "",
+    "Stage": "Complete",
+    "Complete": true
+  },
+  "BlockedCombat": {
+    "HUD": false,
+    "ShotFeedback": 0,
+    "Cursor": "Enum.MouseBehavior.Default",
+    "ShopFireBlocked": true
+  },
+  "DesktopLayout": {
+    "Cards": {
+      "1": {
+        "Name": "Припасы от Завхоза",
+        "DescText": 48,
+        "NameHeight": 52,
+        "NameText": 21,
+        "DescHeight": 70,
+        "DescBottom": 144,
+        "PriceTop": 152
+      },
+      "2": {
+        "Name": "Редкая разработка: Коагуляция",
+        "DescText": 64,
+        "NameHeight": 52,
+        "NameText": 21,
+        "DescHeight": 70,
+        "DescBottom": 144,
+        "PriceTop": 152
+      },
+      "3": {
+        "Name": "Дополнительный переброс",
+        "DescText": 32,
+        "NameHeight": 52,
+        "NameText": 21,
+        "DescHeight": 70,
+        "DescBottom": 144,
+        "PriceTop": 152
+      },
+      "4": {
+        "Name": "Запас прочности",
+        "DescText": 32,
+        "NameHeight": 52,
+        "NameText": 21,
+        "DescHeight": 70,
+        "DescBottom": 144,
+        "PriceTop": 152
+      },
+      "5": {
+        "Name": "Медицинский набор",
+        "DescText": 32,
+        "NameHeight": 52,
+        "NameText": 21,
+        "DescHeight": 70,
+        "DescBottom": 144,
+        "PriceTop": 152
+      }
+    },
+    "Credits": 90,
+    "ContinueVisible": true
+  },
+  "NarrowLayout": {
+    "Columns": 1,
+    "ContinueVisible": true,
+    "Canvas": 1626,
+    "Rows": {
+      "1": {
+        "Height": 70,
+        "Text": 32,
+        "Name": "Припасы от Завхоза"
+      },
+      "2": {
+        "Height": 70,
+        "Text": 64,
+        "Name": "Редкая разработка: Коагуляция"
+      },
+      "3": {
+        "Height": 70,
+        "Text": 32,
+        "Name": "Дополнительный переброс"
+      },
+      "4": {
+        "Height": 70,
+        "Text": 32,
+        "Name": "Запас прочности"
+      },
+      "5": {
+        "Height": 70,
+        "Text": 32,
+        "Name": "Медицинский набор"
+      }
+    },
+    "LastFullyVisible": true,
+    "Width": 400
+  },
+  "ObservedRealRemoteReplays": "After first GUI reroll purchase, five stale BuyShopItem requests did not change balance30/rerolls1; service/ledger unit suites independently verify duplicate rejection.",
+  "HarnessCorrections": [
+    "Original heal test incorrectly assumed HP stayed50 while manually opening menu; default character regeneration changed health. Corrected driver wraps original checkout without altering grants; observed55.0050048828125→90.0050048828125 exactly+35, then regeneration continued.",
+    "An automation command inspected SafeVending before arrival and logged an AssistantCommand missing-member error; subsequent commands await the QA stage. No shipping script error observed.",
+    "Studio Assistant emitted a camera-type-reset diagnostic during camera/prompt automation."
+  ],
+  "Limits": [
+    "NPC deaths/travel timing accelerated, targets are native; this is mechanics QA, not normal1–12balance.",
+    "Merchant route forced to Chance1/FromFloor1 for native coverage; shipping config FromFloor4/Chance.15.",
+    "Premium level/rarity/newboon checkout verified in native isolated service tests using fake players and temporarily stubbed stat refresh hooks; all9effects separately tested using real3guns in milestone4.",
+    "NoDataStore persistence/save/rejoin claim; milestone6pending.",
+    "400×620layout check resizes production panel, not actual mobile-device emulation."
+  ]
+}

@@ -1,5 +1,100 @@
 # FPS CORE 1.0 implementation
 
+## 2026-10-08 — roguelike milestone5 (verified)
+
+Bounded real-kill/floor credits and atomic finite-stock ShopService; auxiliary
+safe vending after boon claim, rare seeded Zavkhoz door (floor4/.15),4–5merchant
+items/freeContinue; premium newboon/level/rarity purchases preserve eligibility.
+ShopWorld props exist only after arrival within existing cabin; no mapgeneration
+edits. GUI measures full text, fixedContinue outside scroll; input/HUD gates.
+Native Studio: ledger11/127, shop16/247, offer/policy regressions pass. RealE+GUI
+reroll purchase90→30, soldreopen, nextcombat, second-flooraward99/heal65→34,
+measured+35HP; shopdeathreset/results159earned125spent. Forcedmerchant5items,
+2patronroutes retained, actual0purchaseContinue→nextcombat/deathreset.400×620
+productionpanel lastitem/Continue verified. FinalnormalFloor1quota30HP100noQA,
+Outputempty;22sources exactlydisk/Edit, stopped. NoDataStore accessed. Stage6next.
+SeeAI/ROGUELIKE_PROGRESS.md and tests/results/Shop{Economy,FinalStartup}QA.json.
+
+## 2026-10-08 — roguelike milestone4 (verified)
+
+Authored four-rarity level1–3 tables for9realboons; seeded rarity bands, per-run
+accepted-menu pity and soft primary4patron weighting. Two funded rerolls/menu,
+stabletoken plus exactrevision prevents replay spending and stale card claims.
+Rarity-aware numeric GUI and build summary; clientstartup wait handles slow map.
+Native Studio: ledger7/53, offers9/2146, policy11/121497 (80k rarity/50k patron
+samples,108scalarcombinations),27Heroic3effectcases on all3guns; actual GUI
+reroll3→2→1 and one claim, failure guards/death reset;400×620scroll/card3 verified.
+Final normalPlayFloor1quota30HP100noNPC/noQA and emptyOutput. See
+AI/ROGUELIKE_PROGRESS.md and tests/results/RarityRerollQA.json. Startingcharges0
+untilshop/research. Only3patronslive, noDataStore or floor1–12balance claim.
+
+## 2026-10-08 — roguelike milestones2/3 (verified)
+
+Three physical rear-lobby bays advertise Volta/Bravo/Weiss before entry. Local
+frontage uses X=-18/0/+18 and vertical doors; OfficeTiles/FloorLayout topology is
+unchanged. The earlier +/-30 placement failed native navigation at Tile_5_2 and
+was corrected. Actual no-jump paths reached all3 cabins. Native E prompt, mouse
+reward selection and W exit have been observed. Only one opaque current offer
+can grant one card; owner, alive, phase, cabin, epoch and token checks remain server-side.
+
+Patrons/BoonCatalog contain9 authored Common level1–3 entries. BoonEffects binds
+the server run and handles magazine capacity, reload charges, direct damage,
+bounded chain damage/stun/horizontal push and healing. Secondary arc damage never
+re-enters direct hooks; shotgun pellets share a proc budget and aggregate per
+target. A corpse killed by an earlier arc is skipped, preventing duplicate kill
+hooks. RewardService handles upgrades/maxed-card removal and explicit supply
+fallback. Safe RewardInterlude clears old enemies and blocks weapons until claim;
+exiting the cabin starts the next fight. Build summary and death results are Russian.
+
+Observed native Studio:9 reward cases/2106 assertions/100 seeded routes; ledger
+7 cases/53 assertions including temporary supply-health cleanup; updated7-phase
+death/respawn fault suite; full9boons×3guns=27 actual remote fire/reload cases.
+Matrix covers native NPC headshot stun, two10HP arc targets/no recursion, voltage
+1.01 repeat multiplier, capacity14/35/7, reload salvo1.12×3 then1.0, push5 with
+no added Y force, real-kill heal2/maxHP cap, missing-health1.15 and HP106/heal3.
+QA targets are positioned/anchored; push releases after actual ray hit; field
+protocol tests the production hook, not physical travel for each gun. Matrix uses
+an independent temporary ledger, so the selected-boon/director chain is checked
+separately: actual card/physical route, Floor2, production Fire ->25/10/10 damage
+with original Director binding; final death clears Build. Output was empty on the
+passing matrix. QA/config/hooks removed by Stop. Direct AssistantCommand require
+had a separate module cache; live Director calls use runtime Scripts as documented.
+
+Desktop grid/card3 wrapping and narrow scroll canvas were fixed after visual
+checks. Three cards remain in one row; width400 local-layout QA scrolls all the
+way through card3 (canvas1378, content1370). This is not mobile device emulation.
+Results show retained end-build while active build is cleared. Details/evidence:
+tests/results/RoguelikeCoreQA.json and AI/ROGUELIKE_PROGRESS.md.
+Final16 disk/Edit Sources equal; fresh normal Play validated/no-fallback,
+Floor1/quota30/HP100/ChoosingWeapon, NPCs0, QA0, Output empty; left stopped in Edit.
+
+Milestone4 still pending: additional rarities, rerolls, weights and pity; levels
+already exist. Milestones5–9 economy/persistence/other5patrons/special recipes/
+normal floor1–12 balance remain pending. No DataStore use or new assets published.
+
+## 2026-10-08 — roguelike milestone1 (verified)
+
+RunSession is the server-only temporary ledger (GUID, epoch, actual kills, cleared
+floors, inventory and immutable result copies). FloorDirector still owns world and
+phase changes. Final death/forced respawn ends once; old callbacks are invalidated,
+weapon actions canceled, and validated Floor1 is rebuilt before another run.
+RunEnded/results UI requires an explicit New Run, followed by existing weapon
+selection. RunRecoveryFailed permits retry and cannot be bypassed by respawn.
+No DataStore/research payout is enabled yet; Unavailable is explicit.
+
+Observed Studio evidence: tests/results/RunLifecycleQA.json. Seven ledger cases,
+52 assertions; two transitions to floor3 and 33 genuine deaths in accelerated
+tests; death/new run resets to actual Floor1. Six fault phases passed; forced map
+failure/respawn/retry passed. All three weapon production remotes exercised normal
+reload, cancel and death-during-reload; new-shot ammo remained11/29/5. Results UI
+visually readable, cursor released. Only Output warning was the deliberately
+injected QA generation failure. Stop removes QA scripts/config changes. Rojo CLI
+not found; MCP synchronized disk sources into Edit, with source equality checked.
+No Rojo build, persistence or normal-length balance verification claimed.
+
+See AI/ROGUELIKE_PROGRESS.md for next milestone, exact files and continuation.
+Existing AGENTS/.rbxl/untracked user work preserved; no commit/merge/push.
+
 ## Current milestone — authored Office tiles v5, 2026-10-06
 
 User rejected further generator expansion and approved replacing ordinary Play with one Office OpenArena prototype. FloorLayout now produces the exact ZOOOZ/OCOCO/OOLOO/OCOEO/ZOSOZ grid:25 cells, CellSize36, footprint180×180. No macro/theme shuffle, independent object placement, arbitrary coordinates or alternate topology remains. Later floors repeat this grid with seeded whole-module variants and the existing quota progression.

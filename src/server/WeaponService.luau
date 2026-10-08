@@ -3,6 +3,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Config = require(ReplicatedStorage.Shared.Config)
 local ZombieService = require(script.Parent.ZombieService)
 local SpawnSources = require(script.Parent.SpawnSources)
+local Effects = require(script.Parent.BoonEffects)
 local WeaponService = {}
 local states, reloadSerial, rng = {}, 0, Random.new()
 local remotes = Instance.new("Folder")
@@ -12,9 +13,19 @@ local function remote(name)
 end
 local fireRemote, reloadRemote = remote("Fire"), remote("Reload")
 local feedbackRemote, selectRemote = remote("Feedback"), remote("SelectWeapon")
+local function combatAllowed(player)
+	local run = ReplicatedStorage:FindFirstChild("RunState")
+	if not run or run:GetAttribute("OwnerUserId") ~= player.UserId then return false end
+	local phase = run:GetAttribute("State")
+	return phase == "FloorIntro" or phase == "EncounterActive" or phase == "PreparingFloor" or phase == "ElevatorAvailable" or phase == "NextFloor"
+end
 local function sendAmmo(player)
 	local state = states[player]
-	if state then feedbackRemote:FireClient(player, "Ammo", state.ammo, state.reloading, state.weaponId) end
+	if state then
+		local weapon=state.weaponId and Config.Weapons[state.weaponId]
+		player:SetAttribute("MagazineCapacity",weapon and Effects.Magazine(player,weapon.MagazineSize)or 0)
+		feedbackRemote:FireClient(player, "Ammo", state.ammo, state.reloading, state.weaponId)
+	end
 end
 local function validVector(value)
 	return typeof(value) == "Vector3" and value.X == value.X and value.Y == value.Y and value.Z == value.Z
@@ -41,7 +52,7 @@ local function fire(player, origin, direction, shotId)
 	local state, character = states[player], player.Character
 	local weapon = state and state.weaponId and Config.Weapons[state.weaponId]
 	local h, head = character and character:FindFirstChildOfClass("Humanoid"), character and character:FindFirstChild("Head")
-	if not weapon or not h or h.Health <= 0 or not head or player:GetAttribute("InElevatorTravel") then return end
+	if not weapon or not h or h.Health <= 0 or not head or player:GetAttribute("InElevatorTravel") or not combatAllowed(player) then return end
 	if not validVector(origin) or not validVector(direction) or (origin - head.Position).Magnitude > 4.5 then return end
 	if direction.Magnitude < 0.98 or direction.Magnitude > 1.02 then return end
 	if state.reloading and weapon.ReloadMode ~= "Shell" then return end
@@ -50,6 +61,7 @@ local function fire(player, origin, direction, shotId)
 	if now - state.lastShot < weapon.FireInterval - 0.005 then return end
 	if state.reloading then state.reloading = false state.reloadToken = nil end
 	state.lastShot, state.ammo = now, state.ammo - 1 sendAmmo(player)
+	local context=Effects.OnShotAccepted(player)
 	local params = RaycastParams.new() params.FilterDescendantsInstances = {character} params.IgnoreWater = true
 	local targets, sources, impacts, endpoints = {}, {}, {}, {}
 	local shotKind, shotPosition, shotInfo = "World", origin + direction * weapon.Range, nil
@@ -79,9 +91,15 @@ local function fire(player, origin, direction, shotId)
 		if pellet == 1 or kind == "Headshot" or (kind == "Body" and shotKind == "World") then shotKind, shotPosition, shotInfo = kind, result.Position, info end
 	end
 	for model, entry in pairs(targets) do
+		-- A previous target's secondary arc can kill another pellet target first.
+		local before=entry.humanoid.Health
+		if before<=0 then continue end
+		entry.damage=Effects.DirectDamage(player,model,entry.damage,context)
 		if entry.damage >= entry.humanoid.Health then model:SetAttribute("FatalHeadshot", entry.headshot) end
 		ZombieService.React(model, entry.headshot, direction)
 		entry.humanoid:TakeDamage(entry.damage)
+		if before>0 and entry.humanoid.Health<=0 then Effects.OnKill(player)end
+		Effects.AfterDirectHit(player,model,entry.headshot,direction,context)
 	end
 	for model,damage in sources do
 		feedbackRemote:FireClient(player,"SourceHit",SpawnSources.Damage(model,player,damage))
@@ -97,13 +115,14 @@ local function reload(player)
 	local weapon = state and state.weaponId and Config.Weapons[state.weaponId]
 	local character = player.Character
 	local h = character and character:FindFirstChildOfClass("Humanoid")
-	if not weapon or not h or h.Health <= 0 or player:GetAttribute("InElevatorTravel") then return end
-	if state.reloading or state.ammo >= weapon.MagazineSize then return end
+	if not weapon or not h or h.Health <= 0 or player:GetAttribute("InElevatorTravel") or not combatAllowed(player) then return end
+	local capacity=Effects.Magazine(player,weapon.MagazineSize)
+	if state.reloading or state.ammo >= capacity then return end
 	state.reloading = true
 	local token = {} state.reloadToken = token
 	if weapon.ReloadMode == "Shell" then
 		task.spawn(function()
-			while states[player] == state and state.reloadToken == token and state.ammo < weapon.MagazineSize do
+			while states[player] == state and state.reloadToken == token and state.ammo < capacity do
 				if h.Health <= 0 or player.Character ~= character or player:GetAttribute("InElevatorTravel") then break end
 				reloadSerial += 1
 				feedbackRemote:FireClient(player, "ReloadStarted", weapon.ShellInsertDuration, reloadSerial, character, state.weaponId)
@@ -112,6 +131,7 @@ local function reload(player)
 				if states[player] ~= state or state.reloadToken ~= token then return end
 				if h.Health <= 0 or player.Character ~= character or player:GetAttribute("InElevatorTravel") then break end
 				state.ammo += 1
+				Effects.OnReloadComplete(player)
 				sendAmmo(player)
 			end
 			if states[player] == state and state.reloadToken == token then
@@ -126,15 +146,34 @@ local function reload(player)
 	task.delay(weapon.ReloadDuration, function()
 		if states[player] ~= state or state.reloadToken ~= token then return end
 		state.reloading = false state.reloadToken = nil
-		if h.Health > 0 then state.ammo = weapon.MagazineSize end
+		if h.Health > 0 and player.Character == character and not player:GetAttribute("InElevatorTravel") and combatAllowed(player) then
+			state.ammo = capacity;Effects.OnReloadComplete(player)
+		end
 		sendAmmo(player)
 	end)
+end
+function WeaponService.CancelActions(player)
+	local state = states[player]
+	if not state then return end
+	state.reloadToken, state.reloading = nil, false
+	sendAmmo(player)
+end
+function WeaponService.RefreshStats(player)sendAmmo(player)end
+function WeaponService.Refill(player)
+	local state=states[player];local weapon=state and state.weaponId and Config.Weapons[state.weaponId]
+	if not weapon then return end
+	WeaponService.CancelActions(player);state.ammo=Effects.Magazine(player,weapon.MagazineSize);sendAmmo(player)
+end
+function WeaponService.ResetPlayer(player)
+	WeaponService.CancelActions(player)
+	states[player] = {ammo=0, reloading=false, lastShot=-math.huge}
+	player:SetAttribute("SelectedWeapon", nil)
+	sendAmmo(player)
 end
 function WeaponService.Start()
 	local function prepare(player)
 		local function reset()
-			states[player] = {ammo=0, reloading=false, lastShot=-math.huge}
-			player:SetAttribute("SelectedWeapon", nil) sendAmmo(player)
+			WeaponService.ResetPlayer(player)
 		end
 		player.CharacterAdded:Connect(reset)
 		if player.Character then reset() end

@@ -4,7 +4,10 @@ function P.New(plan)
  return {Mode=plan.Mode,Quota=plan.Quota,Duration=plan.Duration or 0,Alive=0,Defeated=0,Issued=0,Requeued=0,Elapsed=0,Complete=false,Section=1,SectionKills=0,DestroyedSources=0}
 end
 function P.Spawned(p)p.Alive+=1;p.Issued+=1 end
-function P.Defeated(p)p.Alive=math.max(0,p.Alive-1);p.Defeated+=1;p.SectionKills+=1 end
+function P.Defeated(p)
+ p.Alive=math.max(0,p.Alive-1);p.Defeated+=1;p.SectionKills+=1
+ if p.OnKill then p.OnKill() end
+end
 function P.Requeue(p)p.Alive=math.max(0,p.Alive-1);p.Requeued+=1 end
 function P.Step(p,dt,healthy,sections,sourceCount)
  if p.Complete then return true,false end

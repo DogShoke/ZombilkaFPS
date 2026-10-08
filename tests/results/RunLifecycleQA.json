@@ -1,0 +1,147 @@
+{
+  "Date": "2026-10-08",
+  "Studio": "ZombilkaFPS.rbxl",
+  "Evidence": "Observed native Studio Play. Runtime lifecycle/fault tests use shortened timings and server damage, not a normal-length balance test. Recovery emits an expected injected warning.",
+  "Lifecycle": {
+    "Report": {
+      "StaleStartRejected": true,
+      "NewRun": true,
+      "DeathReset": true,
+      "Transitions": [
+        1,
+        2
+      ],
+      "DuplicateRejected": true,
+      "OutsideRejected": true,
+      "MaxAlive": 4,
+      "Results": {
+        "ClearedFloors": 2,
+        "HighestFloor": 3,
+        "CreditsEarned": 0,
+        "Kills": 33,
+        "ResearchStatus": "Unavailable",
+        "Reason": "Death",
+        "Duration": 34.90427488659043,
+        "CreditsSpent": 0,
+        "RunId": "ec7469f8-ed77-412d-af9e-e82bd616bef4",
+        "ResearchEarned": 0
+      }
+    },
+    "Error": "",
+    "Success": true,
+    "Complete": true
+  },
+  "Faults": {
+    "Report": {
+      "Cases": [
+        {
+          "Target": "Pending",
+          "Passed": true
+        },
+        {
+          "Target": "PreparingFloor",
+          "Passed": true
+        },
+        {
+          "Target": "Closing",
+          "Passed": true
+        },
+        {
+          "Target": "Moving",
+          "Passed": true
+        },
+        {
+          "Target": "NextFloor",
+          "Passed": true
+        },
+        {
+          "Target": "Respawn",
+          "Passed": true
+        }
+      ]
+    },
+    "Error": "",
+    "Success": true,
+    "Complete": true
+  },
+  "Ledger": {
+    "Report": {
+      "Assertions": 52,
+      "Cases": [
+        {
+          "Name": "Begin initializes a run and rejects an active restart",
+          "Passed": true
+        },
+        {
+          "Name": "Finish invalidates callbacks and produces results exactly once",
+          "Passed": true
+        },
+        {
+          "Name": "Result snapshots are deep copies at every boundary",
+          "Passed": true
+        },
+        {
+          "Name": "Temporary state resets while end results remain available",
+          "Passed": true
+        },
+        {
+          "Name": "Floor completion is deduplicated and scoped to epoch",
+          "Passed": true
+        },
+        {
+          "Name": "Real defeats credit kills; technical requeues and stale callbacks do not",
+          "Passed": true
+        },
+        {
+          "Name": "Run duration cannot become negative",
+          "Passed": true
+        }
+      ],
+      "Failed": []
+    },
+    "Error": "",
+    "Success": true,
+    "Complete": true
+  },
+  "Recovery": {
+    "Report": {
+      "RespawnCannotBypassFailure": true,
+      "Retry": true,
+      "NoEarlyRun": true
+    },
+    "Error": "",
+    "Success": true,
+    "Complete": true
+  },
+  "Weapons": {
+    "Report": {
+      "Weapons": [
+        {
+          "Cancel": true,
+          "NormalReload": true,
+          "Id": "Glock",
+          "Ammo": 11,
+          "DeathReloadInvalidated": true
+        },
+        {
+          "Cancel": true,
+          "NormalReload": true,
+          "Id": "AKM",
+          "Ammo": 29,
+          "DeathReloadInvalidated": true
+        },
+        {
+          "Cancel": true,
+          "NormalReload": true,
+          "Id": "Mossberg",
+          "Ammo": 5,
+          "DeathReloadInvalidated": true
+        }
+      ]
+    },
+    "Success": true,
+    "Error": "",
+    "Stage": "Fire",
+    "Complete": true
+  }
+}

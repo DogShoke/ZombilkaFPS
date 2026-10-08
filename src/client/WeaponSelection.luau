@@ -61,11 +61,14 @@ end
 function WeaponSelection:Choose(id)
 	if not self.Active or self.Pending then return end
 	self.Pending=true self.Status.Text="ВЫБРАНО: "..Weapons[id].Name
+	self.RequestSerial=(self.RequestSerial or 0)+1
+	local serial=self.RequestSerial
 	self.Remote:FireServer(id)
-	task.delay(3,function() if self.Active then self.Pending=false self.Status.Text="НАЖМИ НА КАРТОЧКУ ИЛИ 1 / 2 / 3" end end)
+	task.delay(3,function() if self.Active and self.RequestSerial==serial then self.Pending=false self.Status.Text="НАЖМИ НА КАРТОЧКУ ИЛИ 1 / 2 / 3" end end)
 end
 function WeaponSelection:Show(value)
 	self.Active=value self.Gui.Enabled=value self.Pending=false
+	self.RequestSerial=(self.RequestSerial or 0)+1
 	if value then self.Status.Text="НАЖМИ НА КАРТОЧКУ ИЛИ 1 / 2 / 3" end
 end
 return WeaponSelection

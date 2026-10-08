@@ -14,6 +14,9 @@ local SlideController = require(script.SlideController)
 local JumpController = require(script.JumpController)
 local ZombieVisuals = require(script.ZombieVisuals)
 local WeaponSelection = require(script.WeaponSelection)
+local RunResults = require(script.RunResults)
+local RewardSelection = require(script.RewardSelection)
+local ShopSelection = require(script.ShopSelection)
 local GuiService = game:GetService("GuiService")
 local remotes = ReplicatedStorage:WaitForChild("CombatRemotes")
 local fireRemote = remotes:WaitForChild("Fire")
@@ -37,18 +40,29 @@ local slide = SlideController.new()
 local jump = JumpController.new()
 ZombieVisuals.Start()
 local runState = ReplicatedStorage:WaitForChild("RunState")
+local runRemotes=ReplicatedStorage:WaitForChild("RunRemotes",60)
+assert(runRemotes,"Run remotes did not initialize")
+local results = RunResults.new(runState,runRemotes:WaitForChild("StartRun"))
+local rewardSelection=RewardSelection.new(runState,runRemotes:WaitForChild("ClaimBoon"),runRemotes:WaitForChild("RerollBoon"))
+local shopSelection=ShopSelection.new(runState,runRemotes:WaitForChild("BuyShopItem"),runRemotes:WaitForChild("CloseShop"))
+local function refreshSelection()
+	selection:Show(runState:GetAttribute("State")=="ChoosingWeapon"and not weapon)
+	hud.Gui.Enabled=weapon~=nil and not results.Active and not rewardSelection.Active and not shopSelection.Active
+end
+runState:GetAttributeChangedSignal("State"):Connect(refreshSelection)
+refreshSelection()
 hud:SetRun(runState)
 runState.AttributeChanged:Connect(function() hud:SetRun(runState) end)
 local lastReloadSerial = 0
 local function blocked()
-	return not weapon or selection.Active or GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true
+	return not weapon or selection.Active or results.Active or rewardSelection.Active or shopSelection.Active or GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true or player:GetAttribute("InSafeInterlude")==true
 end
 local function equip(id)
 	if id==weaponId and viewmodel then return end
 	if viewmodel then viewmodel:Destroy() viewmodel=nil end
 	weaponId, weapon, triggerHeld = id, id and Config.Weapons[id], false
 	reloading=false lastLocalShot=-math.huge pendingPelletMuzzles={}
-	selection:Show(not weapon) hud.Gui.Enabled=weapon~=nil
+	refreshSelection()
 	if weapon and character and humanoid and humanoid.Health>0 then
 		ammo=weapon.MagazineSize hud:SetAmmo(ammo,false)
 		viewmodel=ViewmodelController.new(workspace.CurrentCamera,id)
@@ -154,7 +168,7 @@ local function shoot()
 end
 
 local function requestReload()
-	if blocked() or not humanoid or humanoid.Health <= 0 or reloading or ammo >= weapon.MagazineSize then return end
+	if blocked() or not humanoid or humanoid.Health <= 0 or reloading or ammo >= (player:GetAttribute("MagazineCapacity")or weapon.MagazineSize) then return end
 
 	reloadRemote:FireServer()
 end
@@ -200,6 +214,16 @@ RunService.Heartbeat:Connect(function()
 end)
 
 feedbackRemote.OnClientEvent:Connect(function(kind, a, b, c, d)
+	if kind=="BoonArc"then
+		for i=2,math.min(#a,3)do
+			local from,to=a[1],a[i];local bolt=Instance.new("Part")
+			bolt.Name="BoonArc";bolt.Anchored=true;bolt.CanCollide=false;bolt.CanQuery=false;bolt.CanTouch=false
+			bolt.Material=Enum.Material.Neon;bolt.Color=Color3.fromRGB(100,192,255)
+			bolt.Size=Vector3.new(.09,.09,(to-from).Magnitude);bolt.CFrame=CFrame.lookAt((from+to)/2,to)
+			bolt.Parent=workspace;game:GetService("Debris"):AddItem(bolt,.12)
+		end
+		return
+	end
 	if kind=="SourceHit"then hud:SourceHit(a);return end
 	if kind == "Equipped" then
 		if c~=character then return end
@@ -240,7 +264,7 @@ end)
 
 -- Apply after camera/default controls, even while the character/viewmodel is being rebuilt.
 RunService:BindToRenderStep("ZombilkaFPSCursor", Enum.RenderPriority.Last.Value + 1, function()
-	local menuOpen = GuiService.MenuIsOpen or selection.Active
+	local menuOpen = GuiService.MenuIsOpen or selection.Active or results.Active or rewardSelection.Active or shopSelection.Active
 	UserInputService.MouseBehavior = menuOpen and Enum.MouseBehavior.Default or Enum.MouseBehavior.LockCenter
 	UserInputService.MouseIconEnabled = menuOpen
 end)

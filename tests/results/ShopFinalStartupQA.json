@@ -1,0 +1,159 @@
+{
+  "FreshNormalPlay": {
+    "State": {
+      "Sections": 0,
+      "LayoutIndex": 1,
+      "FloorComplete": false,
+      "KillQuota": 30,
+      "Alive": 0,
+      "Section": 1,
+      "RunId": "8c3c45fe-4976-4001-829c-528cb9bf275f",
+      "ObjectiveDuration": 0,
+      "SectionKills": 0,
+      "SpawnFailures": 0,
+      "ElevatorLockReason": "ВЫПОЛНИТЕ БОЕВУЮ ЦЕЛЬ",
+      "GenerationVersion": 5,
+      "Seed": 738971419,
+      "DesiredAlive": 5,
+      "AliveCap": 16,
+      "CombatBlocked": false,
+      "RunKills": 0,
+      "Defeated": 0,
+      "RunSeed": 738861645,
+      "Levels": 2,
+      "OwnerUserId": 11148387762,
+      "MacroLabel": "ОФИСНАЯ АРЕНА 5×5",
+      "Rerolls": 0,
+      "ObjectiveElapsed": 0,
+      "SourcesDestroyed": 0,
+      "Credits": 0,
+      "RunActive": true,
+      "Spawned": 0,
+      "Floor": 1,
+      "EncounterMode": "KillQuota",
+      "Macro": "OpenArena",
+      "Pending": 0,
+      "SourcesTotal": 0,
+      "SectionQuota": 0,
+      "State": "ChoosingWeapon",
+      "Pressure": 0,
+      "Paused": false,
+      "SpawnRate": 0.65,
+      "BoonCount": 0,
+      "Theme": "ОФИСЫ",
+      "RunEpoch": 1,
+      "ResearchStatus": "Unavailable"
+    },
+    "SafeMachine": false,
+    "Health": 100,
+    "MaxHealth": 100,
+    "QA": 0
+  },
+  "Output": "Empty",
+  "SourceEquality": [
+    {
+      "Same": true,
+      "Path": "src/client/RewardSelection.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/client/RunResults.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/client/ShopSelection.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/server/EncounterProgress.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/server/FloorDirector.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/server/BoonEffects.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/server/RewardPolicy.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/server/RewardService.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/server/RunSession.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/server/ShopService.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/server/ShopWorld.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/shared/BoonCatalog.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/shared/Patrons.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/shared/ProgressionConfig.luau"
+    },
+    {
+      "Same": true,
+      "Path": "src/shared/ShopCatalog.luau"
+    },
+    {
+      "Path": "src/client/CombatHud.luau",
+      "Same": true,
+      "StudioLength": 10368,
+      "DiskLength": 10368
+    },
+    {
+      "Path": "src/client/WeaponSelection.luau",
+      "Same": true,
+      "StudioLength": 5524,
+      "DiskLength": 5524
+    },
+    {
+      "Path": "src/client/init.client.luau",
+      "Same": true,
+      "StudioLength": 15578,
+      "DiskLength": 15578
+    },
+    {
+      "Path": "src/server/ElevatorService.luau",
+      "Same": true,
+      "StudioLength": 2653,
+      "DiskLength": 2653
+    },
+    {
+      "Path": "src/server/OfficeMap.luau",
+      "Same": true,
+      "StudioLength": 12952,
+      "DiskLength": 12952
+    },
+    {
+      "Path": "src/server/WeaponService.luau",
+      "Same": true,
+      "StudioLength": 10426,
+      "DiskLength": 10426
+    },
+    {
+      "Path": "src/server/ZombieService.luau",
+      "Same": true,
+      "StudioLength": 24670,
+      "DiskLength": 24670
+    }
+  ],
+  "StudioLeft": "Stopped in Edit; no runtime QA/hooks/config persists",
+  "Git": "No commit/merge/push/reset/rebase; source-only git diff --check passed. Full-tree check hit a locked pre-existing .rbxl and was replaced with scoped check."
+}

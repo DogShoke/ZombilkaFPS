@@ -81,25 +81,36 @@ local function buildFloor(run,layout,slot,greybox)
  end end
  sign(props,o+Vector3.new(0,16,-16),layout.MacroLabel,30,accent)
 	local doorZ=layout.HalfDepth-20; local cabinZ=layout.HalfDepth-11
-	part(lobby,"CabinFloor",Vector3.new(18,.12,18),o+Vector3.new(0,.06,cabinZ),C.dark,Enum.Material.Metal)
-	part(lobby,"CabinBack",Vector3.new(18,14,.6),o+Vector3.new(0,7,cabinZ+9),C.dark,Enum.Material.Metal)
-	part(lobby,"CabinCeiling",Vector3.new(18,.6,18),o+Vector3.new(0,14,cabinZ),C.dark,Enum.Material.Metal)
-	for _,x in {-9,9} do part(lobby,"CabinSide",Vector3.new(.6,14,18),o+Vector3.new(x,7,cabinZ),C.dark,Enum.Material.Metal) end
-	local doors={}
-	for i,x in {-4.5,4.5} do
-		local p=part(lobby,"Door"..i,Vector3.new(8.9,13,.6),o+Vector3.new(x,6.5,doorZ),Color3.fromRGB(113,128,135),Enum.Material.Metal)
-		doors[i]={Part=p,Closed=p.CFrame,Open=p.CFrame*CFrame.new(i==1 and -8.7 or 8.7,0,0)}
+	-- Three local entry bays share one destination and the existing two floor slots.
+	local bays,doors={},{}
+	for index,x in {-18,0,18}do
+		local parent=index==2 and lobby or folder(lobby,"RewardBay"..index)
+		part(parent,"CabinFloor",Vector3.new(18,.12,18),o+Vector3.new(x,.06,cabinZ),C.dark,Enum.Material.Metal)
+		part(parent,"CabinBack",Vector3.new(18,14,.6),o+Vector3.new(x,7,cabinZ+9),C.dark,Enum.Material.Metal)
+		part(parent,"CabinCeiling",Vector3.new(18,.6,18),o+Vector3.new(x,14,cabinZ),C.dark,Enum.Material.Metal)
+		for _,side in {-9,9}do part(parent,"CabinSide",Vector3.new(.6,14,18),o+Vector3.new(x+side,7,cabinZ),C.dark,Enum.Material.Metal)end
+		local bay={Cabin=CFrame.new(o+Vector3.new(x,3,cabinZ)),Doors={}}
+		for i,offset in {-4.5,4.5}do
+			local p=part(parent,"Door"..i,Vector3.new(8.9,13,.6),o+Vector3.new(x+offset,6.5,doorZ),Color3.fromRGB(113,128,135),Enum.Material.Metal)
+			-- Vertical retraction keeps open panels out of neighboring entry bays.
+			local door={Part=p,Closed=p.CFrame,Open=p.CFrame*CFrame.new(0,13.3,0)}
+			table.insert(doors,door);table.insert(bay.Doors,door)
+		end
+		bay.Indicator=part(parent,"StatusLight",Vector3.new(15,.35,.3),o+Vector3.new(x,14,doorZ-.5),C.red,Enum.Material.Neon,true)
+		bay.Sign=sign(parent,o+Vector3.new(x,16,doorZ-.7),"НАГРАДА / ПОСЛЕ ЗАЧИСТКИ",18,accent)
+		bay.Sign.CFrame*=CFrame.Angles(0,math.pi,0)
+		local button=part(parent,"ElevatorButton",Vector3.new(1,1.6,.25),o+Vector3.new(x+6,4,cabinZ+8.5),accent,Enum.Material.Neon,true)
+		local prompt=Instance.new("ProximityPrompt");prompt.Name="NextFloor";prompt.ActionText="Выбрать награду";prompt.ObjectText="ЛИФТ";prompt.HoldDuration=.25;prompt.MaxActivationDistance=12;prompt.RequiresLineOfSight=false;prompt.Enabled=false;prompt.Parent=button
+		bay.Prompt=prompt;bays[index]=bay
 	end
-	local indicator=part(lobby,"StatusLight",Vector3.new(15,.35,.3),o+Vector3.new(0,14,doorZ-.5),C.red,Enum.Material.Neon,true)
+	local indicator=bays[2].Indicator
 	local title=sign(lobby,o+Vector3.new(0,11,cabinZ+8.6),"↑  ЭТАЖ "..number,12)
-	local button=part(lobby,"ElevatorButton",Vector3.new(1,1.6,.25),o+Vector3.new(6,4,cabinZ+8.5),accent,Enum.Material.Neon,true)
-	local prompt=Instance.new("ProximityPrompt"); prompt.Name="NextFloor"; prompt.ActionText="На следующий этаж"; prompt.ObjectText="ЛИФТ"; prompt.HoldDuration=.25; prompt.MaxActivationDistance=12; prompt.RequiresLineOfSight=false; prompt.Enabled=false; prompt.Parent=button
-	sign(lobby,o+Vector3.new(0,17,doorZ-.5),"ЛИФТ ↑  /  "..layout.Label,27,accent)
+	local prompt=bays[2].Prompt
 	local spawn=Instance.new("SpawnLocation"); spawn.Name="PlayerSpawn"; spawn.Size=Vector3.new(5,.2,5); spawn.CFrame=CFrame.new(o+Vector3.new(0,.1,doorZ-14)); spawn.Anchored=true; spawn.Transparency=1; spawn.CanCollide=false; spawn.CanQuery=false; spawn.Duration=0; spawn.Enabled=false; spawn.Parent=model
 
  local count=0;for _,p in model:GetDescendants()do if p:IsA("BasePart")then count+=1 end end
  model:SetAttribute("PartCount",count);model:SetAttribute("BuildSeconds",os.clock()-started)
- return {Model=model,Origin=o,Zones=zones,DefenseZones=defenses,Signals={},Gates=gates,Spawn=spawn,Doors=doors,Indicator=indicator,Prompt=prompt,Title=title,Cabin=CFrame.new(o+Vector3.new(0,3,cabinZ)),Entry=CFrame.new(o+Vector3.new(0,3,doorZ-14)),ExitZ=doorZ-3,Bounds={Origin=o,HalfWidth=layout.HalfWidth-3,HalfDepth=layout.HalfDepth-3},Probes=probes,Layout=layout,Slot=slot}
+ return {Model=model,Origin=o,Zones=zones,DefenseZones=defenses,Signals={},Gates=gates,Spawn=spawn,Doors=doors,Bays=bays,Indicator=indicator,Prompt=prompt,Title=title,Cabin=CFrame.new(o+Vector3.new(0,3,cabinZ)),Entry=CFrame.new(o+Vector3.new(0,3,doorZ-14)),ExitZ=doorZ-3,Bounds={Origin=o,HalfWidth=layout.HalfWidth-3,HalfDepth=layout.HalfDepth-3},Probes=probes,Layout=layout,Slot=slot}
 end
 function OfficeMap.SetSection(floor,section)
  for _,g in floor.Gates do local locked=g.Id>=section;g.Part.CanCollide=locked;g.Part.CanQuery=locked;g.Part.Transparency=locked and .45 or 1 end

@@ -41,7 +41,7 @@ local function nearestTarget(position)
 		local character = player.Character
 		local humanoid = character and character:FindFirstChildOfClass("Humanoid")
 		local root = character and character:FindFirstChild("HumanoidRootPart")
-		if humanoid and root and humanoid.Health > 0 then
+		if humanoid and root and humanoid.Health > 0 and not player:GetAttribute("InSafeInterlude") then
 			local distance = (root.Position - position).Magnitude
 			if distance < settings.AggroRange and (not bestDistance or distance < bestDistance) then
 				best, bestDistance = { humanoid = humanoid, root = root }, distance
@@ -165,6 +165,10 @@ local function runAI(data)
 	while rig.model.Parent and rig.humanoid.Health > 0 and data.state ~= "Dead" do
 		if Clock.Paused then task.wait(settings.ThinkInterval) continue end
 		if data.epoch~=epoch then break end
+		if data.stunUntil and Clock.Now()<data.stunUntil then
+			rig.humanoid:MoveTo(rig.root.Position)
+			setState(data,"HitReact");task.wait(settings.ThinkInterval);continue
+		end
 		if rig.root.Position.Y<bounds.Origin.Y-10 then recover(data,"Fell below floor") break end
 		local now = Clock.Now()
 		local target, distance = nearestTarget(rig.root.Position)
@@ -261,6 +265,25 @@ recover=function(data,reason)
 	data.rig.model:Destroy()
 end
 
+function ZombieService.Stun(model,duration)
+	local data=active[model]
+	if not data or data.state=="Spawn"or data.state=="Dead"then return false end
+	data.stunUntil=Clock.Now()+math.clamp(duration,0,.75)
+	data.attackTarget=nil;data.reactUntil=data.stunUntil;setState(data,"HitReact")
+	return true
+end
+function ZombieService.Nearby(position,radius,exclude,limit)
+	local found={}
+	for model,data in active do
+		if model~=exclude and model.Parent and data.rig.humanoid.Health>0 and data.state~="Spawn"then
+			local distance=(data.rig.root.Position-position).Magnitude
+			if distance<=radius then table.insert(found,{Model=model,Distance=distance})end
+		end
+	end
+	table.sort(found,function(a,b)return a.Distance<b.Distance end)
+	local result={};for i=1,math.min(limit,#found)do table.insert(result,found[i].Model)end
+	return result
+end
 function ZombieService.React(model, headshot, shotDirection)
 	local data = active[model]
 	if not data then return end

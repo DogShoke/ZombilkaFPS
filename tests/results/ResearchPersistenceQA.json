@@ -1,0 +1,488 @@
+{
+  "Date": "2026-10-09",
+  "Stage": 6,
+  "Status": "Implemented and mock/native-tested; real persistence gate blocked",
+  "RealDataStoreVerified": false,
+  "Suites": {
+    "QAProfilePersistence": {
+      "Success": true,
+      "Complete": true,
+      "Report": {
+        "RealDataStoreVerified": false,
+        "Assertions": 172,
+        "Mode": "Mock",
+        "Cases": [
+          {
+            "Name": "Catalog has five bounded research areas and exact starter benefits",
+            "Passed": true
+          },
+          {
+            "Name": "Successful missing-key read creates defaults only in memory; Get is detached",
+            "Passed": true
+          },
+          {
+            "Name": "Cumulative checkpoints pay deltas; uncompleted high floor gives no record",
+            "Passed": true
+          },
+          {
+            "Name": "New-run record bonus applies once when that run first beats durable best",
+            "Passed": true
+          },
+          {
+            "Name": "Failed load blocks writes and retains visible pending award",
+            "Passed": true
+          },
+          {
+            "Name": "Corrupt and future schemas fail closed without writes",
+            "Passed": true
+          },
+          {
+            "Name": "Known v0 migration preserves balances/ranks and freezes cutoff at successful load",
+            "Passed": true
+          },
+          {
+            "Name": "Commit-then-error award resolves cancelled retry with durable read",
+            "Passed": true
+          },
+          {
+            "Name": "Failed checkpoint remains retryable and survives another service reload",
+            "Passed": true
+          },
+          {
+            "Name": "Purchase commit-then-error uses stable operation receipt, not a second debit",
+            "Passed": true
+          },
+          {
+            "Name": "Ambiguous purchase stays visible, blocks another checkout and retries after reread",
+            "Passed": true
+          },
+          {
+            "Name": "Research prices, caps, insufficient funds and strict UserIds",
+            "Passed": true
+          },
+          {
+            "Name": "Concurrent expected-rank purchases serialize once",
+            "Passed": true
+          },
+          {
+            "Name": "Concurrent services merge award and purchase without writing stale snapshots",
+            "Passed": true
+          },
+          {
+            "Name": "Concurrent cumulative snapshots retain later checkpoint queued during an API yield",
+            "Passed": true
+          },
+          {
+            "Name": "Balance cap does not corrupt a cumulative receipt after research spending",
+            "Passed": true
+          },
+          {
+            "Name": "UpdateAsync callback reexecution derives result from latest durable input",
+            "Passed": true
+          },
+          {
+            "Name": "Sixty-four claim bound rejects evicted/old/tied replay before granting",
+            "Passed": true
+          },
+          {
+            "Name": "Shutdown enqueue is synchronous; retry includes disconnected pending users",
+            "Passed": true
+          },
+          {
+            "Name": "Unpublished Studio is visibly unavailable and never silently selects mock",
+            "Passed": true
+          }
+        ],
+        "Failed": []
+      }
+    },
+    "QAResearchIntegration": {
+      "Success": true,
+      "Complete": true,
+      "Report": {
+        "RealDataStoreVerified": false,
+        "Assertions": 127,
+        "Mode": "InjectedMock",
+        "Cases": [
+          {
+            "Name": "Five research areas expose bounded actual benefits and readable archive unlocks",
+            "Passed": true
+          },
+          {
+            "Name": "Loaded benefits apply before weapon choice and temporary effects disappear on death",
+            "Passed": true
+          },
+          {
+            "Name": "Research pending ledger uses genuine deduplicated floors rather than kills",
+            "Passed": true
+          },
+          {
+            "Name": "Seeded scanner card previews do not consume pity or mutate offer ownership",
+            "Passed": true
+          },
+          {
+            "Name": "Cumulative checkpoints and final receipt survive save/reload without duplicate awards",
+            "Passed": true
+          },
+          {
+            "Name": "Research checkout validates server owner, phase, epoch, revision and prerequisites",
+            "Passed": true
+          },
+          {
+            "Name": "Rank caps, insufficient funds and rate limit never spend twice",
+            "Passed": true
+          },
+          {
+            "Name": "Yielding checkout locks concurrent requests and cannot alter replacement run",
+            "Passed": true
+          },
+          {
+            "Name": "Unavailable load never writes defaults or enables purchases",
+            "Passed": true
+          },
+          {
+            "Name": "Version-zero migration preserves first reserved run payout and freezes identity after combat",
+            "Passed": true
+          },
+          {
+            "Name": "Result callbacks require exact run identity and leave owner guards intact",
+            "Passed": true
+          },
+          {
+            "Name": "Delayed load cannot publish after leave or overwrite newer same-player continuation",
+            "Passed": true
+          }
+        ],
+        "Failed": []
+      }
+    },
+    "QARunSession": {
+      "Success": true,
+      "Complete": true,
+      "Report": {
+        "Assertions": 127,
+        "Cases": [
+          {
+            "Name": "Begin initializes a run and rejects an active restart",
+            "Passed": true
+          },
+          {
+            "Name": "Finish invalidates callbacks and produces results exactly once",
+            "Passed": true
+          },
+          {
+            "Name": "Result snapshots are deep copies at every boundary",
+            "Passed": true
+          },
+          {
+            "Name": "Temporary state resets while end results remain available",
+            "Passed": true
+          },
+          {
+            "Name": "Floor completion is deduplicated and scoped to epoch",
+            "Passed": true
+          },
+          {
+            "Name": "Real defeats credit kills; technical requeues and stale callbacks do not",
+            "Passed": true
+          },
+          {
+            "Name": "Run duration cannot become negative",
+            "Passed": true
+          },
+          {
+            "Name": "Genuine kill credits are capped by floor budget and never paid for requeues",
+            "Passed": true
+          },
+          {
+            "Name": "Credit operations reject malformed values and insufficient funds atomically",
+            "Passed": true
+          },
+          {
+            "Name": "Floor budgets reject invalid inputs and stale callbacks",
+            "Passed": true
+          },
+          {
+            "Name": "Credit carry cap clips actual earnings and cannot reopen completed rewards",
+            "Passed": true
+          }
+        ],
+        "Failed": []
+      }
+    },
+    "QARewardOffers": {
+      "Success": true,
+      "Complete": true,
+      "Report": {
+        "Assertions": 2146,
+        "Failed": [],
+        "HookCalls": {
+          "Stats": 31,
+          "Health": 31,
+          "Refill": 1
+        },
+        "Cases": [
+          {
+            "Name": "Nine catalog entries have compatible finite scalars and numeric descriptions",
+            "Passed": true
+          },
+          {
+            "Name": "Seeded routes contain three distinct active patrons and fresh opaque IDs",
+            "Passed": true
+          },
+          {
+            "Name": "Route selection rejects stale epoch, wrong floor, unknown and duplicate IDs",
+            "Passed": true
+          },
+          {
+            "Name": "Open preserves advertised patron and publishes three eligible distinct cards",
+            "Passed": true
+          },
+          {
+            "Name": "Invalid claims preserve offer; valid claim grants exactly one boon",
+            "Passed": true
+          },
+          {
+            "Name": "Replacement offers and replacement runs invalidate old claims",
+            "Passed": true
+          },
+          {
+            "Name": "Repeated patron encounters upgrade to three and replace maxed cards",
+            "Passed": true
+          },
+          {
+            "Name": "Fallback supply claims clamp healing and health and consume once",
+            "Passed": true
+          },
+          {
+            "Name": "Clear invalidates selection and offer and removes replicated build",
+            "Passed": true
+          }
+        ],
+        "RouteSamples": 100
+      }
+    },
+    "QAShopTransactions": {
+      "Success": true,
+      "Complete": true,
+      "Report": {
+        "PremiumSeeds": {
+          "rareboon": 1,
+          "rarity": 1,
+          "upgrade": 1
+        },
+        "Assertions": 247,
+        "HookCalls": {
+          "Stats": 11,
+          "Health": 11,
+          "Refill": 1
+        },
+        "Failed": [],
+        "Cases": [
+          {
+            "Name": "Vending exposes three priced finite items with authoritative display state",
+            "Passed": true
+          },
+          {
+            "Name": "Current identity rejects wrong owner, epoch, token and revision",
+            "Passed": true
+          },
+          {
+            "Name": "Opening rejects invalid kinds, floor data and foreign owner",
+            "Passed": true
+          },
+          {
+            "Name": "Dead or missing characters cannot purchase or consume stock",
+            "Passed": true
+          },
+          {
+            "Name": "Insufficient balance and full-health healing are rejected without charge",
+            "Passed": true
+          },
+          {
+            "Name": "Healing clamps missing HP and duplicate/stale purchases spend once",
+            "Passed": true
+          },
+          {
+            "Name": "Reroll carry cap and total health cap reject useless purchases",
+            "Passed": true
+          },
+          {
+            "Name": "Run-only max-health supply grants once and combined bonus never exceeds cap",
+            "Passed": true
+          },
+          {
+            "Name": "Closing is free; reopening retains stock and invalidates prior session packets",
+            "Passed": true
+          },
+          {
+            "Name": "Clear and run replacement invalidate every old session",
+            "Passed": true
+          },
+          {
+            "Name": "Merchant has bounded inventory and a finite free supply even without funds",
+            "Passed": true
+          },
+          {
+            "Name": "Merchant stock is seeded, compatible and stable across reopening",
+            "Passed": true
+          },
+          {
+            "Name": "Merchant routes begin at configured floor and replace exactly one patron choice",
+            "Passed": true
+          },
+          {
+            "Name": "Owned-level merchant upgrade preserves rarity and rejects stale target state",
+            "Passed": true
+          },
+          {
+            "Name": "Random merchant boon is compatible Rare/Epic and never downgrades owned rarity",
+            "Passed": true
+          },
+          {
+            "Name": "Rarity merchant upgrade raises one tier and preserves level",
+            "Passed": true
+          }
+        ]
+      }
+    }
+  },
+  "NativeMock": {
+    "Success": true,
+    "Complete": true,
+    "Report": {
+      "Purchases": {
+        "protocol_analysis": 1,
+        "research_archive": 2,
+        "starting_budget": 1,
+        "elevator_scanner": 2,
+        "body_fortification": 1
+      },
+      "MockNewServiceReload": true,
+      "BalanceAfterPurchases": 453,
+      "SeedIsTestOnly": true,
+      "Scanner": [
+        "+  Сержант Браво\nТАЛАНТ / ВЫБОР ИЗ 3\nСКАНЕР: Ленточное питание\nПЕРВЫЙ НАБОР: ЕСТЬ ЭПИЧЕСКИЙ",
+        "♥  Доктор Вайс\nТАЛАНТ / ВЫБОР ИЗ 3\nСКАНЕР: Коагуляция\nПЕРВЫЙ НАБОР: ЕСТЬ ЭПИЧЕСКИЙ",
+        "ϟ  Профессор Вольта\nТАЛАНТ / ВЫБОР ИЗ 3\nСКАНЕР: Дуговой разряд\nПЕРВЫЙ НАБОР: ЕСТЬ ОБЫЧНЫЙ"
+      ],
+      "Writes": 11,
+      "Death": {
+        "TemporaryBuildCleared": true,
+        "SavedResearch": 6,
+        "NewFloor": 1,
+        "Balance": 459
+      },
+      "StartBenefits": {
+        "Rerolls": 1,
+        "MaxHealth": 103,
+        "Credits": 10
+      },
+      "Mode": "Mock",
+      "RealDataStoreVerified": false,
+      "Weapons": [
+        "AKM",
+        "Mossberg"
+      ]
+    }
+  },
+  "ActualGuiPurchases": [
+    {
+      "Revision": 2,
+      "Busy": false,
+      "Id": "body_fortification",
+      "Balance": 585,
+      "Rank": 1
+    },
+    {
+      "Revision": 3,
+      "Busy": false,
+      "Id": "starting_budget",
+      "Balance": 567,
+      "Rank": 1
+    },
+    {
+      "Revision": 4,
+      "Busy": false,
+      "Id": "protocol_analysis",
+      "Balance": 543,
+      "Rank": 1
+    },
+    {
+      "Revision": 5,
+      "Busy": false,
+      "Id": "elevator_scanner",
+      "Balance": 525,
+      "Rank": 1
+    },
+    {
+      "Revision": 6,
+      "Busy": false,
+      "Id": "elevator_scanner",
+      "Balance": 489,
+      "Rank": 2
+    },
+    {
+      "Revision": 7,
+      "Busy": false,
+      "Id": "research_archive",
+      "Balance": 477,
+      "Rank": 1
+    },
+    {
+      "Revision": 8,
+      "Busy": false,
+      "Id": "research_archive",
+      "Balance": 453,
+      "Rank": 2
+    }
+  ],
+  "NarrowLayout": {
+    "ConfirmActive": false,
+    "ScrollHeight": 430,
+    "PanelHeight": 620,
+    "PanelWidth": 400,
+    "Archive": "Протокол NORTHLINE\nЭкспедиция поднимается по этажам. Таланты, кредиты и перебросы действуют только до завершения забега; исследования сохраняются отдельно.\n\nПамятка отдела снабжения\nВольта изучает электрические разряды, Браво — дисциплину огня, Вайс — восстановление. Автомат и Завхоз продают припасы за кредиты текущего забега.\nЛИЧНЫЙ РЕКОРД: ЭТАЖ 100",
+    "CloseY": 630,
+    "CanvasHeight": 1200
+  },
+  "WeaponRegression": {
+    "Report": "{\"Weapons\":[{\"Cancel\":true,\"NormalReload\":true,\"Id\":\"Glock\",\"Ammo\":11,\"DeathReloadInvalidated\":true},{\"Cancel\":true,\"NormalReload\":true,\"Id\":\"AKM\",\"Ammo\":29,\"DeathReloadInvalidated\":true},{\"Cancel\":true,\"NormalReload\":true,\"Id\":\"Mossberg\",\"Ammo\":5,\"DeathReloadInvalidated\":true}]}",
+    "Success": true,
+    "Error": "",
+    "Stage": "Fire",
+    "Complete": true
+  },
+  "RecoveryRegression": {
+    "Report": "{\"RespawnCannotBypassFailure\":true,\"Retry\":true,\"NoEarlyRun\":true}",
+    "Error": "",
+    "Success": true,
+    "Complete": true
+  },
+  "SupersededQA": {
+    "GuiDriverTimeout": {
+      "Report": "{\"Purchases\":{\"protocol_analysis\":1,\"research_archive\":2,\"starting_budget\":1,\"elevator_scanner\":2,\"body_fortification\":1},\"StartBenefits\":{\"Rerolls\":1,\"MaxHealth\":103,\"Credits\":10},\"SeedIsTestOnly\":true,\"BalanceAfterPurchases\":453,\"Weapons\":[],\"Mode\":\"Mock\",\"RealDataStoreVerified\":false,\"Scanner\":[\"♥  Доктор Вайс\\nТАЛАНТ / ВЫБОР ИЗ 3\\nСКАНЕР: Коагуляция\\nПЕРВЫЙ НАБОР: ЕСТЬ ОБЫЧНЫЙ\",\"+  Сержант Браво\\nТАЛАНТ / ВЫБОР ИЗ 3\\nСКАНЕР: Крупный калибр\\nПЕРВЫЙ НАБОР: ЕСТЬ ОБЫЧНЫЙ\",\"ϟ  Профессор Вольта\\nТАЛАНТ / ВЫБОР ИЗ 3\\nСКАНЕР: Высокое напряжение\\nПЕРВЫЙ НАБОР: ЕСТЬ ЭПИЧЕСКИЙ\"]}",
+      "Success": false,
+      "Error": "ServerScriptService.QARuntimeResearch:19: Timed out",
+      "Stage": "ClaimBoon",
+      "Complete": true
+    },
+    "WeaponReadinessRace": {
+      "Report": "{\"Weapons\":[{\"Cancel\":true,\"NormalReload\":true,\"Id\":\"Glock\",\"Ammo\":11,\"DeathReloadInvalidated\":true}]}",
+      "Success": false,
+      "Error": "Players.OTEC_ROBLOXA67.PlayerScripts.QAWeaponRegression:16: Weapon client timeout",
+      "Stage": "Fire",
+      "Complete": true
+    }
+  },
+  "Limitations": [
+    "Native research flow uses an explicitly injected Mock backend and test-only research seed.",
+    "Real save/rejoin not checked: unpublished place rejected actual GetAsync.",
+    "Accelerated genuine NPC deaths prove mechanics, not floor1–12 balance.",
+    "400x620 production panel layout is not mobile device emulation.",
+    "Initial GUI driver timeout corrected to180s; new-run readiness race fixed and native flow/reload regressions rerun.",
+    "One Studio play tool restart hung; native documented StudioTestService used; no settings/publication.",
+    "Tool-only wrong GUI path/member and early datamodel calls were corrected; no shipping errors observed.",
+    "Expected injected map failure warning is identified as EXPECTED QA."
+  ]
+}

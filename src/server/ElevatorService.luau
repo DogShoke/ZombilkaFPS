@@ -35,6 +35,7 @@ function ElevatorService.SetRewards(floor,routes,selectedId)
 			bay.Prompt.ObjectText=patron.NameRu
 			bay.Sign.SurfaceGui.TextLabel.Text=patron.Symbol.."  "..patron.NameRu..(route.Type=="MerchantShop"and "\nМАГАЗИН / ПОКУПКИ ЗА КРЕДИТЫ"or "\nТАЛАНТ / ВЫБОР ИЗ 3")
 			bay.Sign.SurfaceGui.TextLabel.TextColor3=patron.Color
+			if route.Preview then bay.Sign.SurfaceGui.TextLabel.Text..="\n"..route.Preview end
 			bay.Indicator.Color=patron.Color
 		else bay.Sign.SurfaceGui.TextLabel.Text=previous and previous.Id==selectedId and "ВЫБРАНО / "..(previous.Type=="MerchantShop"and "Завхоз"or Patrons[previous.Patron].NameRu)or "ВЫБОР ЗАКРЫТ"end
 	end

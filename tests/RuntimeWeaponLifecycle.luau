@@ -18,7 +18,7 @@ bridge.OnServerEvent:Connect(function(player,action,serial)
 			if action=="Death"then player.Character.Humanoid.Health=0 elseif S:GetAttribute("RunActive")then assert(D.EndRun(player,"QAWeapon"))end
 			waitFor(function()return S:GetAttribute("State")=="RunEnded"end)
 			if player.Character.Humanoid.Health<=0 then player:LoadCharacterAsync()end
-			waitFor(function()return player.Character and player.Character:FindFirstChildOfClass("Humanoid")and player.Character.Humanoid.Health>0 end)
+			waitFor(function()return player.Character and player.Character:FindFirstChildOfClass("Humanoid")and player.Character.Humanoid.Health>0 and player:GetAttribute("RunCharacterReady")==true end)
 			assert(D.StartRun(player,S:GetAttribute("RunEpoch")))
 			player.Character.Humanoid.MaxHealth=100000;player.Character.Humanoid.Health=100000
 		end

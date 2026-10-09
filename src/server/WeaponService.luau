@@ -36,6 +36,8 @@ local function selectWeapon(player, weaponId)
 	local weapon = typeof(weaponId) == "string" and table.find(Config.Weapons.Order, weaponId) and Config.Weapons[weaponId]
 	local h = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
 	if not state or state.weaponId or not weapon or not h or h.Health <= 0 or not run
+		or player:GetAttribute("ResearchBusy")==true
+		or player:GetAttribute("RunCharacterReady")~=true
 		or run:GetAttribute("State") ~= "ChoosingWeapon" or run:GetAttribute("OwnerUserId") ~= player.UserId then return end
 	if not ReplicatedStorage.Assets:FindFirstChild(weapon.Template) then feedbackRemote:FireClient(player, "SelectionRejected") return end
 	state.weaponId, state.ammo = weaponId, weapon.MagazineSize

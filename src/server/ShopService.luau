@@ -36,7 +36,7 @@ end
 function Shop:HealthRoom()
 	local field=self.Run.Boons.weiss_field_protocol
 	local bonus=field and Boons.Values("weiss_field_protocol",field.Level,field.Rarity).MaxHealth or 0
-	return math.max(0,Boons.Limits.MaxHealthBonus-bonus-(self.Run.SupplyHealth or 0))
+	return math.max(0,Boons.Limits.MaxHealthBonus-bonus-(self.Run.SupplyHealth or 0)-(self.Run.Meta and self.Run.Meta.MaxHealth or 0))
 end
 -- Produces read-only display data and a fully validated server grant plan.
 function Shop:Inspect(item,player)

@@ -1,5 +1,44 @@
 # FPS CORE 1.0 implementation
 
+## 2026-10-09 — research implementation, real DataStore gate blocked
+
+Five centralized research areas; server-only strict versioned profiles, atomic
+UpdateAsync merges, cumulative floor checkpoints, durable bounded receipts and
+expected-rank purchase operations. Failed/corrupt/future loads cannot write defaults.
+Stable operation receipts reconcile commit-then-error; pending writes retry while
+the server remains alive, including after disconnect. Shutdown enqueues before
+starting a25s flush deadline. Migration freezes the v0 cutoff; the still-unstarted
+first run moves its timestamp beyond that boundary without rewriting combat identity.
+Profiles persist no temporary credits, rerolls, talents or floor world state.
+
+Pre-run research terminal UI with five rows, explicit confirmation, prices/caps,
+archive pages and record; results distinguish Saved/Pending/Unavailable and Mock.
+Body/budget/rerolls apply before first combat/new run; combined health bonus still
+caps60 and shop health-room includes permanent HP. Scanner previews one actual
+initial card and its menu's best rarity; pure preview consumes no pity or rerolls.
+Map generation unchanged. Only the existing3patrons/9 ordinary talents are live.
+Native gun regression exposed late CharacterAdded reset overwriting an accepted
+AKM phase; RunCharacterReady now gates start/select until reset is complete.
+Recovery retry explicitly bypasses that wait when no valid reset floor exists.
+
+Observed native Studio: ProfilePersistence20cases/172assertions and
+ResearchIntegration12/127 pass with explicitly injected Mock storage; regressions
+RunSession11/127, RewardOffers9/2146, ShopTransactions16/247 pass. Actual GUI seven
+purchases603→453, new run HP103/credits10/reroll1;30 genuine NPC deaths clearfloor1,
+checkpoint6→balance459. Actual patron card, death clears build/credits/rerolls and
+returnsFloor1; results show6saved explicitlyinMock. Fresh mock service loads ranks
+and459 with no temporary data. AKM/Mossberg next starts retainHP103 and normalmag
+capacity. Full flow repeated after readinessfix passes. Actual fire/reload/cancel/
+deathreload regression on all3guns passes; forced generationfailure/retry passes
+with labelledEXPECTED QA warning. No shipping errors observed. These are accelerated
+mechanics checks, not balance runs.
+
+Actual Roblox GetAsync failed: "You must publish this place to the web to access
+DataStore." PlaceId/GameId0. No publish or Experience setting changes performed.
+Real save/rejoin NOT verified; milestone6 remains partial until supported real QA.
+Stages7–9 remain pending, no disabled talent promoted into offers. See latest
+AI/ROGUELIKE_PROGRESS.md and tests/results/ResearchPersistenceQA.json.
+
 ## 2026-10-08 — roguelike milestone5 (verified)
 
 Bounded real-kill/floor credits and atomic finite-stock ShopService; auxiliary

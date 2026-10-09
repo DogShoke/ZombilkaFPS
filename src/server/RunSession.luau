@@ -2,6 +2,7 @@
 local HttpService = game:GetService("HttpService")
 local Progression=require(game.ReplicatedStorage.Shared.ProgressionConfig)
 local Economy=require(game.ReplicatedStorage.Shared.ShopCatalog).Economy
+local Research=require(game.ReplicatedStorage.Shared.ResearchCatalog)
 local RunSession = {}
 RunSession.__index = RunSession
 
@@ -16,17 +17,21 @@ function RunSession.new()
 	return setmetatable({Epoch=0, Active=false, Results=nil}, RunSession)
 end
 
-function RunSession:Begin(now)
+function RunSession:Begin(now, benefits)
 	assert(not self.Active, "End the previous run first")
 	self.Epoch += 1
 	self.Id = HttpService:GenerateGUID(false)
+	self.RunStartedUnixMs=DateTime.now().UnixTimestampMillis
 	self.Active, self.StartedAt = true, now
 	self.HighestFloor, self.Kills, self.ClearedFloors = 1, 0, 0
 	self.Credits, self.CreditsEarned, self.CreditsSpent, self.Rerolls = 0, 0, 0, 0
 	self.Rerolls=Progression.Rerolls.Starting
+	self.Meta=benefits or Research.Benefits({})
+	self.Credits=self.Meta.StartingCredits or 0
+	self.Rerolls=self.Meta.StartingRerolls or self.Rerolls
 	self.Pity={CommonDrought=0,EpicDrought=0};self.PatronOrder={}
 	self.Boons, self.Modifiers, self.Patrons, self.Completed = {}, {}, {}, {}
-	self.PendingResearch = 0 -- No payout until the safe profile service is implemented.
+	self.PendingResearch = 0
 	self.SupplyHealth=0
 	self.Floor,self.KillBudget,self.FloorKills=1,0,{}
 	return self.Epoch
@@ -71,6 +76,7 @@ function RunSession:CompleteFloor(epoch, floor)
 	if not self:IsCurrent(epoch) or not amount(floor)or floor<1 or self.Completed[floor] then return false end
 	self.Completed[floor] = true
 	self.ClearedFloors += 1
+	self.PendingResearch=self.ClearedFloors*Research.Rewards.PerFloor
 	self:AddCredits(epoch,math.min(Economy.CreditCap,Economy.FloorBase+Economy.FloorStep*(floor-1)))
 	return true
 end
@@ -79,10 +85,11 @@ function RunSession:Finish(now, reason)
 	if not self.Active then return nil end
 	self.Results = {
 		RunId=self.Id, HighestFloor=self.HighestFloor, Kills=self.Kills,
+		RunStartedUnixMs=self.RunStartedUnixMs,
 		ClearedFloors=self.ClearedFloors, Duration=math.max(0, now-self.StartedAt),
 		Patrons=copy(self.Patrons), Boons=copy(self.Boons),
 		CreditsEarned=self.CreditsEarned, CreditsSpent=self.CreditsSpent,
-		ResearchEarned=0, ResearchStatus="Unavailable", Reason=reason,
+		ResearchEarned=0, PendingResearch=self.PendingResearch, ResearchStatus="Pending", Reason=reason,
 	}
 	self.Active = false
 	self.Epoch += 1 -- Invalidates callbacks before a replacement character/run exists.
@@ -90,6 +97,7 @@ function RunSession:Finish(now, reason)
 	self.Boons, self.Modifiers, self.Patrons = {}, {}, {}
 	self.Pity={CommonDrought=0,EpicDrought=0};self.PatronOrder={}
 	self.SupplyHealth=0
+	self.Meta=nil
 	self.Floor,self.KillBudget,self.FloorKills=1,0,{}
 	return copy(self.Results)
 end

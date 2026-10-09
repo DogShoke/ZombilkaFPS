@@ -17,6 +17,7 @@ local WeaponSelection = require(script.WeaponSelection)
 local RunResults = require(script.RunResults)
 local RewardSelection = require(script.RewardSelection)
 local ShopSelection = require(script.ShopSelection)
+local ResearchPanel = require(script.ResearchPanel)
 local GuiService = game:GetService("GuiService")
 local remotes = ReplicatedStorage:WaitForChild("CombatRemotes")
 local fireRemote = remotes:WaitForChild("Fire")
@@ -45,17 +46,23 @@ assert(runRemotes,"Run remotes did not initialize")
 local results = RunResults.new(runState,runRemotes:WaitForChild("StartRun"))
 local rewardSelection=RewardSelection.new(runState,runRemotes:WaitForChild("ClaimBoon"),runRemotes:WaitForChild("RerollBoon"))
 local shopSelection=ShopSelection.new(runState,runRemotes:WaitForChild("BuyShopItem"),runRemotes:WaitForChild("CloseShop"))
+local researchPanel=ResearchPanel.new(runState,runRemotes:WaitForChild("BuyResearch"))
 local function refreshSelection()
-	selection:Show(runState:GetAttribute("State")=="ChoosingWeapon"and not weapon)
-	hud.Gui.Enabled=weapon~=nil and not results.Active and not rewardSelection.Active and not shopSelection.Active
+	selection:Show(runState:GetAttribute("State")=="ChoosingWeapon"and not weapon and not researchPanel.Active)
+	results.Gui.Enabled=results.Active and not researchPanel.Active
+	hud.Gui.Enabled=weapon~=nil and not results.Active and not rewardSelection.Active and not shopSelection.Active and not researchPanel.Active
 end
+local function openResearch()researchPanel:Show(true);refreshSelection()end
+selection.ResearchButton.Activated:Connect(openResearch)
+results.ResearchButton.Activated:Connect(openResearch)
+researchPanel.Gui:GetPropertyChangedSignal("Enabled"):Connect(refreshSelection)
 runState:GetAttributeChangedSignal("State"):Connect(refreshSelection)
 refreshSelection()
 hud:SetRun(runState)
 runState.AttributeChanged:Connect(function() hud:SetRun(runState) end)
 local lastReloadSerial = 0
 local function blocked()
-	return not weapon or selection.Active or results.Active or rewardSelection.Active or shopSelection.Active or GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true or player:GetAttribute("InSafeInterlude")==true
+	return not weapon or selection.Active or results.Active or rewardSelection.Active or shopSelection.Active or researchPanel.Active or GuiService.MenuIsOpen or player:GetAttribute("InElevatorTravel") == true or player:GetAttribute("InSafeInterlude")==true
 end
 local function equip(id)
 	if id==weaponId and viewmodel then return end
@@ -264,7 +271,9 @@ end)
 
 -- Apply after camera/default controls, even while the character/viewmodel is being rebuilt.
 RunService:BindToRenderStep("ZombilkaFPSCursor", Enum.RenderPriority.Last.Value + 1, function()
-	local menuOpen = GuiService.MenuIsOpen or selection.Active or results.Active or rewardSelection.Active or shopSelection.Active
+	if researchPanel:Update()then refreshSelection()end
+	results.Gui.Enabled=results.Active and not researchPanel.Active
+	local menuOpen = GuiService.MenuIsOpen or selection.Active or results.Active or rewardSelection.Active or shopSelection.Active or researchPanel.Active
 	UserInputService.MouseBehavior = menuOpen and Enum.MouseBehavior.Default or Enum.MouseBehavior.LockCenter
 	UserInputService.MouseIconEnabled = menuOpen
 end)

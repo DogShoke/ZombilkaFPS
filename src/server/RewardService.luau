@@ -40,6 +40,27 @@ function Rewards:RoutesFor(seed,floor)
 	if floor>=Merchant.FromFloor and #routes>=2 and Random.new(Policy.Seed(seed,floor,self.Run.Epoch,4)):NextNumber()<Merchant.Chance then
 		local route=routes[#routes];route.Type="MerchantShop";route.Patron=nil
 	end
+	local scanner=self.Run.Meta and self.Run.Meta.Scanner or 0
+	if scanner>0 then
+		for _,route in routes do
+			if route.Type=="MerchantShop"then
+				route.Preview="ЛЕЧЕНИЕ / ПЕРЕБРОСЫ"..(scanner>=2 and "\nЕСТЬ БЕСПЛАТНЫЙ ЗАПАС"or "")
+			else
+				local player=game.Players:GetPlayerByUserId(self.State:GetAttribute("OwnerUserId")or 0)
+				local weapon=player and player:GetAttribute("SelectedWeapon")
+				if weapon then
+					local cards=self:BuildCards(route,0,nil,weapon)
+					if cards[1]then route.Preview="СКАНЕР: "..cards[1].NameRu end
+					if scanner>=2 and cards[1]then
+						local best=0;for _,card in cards do local rarity=Config.Rarities[card.Rarity];if rarity then best=math.max(best,rarity.Rank)end end
+						if best==0 then route.Preview..="\nПЕРВЫЙ НАБОР: ПРИПАСЫ"else
+							for _,rarity in Config.Rarities do if rarity.Rank==best then route.Preview..="\nПЕРВЫЙ НАБОР: ЕСТЬ "..string.upper(rarity.NameRu);break end end
+						end
+					end
+				end
+			end
+		end
+	end
 	self.Routes=routes;self.Selected=nil;return routes
 end
 function Rewards:Select(id,epoch,floor)

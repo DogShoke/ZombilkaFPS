@@ -36,7 +36,7 @@ end
 function Effects.RefreshHealth()
 	local h=alive();if not h then return end
 	local v=values("weiss_field_protocol")
-	h.MaxHealth=Catalog.Limits.BaseHealth+math.clamp((v and v.MaxHealth or 0)+(session.SupplyHealth or 0),0,Catalog.Limits.MaxHealthBonus)
+	h.MaxHealth=Catalog.Limits.BaseHealth+math.clamp((v and v.MaxHealth or 0)+(session.SupplyHealth or 0)+(session.Meta and session.Meta.MaxHealth or 0),0,Catalog.Limits.MaxHealthBonus)
 	h.Health=math.min(h.Health,h.MaxHealth)
 end
 function Effects.OnFloorStart()

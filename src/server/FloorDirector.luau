@@ -17,6 +17,7 @@ local RewardService=require(script.Parent.RewardService)
 local ShopService=require(script.Parent.ShopService)
 local ShopWorld=require(script.Parent.ShopWorld)
 local Economy=require(ReplicatedStorage.Shared.ShopCatalog).Economy
+local ResearchService=require(script.Parent.ResearchService)
 local Director={}
 function Director.Start(map)
  local state=ReplicatedStorage:FindFirstChild("RunState")or Instance.new("Folder");state.Name="RunState";state.Parent=ReplicatedStorage
@@ -30,9 +31,12 @@ function Director.Start(map)
  local connectFloor,reset,endRun,rebuildFirst
  local resetReady=true
  local boundCharacter,deathConnection
+ local readyCharacter
  local runRemotes=Instance.new("Folder");runRemotes.Name="RunRemotes";runRemotes.Parent=ReplicatedStorage
  local startRemote=Instance.new("RemoteEvent");startRemote.Name="StartRun";startRemote.Parent=runRemotes
  local results=Instance.new("Folder");results.Name="RunResults";results.Parent=state
+ local research=ResearchService.new(session,state,results,runRemotes,function()return phase end)
+ research:StartRetryLoop()
  local rewards=RewardService.new(session,state)
  local shop=ShopService.new(session,state,rewards)
  local claimRemote=Instance.new("RemoteEvent");claimRemote.Name="ClaimBoon";claimRemote.Parent=runRemotes
@@ -55,7 +59,6 @@ function Director.Start(map)
   state:SetAttribute("RunKills",session.Active and session.Kills or 0)
   local count=0;for _ in session.Boons or {}do count+=1 end
   state:SetAttribute("BoonCount",session.Active and count or 0)
-  state:SetAttribute("ResearchStatus","Unavailable")
  end
  local function setPhase(value,delay)phase=value;deadline=Clock.Now()+(delay or 0);publish()end
  local function clearNext()if map.Next then map.Next.Model:Destroy();map.Next=nil end end
@@ -71,6 +74,7 @@ function Director.Start(map)
  end
  reset=function(character)
   local player=owner;if not player then return end
+  readyCharacter=nil;player:SetAttribute("RunCharacterReady",false)
   if boundCharacter and boundCharacter~=character and session.Active then endRun("Respawn") end
   boundCharacter=character
   if deathConnection then deathConnection:Disconnect() end
@@ -83,6 +87,8 @@ function Director.Start(map)
   player:SetAttribute("InElevatorTravel",false);Elevator.SetOpen(current,false);current.Spawn.Enabled=true;player.RespawnLocation=current.Spawn
   root.Anchored=false;character:PivotTo(current.Entry);configureFloor()
   setPhase(not resetReady and "RunRecoveryFailed"or session.Active and "ChoosingWeapon"or "RunEnded")
+  research:ApplyStart(player)
+  readyCharacter=character;player:SetAttribute("RunCharacterReady",true)
  end
  rebuildFirst=function(player)
   number=1;resetReady=false;rebuilding=true;Elevator.SetOpen(current,false);setPhase("ResettingRun")
@@ -97,7 +103,7 @@ function Director.Start(map)
    resetReady=true
    f.Spawn.Enabled=true;player.RespawnLocation=f.Spawn
    local c=player.Character;local h=c and c:FindFirstChildOfClass("Humanoid")
-   if h and h.Health>0 then c:PivotTo(f.Entry)end
+   if h and h.Health>0 then c:PivotTo(f.Entry);if c==readyCharacter then player:SetAttribute("RunCharacterReady",true)end end
    old.Model:Destroy();configureFloor();setPhase("RunEnded")
   end)
  end
@@ -105,20 +111,22 @@ function Director.Start(map)
   local snapshot=session:Finish(Clock.Now(),reason)
   if not snapshot then return false end
   local player=owner
+  player:SetAttribute("RunCharacterReady",false)
   -- Commit the result before cleanup; a duplicate death cannot replace or pay it twice.
   for k,v in snapshot do if type(v)~="table"then results:SetAttribute(k,v)end end
   results:SetAttribute("BoonsJson",game:GetService("HttpService"):JSONEncode(snapshot.Boons))
   results:SetAttribute("PatronsJson",game:GetService("HttpService"):JSONEncode(snapshot.Patrons))
   cancel();Weapons.ResetPlayer(player);player:SetAttribute("InElevatorTravel",false)
+  research:Checkpoint(player,snapshot,true)
   rebuildFirst(player);return true
  end
  Director.EndRun=function(player,reason)if player~=owner then return false end;return endRun(reason or "Death")end
  Director.StartRun=function(player,epoch)
   local c=player.Character;local h=c and c:FindFirstChildOfClass("Humanoid")
-  if player~=owner or rebuilding or epoch~=session.Epoch or not h or h.Health<=0 then return false end
+  if player~=owner or rebuilding or epoch~=session.Epoch or not h or h.Health<=0 or player:GetAttribute("ResearchBusy")==true or phase~="RunRecoveryFailed"and player:GetAttribute("RunCharacterReady")~=true then return false end
   if phase=="RunRecoveryFailed"then rebuildFirst(player);return true end
   if phase~="RunEnded"or not resetReady then return false end
-  Weapons.ResetPlayer(player);session:Begin(Clock.Now());Effects.Bind(session,player);setPhase("ChoosingWeapon");return true
+  Weapons.ResetPlayer(player);session:Begin(Clock.Now(),research:Benefits(player));Effects.Bind(session,player);setPhase("ChoosingWeapon");research:ApplyStart(player);return true
  end
  startRemote.OnServerEvent:Connect(function(player,epoch)Director.StartRun(player,epoch)end)
  connectFloor=function(f)
@@ -183,8 +191,10 @@ function Director.Start(map)
  local function join(player)
   if owner or rebuilding then return end
   owner=player;state:SetAttribute("OwnerUserId",player.UserId)
+  player:SetAttribute("RunCharacterReady",false)
   session:Begin(Clock.Now())
   Effects.Bind(session,player)
+  research:Load(player)
   table.insert(subscriptions,player:GetAttributeChangedSignal("SelectedWeapon"):Connect(function()
    if owner==player and phase=="ChoosingWeapon"and Config.Weapons[player:GetAttribute("SelectedWeapon")]then setPhase("FloorIntro",Config.Run.IntroDuration)end
   end))
@@ -194,7 +204,9 @@ function Director.Start(map)
  Players.PlayerAdded:Connect(join)
  Players.PlayerRemoving:Connect(function(player)
   if player~=owner then return end
-  session:Finish(Clock.Now(),"Disconnect");cancel();if deathConnection then deathConnection:Disconnect();deathConnection=nil end
+  local snapshot=session:Finish(Clock.Now(),"Disconnect")
+  if snapshot then research:Checkpoint(player,snapshot,true)end
+  research:Leave(player);cancel();if deathConnection then deathConnection:Disconnect();deathConnection=nil end
   boundCharacter=nil;for _,c in subscriptions do c:Disconnect()end;subscriptions={};owner=nil;number=1;rebuilding=true
   local old=current;setPhase("WaitingForPlayer");local token=generation
   task.spawn(function()
@@ -206,6 +218,13 @@ function Director.Start(map)
   end)
  end)
  for _,p in Players:GetPlayers()do join(p)end
+ game:BindToClose(function()
+  if owner then
+   local snapshot=session:Finish(Clock.Now(),"Shutdown")
+   if snapshot then research.Profiles:EnqueueRun(owner.UserId,snapshot)end
+  end
+  research.Profiles:Close(25)
+ end)
  local function begin()
   progress=Progress.New(current.Layout.Encounter);bursts={};lastBurst=-math.huge
   local epoch=session.Epoch
@@ -225,7 +244,9 @@ function Director.Start(map)
   return zones
  end
  local function prepare()
-  session:CompleteFloor(session.Epoch,number)
+  if session:CompleteFloor(session.Epoch,number)then
+   research:Checkpoint(owner,{RunId=session.Id,RunStartedUnixMs=session.RunStartedUnixMs,ClearedFloors=session.ClearedFloors,HighestFloor=session.HighestFloor},false)
+  end
   Zombies.StopSpawning();Sources.Stop();bursts={}
   setPhase("PreparingFloor");local token,source,destination=generation,current,number+1
   local spec={Run=map.Run,Seed=map.Seed}

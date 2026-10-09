@@ -4,6 +4,9 @@ local UserInputService = game:GetService("UserInputService")
 local Weapons = require(game.ReplicatedStorage.Shared.Weapons)
 local WeaponSelection = {}
 WeaponSelection.__index = WeaponSelection
+local function selectionHint()
+	return Players.LocalPlayer:GetAttribute("ResearchBusy")==true and "ЗАГРУЗКА ИССЛЕДОВАНИЙ…"or "НАЖМИ НА КАРТОЧКУ ИЛИ 1 / 2 / 3"
+end
 local function text(parent, name, value, size, position, dimensions, color)
 	local label = Instance.new("TextLabel")
 	label.Name, label.Text, label.TextSize = name, value, size
@@ -29,6 +32,13 @@ function WeaponSelection.new(remote)
 	text(panel,"Title","ВЫБЕРИ ОРУЖИЕ",36,UDim2.fromOffset(0,34),UDim2.fromOffset(1020,48))
 	text(panel,"Subtitle","Выбор на этот забег. Зачистка начнётся, когда будешь готов.",15,UDim2.fromOffset(0,86),UDim2.fromOffset(1020,28),Color3.fromRGB(158,170,176))
 	local self=setmetatable({Gui=gui,Active=true,Pending=false,Remote=remote,Buttons={}},WeaponSelection)
+	local researchButton=Instance.new("TextButton")
+	researchButton.Name="ResearchButton";researchButton.Text="ИССЛЕДОВАНИЯ";researchButton.Font=Enum.Font.GothamBold
+	researchButton.TextSize=16;researchButton.TextColor3=Color3.fromRGB(180,224,209)
+	researchButton.BackgroundColor3=Color3.fromRGB(28,38,44);researchButton.BorderSizePixel=0
+	researchButton.AnchorPoint=Vector2.new(.5,0);researchButton.Position=UDim2.new(.5,0,0,16)
+	researchButton.Size=UDim2.fromOffset(220,40);researchButton.Parent=backdrop
+	self.ResearchButton=researchButton
 	for index,id in ipairs(Weapons.Order) do
 		local weapon=Weapons[id]
 		local card=Instance.new("TextButton") card.Name=id card.Text="" card.AutoButtonColor=false
@@ -50,7 +60,10 @@ function WeaponSelection.new(remote)
 		card.Activated:Connect(function() self:Choose(id) end)
 		self.Buttons[id]=card
 	end
-	self.Status=text(panel,"Status","НАЖМИ НА КАРТОЧКУ ИЛИ 1 / 2 / 3",12,UDim2.fromOffset(0,491),UDim2.fromOffset(1020,20),Color3.fromRGB(127,148,150))
+	self.Status=text(panel,"Status",selectionHint(),12,UDim2.fromOffset(0,491),UDim2.fromOffset(1020,20),Color3.fromRGB(127,148,150))
+	Players.LocalPlayer:GetAttributeChangedSignal("ResearchBusy"):Connect(function()
+		if self.Active and not self.Pending then self.Status.Text=selectionHint()end
+	end)
 	UserInputService.InputBegan:Connect(function(input,processed)
 		if processed or not self.Active or game:GetService("GuiService").MenuIsOpen then return end
 		local index=table.find({Enum.KeyCode.One,Enum.KeyCode.Two,Enum.KeyCode.Three},input.KeyCode)
@@ -59,16 +72,20 @@ function WeaponSelection.new(remote)
 	return self
 end
 function WeaponSelection:Choose(id)
+	if game.Players.LocalPlayer:GetAttribute("RunCharacterReady")~=true then return end
 	if not self.Active or self.Pending then return end
+	if Players.LocalPlayer:GetAttribute("ResearchBusy")==true then self.Status.Text=selectionHint() return end
 	self.Pending=true self.Status.Text="ВЫБРАНО: "..Weapons[id].Name
+	self.ResearchButton.Active=false
 	self.RequestSerial=(self.RequestSerial or 0)+1
 	local serial=self.RequestSerial
 	self.Remote:FireServer(id)
-	task.delay(3,function() if self.Active and self.RequestSerial==serial then self.Pending=false self.Status.Text="НАЖМИ НА КАРТОЧКУ ИЛИ 1 / 2 / 3" end end)
+	task.delay(3,function() if self.Active and self.RequestSerial==serial then self.Pending=false self.ResearchButton.Active=true self.Status.Text=selectionHint() end end)
 end
 function WeaponSelection:Show(value)
 	self.Active=value self.Gui.Enabled=value self.Pending=false
+	self.ResearchButton.Active=value
 	self.RequestSerial=(self.RequestSerial or 0)+1
-	if value then self.Status.Text="НАЖМИ НА КАРТОЧКУ ИЛИ 1 / 2 / 3" end
+	if value then self.Status.Text=selectionHint() end
 end
 return WeaponSelection

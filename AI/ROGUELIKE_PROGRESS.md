@@ -1,8 +1,128 @@
 # Roguelike progression — continuation checkpoint
 
-Date: 2026-10-08. Branch: `dev`. Read `AGENTS.md`, the ENTIRE
+Date: 2026-10-09. Branch: `dev`. Read `AGENTS.md`, the ENTIRE
 `ZOMBILKA_CODEX_MASTER_PROMPT.md`, this file and recent `AI/IMPLEMENTATION.md`
 before continuing. No automatic commit/merge/push.
+
+## 2026-10-09 — latest checkpoint: stage6 implemented, real save gate BLOCKED
+
+Read this section before the historical stage0–5 notes below. Master reread in full.
+Studio275cfdff-e2a9-4499-9f5d-8d302cb93047 / ZombilkaFPS.rbxl. Ordinary baseline
+ChoosingWeapon/Floor1, Output empty. Actual GetAsync failed with
+"You must publish this place to the web to access DataStore." PlaceId=0/GameId=0.
+No publish/settings changes authorized or performed. Stage6 is NOT fully complete:
+real Roblox save/rejoin remains unverified. Stages7–9 NOT started, all other5patrons
+remain Disabled; no fake active talents. Stop at this safe, tested implementation
+checkpoint rather than silently bypassing the persistence gate or publishing.
+
+Implemented stage6:
+- Shared ResearchCatalog fiveareas and prices: body18/36/60(+3HP/rank,3),
+  budget18/36/60(+10credits/rank,3), protocol24/48(1/2rerolls), scanner18/36,
+  archive12/24(two actual lore pages + record). All starterbenefits apply before
+  combat/newrun; corepatrons never research-gated. HP meta+boon+run cap60; shop
+  health-room subtracts meta. Startercredits excluded from CreditsEarned.
+- Server profiles plain Version1/ResearchData/ResearchRanks/BestFloor/Revision
+  +bounded receipts only; no temporary build/credits/world/rerolls. Strict v0
+  migration, corrupt/future failclosed, no writes after failedload. UserId keys,
+  Live storeZombilkaResearch_v1 / isolated StudioZombilkaResearch_Studio_v1.
+  There is NO automatic mock fallback. Unpublished Play shows Unavailable and
+  permits baseline gameplay with permanent purchases disabled.
+- Real clearedfloors produce6research; first new completed-floorrecord/run +3.
+  Safe cumulative checkpoints after every clear, final/death/disconnect reconcile
+  SAME RunId paidfloor count. UpdateAsync merges latest durable data, serialized
+  perUserId, boundedretry, stable purchase operation receipts/expectedrank. Lost
+  acknowledgement cannot debit twice. Pending kept in RAM and retried20s, including
+  disconnected users; shutdown synchronously enqueues then starts25s flush.
+  During a prolonged API outage/servercrash unconfirmed RAM-only rewards can still
+  be lost: no claim of durable persistence without confirmation. Bounded64claim
+  receipts + eviction watermark reject late replay, including tied timestamps.
+- Minimal safe pre-run terminal via existing weapon/results screens; five rows,
+  separate confirmation, localized status/prices/caps, scroll and fixedClose.
+  Results Saved/Pending/Unavailable distinguish confirmed vs awaiting research,
+  explicit Mock/Studio mode. Scanner1 shows one real initialcard, scanner2 best
+  initial-menu rarity; reroll can change it. Preview changes no pity/offer state;
+  maxed-patron supply fallback handles missing rarity. No mapgeneration changes.
+- v0 load cutoff is frozen; a run reserved BEFORE loading gets timestamp above
+  migration watermark only before weapon/combat. No combat identity rewrite.
+- Necessary lifecycle fix from native regression: late CharacterAdded reset could
+  overwrite accepted AKM's FloorIntro with ChoosingWeapon. RunCharacterReady now
+  gates StartRun/select until placement/reset completes. Alive existingcharacters
+  regainready after rebuild; RunRecoveryFailed retry remains available. This is
+  a narrow regression fix, not a rewrite of stages0–5.
+
+Observed tests (tests/results/ResearchPersistenceQA.json):
+- Native temporary Play Scripts: ProfilePersistence20cases/172assertions;
+  ResearchIntegration12/127, including loadfail/no-write, cumulative payout,
+  commit-then-error, concurrentmerge, migration first-run, eviction/tie replay,
+  ranks/costs/caps, stale epoch/owner/revision/phase/dead requests and async guards.
+  Explicit injected Mock only, RealDataStoreVerified=false.
+- Regressions RunSession11/127, RewardOffers9/2146, ShopTransactions16/247 pass.
+  Combined68cases/2819assertions. Gun lifecycle actual remotes Glock/AKM/Mossberg:
+  fire, normalreload, canceledreload, deathreload invalidation PASS after readyfix.
+  Injected Map.CreateFloor failure/retry passes; EXPECTED QA warning labelled.
+- Actual GUI7purchases on labelled test-only603balance →453; fresh Glockrun
+  HP103/credits10/reroll1; actual30NPCdeaths clearfloor1, checkpoint6→459.
+  Three scanner signs match initialrealmenus; actual patron card then death:
+  build/credits/rerolls empty, trueFloor1, results6saved expresslyinMock. NEW mock
+  service reloads ranks/459 and no temporary data. Native AKM/Mossberg newruns
+  retain103HP + normalmagazine capacities. Full flow repeated after readyfix PASS.
+- Desktop and400×620 productionpanel layout observed; scrollable all5rows/archive,
+  confirmation/Close fixed and visible, no competingmenus, freecursor. This is
+  layout QA, not mobiledevice emulation. Default unpublished GUI disablesConfirm
+  and explains publication required. No floor1–12/performance/balance claim.
+- QA-only corrections: initial60s card-driver timeout expanded180s and repeated;
+  ammo-capacity observation explicitly uses original RefreshStats (equip's HUD
+  starts with basecapacity). Wrong GUI path/member/early datamodel calls corrected.
+  One MCP playrestart stuck; documented native StudioTestService Play/EndTest
+  restoredtesting. No RunService.Stop, no QA scripts installedinEdit. No shipping
+  error observed; prior injected mapfailurewarning is expected.
+
+Files: new src/shared/ResearchCatalog.luau; src/server/{ProfileSchema,ProfileService,
+ResearchService}.luau; src/client/ResearchPanel.luau. Modified RunSession,
+FloorDirector,BoonEffects,ShopService,RewardService,ElevatorService,WeaponService;
+client init,RunResults,WeaponSelection. New tests/{ProfilePersistence,
+ResearchIntegration,RuntimeResearchFlow}.luau; updated RunSession and
+RuntimeWeaponLifecycle server bridge. Saved ResearchPersistenceQA.json;
+GAME/AI PROJECT/IMPLEMENTATION/testguide/checkpoint updated.
+Final ordinary freshPlay: ChoosingWeapon/Floor1/quota30, HP100/max100, readytrue,
+credits/rerolls/build/Alive/Pending0, ResearchUnavailable/Studio (not Mock), noQA.
+Only weaponmenu visible/freecursor.15changed shipping sources exactlyequaldisk/Edit;
+noQA scripts inEdit. Stopped inEdit; evidence ResearchFinalStartupQA.json. Scoped
+git diff --check src/AI/tests/GAME passes (line-ending warnings only). No RojoCLI
+build or .rbxl file save performed; source files and checkpoint are saved on disk.
+Skills actually read: roblox-datastores/security/gui; official Roblox DataStore
+and StudioTestService docs checked. Three selective agents used, separatefiles;
+root integrated and alone controlled Studio. No installs.
+Previous authorized upload2026-10-08 pushed dev cc3bce5. On2026-10-09 the user
+explicitly requested uploading the stage6 implementation, tests and documentation
+to dev. This authorizes the Git commit/push for this checkpoint only; it does not
+authorize Roblox publication/settings changes. Real DataStore validation remains
+blocked as described above. Pre-existing local AGENTS.md, .rbxl, .claude,
+skills-lock.json and master-prompt changes are outside this upload.
+Pre-existing AGENTS/.rbxl/.claude/master/skills-lock changes preserved.
+
+Exact continuation:
+1. Read latest checkpoint/master/AGENTS/GAME/docs/status/diff. Preserve all changes.
+2. Stage6 real persistence gate: only in an already authorized, published TEST
+   Experience with StudioAPI access. If stillPlaceId0, report blocker; do NOT
+   publish/toggle permissions yourself. Current shipping code uses honestUnavailable.
+3. Do NOT use RuntimeResearchFlow's603seed/mock for real verification. Exercise
+   genuinely clearedfloor awards, terminalpurchase, stop/start sameUserId/newserver,
+   verify actualStudio store ranks/balance and starterbenefits; temporarybuild/
+   credits/floor absent. No writes to Live namespace or deleting olduserdata.
+4. Confirm actual save/rejoin, disconnect/shutdown and repeateddeath idempotency;
+   save real evidence separately. Mockfault tests are already reproducible, but
+   cannot replace this check. Then mark6complete and move7 (remaining5patrons,
+   actual4ordinary each + remainingcoremechanics),8Legendary/DuoElectrotoxin then
+   otherrecipes,9normalfloor1–12build/economy/weapon/performance QA. Keep unfinished
+   talents Disabled. No mapgeneration or automaticGit changes.
+5. QA drivers only temporaryPlay; Stop between isolated Effects.Bind suites and
+   live tests. Query mode before executing SDK recovery: launch is asynchronous.
+
+Suggested prompt: "Продолжай с checkpoint2026-10-09. Этап6 реализован и проверен
+с явным Mock; настоящее сохранение и повторный вход ещё не проверены. Не публикуй
+и не меняй Experience без разрешения. Заверши разрешённую реальную проверку6,
+затем последовательно7–9. Сохрани работающие0–5, не меняй генерацию, не делайGit."
 
 ## Initial audit / milestone 0
 
@@ -35,7 +155,7 @@ before continuing. No automatic commit/merge/push.
 - [x] 3 Nine real effects for Volta/Bravo/Weiss — Studio gate passed.
 - [x] 4 Rarity/levels/rerolls/fairness — Studio gate passed.
 - [x] 5 Credits/vending/merchant — Studio gate passed.
-- [ ] 6 Research/persistence/meta purchases.
+- [ ] 6 Research/persistence/meta purchases — implemented/mock-tested; real save/rejoin blocked.
 - [ ] 7 Eight patrons/full catalog (unbuilt effects disabled).
 - [ ] 8 Legendary/Duo, Electrotoxin first.
 - [ ] 9 Polish and normal-length floor1–12 balance QA.
@@ -263,7 +383,7 @@ Files for5: new src/shared/ShopCatalog.luau, src/server/{ShopService,ShopWorld}.
  FloorDirector,RewardService,ElevatorService,init.client,CombatHud,RunResults;
  tests/RunSession and patron regression harnesses; project docs/test guide.
 
-## Limits / remaining work
+## Historical stage5 stopping point (2026-10-08; superseded by latest checkpoint)
 
 Milestones0–5 complete. Stop at this tested milestone boundary for the session.
 Stage6 NOT started: no research catalog/profile service or DataStore calls exist.
@@ -274,7 +394,7 @@ not the full40catalog. Duo-specific patronbias and special pity await8.
 No normal floor1–12balance, late-gameFPS, realmobile/co-op verification claimed.
 No RojoCLI build, .rbxl save, commit/merge/push/rebase/reset claimed.
 
-## Exact continuation for next session
+## Historical continuation (2026-10-08; use latest 2026-10-09 instructions instead)
 
 1. Read this progress first, then ENTIRE master, AGENTS, GAME, recentIMPLEMENTATION
    and gitstatus/diff. Preserve pre-existing user changes. Never inspect oldproject.

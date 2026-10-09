@@ -42,7 +42,7 @@ case("Finish invalidates callbacks and produces results exactly once", function(
 	local result = session:Finish(142, "Death")
 	check(result ~= nil and result.Kills == 1 and result.HighestFloor == 3, "Finish snapshots run counters")
 	check(result.Duration == 42 and result.Reason == "Death", "Finish snapshots time and reason")
-	check(result.ResearchEarned == 0 and result.ResearchStatus == "Unavailable", "Persistence stub does not invent research")
+	check(result.ResearchEarned == 0 and result.ResearchStatus == "Pending", "Run ledger does not claim an unacknowledged save")
 	check(not session.Active and session.Epoch == epoch + 1, "Finish immediately invalidates epoch")
 	check(not session:IsCurrent(epoch) and not session:RecordKill(epoch), "Ended-run callback rejected")
 	check(session:Finish(200, "Duplicate") == nil, "Second Finish returns no grantable result")

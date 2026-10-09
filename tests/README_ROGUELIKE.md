@@ -1,5 +1,37 @@
 # Roguelike Studio QA
 
+## Stage6 persistence and research (2026-10-09)
+
+ProfilePersistence20/172 and ResearchIntegration12/127 execute as temporary Play
+Scripts before combat. They use isolated injected stores explicitly labelled Mock,
+including commit-then-error, retries, migrations, concurrent merges, cumulative
+floor payouts, bounded receipts, schema failure and shutdown enqueue. Integration
+temporarily binds Effects to fake characters: mandatory Stop/restart afterwards.
+Mock save/new-service reload is NOT real Roblox DataStore/rejoin verification.
+
+RuntimeResearchFlow.luau: Play-only, root-controlled actualGUI driver. Installs
+after ChoosingWeapon; deliberately ends initialemptyrun to capture ResearchService
+through its Publish method, restores that hook, substitutes an explicitly labelled
+in-memory store, seeds test-only603research. AtStage BuyResearch open results
+ResearchButton, buy body1/budget1/protocol1/scanner2/archive2 using row+Confirm
+(seven separate purchases, total150). Close/NewRun/Glock atStage StartGlock.
+Driver accelerates realNPC issuance/deaths to clear actual firstquota30, validates
+scanner signs, selects a server-valid patron route; click a real card atClaimBoon.
+Driver dies/resets/reloads a NEW mock service from SAME fakebackend; then requests
+actual NewRun/AKM and NewRun/Mossberg. Observe Complete/Success/Report. Stop removes
+mock profile, hooks and tuning. This does not measure floor1–12balance or real rejoin.
+
+Current PlaceId/GameId0: actual GetAsync capability probe fails with publication
+required. Never publish/change Experience settings to force a pass without human
+authorization. Production uses ZombilkaResearch_v1; API-enabled published Studio
+uses isolated ZombilkaResearch_Studio_v1 (which CAN persist). Mock is injected only
+by external QA; there is no silent game fallback or production default overwrite.
+
+Studio MCP start_stop_play became stuck during one restart. Native documented
+StudioTestService:ExecutePlayModeAsync / EndTest restored testing without touching
+Experience settings or installing test scripts in Edit. If that recurs, inspect
+mode before recovery; do not use RunService.Stop (it can retain simulation changes).
+
 Run only in the connected **ZombilkaFPS** Studio place. The `tests/` folder is
 outside the shipping Rojo tree. Never publish these drivers/remotes or install
 them into Edit. Stop Play between world-mutating suites. They tune settings or

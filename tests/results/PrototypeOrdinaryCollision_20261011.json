@@ -1,0 +1,44 @@
+{
+  "Scope": "Ordinary init-created CorporateComplex; QA teleports real player to each approach only; real D input 2s, no isolated map/controller/forced movement during input",
+  "Cases": [
+    {
+      "FromX": -126.55249786376953,
+      "Z": -57,
+      "LeftEdge": -119.55250000953674,
+      "Case": "Car",
+      "Final": {
+        "Y": 182.9990234375,
+        "X": -120.5480728149414,
+        "Weapon": "Glock",
+        "Z": -57.09443664550781
+      },
+      "Passed": true
+    },
+    {
+      "FromX": 82.7249984741211,
+      "Z": -52,
+      "LeftEdge": 89.72500014305115,
+      "Case": "Rack",
+      "Final": {
+        "Y": 183.00437927246094,
+        "X": 88.71681213378906,
+        "Weapon": "Glock",
+        "Z": -52.063961029052734
+      },
+      "Passed": true
+    },
+    {
+      "FromX": 88.44249725341797,
+      "Z": -126,
+      "LeftEdge": 95.44249797837246,
+      "Case": "Container",
+      "Final": {
+        "Y": 182.99903869628906,
+        "X": 94.4472427368164,
+        "Weapon": "Glock",
+        "Z": -126.09229278564453
+      },
+      "Passed": true
+    }
+  ]
+}

@@ -1,5 +1,45 @@
 # FPS CORE 1.0 implementation
 
+## 2026-10-11 — ordinary Play prototype activation, latest checkpoint
+
+User priority supersedes previous inactive-map visual gate. GameModeConfig selects
+EndlessSurvivalPrototype by default in Studio (LiveMode legacy). init exclusively
+starts CorporateMap/ZombieService/WeaponService/EndlessPrototype; old OfficeRun
+preserved in ServerStorage. Minimal preview uses existing weapon phases/remotes,
+constant5-NPC cap, genuine kills/death and restart on same map. No XP, pressure
+curve, floor objectives/elevators, economy or profile writes. Mode-aware UI labels
+and hidden research buttons. Prototype daylight/sign facing corrected from actual view.
+
+Ordinary Play observed for all3 weapons: shooting/ammo/reload, natural NPC attacks
+and death, A/D traversal to both side zones, results restart and real AKM NPC kills.
+Main-map car/rack/container collisions passed. Native screenshots saved; Edit preview
+visible. Legacy rollback startup checked, then prototype default restored. Sources
+match Rojo Edit. No automatic .rbxl save/Git/publication/settings. Stop for user
+assessment; detailed CURRENT section in AI/ENDLESS_MIGRATION_PROGRESS.md supersedes
+older inactive-prototype instructions below.
+
+## 2026-10-11 — endless migration M0 / isolated M1 v2 checkpoint
+
+New endless master read fully; dependency/rollback audit recorded in
+AI/ENDLESS_MIGRATION_PROGRESS.md. Authored CorporateLayout/CorporateMap adds
+three fixed zones,18 lanes,stable imported hulls and two ramp-access maintenance
+decks. ZombieService.Configure optional fifth worldModel enables correct authored
+spawn-overlap checks while four-argument legacy calls retain OfficeRun semantics.
+init and floor generation unchanged; mode selector/director/XP are not implemented.
+
+Native Studio v2:48 no-jump paths and ground clearances passed, two dedicated
+Humanoid walks passed, real production NPC approach/attack in all3 zones passed.
+v1 rack/container top-of-cover failures retained; v2 decks/ramps passed native ascent
+and attack for car/rack/container. Real production central crossing walk/sprint/slide
+and three player-versus-prop collisions passed. Results are in tests/results/EndlessMap*.
+These are normal-time runtime observations, not mocks or FPS/balance guarantees.
+
+Visual map gate remains BLOCKED: old/new/debug3D absent in captures, GUI visible;
+second temporary CaptureService diagnostic also blank. No accepted art screenshot,
+full traversal review or fun assessment. Do not promote M1 or start M2 before gate.
+QA objects removed by Stop; owned Edit preview removed, OfficeRun and user rbxl
+preserved. No Git mutation, place save/publication or Experience settings change.
+
 ## 2026-10-09 — research implementation, real DataStore gate blocked
 
 Five centralized research areas; server-only strict versioned profiles, atomic

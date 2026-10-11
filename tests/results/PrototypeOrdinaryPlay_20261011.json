@@ -1,0 +1,1107 @@
+{
+  "Scope": "Ordinary Play startup through shipping init, CorporateComplex at (0,180,0). Observer only; no isolated maps or injected spawn/combat service. Fourth record adds camera-assisted natural NPC head/body hit test after real NewRun click.",
+  "Weapons": [
+    {
+      "Feedback": [
+        {
+          "Ammo": 11,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Glock"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Duration": 1.5,
+          "Kind": "ReloadStarted"
+        },
+        {
+          "Ammo": 11,
+          "Kind": "Ammo",
+          "Reloading": true,
+          "Weapon": "Glock"
+        },
+        {
+          "Ammo": 12,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Glock"
+        },
+        {
+          "Ammo": 12,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Glock"
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        }
+      ],
+      "HealthSamples": [
+        {
+          "HP": 88,
+          "At": 3563.8426086
+        },
+        {
+          "HP": 89.00399017333984,
+          "At": 3564.8465493999993
+        },
+        {
+          "HP": 77.00399017333984,
+          "At": 3565.4677580999996
+        },
+        {
+          "HP": 78.00506591796875,
+          "At": 3565.8462958
+        },
+        {
+          "HP": 66.00506591796875,
+          "At": 3566.3509776
+        },
+        {
+          "HP": 67.0074234008789,
+          "At": 3566.8502393999997
+        },
+        {
+          "HP": 55.007423400878906,
+          "At": 3567.255330499999
+        },
+        {
+          "HP": 56.00836181640625,
+          "At": 3567.8498586999995
+        },
+        {
+          "HP": 44.00836181640625,
+          "At": 3568.1379350999996
+        },
+        {
+          "HP": 45.01164627075195,
+          "At": 3568.8547663
+        },
+        {
+          "HP": 33.01164627075195,
+          "At": 3569.0427904
+        },
+        {
+          "HP": 34.01606750488281,
+          "At": 3569.8550154999994
+        },
+        {
+          "HP": 22.016067504882812,
+          "At": 3569.9244536999995
+        },
+        {
+          "HP": 10.016067504882812,
+          "At": 3570.8285865999997
+        },
+        {
+          "HP": 11.020027160644531,
+          "At": 3570.8620167999998
+        },
+        {
+          "HP": -0.9799728393554688,
+          "At": 3571.6418221999993
+        },
+        {
+          "HP": 0,
+          "At": 3571.6507715
+        }
+      ],
+      "Weapon": "Glock"
+    },
+    {
+      "Feedback": [
+        {
+          "Ammo": 29,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 28,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 27,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 26,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 25,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 24,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 23,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 22,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 21,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Duration": 2.6,
+          "Kind": "ReloadStarted"
+        },
+        {
+          "Ammo": 21,
+          "Kind": "Ammo",
+          "Reloading": true,
+          "Weapon": "AKM"
+        },
+        {
+          "Ammo": 30,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Ammo": 30,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        }
+      ],
+      "HealthSamples": [
+        {
+          "HP": 88,
+          "At": 3639.34033
+        },
+        {
+          "HP": 89.00335693359375,
+          "At": 3640.343045899999
+        },
+        {
+          "HP": 77.00335693359375,
+          "At": 3640.9647387999994
+        },
+        {
+          "HP": 78.00717163085938,
+          "At": 3641.347412
+        },
+        {
+          "HP": 79.0080795288086,
+          "At": 3642.3476032999997
+        },
+        {
+          "HP": 67.0080795288086,
+          "At": 3642.5895937999994
+        },
+        {
+          "HP": 68.01107025146484,
+          "At": 3643.3520344
+        },
+        {
+          "HP": 56.011070251464844,
+          "At": 3643.3641602
+        },
+        {
+          "HP": 44.011070251464844,
+          "At": 3644.2144943999992
+        },
+        {
+          "HP": 45.01225280761719,
+          "At": 3644.3530518999996
+        },
+        {
+          "HP": 33.01225280761719,
+          "At": 3644.9882579999994
+        },
+        {
+          "HP": 34.014644622802734,
+          "At": 3645.3518242
+        },
+        {
+          "HP": 22.014644622802734,
+          "At": 3645.8383620999994
+        },
+        {
+          "HP": 23.015687942504883,
+          "At": 3646.3547947999996
+        },
+        {
+          "HP": 11.015687942504883,
+          "At": 3646.6137011
+        },
+        {
+          "HP": 12.019039154052734,
+          "At": 3647.3590828999995
+        },
+        {
+          "HP": 0.019039154052734375,
+          "At": 3647.4637268999995
+        },
+        {
+          "HP": -11.980960845947266,
+          "At": 3648.2398040999997
+        },
+        {
+          "HP": 0,
+          "At": 3648.2401633
+        }
+      ],
+      "Weapon": "AKM"
+    },
+    {
+      "Feedback": [
+        {
+          "Ammo": 5,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Duration": 1.05,
+          "Kind": "ReloadStarted"
+        },
+        {
+          "Ammo": 5,
+          "Kind": "Ammo",
+          "Reloading": true,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Ammo": 6,
+          "Kind": "Ammo",
+          "Reloading": true,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Ammo": 6,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Ammo": 6,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        }
+      ],
+      "HealthSamples": [
+        {
+          "HP": 88,
+          "At": 3695.5489325
+        },
+        {
+          "HP": 89.00035095214844,
+          "At": 3696.5474233999994
+        },
+        {
+          "HP": 77.00035095214844,
+          "At": 3697.1723041999994
+        },
+        {
+          "HP": 78.0003890991211,
+          "At": 3697.5469365999998
+        },
+        {
+          "HP": 79.00399780273438,
+          "At": 3698.5488433
+        },
+        {
+          "HP": 67.00399780273438,
+          "At": 3698.7938657999994
+        },
+        {
+          "HP": 68.00894165039062,
+          "At": 3699.5556656
+        },
+        {
+          "HP": 56.008941650390625,
+          "At": 3700.4179661999997
+        },
+        {
+          "HP": 57.011932373046875,
+          "At": 3700.558997599999
+        },
+        {
+          "HP": 58.01622772216797,
+          "At": 3701.5636828999995
+        },
+        {
+          "HP": 46.01622772216797,
+          "At": 3702.0433970999993
+        },
+        {
+          "HP": 47.01665115356445,
+          "At": 3702.5639364999997
+        },
+        {
+          "HP": 35.01665115356445,
+          "At": 3702.8519115
+        },
+        {
+          "HP": 36.01931381225586,
+          "At": 3703.5670891
+        },
+        {
+          "HP": 24.01931381225586,
+          "At": 3703.6670243999997
+        },
+        {
+          "HP": 12.01931381225586,
+          "At": 3704.4805245999996
+        },
+        {
+          "HP": 13.02356243133545,
+          "At": 3704.5714596
+        },
+        {
+          "HP": 1.0235624313354492,
+          "At": 3705.2919113999997
+        },
+        {
+          "HP": 2.0268537998199463,
+          "At": 3705.5762403
+        },
+        {
+          "HP": -9.973146438598633,
+          "At": 3706.1049929
+        },
+        {
+          "HP": 0,
+          "At": 3706.1100594
+        }
+      ],
+      "Weapon": "Mossberg"
+    },
+    {
+      "Feedback": [
+        {
+          "Ammo": 5,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Duration": 1.05,
+          "Kind": "ReloadStarted"
+        },
+        {
+          "Ammo": 5,
+          "Kind": "Ammo",
+          "Reloading": true,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Ammo": 6,
+          "Kind": "Ammo",
+          "Reloading": true,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Ammo": 6,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Ammo": 6,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "Mossberg"
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 29,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Headshot",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 28,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Headshot",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 27,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Headshot",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 26,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 25,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 24,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 23,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Headshot",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 22,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Body",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 21,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 20,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Headshot",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 19,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Body",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 18,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 17,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 16,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 15,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 14,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 13,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 12,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 11,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 10,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 9,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 8,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Headshot",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 7,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Headshot",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 6,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "Headshot",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 5,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 4,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 3,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 2,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 1,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Hit": "World",
+          "Kind": "Shot"
+        },
+        {
+          "Duration": 2.6,
+          "Kind": "ReloadStarted"
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": true,
+          "Weapon": "AKM"
+        },
+        {
+          "Ammo": 30,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Ammo": 30,
+          "Kind": "Ammo",
+          "Reloading": false,
+          "Weapon": "AKM"
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        },
+        {
+          "Ammo": 0,
+          "Kind": "Ammo",
+          "Reloading": false
+        }
+      ],
+      "HealthSamples": [
+        {
+          "HP": 88,
+          "At": 3695.5489325
+        },
+        {
+          "HP": 89.00035095214844,
+          "At": 3696.5474233999994
+        },
+        {
+          "HP": 77.00035095214844,
+          "At": 3697.1723041999994
+        },
+        {
+          "HP": 78.0003890991211,
+          "At": 3697.5469365999998
+        },
+        {
+          "HP": 79.00399780273438,
+          "At": 3698.5488433
+        },
+        {
+          "HP": 67.00399780273438,
+          "At": 3698.7938657999994
+        },
+        {
+          "HP": 68.00894165039062,
+          "At": 3699.5556656
+        },
+        {
+          "HP": 56.008941650390625,
+          "At": 3700.4179661999997
+        },
+        {
+          "HP": 57.011932373046875,
+          "At": 3700.558997599999
+        },
+        {
+          "HP": 58.01622772216797,
+          "At": 3701.5636828999995
+        },
+        {
+          "HP": 46.01622772216797,
+          "At": 3702.0433970999993
+        },
+        {
+          "HP": 47.01665115356445,
+          "At": 3702.5639364999997
+        },
+        {
+          "HP": 35.01665115356445,
+          "At": 3702.8519115
+        },
+        {
+          "HP": 36.01931381225586,
+          "At": 3703.5670891
+        },
+        {
+          "HP": 24.01931381225586,
+          "At": 3703.6670243999997
+        },
+        {
+          "HP": 12.01931381225586,
+          "At": 3704.4805245999996
+        },
+        {
+          "HP": 13.02356243133545,
+          "At": 3704.5714596
+        },
+        {
+          "HP": 1.0235624313354492,
+          "At": 3705.2919113999997
+        },
+        {
+          "HP": 2.0268537998199463,
+          "At": 3705.5762403
+        },
+        {
+          "HP": -9.973146438598633,
+          "At": 3706.1049929
+        },
+        {
+          "HP": 0,
+          "At": 3706.1100594
+        },
+        {
+          "HP": 88,
+          "At": 3778.8433950999997
+        },
+        {
+          "HP": 89.00112915039062,
+          "At": 3779.8429846999998
+        },
+        {
+          "HP": 77.00112915039062,
+          "At": 3780.4685585999996
+        },
+        {
+          "HP": 78.00336456298828,
+          "At": 3780.8481622
+        },
+        {
+          "HP": 79.00796508789062,
+          "At": 3781.8506168999993
+        },
+        {
+          "HP": 67.00796508789062,
+          "At": 3782.0925214999997
+        },
+        {
+          "HP": 55.007965087890625,
+          "At": 3782.8507045999995
+        },
+        {
+          "HP": 56.012638092041016,
+          "At": 3782.8508978
+        },
+        {
+          "HP": 44.012638092041016,
+          "At": 3783.7220669999997
+        },
+        {
+          "HP": 45.0165901184082,
+          "At": 3783.8586072
+        },
+        {
+          "HP": 33.0165901184082,
+          "At": 3784.4756911999993
+        },
+        {
+          "HP": 34.020111083984375,
+          "At": 3784.8585300999994
+        },
+        {
+          "HP": 22.020111083984375,
+          "At": 3785.3214110999998
+        },
+        {
+          "HP": 23.02305793762207,
+          "At": 3785.8623952
+        },
+        {
+          "HP": 11.02305793762207,
+          "At": 3786.0969559999994
+        },
+        {
+          "HP": 12.024214744567871,
+          "At": 3786.8637881999994
+        },
+        {
+          "HP": 0.024214744567871094,
+          "At": 3787.7214183999995
+        },
+        {
+          "HP": 1.027054786682129,
+          "At": 3787.870814
+        },
+        {
+          "HP": -10.972945213317871,
+          "At": 3788.5045925999993
+        },
+        {
+          "HP": 0,
+          "At": 3788.5117487999996
+        }
+      ],
+      "Weapon": "AKM",
+      "Scope": "Ordinary prototype restarted via Results.NewRun; natural NPCs; temporary client camera aim, actual held mouse fires, no NPC/damage/ammo edits."
+    }
+  ],
+  "Map": {
+    "Version": 2,
+    "Parts": 143,
+    "VisibleMeshes": 57,
+    "CoverHulls": 47,
+    "Spawn": {
+      "X": 0,
+      "Y": 183,
+      "Z": 20
+    },
+    "ZoneCentresX": [
+      -106,
+      0,
+      106
+    ]
+  },
+  "Movement": {
+    "AKM_ToService": {
+      "X": 77.96098,
+      "Y": 183,
+      "Z": 19.77707
+    },
+    "Mossberg_ToParking": {
+      "X": -77.85228,
+      "Y": 183,
+      "Z": 19.7994
+    },
+    "Input": "D/A 5 seconds from ordinary spawn, no teleport"
+  },
+  "Restart": {
+    "BeforeEpoch": 2,
+    "AfterEpoch": 3,
+    "State": "ChoosingWeapon",
+    "Spawn": {
+      "X": 0,
+      "Y": 183,
+      "Z": 20
+    },
+    "SameAuthoredLayout": true,
+    "PostRestartNaturalKillsObserved": 3
+  },
+  "Visual": {
+    "Observed": true,
+    "Daylight": true,
+    "Images": [
+      "Prototype_AKM_Service_20261011.png",
+      "Prototype_Mossberg_Parking_20261011.png"
+    ],
+    "Limit": "Technical prototype is visibly sparse/open; visuals observed, enjoyable final combat layout not accepted"
+  },
+  "ConsoleErrorsObserved": 0,
+  "OldFloorDirectorStarted": false,
+  "XPImplemented": false,
+  "PersistenceTested": false
+}

@@ -72,11 +72,19 @@ function Results.new(state,remote)
    researchNotice.Text..="\nИзолированный прогресс Studio."
    if research:GetAttribute("Status")=="Unavailable"and game.PlaceId==0 then researchNotice.Text..="\nДля сохранения нужна опубликованная тестовая игра."end
   elseif mode=="Mock"then researchNotice.Text..="\nТестовое хранилище: прогресс не сохраняется между сессиями."end
+  local prototype=state:GetAttribute("GameMode")=="EndlessSurvivalPrototype"
+  if prototype then
+   summary.Text=string.format("ENDLESS SURVIVAL PROTOTYPE\nУБИЙСТВА %d   /   ВРЕМЯ %02d:%02d",data:GetAttribute("Kills")or 0,math.floor(duration/60),duration%60)
+   build.Text="ОФИС / ПАРКОВКА / ТЕХНИЧЕСКАЯ ЗОНА"
+   reset.Text="Новый заход начинается на той же карте. Выберите оружие заново."
+   researchNotice.Text="Это прототип карты и боя. XP, таланты и исследования здесь пока отключены; постоянные данные не изменяются."
+  end
   if data:GetAttribute("NewRecord")==true then researchNotice.Text..="\nНОВЫЙ ЛИЧНЫЙ РЕКОРД!"end
   local c=Players.LocalPlayer.Character;local h=c and c:FindFirstChildOfClass("Humanoid")
   newRun.Text=phase=="ResettingRun"and "ПОДГОТОВКА ПЕРВОГО ЭТАЖА…"or phase=="RunRecoveryFailed"and "ПОВТОРИТЬ ПОДГОТОВКУ ЭТАЖА"or h and h.Health>0 and "НОВЫЙ ЗАБЕГ"or "ОЖИДАНИЕ ВОЗРОЖДЕНИЯ…"
   newRun.Active=(phase=="RunEnded"or phase=="RunRecoveryFailed")and h~=nil and h.Health>0 and (phase=="RunRecoveryFailed"or Players.LocalPlayer:GetAttribute("RunCharacterReady")==true)
   researchButton.Active=phase=="RunEnded";researchButton.Selectable=researchButton.Active
+  researchButton.Visible=not prototype
  end
  self.Refresh=refresh
  state.AttributeChanged:Connect(refresh);data.AttributeChanged:Connect(refresh);research.AttributeChanged:Connect(refresh)

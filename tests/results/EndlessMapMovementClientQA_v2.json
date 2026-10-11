@@ -1,0 +1,4221 @@
+{
+  "Scope": "Native client observer of production movement controls",
+  "Samples": [
+    {
+      "Y": 403,
+      "X": 320.57012939453125,
+      "Time": 0.05396589999963908,
+      "Z": 0,
+      "Speed": 15.99712085723877,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 321.4369201660156,
+      "Time": 0.10510269999940647,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 322.2370910644531,
+      "Time": 0.15872309999940626,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 323.10394287109375,
+      "Time": 0.21222769999985758,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 323.9707946777344,
+      "Time": 0.2661313999997219,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 324.837646484375,
+      "Time": 0.31991589999961434,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 325.6378173828125,
+      "Time": 0.371018599999843,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 326.57135009765625,
+      "Time": 0.4259065999995073,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 327.37152099609375,
+      "Time": 0.47861029999967286,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 328.17169189453125,
+      "Time": 0.528690999999526,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 329.0385437011719,
+      "Time": 0.578873599999497,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 329.9053955078125,
+      "Time": 0.6331556999994064,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 330.7722473144531,
+      "Time": 0.6887244999998074,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 331.5724182128906,
+      "Time": 0.7405890999998519,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 332.3725891113281,
+      "Time": 0.791517699999531,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 333.23944091796875,
+      "Time": 0.8452799999995477,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 334.1062927246094,
+      "Time": 0.8967254999997749,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 334.9064636230469,
+      "Time": 0.9494911000001593,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 335.7733154296875,
+      "Time": 1.0038338999993357,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 336.6401672363281,
+      "Time": 1.0549235999997109,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 337.4403381347656,
+      "Time": 1.1085192000000461,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 338.30718994140625,
+      "Time": 1.159176699999989,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 339.10736083984375,
+      "Time": 1.2123068999999305,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 339.9742126464844,
+      "Time": 1.266114999999445,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 340.7743835449219,
+      "Time": 1.3163868000001457,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 341.7079162597656,
+      "Time": 1.370896499999617,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 342.5080871582031,
+      "Time": 1.4242418999992879,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 343.37493896484375,
+      "Time": 1.4750736999994842,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 344.17510986328125,
+      "Time": 1.5251336000001174,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 344.97528076171875,
+      "Time": 1.5797329999995782,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 345.8421325683594,
+      "Time": 1.63222179999957,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 346.708984375,
+      "Time": 1.6867391999994652,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 347.5091552734375,
+      "Time": 1.7370375999998942,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 348.3760070800781,
+      "Time": 1.790382000000136,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 349.1761779785156,
+      "Time": 1.84121899999991,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 350.04302978515625,
+      "Time": 1.8963779999994586,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 350.9098815917969,
+      "Time": 1.9498711999995066,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 351.7767333984375,
+      "Time": 2.003598299999794,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 352.6435852050781,
+      "Time": 2.0587563999997656,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 353.51043701171875,
+      "Time": 2.1127747000000454,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 354.3772888183594,
+      "Time": 2.166440599999987,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 355.244140625,
+      "Time": 2.21989880000001,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 356.1109924316406,
+      "Time": 2.271015299999817,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 356.9111633300781,
+      "Time": 2.3238727999996627,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 357.7113342285156,
+      "Time": 2.3745556999992914,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 358.5115051269531,
+      "Time": 2.4246038000001136,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 359.37835693359375,
+      "Time": 2.477853299999879,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 360.17852783203125,
+      "Time": 2.528674299999693,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 361.0453796386719,
+      "Time": 2.5824497999992673,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 361.8455505371094,
+      "Time": 2.633640199999718,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 362.7790832519531,
+      "Time": 2.6878804999996646,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 363.5792541503906,
+      "Time": 2.741234799999802,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 364.44610595703125,
+      "Time": 2.795183199999883,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 365.3129577636719,
+      "Time": 2.8461655000000974,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 366.1131286621094,
+      "Time": 2.898910999999316,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 366.97998046875,
+      "Time": 2.953831099999661,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 367.8468322753906,
+      "Time": 3.0078795999997965,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 368.6470031738281,
+      "Time": 3.05810719999954,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 369.51385498046875,
+      "Time": 3.1115945000001375,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 370.3807067871094,
+      "Time": 3.166102199999841,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 371.24755859375,
+      "Time": 3.219714500000009,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 372.1144104003906,
+      "Time": 3.2742724999998245,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 373.0479431152344,
+      "Time": 3.329146899999614,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 373.8481140136719,
+      "Time": 3.3820553999994445,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 374.6482849121094,
+      "Time": 3.4327665999999226,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 375.51513671875,
+      "Time": 3.4872150999999576,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 376.3819885253906,
+      "Time": 3.540325899999516,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 377.1821594238281,
+      "Time": 3.590371799999957,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 377.9823303222656,
+      "Time": 3.641828400000122,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 378.84918212890625,
+      "Time": 3.694979799999601,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 379.7160339355469,
+      "Time": 3.749689799999942,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 380.5828857421875,
+      "Time": 3.803801399999429,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 381.4497375488281,
+      "Time": 3.857249199999387,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 382.2499084472656,
+      "Time": 3.9078466000000844,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 383.11676025390625,
+      "Time": 3.960911999999553,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 383.91693115234375,
+      "Time": 4.01146719999997,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 384.71710205078125,
+      "Time": 4.062918199999331,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 385.5839538574219,
+      "Time": 4.115361099999973,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 386.3841247558594,
+      "Time": 4.166110499999377,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 387.2509765625,
+      "Time": 4.219293799999832,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 388.0511474609375,
+      "Time": 4.269328999999743,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 388.851318359375,
+      "Time": 4.319715599999654,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 389.6514892578125,
+      "Time": 4.369790299999295,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 390.5183410644531,
+      "Time": 4.423544199999924,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 391.3185119628906,
+      "Time": 4.474322699999902,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 392.2520446777344,
+      "Time": 4.528817099999287,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 393.0522155761719,
+      "Time": 4.583049299999402,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 393.8523864746094,
+      "Time": 4.633395199999541,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 394.71923828125,
+      "Time": 4.6877064999998765,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 395.5860900878906,
+      "Time": 4.740452000000005,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 396.45294189453125,
+      "Time": 4.7947410999995554,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 397.3197937011719,
+      "Time": 4.848618999999417,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 398.1199645996094,
+      "Time": 4.898848099999668,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 398.98681640625,
+      "Time": 4.953343999999561,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 399.8536682128906,
+      "Time": 5.007455699999809,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 400.72052001953125,
+      "Time": 5.061084299999493,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 401.52069091796875,
+      "Time": 5.111582999999882,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 402.32086181640625,
+      "Time": 5.161939099999472,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 403.1877136230469,
+      "Time": 5.214935999999398,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 403.9878845214844,
+      "Time": 5.265281399999367,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 404.854736328125,
+      "Time": 5.316126499999882,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 405.6549072265625,
+      "Time": 5.369578099999671,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 406.455078125,
+      "Time": 5.420211999999992,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 407.3219299316406,
+      "Time": 5.474836200000027,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 408.18878173828125,
+      "Time": 5.527756899999986,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 408.98895263671875,
+      "Time": 5.578015999999479,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 409.78912353515625,
+      "Time": 5.628501999999571,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 410.58929443359375,
+      "Time": 5.678874399999586,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 411.4561462402344,
+      "Time": 5.732268199999453,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 412.2563171386719,
+      "Time": 5.7828128999999535,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 413.1898498535156,
+      "Time": 5.837371300000086,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 413.9900207519531,
+      "Time": 5.889893599999596,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 414.7901916503906,
+      "Time": 5.940291399999296,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 415.5903625488281,
+      "Time": 5.990754899999956,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 416.45721435546875,
+      "Time": 6.0448349999996935,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 417.25738525390625,
+      "Time": 6.095640399999866,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 418.1242370605469,
+      "Time": 6.148957899999914,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 418.9910888671875,
+      "Time": 6.202943100000084,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 419.8579406738281,
+      "Time": 6.256798200000048,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 420.6581115722656,
+      "Time": 6.30691779999961,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 421.4582824707031,
+      "Time": 6.35720289999972,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 422.2584533691406,
+      "Time": 6.4080465999995795,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 423.12530517578125,
+      "Time": 6.461606400000164,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 423.9921569824219,
+      "Time": 6.51490289999947,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 424.7923278808594,
+      "Time": 6.565218299999287,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 425.6591796875,
+      "Time": 6.6188845999995465,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 426.4593505859375,
+      "Time": 6.669696199999635,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 427.259521484375,
+      "Time": 6.719785599999341,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 428.1263732910156,
+      "Time": 6.773722999999336,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 428.99322509765625,
+      "Time": 6.824106699999902,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 429.79339599609375,
+      "Time": 6.878335899999911,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 430.6602478027344,
+      "Time": 6.931984199999533,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 431.527099609375,
+      "Time": 6.985702999999376,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 432.3272705078125,
+      "Time": 7.035792599999695,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 433.1941223144531,
+      "Time": 7.089841699999852,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 433.9942932128906,
+      "Time": 7.140360200000032,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 434.86114501953125,
+      "Time": 7.194098099999792,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 435.66131591796875,
+      "Time": 7.244575499999883,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 436.46148681640625,
+      "Time": 7.294801799999732,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 437.3283386230469,
+      "Time": 7.348724099999345,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 438.1285095214844,
+      "Time": 7.399181400000089,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 438.995361328125,
+      "Time": 7.45213639999929,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 439.7955322265625,
+      "Time": 7.5029592000000775,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 440.6623840332031,
+      "Time": 7.5570919000001595,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 441.52923583984375,
+      "Time": 7.6111510000000635,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 442.32940673828125,
+      "Time": 7.661227699999472,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 443.1962585449219,
+      "Time": 7.7153136999995695,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 444.0631103515625,
+      "Time": 7.768784799999594,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 444.86328125,
+      "Time": 7.818864400000166,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 445.7301330566406,
+      "Time": 7.873194299999341,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 446.5303039550781,
+      "Time": 7.924153299999489,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 447.39715576171875,
+      "Time": 7.977921400000014,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 448.19732666015625,
+      "Time": 8.028746599999977,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 449.0641784667969,
+      "Time": 8.082259199999498,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 449.8643493652344,
+      "Time": 8.13255239999944,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 450.731201171875,
+      "Time": 8.18657549999989,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 451.5980529785156,
+      "Time": 8.24006559999998,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 452.46490478515625,
+      "Time": 8.294342600000164,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 453.26507568359375,
+      "Time": 8.344502899999497,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 454.1319274902344,
+      "Time": 8.398535499999525,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 454.998779296875,
+      "Time": 8.45252470000014,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 455.8656311035156,
+      "Time": 8.506255299999793,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 456.73248291015625,
+      "Time": 8.558222300000125,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 457.53265380859375,
+      "Time": 8.610247300000083,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 458.33282470703125,
+      "Time": 8.66150749999997,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 459.1996765136719,
+      "Time": 8.715295799999694,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 460.0665283203125,
+      "Time": 8.76901480000015,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 460.9333801269531,
+      "Time": 8.824158800000077,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 461.80023193359375,
+      "Time": 8.877365199999986,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 462.6670837402344,
+      "Time": 8.932766799999627,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 463.533935546875,
+      "Time": 8.98603169999933,
+      "Z": 0,
+      "Speed": 16,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 464.4769592285156,
+      "Time": 9.036428800000067,
+      "Z": 0,
+      "Speed": 23.929067611694336,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 465.7768249511719,
+      "Time": 9.08945279999989,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 466.9768981933594,
+      "Time": 9.139993499999946,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 468.2769775390625,
+      "Time": 9.19353079999928,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 469.47705078125,
+      "Time": 9.244661599999745,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 470.7771301269531,
+      "Time": 9.299243999999817,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 472.07720947265625,
+      "Time": 9.352314899999328,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 473.27728271484375,
+      "Time": 9.403034099999786,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 474.5773620605469,
+      "Time": 9.456918299999415,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 475.7774353027344,
+      "Time": 9.507160499999372,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 477.0775146484375,
+      "Time": 9.561044999999467,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 478.3775939941406,
+      "Time": 9.61472330000015,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 479.5776672363281,
+      "Time": 9.666577799999686,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 480.87774658203125,
+      "Time": 9.718956199999411,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 482.1778259277344,
+      "Time": 9.772876999999426,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 483.4779052734375,
+      "Time": 9.828063699999802,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 484.7779846191406,
+      "Time": 9.88200280000001,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 486.07806396484375,
+      "Time": 9.935309399999824,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 487.27813720703125,
+      "Time": 9.985597399999278,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 488.7076721191406,
+      "Time": 10.039537199999359,
+      "Z": 0,
+      "Speed": 29.624040603637695,
+      "Floor": "Concrete",
+      "WalkSpeed": 29.578943252563477,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 490.1651611328125,
+      "Time": 10.090499699999782,
+      "Z": 0,
+      "Speed": 28.746498107910156,
+      "Floor": "Concrete",
+      "WalkSpeed": 28.686973571777344,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 491.69451904296875,
+      "Time": 10.14471599999979,
+      "Z": 0,
+      "Speed": 27.792591094970703,
+      "Floor": "Concrete",
+      "WalkSpeed": 27.738672256469727,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 493.17242431640625,
+      "Time": 10.19906869999977,
+      "Z": 0,
+      "Speed": 26.841304779052734,
+      "Floor": "Concrete",
+      "WalkSpeed": 26.78731346130371,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 494.70709228515625,
+      "Time": 10.253309199999421,
+      "Z": 0,
+      "Speed": 25.88616371154785,
+      "Floor": "Concrete",
+      "WalkSpeed": 25.837448120117188,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 495.9748840332031,
+      "Time": 10.307409600000028,
+      "Z": 0,
+      "Speed": 24.951486587524414,
+      "Floor": "Concrete",
+      "WalkSpeed": 24.89125633239746,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 497.299072265625,
+      "Time": 10.360186500000054,
+      "Z": 0,
+      "Speed": 24.005720138549805,
+      "Floor": "Concrete",
+      "WalkSpeed": 23.968265533447266,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 498.4757385253906,
+      "Time": 10.410647499999868,
+      "Z": 0,
+      "Speed": 23.130420684814453,
+      "Floor": "Concrete",
+      "WalkSpeed": 23.08480453491211,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 499.6083068847656,
+      "Time": 10.461208599999736,
+      "Z": 0,
+      "Speed": 22.254039764404297,
+      "Floor": "Concrete",
+      "WalkSpeed": 22.20013999938965,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 500.786376953125,
+      "Time": 10.514943299999686,
+      "Z": 0,
+      "Speed": 21.304121017456055,
+      "Floor": "Concrete",
+      "WalkSpeed": 21.259531021118164,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 501.8279724121094,
+      "Time": 10.565229899999395,
+      "Z": 0,
+      "Speed": 20.422447204589844,
+      "Floor": "Concrete",
+      "WalkSpeed": 20.379695892333984,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 502.82568359375,
+      "Time": 10.615252799999325,
+      "Z": 0,
+      "Speed": 19.56228256225586,
+      "Floor": "Concrete",
+      "WalkSpeed": 19.503955841064453,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 503.8573303222656,
+      "Time": 10.6699052999993,
+      "Z": 0,
+      "Speed": 18.604263305664062,
+      "Floor": "Concrete",
+      "WalkSpeed": 18.547828674316406,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 504.8377685546875,
+      "Time": 10.723177299999406,
+      "Z": 0,
+      "Speed": 17.737384796142578,
+      "Floor": "Concrete",
+      "WalkSpeed": 17.672645568847656,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 505.76702880859375,
+      "Time": 10.77812989999984,
+      "Z": 0,
+      "Speed": 16.710683822631836,
+      "Floor": "Concrete",
+      "WalkSpeed": 16.653865814208984,
+      "Sliding": true
+    },
+    {
+      "Y": 403,
+      "X": 506.72442626953125,
+      "Time": 10.831667299999935,
+      "Z": 0,
+      "Speed": 23.499568939208984,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 508.023193359375,
+      "Time": 10.884859699999652,
+      "Z": 0,
+      "Speed": 23.999998092651367,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 509.2232666015625,
+      "Time": 10.936175299999377,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 510.5233459472656,
+      "Time": 10.989380699999856,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 511.7234191894531,
+      "Time": 11.039879799999653,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 512.9232177734375,
+      "Time": 11.090311500000098,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 514.222900390625,
+      "Time": 11.144279299999653,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 515.5225830078125,
+      "Time": 11.19871559999956,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 516.822265625,
+      "Time": 11.252908699999352,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 518.1219482421875,
+      "Time": 11.307807700000012,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 519.421630859375,
+      "Time": 11.360192600000119,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 520.621337890625,
+      "Time": 11.410351499999706,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 521.821044921875,
+      "Time": 11.460496799999419,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 523.1207275390625,
+      "Time": 11.51485749999938,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 524.3204345703125,
+      "Time": 11.565586499999881,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 525.6201171875,
+      "Time": 11.618886100000054,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 526.9197998046875,
+      "Time": 11.672814599999583,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 528.1195068359375,
+      "Time": 11.72365179999997,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 529.419189453125,
+      "Time": 11.776737999999568,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 530.618896484375,
+      "Time": 11.827097699999285,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 531.818603515625,
+      "Time": 11.877214699999968,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 533.018310546875,
+      "Time": 11.927854599999591,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 534.3179931640625,
+      "Time": 11.980775600000015,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 535.5177001953125,
+      "Time": 12.031820499999412,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 536.8173828125,
+      "Time": 12.085350100000142,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 538.1170654296875,
+      "Time": 12.139470699999947,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 539.416748046875,
+      "Time": 12.193678799999361,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 540.7164306640625,
+      "Time": 12.248876599999676,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 542.01611328125,
+      "Time": 12.302492299999358,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 543.3157958984375,
+      "Time": 12.356356799999958,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 544.615478515625,
+      "Time": 12.410740399999668,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 545.9151611328125,
+      "Time": 12.463936499999363,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 547.1148681640625,
+      "Time": 12.514811499999269,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 548.3145751953125,
+      "Time": 12.565346999999747,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 549.6142578125,
+      "Time": 12.618072899999788,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 550.81396484375,
+      "Time": 12.668767299999672,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 552.1136474609375,
+      "Time": 12.722583299999314,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 553.3133544921875,
+      "Time": 12.773051000000123,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 554.5130615234375,
+      "Time": 12.823814899999888,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 555.812744140625,
+      "Time": 12.876333399999567,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 557.012451171875,
+      "Time": 12.926441199999317,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 558.212158203125,
+      "Time": 12.97698279999986,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 559.411865234375,
+      "Time": 13.028553499999362,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 560.7115478515625,
+      "Time": 13.08154099999956,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 562.01123046875,
+      "Time": 13.135833899999852,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 563.3109130859375,
+      "Time": 13.189368100000138,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 564.610595703125,
+      "Time": 13.243290599999455,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 565.9102783203125,
+      "Time": 13.297236800000064,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 567.1099853515625,
+      "Time": 13.34895669999969,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 568.40966796875,
+      "Time": 13.401800999999978,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 569.609375,
+      "Time": 13.451856699999553,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 570.80908203125,
+      "Time": 13.503002999999808,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 572.1087646484375,
+      "Time": 13.55629129999943,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 573.408447265625,
+      "Time": 13.609782799999266,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 574.608154296875,
+      "Time": 13.65995219999968,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 575.9078369140625,
+      "Time": 13.71424079999997,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 577.1075439453125,
+      "Time": 13.76556470000014,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 578.4072265625,
+      "Time": 13.819151699999566,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 579.7069091796875,
+      "Time": 13.872203699999773,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 580.9066162109375,
+      "Time": 13.923046099999738,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 582.206298828125,
+      "Time": 13.976016900000104,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 583.406005859375,
+      "Time": 14.027196699999877,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 584.7056884765625,
+      "Time": 14.081095099999402,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 586.00537109375,
+      "Time": 14.134846399999333,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 587.205078125,
+      "Time": 14.185762299999624,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 588.5047607421875,
+      "Time": 14.239441899999292,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 589.804443359375,
+      "Time": 14.293650599999637,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 591.1041259765625,
+      "Time": 14.347703200000069,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 592.40380859375,
+      "Time": 14.402684799999406,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 593.7034912109375,
+      "Time": 14.456386500000008,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 594.9031982421875,
+      "Time": 14.506742499999746,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 596.202880859375,
+      "Time": 14.55919349999931,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 597.402587890625,
+      "Time": 14.60986309999953,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 598.602294921875,
+      "Time": 14.660507399999915,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 599.9019775390625,
+      "Time": 14.713650899999266,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 601.1016845703125,
+      "Time": 14.764867899999444,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 602.4013671875,
+      "Time": 14.818894199999704,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 603.7010498046875,
+      "Time": 14.87224040000001,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 604.9007568359375,
+      "Time": 14.922477699999945,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 606.200439453125,
+      "Time": 14.976907199999914,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 403,
+      "X": 607.5001220703125,
+      "Time": 15.030670199999804,
+      "Z": 0,
+      "Speed": 24,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.084774399999333,
+      "Z": 0.08265972137451172,
+      "Speed": 0.002177358604967594,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.135021199999755,
+      "Z": 0.08265571296215057,
+      "Speed": 0.0019115550676360726,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.18533269999989,
+      "Z": 0.08265595883131027,
+      "Speed": 0.001361800474114716,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.239438099999461,
+      "Z": 0.08265580981969833,
+      "Speed": 0.0005233382107689977,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.294136999999864,
+      "Z": 0.08264395594596863,
+      "Speed": 0.00023314142890740186,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.348320799999783,
+      "Z": 0.08264091610908508,
+      "Speed": 0.000027878615583176725,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.401024899999356,
+      "Z": 0.08264216780662537,
+      "Speed": 0.000044747332140104845,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.451887399999578,
+      "Z": 0.08264309912919998,
+      "Speed": 0.00009459464490646496,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.503090799999882,
+      "Z": 0.08264368027448654,
+      "Speed": 0.00014594002277590334,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.55595059999996,
+      "Z": 0.08264335244894028,
+      "Speed": 0.000219189707422629,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0008544921875,
+      "Time": 15.609647700000096,
+      "Z": 0.08264139294624329,
+      "Speed": 0.0002965634921565652,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 608.0003051757812,
+      "Time": 15.659740799999781,
+      "Z": 0.08262737095355988,
+      "Speed": 0.0003748967428691685,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0000610351562,
+      "Time": 15.71421299999929,
+      "Z": 0.07876742631196976,
+      "Speed": 0.0038065037224441767,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001220703125,
+      "Time": 15.764331699999275,
+      "Z": 0.07866065204143524,
+      "Speed": 0.0038155086804181337,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001220703125,
+      "Time": 15.814431400000103,
+      "Z": 0.0786348357796669,
+      "Speed": 0.000745654571801424,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001220703125,
+      "Time": 15.868672999999944,
+      "Z": 0.07861793041229248,
+      "Speed": 0.0006880465662106872,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001831054688,
+      "Time": 15.92219489999934,
+      "Z": 0.07860369980335236,
+      "Speed": 0.0003274994669482112,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001831054688,
+      "Time": 15.976333799999338,
+      "Z": 0.07859212160110474,
+      "Speed": 0.00018654933955986053,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001831054688,
+      "Time": 16.03012949999993,
+      "Z": 0.07858266681432724,
+      "Speed": 0.0002548363117966801,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001831054688,
+      "Time": 16.080488099999457,
+      "Z": 0.07857257127761841,
+      "Speed": 0.00038541111280210316,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001831054688,
+      "Time": 16.133984899999632,
+      "Z": 0.07856189459562302,
+      "Speed": 0.0004989039734937251,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001831054688,
+      "Time": 16.185173899999427,
+      "Z": 0.07855124026536942,
+      "Speed": 0.0005805855616927147,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 608.0001831054688,
+      "Time": 16.239088100000117,
+      "Z": 0.07853879779577255,
+      "Speed": 0.000645497057121247,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.999755859375,
+      "X": 607.9999389648438,
+      "Time": 16.289348100000097,
+      "Z": 0.07851807028055191,
+      "Speed": 0.0011667113285511732,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0003662109375,
+      "Time": 16.342954299999292,
+      "Z": 0.0747104361653328,
+      "Speed": 0.0007438147440552711,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0003662109375,
+      "Time": 16.396698199999264,
+      "Z": 0.07467591017484665,
+      "Speed": 0.0004930482828058302,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0003662109375,
+      "Time": 16.44689930000004,
+      "Z": 0.07465588301420212,
+      "Speed": 0.0004477891488932073,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0003662109375,
+      "Time": 16.4980544,
+      "Z": 0.07464216649532318,
+      "Speed": 0.0004805689677596092,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0003662109375,
+      "Time": 16.551315599999725,
+      "Z": 0.07463152706623077,
+      "Speed": 0.0005469095194712281,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0004272460938,
+      "Time": 16.601523700000143,
+      "Z": 0.0746234804391861,
+      "Speed": 0.000592849391978234,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0004272460938,
+      "Time": 16.65526399999999,
+      "Z": 0.07461658120155334,
+      "Speed": 0.0006369609036482871,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0004272460938,
+      "Time": 16.705955399999766,
+      "Z": 0.07461085170507431,
+      "Speed": 0.0006719848024658859,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0004272460938,
+      "Time": 16.759607899999537,
+      "Z": 0.07460445910692215,
+      "Speed": 0.0007007341482676566,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0004272460938,
+      "Time": 16.813726399999723,
+      "Z": 0.0745975524187088,
+      "Speed": 0.0007215160876512527,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.99969482421875,
+      "X": 608.0004272460938,
+      "Time": 16.86472319999939,
+      "Z": 0.07459056377410889,
+      "Speed": 0.0007352379034273326,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.0001831054688,
+      "Time": 16.91700359999959,
+      "Z": 0.07072915136814117,
+      "Speed": 0.009891766123473644,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 16.967933199999607,
+      "Z": 0.07061606645584106,
+      "Speed": 0.0005416431813500822,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.02222619999975,
+      "Z": 0.0706031322479248,
+      "Speed": 0.0003222622908651829,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.0766294999994,
+      "Z": 0.07059085369110107,
+      "Speed": 0.00019814407278317958,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.13038139999935,
+      "Z": 0.07057857513427734,
+      "Speed": 0.0002775785105768591,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.180605699999433,
+      "Z": 0.07056565582752228,
+      "Speed": 0.0003693483886308968,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.234316600000056,
+      "Z": 0.07055029273033142,
+      "Speed": 0.00045841815881431103,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.28846969999995,
+      "Z": 0.07053417712450027,
+      "Speed": 0.000530337740201503,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.34363519999988,
+      "Z": 0.07051799446344376,
+      "Speed": 0.0005844842526130378,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.396364100000028,
+      "Z": 0.07050223648548126,
+      "Speed": 0.0006236548069864511,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608.000244140625,
+      "Time": 17.446966699999393,
+      "Z": 0.07048837840557098,
+      "Speed": 0.0006504352204501629,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996643066406,
+      "X": 608,
+      "Time": 17.497820599999613,
+      "Z": 0.07046879827976227,
+      "Speed": 0.0010876834858208895,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.550645399999667,
+      "Z": 0.0665469765663147,
+      "Speed": 0.0037679756060242653,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.600818299999446,
+      "Z": 0.0665108934044838,
+      "Speed": 0.00041604190482757986,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.655105599999843,
+      "Z": 0.06649691611528397,
+      "Speed": 0.00024378315720241517,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.709888999999748,
+      "Z": 0.0664854496717453,
+      "Speed": 0.00020874412439297885,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.763379999999415,
+      "Z": 0.06647296249866486,
+      "Speed": 0.000297668797429651,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.81790759999967,
+      "Z": 0.0664588212966919,
+      "Speed": 0.0003955093561671674,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.872119999999995,
+      "Z": 0.06644351035356522,
+      "Speed": 0.00048057036474347115,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.926720299999943,
+      "Z": 0.06642769277095795,
+      "Speed": 0.0005470890318974853,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 17.980327599999328,
+      "Z": 0.06641194969415665,
+      "Speed": 0.0005969943013042212,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 18.034032699999443,
+      "Z": 0.06639672815799713,
+      "Speed": 0.0006338630919344723,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9996337890625,
+      "X": 608.000244140625,
+      "Time": 18.08432889999949,
+      "Z": 0.06638336926698685,
+      "Speed": 0.000657917931675911,
+      "Floor": "Concrete",
+      "WalkSpeed": 24,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9997863769531,
+      "X": 607.999267578125,
+      "Time": 18.134877399999823,
+      "Z": 0.06694146245718002,
+      "Speed": 0.09755712002515793,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.99755859375,
+      "Time": 18.1849358999998,
+      "Z": 0.06621915102005005,
+      "Speed": 0.0054046958684921265,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9964599609375,
+      "Time": 18.238960799999404,
+      "Z": 0.0662212148308754,
+      "Speed": 0.0008120745769701898,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9955444335938,
+      "Time": 18.29339489999984,
+      "Z": 0.06619438529014587,
+      "Speed": 0.0007033615838736296,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9945678710938,
+      "Time": 18.348740099999304,
+      "Z": 0.06616953015327454,
+      "Speed": 0.0006876260158605874,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9933471679688,
+      "Time": 18.400854399999844,
+      "Z": 0.06613681465387344,
+      "Speed": 0.0008862784598022699,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9923706054688,
+      "Time": 18.451014999999643,
+      "Z": 0.06610776484012604,
+      "Speed": 0.0008588240598328412,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9917602539062,
+      "Time": 18.50490019999961,
+      "Z": 0.06608755141496658,
+      "Speed": 0.0005022700061090291,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9912109375,
+      "Time": 18.555135699999482,
+      "Z": 0.06607210636138916,
+      "Speed": 0.00042803166434168816,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9906005859375,
+      "Time": 18.6091351999994,
+      "Z": 0.06605619192123413,
+      "Speed": 0.0004152452456764877,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9900512695312,
+      "Time": 18.663520499999322,
+      "Z": 0.06604039669036865,
+      "Speed": 0.00039949739584699273,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 18.718509499999527,
+      "Z": 0.0660313218832016,
+      "Speed": 0.00015526522474829108,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 18.772005400000126,
+      "Z": 0.06603043526411057,
+      "Speed": 0.000007050904969219118,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 18.826234499999373,
+      "Z": 0.06603041291236877,
+      "Speed": 2.2381350106570608e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 18.880115799999658,
+      "Z": 0.06603042781352997,
+      "Speed": 1.9065146261709742e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 18.93543640000007,
+      "Z": 0.06603044271469116,
+      "Speed": 2.3439942253844492e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 18.98821119999957,
+      "Z": 0.06603043526411057,
+      "Speed": 0.0000011903940730917384,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.042092499999853,
+      "Z": 0.06603045761585236,
+      "Speed": 0.0000014147772162687033,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.09695879999981,
+      "Z": 0.06603048741817474,
+      "Speed": 4.857858471041254e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.15076820000013,
+      "Z": 0.06603051722049713,
+      "Speed": 4.931587227474665e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.204858499999318,
+      "Z": 0.06603053957223892,
+      "Speed": 4.946595595356484e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.258987299999717,
+      "Z": 0.06603055447340012,
+      "Speed": 6.595768695660809e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.309538299999986,
+      "Z": 0.0660305768251419,
+      "Speed": 0.000001307574393649702,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.36343869999928,
+      "Z": 0.06603061407804489,
+      "Speed": 6.328305630631803e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.41751529999965,
+      "Z": 0.06603065133094788,
+      "Speed": 6.295034040704195e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.470932100000027,
+      "Z": 0.06603068113327026,
+      "Speed": 6.274995598687383e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.522478699999738,
+      "Z": 0.06603070348501205,
+      "Speed": 0.0000012145828804932535,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.575483199999326,
+      "Z": 0.06603072583675385,
+      "Speed": 0.0000012145987966505345,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.62585390000004,
+      "Z": 0.06603077054023743,
+      "Speed": 6.602599569305312e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.67950380000002,
+      "Z": 0.06603080779314041,
+      "Speed": 6.58263047625951e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.730400099999315,
+      "Z": 0.0660308375954628,
+      "Speed": 6.565553007931157e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.784976899999492,
+      "Z": 0.06603085994720459,
+      "Speed": 0.000001207218701892998,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.838029099999403,
+      "Z": 0.06603089720010757,
+      "Speed": 6.249923671930446e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.88863069999934,
+      "Z": 0.06603092700242996,
+      "Speed": 6.369672860273567e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.941464200000155,
+      "Z": 0.06603096425533295,
+      "Speed": 6.35327126019547e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 19.993617000000086,
+      "Z": 0.06603097915649414,
+      "Speed": 0.0000011906553254448227,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.046985699999823,
+      "Z": 0.06603100895881653,
+      "Speed": 0.0000012240449223099859,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.099975499999346,
+      "Z": 0.06603104621171951,
+      "Speed": 6.664820375590352e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.15076349999981,
+      "Z": 0.0660310834646225,
+      "Speed": 6.649053148066741e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.201341999999386,
+      "Z": 0.06603112071752548,
+      "Speed": 6.6320200176051e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.254373400000077,
+      "Z": 0.06603113561868668,
+      "Speed": 0.0000012216314644319937,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.308775200000127,
+      "Z": 0.06603117287158966,
+      "Speed": 3.849726226690109e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.35942569999952,
+      "Z": 0.06603121012449265,
+      "Speed": 6.457006520577124e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.4122440000001,
+      "Z": 0.06603123992681503,
+      "Speed": 6.440475885938213e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.46295099999952,
+      "Z": 0.06603125482797623,
+      "Speed": 5.376011245061818e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.513354499999878,
+      "Z": 0.06603128463029861,
+      "Speed": 0.0000012424114856912638,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.567191600000115,
+      "Z": 0.0660313293337822,
+      "Speed": 6.750546504008526e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.61755929999981,
+      "Z": 0.06603135913610458,
+      "Speed": 6.753217007826606e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.6713522,
+      "Z": 0.06603139638900757,
+      "Speed": 6.734481416970084e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.72530159999951,
+      "Z": 0.06603141874074936,
+      "Speed": 0.0000011587666222112603,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.776311599999644,
+      "Z": 0.06603145599365234,
+      "Speed": 0.0000011561144219740527,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.82974689999992,
+      "Z": 0.06603149324655533,
+      "Speed": 7.273112601069442e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.879865699999755,
+      "Z": 0.06603153049945831,
+      "Speed": 7.256089702423196e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.93414909999956,
+      "Z": 0.0660315528512001,
+      "Speed": 0.0000011384760227883817,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 20.988815699999577,
+      "Z": 0.06603159010410309,
+      "Speed": 0.0000011728097888408229,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.038980999999694,
+      "Z": 0.06603162735700607,
+      "Speed": 7.128011247914401e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.091561499999443,
+      "Z": 0.06603166460990906,
+      "Speed": 7.117114364518784e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.14194580000003,
+      "Z": 0.06603170186281204,
+      "Speed": 7.097369234543294e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.191986599999836,
+      "Z": 0.06603171676397324,
+      "Speed": 0.0000011281942988716764,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.24714849999964,
+      "Z": 0.06603176146745682,
+      "Speed": 5.422148205980193e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.29997949999961,
+      "Z": 0.0660317987203598,
+      "Speed": 8.131022468660376e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.35040149999986,
+      "Z": 0.06603184342384338,
+      "Speed": 8.110218345791509e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.400743999999577,
+      "Z": 0.06603185832500458,
+      "Speed": 0.0000011153958894283278,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.45400569999947,
+      "Z": 0.06603189557790756,
+      "Speed": 0.0000011130533721370739,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.504793099999915,
+      "Z": 0.06603194028139114,
+      "Speed": 7.411557589875883e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.555097499999647,
+      "Z": 0.06603197753429413,
+      "Speed": 7.392956149487873e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.608677899999748,
+      "Z": 0.06603198498487473,
+      "Speed": 8.815314345156366e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.658843700000034,
+      "Z": 0.06603202223777771,
+      "Speed": 0.0000011434057114456664,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.714221399999587,
+      "Z": 0.06603206694126129,
+      "Speed": 8.102403512566525e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.767086500000005,
+      "Z": 0.06603211164474487,
+      "Speed": 8.134236963996955e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.817195300000094,
+      "Z": 0.06603214889764786,
+      "Speed": 8.1151387121281e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.870840900000076,
+      "Z": 0.06603217124938965,
+      "Speed": 0.0000011081681350333383,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.92141779999929,
+      "Z": 0.06603220850229263,
+      "Speed": 6.372998768711113e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 21.97526459999972,
+      "Z": 0.06603225320577621,
+      "Speed": 7.32343039544503e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    },
+    {
+      "Y": 402.9999694824219,
+      "X": 607.9898071289062,
+      "Time": 22.029688499999793,
+      "Z": 0.0660322904586792,
+      "Speed": 7.303115125978366e-7,
+      "Floor": "Concrete",
+      "WalkSpeed": 16,
+      "Sliding": false
+    }
+  ],
+  "Summary": {
+    "MinX": 320.57012939453125,
+    "MaxX": 608.0008544921875,
+    "MaxSpeed": 29.624040603637695,
+    "WalkSpeeds": [
+      16,
+      24,
+      29.578943252563477,
+      28.686973571777344,
+      27.738672256469727,
+      26.78731346130371,
+      25.837448120117188,
+      24.89125633239746,
+      23.968265533447266,
+      23.08480453491211,
+      22.20013999938965,
+      21.259531021118164,
+      20.379695892333984,
+      19.503955841064453,
+      18.547828674316406,
+      17.672645568847656,
+      16.653865814208984
+    ],
+    "SlidingObserved": true,
+    "SlideSamples": 15
+  }
+}

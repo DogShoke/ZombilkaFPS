@@ -28,9 +28,10 @@ function WeaponSelection.new(remote)
 	local scale = Instance.new("UIScale") scale.Parent = panel
 	local function resize() local v=workspace.CurrentCamera.ViewportSize scale.Scale=math.min(1,(v.X-48)/1020,(v.Y-56)/510) end
 	resize() workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(resize)
-	text(panel,"Eyebrow","NORTHLINE / ОПЕРАЦИИ",13,UDim2.fromOffset(0,0),UDim2.fromOffset(1020,24),Color3.fromRGB(160,185,175))
+	local prototype=game.ReplicatedStorage.RunState:GetAttribute("GameMode")=="EndlessSurvivalPrototype"
+	text(panel,"Eyebrow",prototype and "ENDLESS SURVIVAL PROTOTYPE"or "NORTHLINE / ОПЕРАЦИИ",13,UDim2.fromOffset(0,0),UDim2.fromOffset(1020,24),Color3.fromRGB(160,185,175))
 	text(panel,"Title","ВЫБЕРИ ОРУЖИЕ",36,UDim2.fromOffset(0,34),UDim2.fromOffset(1020,48))
-	text(panel,"Subtitle","Выбор на этот забег. Зачистка начнётся, когда будешь готов.",15,UDim2.fromOffset(0,86),UDim2.fromOffset(1020,28),Color3.fromRGB(158,170,176))
+	text(panel,"Subtitle",prototype and "Офис, парковка и техническая зона на одной карте. Выберите оружие для осмотра и боя."or "Выбор на этот забег. Зачистка начнётся, когда будешь готов.",15,UDim2.fromOffset(0,86),UDim2.fromOffset(1020,28),Color3.fromRGB(158,170,176))
 	local self=setmetatable({Gui=gui,Active=true,Pending=false,Remote=remote,Buttons={}},WeaponSelection)
 	local researchButton=Instance.new("TextButton")
 	researchButton.Name="ResearchButton";researchButton.Text="ИССЛЕДОВАНИЯ";researchButton.Font=Enum.Font.GothamBold

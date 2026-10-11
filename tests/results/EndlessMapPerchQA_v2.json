@@ -1,0 +1,36 @@
+{
+  "Scope": "Already-emerged native AI versus stationary player on top of cover, no weapon/damage tuning",
+  "Cases": [
+    {
+      "HullHeight": 5.915000915527344,
+      "Seconds": 11.389017800000147,
+      "Name": "Car",
+      "PlayerY": 408.91497802734375,
+      "BestDistance": 0.5726586580276489,
+      "NPCPeakY": 410.2463684082031,
+      "Passed": true,
+      "HP": 88
+    },
+    {
+      "HullHeight": 7.349998950958252,
+      "Seconds": 10.455540699999801,
+      "Name": "Rack",
+      "PlayerY": 410.3499755859375,
+      "BestDistance": 0.6982832551002502,
+      "NPCPeakY": 410.3499755859375,
+      "Passed": true,
+      "HP": 88
+    },
+    {
+      "HullHeight": 7.560002326965332,
+      "Seconds": 9.644298499999422,
+      "Name": "Container",
+      "PlayerY": 410.55999755859375,
+      "BestDistance": 0.4955621659755707,
+      "NPCPeakY": 410.55999755859375,
+      "Passed": true,
+      "HP": 88
+    }
+  ],
+  "Passed": true
+}

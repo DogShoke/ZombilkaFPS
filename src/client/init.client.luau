@@ -48,6 +48,7 @@ local rewardSelection=RewardSelection.new(runState,runRemotes:WaitForChild("Clai
 local shopSelection=ShopSelection.new(runState,runRemotes:WaitForChild("BuyShopItem"),runRemotes:WaitForChild("CloseShop"))
 local researchPanel=ResearchPanel.new(runState,runRemotes:WaitForChild("BuyResearch"))
 local function refreshSelection()
+	selection.ResearchButton.Visible=runState:GetAttribute("GameMode")~="EndlessSurvivalPrototype"
 	selection:Show(runState:GetAttribute("State")=="ChoosingWeapon"and not weapon and not researchPanel.Active)
 	results.Gui.Enabled=results.Active and not researchPanel.Active
 	hud.Gui.Enabled=weapon~=nil and not results.Active and not rewardSelection.Active and not shopSelection.Active and not researchPanel.Active

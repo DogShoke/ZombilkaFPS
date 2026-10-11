@@ -20,6 +20,8 @@ local floorTuning = { Health=settings.MaxHealth, Speed=settings.WalkSpeed, Damag
 local epoch, phaseProgress, spawning = 0, nil, false
 local reservations={}
 local spawnEnabled=false
+-- Optional authored world for isolated map QA/endless; legacy defaults unchanged.
+local arenaModel
 local diagnostics = {Failures=0,Reason="",FallbackSector="",Blocked=false}
 
 local navigationNodes={}
@@ -325,7 +327,7 @@ local function validSpawn(point)
 		end
 	end
 	if not nearestDistance or nearestDistance > settings.MaxSpawnDistance then return false end
-	local arena = workspace:FindFirstChild("OfficeRun")
+	local arena = arenaModel or workspace:FindFirstChild("OfficeRun")
 	if arena then
 		local params = OverlapParams.new()
 		params.FilterType = Enum.RaycastFilterType.Include
@@ -409,10 +411,11 @@ function ZombieService.Start(spawnZones)
 	for _, player in ipairs(Players:GetPlayers()) do preparePlayer(player) end
 end
 
-function ZombieService.Configure(spawnZones, floorBounds, number, nodes)
+function ZombieService.Configure(spawnZones, floorBounds, number, nodes, worldModel)
 	epoch+=1; spawning=false;  phaseProgress=nil;spawnEnabled=false
  for marker in reservations do if marker.Parent then marker:Destroy()end end;reservations={}
 	zones = spawnZones
+	arenaModel = worldModel
 	if floorBounds then bounds=floorBounds end
 	navigationNodes={}; spawnSerial=0
 	for _,n in nodes or {} do table.insert(navigationNodes,bounds.Origin+Vector3.new(n.X,n.Y+3,n.Z)) end

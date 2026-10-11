@@ -19,16 +19,37 @@ end
 Players.PlayerAdded:Connect(prepareAvatar)
 for _, player in ipairs(Players:GetPlayers()) do prepareAvatar(player) end
 
-local OfficeMap = require(script.OfficeMap)
 local ZombieService = require(script.ZombieService)
 local WeaponService = require(script.WeaponService)
-local FloorDirector = require(script.FloorDirector)
-local map = OfficeMap.Build()
-ZombieService.Start(map.Current.Zones)
-WeaponService.Start()
-FloorDirector.Start(map)
-map.Current.Spawn.Enabled = true
-for _,player in Players:GetPlayers()do player.RespawnLocation=map.Current.Spawn end
+local modes=require(ReplicatedStorage.Shared.GameModeConfig)
+local mode=game:GetService("RunService"):IsStudio()and modes.StudioMode or modes.LiveMode
+assert(mode=="EndlessSurvivalPrototype"or mode=="LegacyFloors","Unknown game mode: "..tostring(mode))
+runState:SetAttribute("GameMode",mode)
+local storage=game:GetService("ServerStorage")
+local function preserve(instance,folderName)
+	if not instance then return end
+	local archive=storage:FindFirstChild(folderName)
+	if not archive then archive=Instance.new("Folder");archive.Name=folderName;archive.Parent=storage end
+	instance.Parent=archive -- Preserve user/preview geometry; never delete it.
+end
+local preview=workspace:FindFirstChild("CorporateComplex")
+if preview and preview:GetAttribute("EndlessPrototypePreview")==true then preserve(preview,"EndlessPreviewArchive")end
+preserve(workspace:FindFirstChild("OfficeRun"),"LegacyMapArchive")
+local spawn
+if mode=="EndlessSurvivalPrototype"then
+	local map=require(script.CorporateMap).Build()
+	for key,value in modes.Prototype.Lighting do game:GetService("Lighting")[key]=value end
+	ZombieService.Start(map.Zones);WeaponService.Start()
+	require(script.EndlessPrototype).Start(map)
+	spawn=map.Spawn
+else
+	local map=require(script.OfficeMap).Build()
+	ZombieService.Start(map.Current.Zones);WeaponService.Start()
+	runState:SetAttribute("ActiveDirector","FloorDirector")
+	require(script.FloorDirector).Start(map)
+	spawn=map.Current.Spawn;spawn.Enabled=true
+end
+for _,player in Players:GetPlayers()do player.RespawnLocation=spawn end
 Players.CharacterAutoLoads = true
 for _,player in Players:GetPlayers()do
  if not player.Character then task.spawn(function()if player.Parent==Players and not player.Character then player:LoadCharacterAsync()end end)end

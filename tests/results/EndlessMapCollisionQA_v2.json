@@ -1,0 +1,44 @@
+{
+  "Scope": "Production player, normal Glock selected, D held 2 seconds toward each hull from world left at ground elevation. No forced character movement during input.",
+  "Cases": [
+    {
+      "Case": "Car",
+      "From": {
+        "X": 323.44751,
+        "Y": 403,
+        "Z": -57
+      },
+      "LeftEdge": 330.4475,
+      "Final": {
+        "X": 329.44727,
+        "Y": 403,
+        "Z": -57.00781
+      },
+      "Passed": true
+    },
+    {
+      "Z": -52,
+      "X": 532.7249755859375,
+      "LeftEdge": 539.7250001430511,
+      "Case": "Rack",
+      "Final": {
+        "Y": 403.001953125,
+        "X": 538.7265625,
+        "Z": -52.0078125
+      },
+      "Passed": true
+    },
+    {
+      "Z": -126,
+      "X": 538.4425048828125,
+      "LeftEdge": 545.4424979783724,
+      "Case": "Container",
+      "Final": {
+        "Y": 403,
+        "X": 544.443359375,
+        "Z": -126.0078125
+      },
+      "Passed": true
+    }
+  ]
+}

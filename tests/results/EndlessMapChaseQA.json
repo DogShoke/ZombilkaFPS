@@ -1,0 +1,56 @@
+{
+  "Date": "2026-10-11",
+  "Scope": "Real emerged native ZombieService chase and attack; test player anchored for reproducibility",
+  "NormalTiming": true,
+  "Cases": [
+    {
+      "Seconds": 14.552658099999462,
+      "Zone": "Parking",
+      "BestDistance": 1.462348222732544,
+      "InitialPosition": "309.4420471191406, 401.7124328613281, -89.8694839477539",
+      "Passed": true,
+      "Issued": 1,
+      "Diagnostics": {
+        "FallbackSector": "",
+        "Blocked": false,
+        "Failures": 0,
+        "Reason": ""
+      },
+      "InitialEmergedDistance": 96.2934799194336,
+      "HP": 88
+    },
+    {
+      "Seconds": 11.070088399999804,
+      "Zone": "Office",
+      "BestDistance": 2.7103610038757324,
+      "InitialPosition": "509.84637451171875, 401.7124328613281, -4.084692001342773",
+      "Passed": true,
+      "Issued": 1,
+      "Diagnostics": {
+        "FallbackSector": "",
+        "Blocked": false,
+        "Failures": 0,
+        "Reason": ""
+      },
+      "InitialEmergedDistance": 59.999427795410156,
+      "HP": 88
+    },
+    {
+      "Seconds": 15.342426399999567,
+      "Zone": "Service",
+      "BestDistance": 3.534956455230713,
+      "InitialPosition": "589.7355346679688, 401.8044128417969, -92.04117584228516",
+      "Passed": true,
+      "Issued": 1,
+      "Diagnostics": {
+        "FallbackSector": "",
+        "Blocked": false,
+        "Failures": 0,
+        "Reason": ""
+      },
+      "InitialEmergedDistance": 98.03618621826172,
+      "HP": 88
+    }
+  ],
+  "Passed": true
+}

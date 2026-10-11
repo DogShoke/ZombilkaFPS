@@ -1,0 +1,941 @@
+{
+  "Paths": [
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:NW",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": -140
+      },
+      "Status": "Success",
+      "Length": 216.6102643609047,
+      "Waypoints": 39
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:NOffice",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": -140
+      },
+      "Status": "Success",
+      "Length": 164.77052283287048,
+      "Waypoints": 30
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:NE",
+      "From": {
+        "Y": 403,
+        "X": 990,
+        "Z": -140
+      },
+      "Status": "Success",
+      "Length": 248.04963731765747,
+      "Waypoints": 44
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:WestNorth",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 182.93524956703186,
+      "Waypoints": 32
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:NorthWestCross",
+      "From": {
+        "Y": 403,
+        "X": 794,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 127.66719126701355,
+      "Waypoints": 23
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:NorthEastCross",
+      "From": {
+        "Y": 403,
+        "X": 906,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 125.21980476379395,
+      "Waypoints": 22
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:EastNorth",
+      "From": {
+        "Y": 403,
+        "X": 990,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 181.14865708351135,
+      "Waypoints": 32
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:West",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 141.42136025428772,
+      "Waypoints": 25
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:WestCross",
+      "From": {
+        "Y": 403,
+        "X": 794,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 59.4642767906189,
+      "Waypoints": 11
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:EastCross",
+      "From": {
+        "Y": 403,
+        "X": 906,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 59.4642767906189,
+      "Waypoints": 11
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:East",
+      "From": {
+        "Y": 403,
+        "X": 990,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 141.42136025428772,
+      "Waypoints": 25
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:WestSouth",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": 92
+      },
+      "Status": "Success",
+      "Length": 157.71027874946594,
+      "Waypoints": 28
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:SouthWestCross",
+      "From": {
+        "Y": 403,
+        "X": 794,
+        "Z": 92
+      },
+      "Status": "Success",
+      "Length": 91.21403348445892,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:SouthEastCross",
+      "From": {
+        "Y": 403,
+        "X": 906,
+        "Z": 92
+      },
+      "Status": "Success",
+      "Length": 91.21403348445892,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:EastSouth",
+      "From": {
+        "Y": 403,
+        "X": 990,
+        "Z": 92
+      },
+      "Status": "Success",
+      "Length": 157.4293520450592,
+      "Waypoints": 28
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:SW",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": 140
+      },
+      "Status": "Success",
+      "Length": 187.55034828186035,
+      "Waypoints": 33
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:SOffice",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": 140
+      },
+      "Status": "Success",
+      "Length": 120.7024137377739,
+      "Waypoints": 23
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "LaneToSpawn:SE",
+      "From": {
+        "Y": 403,
+        "X": 990,
+        "Z": 140
+      },
+      "Status": "Success",
+      "Length": 184.39088582992554,
+      "Waypoints": 32
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 744,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "SpawnToZone:Parking",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Status": "Success",
+      "Length": 107.87029552459717,
+      "Waypoints": 19
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "SpawnToZone:Office",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Status": "Success",
+      "Length": 20,
+      "Waypoints": 5
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 956,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "SpawnToZone:Service",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Status": "Success",
+      "Length": 107.87029552459717,
+      "Waypoints": 19
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 794,
+        "Z": -92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route1_1/Route1_2",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 84,
+      "Waypoints": 15
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": -92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route1_2/Route1_3",
+      "From": {
+        "Y": 403,
+        "X": 794,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 56,
+      "Waypoints": 11
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 906,
+        "Z": -92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route1_3/Route1_4",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 56,
+      "Waypoints": 11
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 990,
+        "Z": -92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route1_4/Route1_5",
+      "From": {
+        "Y": 403,
+        "X": 906,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 84.09465822204947,
+      "Waypoints": 16
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 710,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route1_1/Route2_1",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 92,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 794,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_1/Route2_2",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 84,
+      "Waypoints": 15
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 794,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route1_2/Route2_2",
+      "From": {
+        "Y": 403,
+        "X": 794,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 92,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_2/Route2_3",
+      "From": {
+        "Y": 403,
+        "X": 794,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 56,
+      "Waypoints": 11
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 906,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_3/Route2_4",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 56,
+      "Waypoints": 11
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 906,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route1_4/Route2_4",
+      "From": {
+        "Y": 403,
+        "X": 906,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 92.01026439666748,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 990,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_4/Route2_5",
+      "From": {
+        "Y": 403,
+        "X": 906,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 84.23289580643177,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 990,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route1_5/Route2_5",
+      "From": {
+        "Y": 403,
+        "X": 990,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 92.01045322418213,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 710,
+        "Z": 92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_1/Route3_1",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 92,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 794,
+        "Z": 92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route3_1/Route3_2",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": 92
+      },
+      "Status": "Success",
+      "Length": 84,
+      "Waypoints": 15
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 794,
+        "Z": 92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_2/Route3_2",
+      "From": {
+        "Y": 403,
+        "X": 794,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 92,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route3_2/Route3_3",
+      "From": {
+        "Y": 403,
+        "X": 794,
+        "Z": 92
+      },
+      "Status": "Success",
+      "Length": 56,
+      "Waypoints": 11
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 906,
+        "Z": 92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route3_3/Route3_4",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": 92
+      },
+      "Status": "Success",
+      "Length": 56,
+      "Waypoints": 11
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 906,
+        "Z": 92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_4/Route3_4",
+      "From": {
+        "Y": 403,
+        "X": 906,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 96.19022750854492,
+      "Waypoints": 18
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 990,
+        "Z": 92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route3_4/Route3_5",
+      "From": {
+        "Y": 403,
+        "X": 906,
+        "Z": 92
+      },
+      "Status": "Success",
+      "Length": 84,
+      "Waypoints": 15
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 990,
+        "Z": 92
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_5/Route3_5",
+      "From": {
+        "Y": 403,
+        "X": 990,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 92,
+      "Waypoints": 17
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 850,
+        "Z": 20
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "AuthoredRoute:Route2_3/Entry",
+      "From": {
+        "Y": 403,
+        "X": 850,
+        "Z": 0
+      },
+      "Status": "Success",
+      "Length": 20,
+      "Waypoints": 5
+    },
+    {
+      "To": {
+        "Y": 410.3499755859375,
+        "X": 954,
+        "Z": -44
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "DeckApproach:ServerMaintenance:-1",
+      "From": {
+        "Y": 403,
+        "X": 954,
+        "Z": -83
+      },
+      "Status": "Success",
+      "Length": 39.98575401306152,
+      "Waypoints": 8
+    },
+    {
+      "To": {
+        "Y": 410.3499755859375,
+        "X": 954,
+        "Z": -44
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "DeckApproach:ServerMaintenance:1",
+      "From": {
+        "Y": 403,
+        "X": 954,
+        "Z": -5
+      },
+      "Status": "Success",
+      "Length": 39.973633766174316,
+      "Waypoints": 8
+    },
+    {
+      "To": {
+        "Y": 410.55999755859375,
+        "X": 954,
+        "Z": -126
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "DeckApproach:LoadingAccess:-1",
+      "From": {
+        "Y": 403,
+        "X": 954,
+        "Z": -157
+      },
+      "Status": "Success",
+      "Length": 32.12165117263794,
+      "Waypoints": 7
+    },
+    {
+      "To": {
+        "Y": 410.55999755859375,
+        "X": 954,
+        "Z": -126
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "DeckApproach:LoadingAccess:1",
+      "From": {
+        "Y": 403,
+        "X": 954,
+        "Z": -95
+      },
+      "Status": "Success",
+      "Length": 32.00576734542847,
+      "Waypoints": 7
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 794,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "ActorRoute:CarBank",
+      "From": {
+        "Y": 403,
+        "X": 710,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 136.1402524970472,
+      "Waypoints": 26
+    },
+    {
+      "To": {
+        "Y": 403,
+        "X": 906,
+        "Z": 0
+      },
+      "Passed": true,
+      "Jumps": 0,
+      "Name": "ActorRoute:RackBank",
+      "From": {
+        "Y": 403,
+        "X": 990,
+        "Z": -92
+      },
+      "Status": "Success",
+      "Length": 126.06543254852295,
+      "Waypoints": 23
+    }
+  ],
+  "Seconds": 21.63367870000002,
+  "Checks": [
+    {
+      "Passed": true,
+      "Name": "Bounded authored footprint",
+      "Detail": {
+        "Y": 400,
+        "X": 850,
+        "Z": 0
+      }
+    },
+    {
+      "Passed": true,
+      "Name": "Three connected zone definitions",
+      "Detail": 3
+    },
+    {
+      "Passed": true,
+      "Name": "PartCount matches actual world",
+      "Detail": 143
+    },
+    {
+      "Passed": true,
+      "Name": "Initial part budget",
+      "Detail": "1500 is a QA investigation threshold, not a measured performance guarantee"
+    },
+    {
+      "Passed": true,
+      "Name": "Meaningful cover has combat hulls",
+      "Detail": {
+        "Count": 47,
+        "Invalid": []
+      }
+    },
+    {
+      "Passed": true,
+      "Name": "Declared routes at least 12 studs",
+      "Detail": []
+    },
+    {
+      "Passed": true,
+      "Name": "Authored route physical width",
+      "Detail": []
+    }
+  ],
+  "ActorWalk": {
+    "Status": "PASSED",
+    "Samples": [
+      {
+        "Passed": true,
+        "Seconds": 8.810481999999865,
+        "Name": "CarBank",
+        "DistanceRemaining": 2.446564197540283
+      },
+      {
+        "Passed": true,
+        "Seconds": 8.046035200000006,
+        "Name": "RackBank",
+        "DistanceRemaining": 2.2406582832336426
+      }
+    ]
+  },
+  "Name": "CorporateMapQA",
+  "CollisionLimitation": "Hull flags and route clearance tested; actual player walking into each prop, weapon-ray behavior and slide need separate native Play checks",
+  "FunAssessment": "REQUIRES USER PLAYTEST: navigation is not evidence of enjoyable level design",
+  "Mode": "NativeStudio",
+  "Counts": {
+    "CoverHulls": 47,
+    "Meshes": 57,
+    "Colliders": 58,
+    "Parts": 143
+  },
+  "Passed": true
+}

@@ -130,6 +130,12 @@ function CombatHud:SourceHit(result)
 end
 function CombatHud:SetRun(state)
  local phase,mode=state:GetAttribute("State"),state:GetAttribute("EncounterMode")
+ if state:GetAttribute("GameMode")=="EndlessSurvivalPrototype"then
+  local seconds=math.floor(state:GetAttribute("PrototypeElapsed")or 0)
+  self.RunLabel.Text=string.format("ENDLESS SURVIVAL PROTOTYPE\nОФИС / ПАРКОВКА / ТЕХЗОНА\nЗОМБИ %d   УБИЙСТВА %d   %02d:%02d",state:GetAttribute("Alive")or 0,state:GetAttribute("RunKills")or 0,math.floor(seconds/60),seconds%60)
+  self.Message.Text=phase=="FloorIntro"and "ГОТОВЬТЕСЬ"or phase=="EncounterActive"and "ИССЛЕДУЙТЕ КОМПЛЕКС / ОСТАВАЙТЕСЬ В ЖИВЫХ"or ""
+  return
+ end
  local kills,quota=state:GetAttribute("Defeated")or 0,state:GetAttribute("KillQuota")or 0
  local alive=state:GetAttribute("Alive")or 0
  local names={KillQuota="КВОТА УБИЙСТВ",SpawnerHunt="КОФЕЙНОЕ ЗАРАЖЕНИЕ",WideGauntlet="ШИРОКИЙ ПРОРЫВ",Survival="ВЫЖИВАНИЕ"}

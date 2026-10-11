@@ -1,5 +1,14 @@
 # Zombilka FPS
 
+2026-10-11 CURRENT: ordinary Studio Play now selects EndlessSurvivalPrototype through
+GameModeConfig.StudioMode. CorporateMap v2 is active, with existing three weapons and
+bounded constant NPC replenishment; FloorDirector/elevators are absent in that branch.
+Old map preserved in ServerStorage.LegacyMapArchive; rollback StudioMode=LegacyFloors.
+Native ordinary weapon/attack/traversal/restart/collision and visible3D observed.
+Edit preview left for user assessment. No full M2/M3/XP/profile changes; STOP for user
+map feedback. Continue from CURRENT section AI/ENDLESS_MIGRATION_PROGRESS.md.
+Older paragraphs below are retained legacy/history, not the active Studio roadmap.
+
 Current source (2026-10-09): Office/OpenArena5×5, 180×180, continuous horde and
 KillQuota only. The multi-theme/three-wave paragraphs below are historical.
 Roguelike milestone1 is verified: server RunSession ledger, death ends the run,

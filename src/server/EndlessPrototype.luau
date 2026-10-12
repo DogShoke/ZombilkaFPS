@@ -113,7 +113,11 @@ function Prototype.Start(map)
 			if not spawnBusy and Clock.Now()>=nextSpawn and Zombies.Count()+Zombies.Pending()<Settings.DesiredAlive then
 				spawnBusy=true;local token=generation
 				task.spawn(function()
-					local ok,err=pcall(Zombies.Spawn)
+					local ok,err=pcall(function()
+						local root=owner and owner.Character and owner.Character:FindFirstChild("HumanoidRootPart")
+						if map.GetSpawnZones and root then Zombies.SetZones(map.GetSpawnZones(root.Position))end
+						return Zombies.Spawn()
+					end)
 					if token~=generation then return end
 					spawnBusy=false;nextSpawn=Clock.Now()+Settings.SpawnInterval
 					if not ok then warn("Prototype spawn failed: "..tostring(err))end

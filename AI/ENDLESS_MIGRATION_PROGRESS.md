@@ -4,7 +4,17 @@ Date: 2026-10-11. Branch dev; baseline commit 1260454. New authority:
 ZOMBILKAFPS_2_0_ENDLESS_MIGRATION_TASK.md, read fully. Old master read fully
 as historical boon/safety reference, not current game-flow requirements.
 
-## CURRENT — ordinary Studio Play prototype enabled (2026-10-11)
+## CURRENT — Blender campus V4 integrated (2026-10-12)
+
+User asked to add the populated Blender map to the game and imported the prepared FBX in Studio when MCP mesh upload proved unavailable. Ordinary Play now selects `GameModeConfig.Prototype.Map="Campus"`; rollback map="Corporate", full legacy rollback StudioMode="LegacyFloors". LiveMode remains legacy; no publishing/place overwrite/Git mutation.
+
+Source: CampusMap.luau, generated CampusLayout.luau, GameModeConfig, init.server, small near-player zone selection in EndlessPrototype, and default.project.json. ServerStorage.CampusAssets is backed by assets/maps/CampusReference/roblox_runtime/*.rbxmx:446 normalized visual meshes and6,414 separate hulls. Adapter creates one CampusComplex, spawn(0,183,42),1,273 physical emergence positions,55 inactive activity markers and continuous fence bounds with southern booth approach. Streaming enabled. Original imported model and old previews archived; OfficeRun preserved. Existing weapons/AI/controller/restart retained; no XP/activity/reward handlers or profile access changes.
+
+Verified shipping Play after scale/axis correction: ActiveMap=Campus, director=EndlessPrototype, one V4 world, no active CorporateComplex; actual A2.2s moved X−35.2666. Real AKM fire/reload30→21→30. Native read-only sampling observed five natural NPCs chase/attack, health100→88→0, RunEnded, new run/weapon selection. Console empty. Final Edit checks:714 route/headroom rays +1,273 physical floor-support checks, zero failures;12 small height resnaps; fountain hull query passed. Cargo/service hull additions occurred after the bounded combat run and were included in final collision checks. No sustained FPS measurement or exhaustive all-building/roof pursuit test claimed.
+
+Evidence: tests/results/CampusOrdinaryPlay_20261012.json, CampusCollisionQA_20261012.json, Campus_Edit_20261012.png. Full art/import/normalization details and resume instructions: assets/maps/CampusReference/README.md. Studio12bfb276-3e96-4d1b-a00a-3ef5d9d7fe61 / ZombilkaFPS.rbxl is in Edit with the new preview; user can press Play. Source XML/assets are saved; reopening should use updated Rojo project/reconnect for new ServerStorage mapping. Remaining: full traversal/roof pursuit, fine collision review/LOD/performance, then separately scoped activity/progression implementation. Older checkpoints below are historical.
+
+## Previous — ordinary Studio Play prototype enabled (2026-10-11)
 
 User clarified priority: make authored map visible/playable through ordinary Play;
 do not wait for old visual gate and do not implement XP/full M2–M3 yet. This section

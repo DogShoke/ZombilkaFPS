@@ -1,0 +1,4455 @@
+{
+  "version": 4,
+  "scope": "Blender interiors and authored inactive activity sites",
+  "playable_dimensions_m": [
+    480,
+    440
+  ],
+  "studs_per_metre": 3.5,
+  "buildings": [
+    {
+      "id": "Atrium",
+      "label": "COMMAND / ATRIUM",
+      "x": 0,
+      "y": 63,
+      "w": 66,
+      "d": 30,
+      "base": 3,
+      "top": 17,
+      "theme": "Command",
+      "core": "Atrium",
+      "upper": null,
+      "mezz": 8.2,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            0,
+            48.0,
+            3
+          ],
+          "width": 8,
+          "headroom": 3.4
+        },
+        {
+          "side": "left",
+          "position": [
+            -33.0,
+            65,
+            3
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "right",
+          "position": [
+            33.0,
+            65,
+            3
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Atrium_Ground",
+          "floor_z": 3,
+          "bounds": [
+            -33.0,
+            48.0,
+            33.0,
+            78.0
+          ],
+          "theme": "Command",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending",
+          "transverse_route_y_m": 52
+        },
+        {
+          "id": "Atrium_Gallery",
+          "floor_z": 8.2,
+          "bounds": [
+            -32.0,
+            72.0,
+            32.0,
+            78.0
+          ],
+          "theme": "Control",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Office",
+      "label": "OFFICE / SALVAGE",
+      "x": -57,
+      "y": 35,
+      "w": 42,
+      "d": 47,
+      "base": 4,
+      "top": 9,
+      "theme": "Office",
+      "core": "WestWing",
+      "upper": null,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            -57,
+            11.5,
+            4
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "right",
+          "position": [
+            -36.0,
+            35,
+            4
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Office_Ground",
+          "floor_z": 4,
+          "bounds": [
+            -78.0,
+            11.5,
+            -36.0,
+            58.5
+          ],
+          "theme": "Office",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Biolab",
+      "label": "BIOLAB / QUARANTINE",
+      "x": 57,
+      "y": 35,
+      "w": 42,
+      "d": 47,
+      "base": 4,
+      "top": 9,
+      "theme": "Biolab",
+      "core": "EastWing",
+      "upper": null,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            57,
+            11.5,
+            4
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "left",
+          "position": [
+            36.0,
+            35,
+            4
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Biolab_Ground",
+          "floor_z": 4,
+          "bounds": [
+            36.0,
+            11.5,
+            78.0,
+            58.5
+          ],
+          "theme": "Biolab",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Armory",
+      "label": "ARMORY / SECURITY",
+      "x": -69,
+      "y": 68,
+      "w": 28,
+      "d": 22,
+      "base": 0.44,
+      "top": 12,
+      "theme": "Armory",
+      "core": "WestAnnex",
+      "upper": null,
+      "mezz": 5,
+      "small": false,
+      "entries": [
+        {
+          "side": "rear",
+          "position": [
+            -69,
+            79.0,
+            0.44
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "right",
+          "position": [
+            -55.0,
+            61,
+            0.44
+          ],
+          "width": 4.6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Armory_Ground",
+          "floor_z": 0.44,
+          "bounds": [
+            -83.0,
+            57.0,
+            -55.0,
+            79.0
+          ],
+          "theme": "Armory",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending",
+          "transverse_route_y_m": 61
+        },
+        {
+          "id": "Armory_Mezzanine",
+          "floor_z": 5,
+          "bounds": [
+            -82.0,
+            73.0,
+            -56.0,
+            79.0
+          ],
+          "theme": "Armory",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "DataCentre",
+      "label": "DATA / COOLING",
+      "x": 72,
+      "y": 69,
+      "w": 30,
+      "d": 22,
+      "base": 0.44,
+      "top": 12,
+      "theme": "Servers",
+      "core": "EastAnnex",
+      "upper": null,
+      "mezz": 5,
+      "small": false,
+      "entries": [
+        {
+          "side": "rear",
+          "position": [
+            72,
+            80.0,
+            0.44
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "right",
+          "position": [
+            87.0,
+            62,
+            0.44
+          ],
+          "width": 4.6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "DataCentre_Ground",
+          "floor_z": 0.44,
+          "bounds": [
+            57.0,
+            58.0,
+            87.0,
+            80.0
+          ],
+          "theme": "Servers",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending",
+          "transverse_route_y_m": 62
+        },
+        {
+          "id": "DataCentre_Mezzanine",
+          "floor_z": 5,
+          "bounds": [
+            58.0,
+            74.0,
+            86.0,
+            80.0
+          ],
+          "theme": "Servers",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "PowerShop",
+      "label": "POWER / REPAIR",
+      "x": 80,
+      "y": -39,
+      "w": 28,
+      "d": 35,
+      "base": 0.44,
+      "top": 8,
+      "theme": "Workshop",
+      "core": "Warehouse",
+      "upper": null,
+      "mezz": 4.2,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            80,
+            -56.5,
+            0.44
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            80,
+            -21.5,
+            0.44
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "PowerShop_Ground",
+          "floor_z": 0.44,
+          "bounds": [
+            66.0,
+            -56.5,
+            94.0,
+            -21.5
+          ],
+          "theme": "Workshop",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending",
+          "transverse_route_y_m": -51
+        },
+        {
+          "id": "PowerShop_Mezzanine",
+          "floor_z": 4.2,
+          "bounds": [
+            67.0,
+            -29.5,
+            93.0,
+            -21.5
+          ],
+          "theme": "Control",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "GateOffice",
+      "label": "ACCESS / CONTROL",
+      "x": 15,
+      "y": -76,
+      "w": 9,
+      "d": 7,
+      "base": 0.44,
+      "top": 4,
+      "theme": "Security",
+      "core": "Security",
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            15,
+            -79.5,
+            0.44
+          ],
+          "width": 2,
+          "headroom": 3.2600000000000002
+        },
+        {
+          "side": "rear",
+          "position": [
+            15,
+            -72.5,
+            0.44
+          ],
+          "width": 2,
+          "headroom": 3.2600000000000002
+        }
+      ],
+      "rooms": [
+        {
+          "id": "GateOffice_Ground",
+          "floor_z": 0.44,
+          "bounds": [
+            10.5,
+            -79.5,
+            19.5,
+            -72.5
+          ],
+          "theme": "Security",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Research",
+      "label": "RESEARCH / REACTOR",
+      "x": -174,
+      "y": 54,
+      "w": 57,
+      "d": 51,
+      "base": 0.26,
+      "top": 8.6,
+      "theme": "Research",
+      "core": null,
+      "upper": 4.46,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            -174,
+            28.5,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            -174,
+            79.5,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "right",
+          "position": [
+            -145.5,
+            46.5,
+            4.46
+          ],
+          "width": 5,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Research_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            -202.5,
+            28.5,
+            -145.5,
+            79.5
+          ],
+          "theme": "Research",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        },
+        {
+          "id": "Research_Upper",
+          "floor_z": 4.46,
+          "bounds": [
+            -202.5,
+            28.5,
+            -145.5,
+            79.5
+          ],
+          "theme": "Analysis",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Medical",
+      "label": "MEDICAL / TRIAGE",
+      "x": -174,
+      "y": -49,
+      "w": 48,
+      "d": 32,
+      "base": 0.26,
+      "top": 4.3,
+      "theme": "Medical",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            -174,
+            -65.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            -174,
+            -33.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Medical_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            -198.0,
+            -65.0,
+            -150.0,
+            -33.0
+          ],
+          "theme": "Medical",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Logistics",
+      "label": "LOGISTICS / CARGO",
+      "x": 174,
+      "y": 65,
+      "w": 58,
+      "d": 36,
+      "base": 0.26,
+      "top": 4.3,
+      "theme": "Logistics",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            174,
+            47.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            174,
+            83.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Logistics_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            145.0,
+            47.0,
+            203.0,
+            83.0
+          ],
+          "theme": "Logistics",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "VehicleShop",
+      "label": "GARAGE / WORKSHOP",
+      "x": 174,
+      "y": 2,
+      "w": 58,
+      "d": 30,
+      "base": 0.26,
+      "top": 4.3,
+      "theme": "Workshop",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            174,
+            -13.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            174,
+            17.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "VehicleShop_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            145.0,
+            -13.0,
+            203.0,
+            17.0
+          ],
+          "theme": "Workshop",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Transit",
+      "label": "TRANSIT / DISPATCH",
+      "x": -4,
+      "y": -175,
+      "w": 104,
+      "d": 23,
+      "base": 0.26,
+      "top": 4.3,
+      "theme": "Transit",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            -4,
+            -186.5,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            -4,
+            -163.5,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Transit_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            -56.0,
+            -186.5,
+            48.0,
+            -163.5
+          ],
+          "theme": "Transit",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "FuelMart",
+      "label": "SUPPLIES / FUEL MART",
+      "x": 176,
+      "y": -175,
+      "w": 40,
+      "d": 16,
+      "base": 0.26,
+      "top": 4.3,
+      "theme": "Retail",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            176,
+            -183.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            176,
+            -167.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "FuelMart_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            156.0,
+            -183.0,
+            196.0,
+            -167.0
+          ],
+          "theme": "Retail",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Cafe",
+      "label": "CAFE / PANTRY",
+      "x": -52,
+      "y": 155,
+      "w": 44,
+      "d": 26,
+      "base": 0.26,
+      "top": 4.3,
+      "theme": "Cafe",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            -52,
+            142.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            -52,
+            168.0,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "Cafe_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            -74.0,
+            142.0,
+            -30.0,
+            168.0
+          ],
+          "theme": "Cafe",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "FieldLab",
+      "label": "FIELD LAB / RADIO",
+      "x": -161,
+      "y": 151,
+      "w": 49,
+      "d": 29,
+      "base": 0.26,
+      "top": 8.6,
+      "theme": "FieldLab",
+      "core": null,
+      "upper": 4.46,
+      "mezz": null,
+      "small": false,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            -161,
+            136.5,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            -161,
+            165.5,
+            0.26
+          ],
+          "width": 6,
+          "headroom": 3.4
+        },
+        {
+          "side": "right",
+          "position": [
+            -136.5,
+            154.5,
+            4.46
+          ],
+          "width": 5,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "FieldLab_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            -185.5,
+            136.5,
+            -136.5,
+            165.5
+          ],
+          "theme": "FieldLab",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending",
+          "transverse_route_y_m": 139.5
+        },
+        {
+          "id": "FieldLab_Upper",
+          "floor_z": 4.46,
+          "bounds": [
+            -185.5,
+            136.5,
+            -136.5,
+            165.5
+          ],
+          "theme": "Radio",
+          "main_route_width_m": 6,
+          "status": "authored_geometry_runtime_pending",
+          "transverse_route_y_m": 139.5
+        }
+      ]
+    },
+    {
+      "id": "SouthSecurity",
+      "label": "SECURITY / SOUTH",
+      "x": 32,
+      "y": -195,
+      "w": 14,
+      "d": 10,
+      "base": 0.26,
+      "top": 4.3,
+      "theme": "Security",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            32,
+            -200.0,
+            0.26
+          ],
+          "width": 3,
+          "headroom": 3.4
+        },
+        {
+          "side": "rear",
+          "position": [
+            32,
+            -190.0,
+            0.26
+          ],
+          "width": 3,
+          "headroom": 3.4
+        }
+      ],
+      "rooms": [
+        {
+          "id": "SouthSecurity_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            25.0,
+            -200.0,
+            39.0,
+            -190.0
+          ],
+          "theme": "Security",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "UtilityEast",
+      "label": "UTILITY / EAST",
+      "x": 204,
+      "y": -56,
+      "w": 7,
+      "d": 5,
+      "base": 0.26,
+      "top": 3.5,
+      "theme": "Utility",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            204,
+            -58.5,
+            0.26
+          ],
+          "width": 2.2,
+          "headroom": 2.9400000000000004
+        },
+        {
+          "side": "right",
+          "position": [
+            207.5,
+            -56,
+            0.26
+          ],
+          "width": 1.8,
+          "headroom": 2.9400000000000004
+        }
+      ],
+      "rooms": [
+        {
+          "id": "UtilityEast_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            200.5,
+            -58.5,
+            207.5,
+            -53.5
+          ],
+          "theme": "Utility",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "UtilityWest",
+      "label": "UTILITY / WEST",
+      "x": -204,
+      "y": 27,
+      "w": 7,
+      "d": 5,
+      "base": 0.26,
+      "top": 3.5,
+      "theme": "Utility",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            -204,
+            24.5,
+            0.26
+          ],
+          "width": 2.2,
+          "headroom": 2.9400000000000004
+        },
+        {
+          "side": "right",
+          "position": [
+            -200.5,
+            27,
+            0.26
+          ],
+          "width": 1.8,
+          "headroom": 2.9400000000000004
+        }
+      ],
+      "rooms": [
+        {
+          "id": "UtilityWest_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            -207.5,
+            24.5,
+            -200.5,
+            29.5
+          ],
+          "theme": "Utility",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "UtilityPark",
+      "label": "UTILITY / PARK",
+      "x": 94,
+      "y": 174,
+      "w": 7,
+      "d": 5,
+      "base": 0.26,
+      "top": 3.5,
+      "theme": "Utility",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            94,
+            171.5,
+            0.26
+          ],
+          "width": 2.2,
+          "headroom": 2.9400000000000004
+        },
+        {
+          "side": "right",
+          "position": [
+            97.5,
+            174,
+            0.26
+          ],
+          "width": 1.8,
+          "headroom": 2.9400000000000004
+        }
+      ],
+      "rooms": [
+        {
+          "id": "UtilityPark_Ground",
+          "floor_z": 0.26,
+          "bounds": [
+            90.5,
+            171.5,
+            97.5,
+            176.5
+          ],
+          "theme": "Utility",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "CoffeeWest",
+      "label": "COFFEE / KIOSK",
+      "x": -91,
+      "y": 154,
+      "w": 5,
+      "d": 3.5,
+      "base": 0.2,
+      "top": 3,
+      "theme": "Kiosk",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            -91,
+            152.25,
+            0.2
+          ],
+          "width": 1.8,
+          "headroom": 2.5
+        },
+        {
+          "side": "right",
+          "position": [
+            -88.5,
+            154,
+            0.2
+          ],
+          "width": 1.8,
+          "headroom": 2.5
+        }
+      ],
+      "rooms": [
+        {
+          "id": "CoffeeWest_Ground",
+          "floor_z": 0.2,
+          "bounds": [
+            -93.5,
+            152.25,
+            -88.5,
+            155.75
+          ],
+          "theme": "Kiosk",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "CoffeePark",
+      "label": "COFFEE / KIOSK",
+      "x": 18,
+      "y": 179,
+      "w": 5,
+      "d": 3.5,
+      "base": 0.2,
+      "top": 3,
+      "theme": "Kiosk",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [
+        {
+          "side": "front",
+          "position": [
+            18,
+            177.25,
+            0.2
+          ],
+          "width": 1.8,
+          "headroom": 2.5
+        },
+        {
+          "side": "right",
+          "position": [
+            20.5,
+            179,
+            0.2
+          ],
+          "width": 1.8,
+          "headroom": 2.5
+        }
+      ],
+      "rooms": [
+        {
+          "id": "CoffeePark_Ground",
+          "floor_z": 0.2,
+          "bounds": [
+            15.5,
+            177.25,
+            20.5,
+            180.75
+          ],
+          "theme": "Kiosk",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Watch1",
+      "label": "WATCH / RADIO",
+      "x": -205,
+      "y": -180,
+      "w": 3.2,
+      "d": 3.2,
+      "base": 6.125,
+      "top": 8.3,
+      "theme": "Watch",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [],
+      "rooms": [
+        {
+          "id": "Watch1_Ground",
+          "floor_z": 6.125,
+          "bounds": [
+            -206.6,
+            -181.6,
+            -203.4,
+            -178.4
+          ],
+          "theme": "Watch",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Watch2",
+      "label": "WATCH / RADIO",
+      "x": -205,
+      "y": 180,
+      "w": 3.2,
+      "d": 3.2,
+      "base": 6.125,
+      "top": 8.3,
+      "theme": "Watch",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [],
+      "rooms": [
+        {
+          "id": "Watch2_Ground",
+          "floor_z": 6.125,
+          "bounds": [
+            -206.6,
+            178.4,
+            -203.4,
+            181.6
+          ],
+          "theme": "Watch",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Watch3",
+      "label": "WATCH / RADIO",
+      "x": 205,
+      "y": -180,
+      "w": 3.2,
+      "d": 3.2,
+      "base": 6.125,
+      "top": 8.3,
+      "theme": "Watch",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [],
+      "rooms": [
+        {
+          "id": "Watch3_Ground",
+          "floor_z": 6.125,
+          "bounds": [
+            203.4,
+            -181.6,
+            206.6,
+            -178.4
+          ],
+          "theme": "Watch",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    },
+    {
+      "id": "Watch4",
+      "label": "WATCH / RADIO",
+      "x": 205,
+      "y": 180,
+      "w": 3.2,
+      "d": 3.2,
+      "base": 6.125,
+      "top": 8.3,
+      "theme": "Watch",
+      "core": null,
+      "upper": null,
+      "mezz": null,
+      "small": true,
+      "entries": [],
+      "rooms": [
+        {
+          "id": "Watch4_Ground",
+          "floor_z": 6.125,
+          "bounds": [
+            203.4,
+            178.4,
+            206.6,
+            181.6
+          ],
+          "theme": "Watch",
+          "main_route_width_m": 1.8,
+          "status": "authored_geometry_runtime_pending"
+        }
+      ]
+    }
+  ],
+  "activity_sites": [
+    {
+      "id": "Site_001_Atrium_BossBeacon",
+      "building": "Atrium",
+      "floor": "Ground",
+      "type": "BossBeacon",
+      "position_m": [
+        -15.84,
+        56.9,
+        3
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 8,
+      "description": "Optional elite encounter arena",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -15.84,
+        54.9,
+        3
+      ]
+    },
+    {
+      "id": "Site_002_Atrium_WeaponBench",
+      "building": "Atrium",
+      "floor": "Ground",
+      "type": "WeaponBench",
+      "position_m": [
+        15.84,
+        70.1,
+        3
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Choose a build route at command workshop",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        15.84,
+        68.1,
+        3
+      ]
+    },
+    {
+      "id": "Site_003_Atrium_DataCache",
+      "building": "Atrium",
+      "floor": "Gallery",
+      "type": "DataCache",
+      "position_m": [
+        18.0,
+        76.4,
+        8.2
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Gallery command record candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        18.0,
+        74.4,
+        8.2
+      ]
+    },
+    {
+      "id": "Site_004_Office_LootCache",
+      "building": "Office",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        -67.08,
+        25.16,
+        4
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Office supply cache",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -67.08,
+        23.16,
+        4
+      ]
+    },
+    {
+      "id": "Site_005_Office_RiskTerminal",
+      "building": "Office",
+      "floor": "Ground",
+      "type": "RiskTerminal",
+      "position_m": [
+        -46.92,
+        45.84,
+        4
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 6,
+      "description": "Optional threat increase for rarer loot",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -46.92,
+        43.84,
+        4
+      ]
+    },
+    {
+      "id": "Site_006_Biolab_PurifierDefence",
+      "building": "Biolab",
+      "floor": "Ground",
+      "type": "PurifierDefence",
+      "position_m": [
+        46.92,
+        25.16,
+        4
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 7,
+      "description": "Defend the decontamination purifier",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        46.92,
+        23.16,
+        4
+      ]
+    },
+    {
+      "id": "Site_007_Biolab_SampleHunt",
+      "building": "Biolab",
+      "floor": "Ground",
+      "type": "SampleHunt",
+      "position_m": [
+        67.08,
+        45.84,
+        4
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Search for three specimen containers",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        67.08,
+        43.84,
+        4
+      ]
+    },
+    {
+      "id": "Site_008_Armory_WeaponBench",
+      "building": "Armory",
+      "floor": "Ground",
+      "type": "WeaponBench",
+      "position_m": [
+        -74.2,
+        70.3,
+        0.44
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Weapon improvement site",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -74.2,
+        68.3,
+        0.44
+      ]
+    },
+    {
+      "id": "Site_009_Armory_EliteSignal",
+      "building": "Armory",
+      "floor": "Ground",
+      "type": "EliteSignal",
+      "position_m": [
+        -63.8,
+        70.3,
+        0.44
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 6,
+      "description": "Optional security elite beacon",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -63.8,
+        68.3,
+        0.44
+      ]
+    },
+    {
+      "id": "Site_010_Armory_LootCache",
+      "building": "Armory",
+      "floor": "Mezzanine",
+      "type": "LootCache",
+      "position_m": [
+        -69.0,
+        78.0,
+        5
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Accessible mezzanine reward candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -69.0,
+        76.0,
+        5
+      ]
+    },
+    {
+      "id": "Site_011_DataCentre_ChargeRelay",
+      "building": "DataCentre",
+      "floor": "Ground",
+      "type": "ChargeRelay",
+      "position_m": [
+        66.8,
+        71.3,
+        0.44
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 6,
+      "description": "Hold the server relay while it charges",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        66.8,
+        69.3,
+        0.44
+      ]
+    },
+    {
+      "id": "Site_012_DataCentre_DataCache",
+      "building": "DataCentre",
+      "floor": "Ground",
+      "type": "DataCache",
+      "position_m": [
+        77.2,
+        71.3,
+        0.44
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Data vault reward candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        77.2,
+        69.3,
+        0.44
+      ]
+    },
+    {
+      "id": "Site_013_DataCentre_DataCache",
+      "building": "DataCentre",
+      "floor": "Mezzanine",
+      "type": "DataCache",
+      "position_m": [
+        72.0,
+        79.0,
+        5
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Accessible mezzanine reward candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        72.0,
+        77.0,
+        5
+      ]
+    },
+    {
+      "id": "Site_014_PowerShop_Recycler",
+      "building": "PowerShop",
+      "floor": "Ground",
+      "type": "Recycler",
+      "position_m": [
+        74.8,
+        -44.5,
+        0.44
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Trade salvaged supplies for run rewards",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        74.8,
+        -46.5,
+        0.44
+      ]
+    },
+    {
+      "id": "Site_015_PowerShop_ChargeRelay",
+      "building": "PowerShop",
+      "floor": "Ground",
+      "type": "ChargeRelay",
+      "position_m": [
+        85.2,
+        -44.5,
+        0.44
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 6,
+      "description": "Restart workshop power under pressure",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        85.2,
+        -46.5,
+        0.44
+      ]
+    },
+    {
+      "id": "Site_016_PowerShop_DataCache",
+      "building": "PowerShop",
+      "floor": "Mezzanine",
+      "type": "DataCache",
+      "position_m": [
+        80.0,
+        -22.5,
+        4.2
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Accessible mezzanine reward candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        80.0,
+        -24.5,
+        4.2
+      ]
+    },
+    {
+      "id": "Site_017_GateOffice_DataCache",
+      "building": "GateOffice",
+      "floor": "Ground",
+      "type": "DataCache",
+      "position_m": [
+        17.43,
+        -76.0,
+        0.44
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 1.5,
+      "description": "Security route cache",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        17.43,
+        -78.0,
+        0.44
+      ]
+    },
+    {
+      "id": "Site_018_Research_ChargeRelay",
+      "building": "Research",
+      "floor": "Ground",
+      "type": "ChargeRelay",
+      "position_m": [
+        -187.68,
+        43.28,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 7,
+      "description": "Charge the experimental reactor",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -187.68,
+        41.28,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_019_Research_RiskTerminal",
+      "building": "Research",
+      "floor": "Ground",
+      "type": "RiskTerminal",
+      "position_m": [
+        -160.32,
+        65.72,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 5,
+      "description": "Risk experiment reward candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -160.32,
+        63.72,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_020_Research_RiskTerminal",
+      "building": "Research",
+      "floor": "Upper",
+      "type": "RiskTerminal",
+      "position_m": [
+        -161.46,
+        65.22,
+        4.46
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 5,
+      "description": "Upper-floor optional encounter site",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -161.46,
+        63.22,
+        4.46
+      ]
+    },
+    {
+      "id": "Site_021_Research_DataCache",
+      "building": "Research",
+      "floor": "Upper",
+      "type": "DataCache",
+      "position_m": [
+        -183.12,
+        65.22,
+        4.46
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Upper analysis/dispatch cache",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -183.12,
+        63.22,
+        4.46
+      ]
+    },
+    {
+      "id": "Site_022_Medical_RecoveryStation",
+      "building": "Medical",
+      "floor": "Ground",
+      "type": "RecoveryStation",
+      "position_m": [
+        -185.52,
+        -55.54,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Limited recovery service, future cost validation",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -185.52,
+        -57.54,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_023_Medical_LootCache",
+      "building": "Medical",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        -162.48,
+        -41.46,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Medical supply candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -162.48,
+        -43.46,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_024_Logistics_LootCache",
+      "building": "Logistics",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        160.08,
+        57.58,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Supply cargo reward candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        160.08,
+        55.58,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_025_Logistics_EliteSignal",
+      "building": "Logistics",
+      "floor": "Ground",
+      "type": "EliteSignal",
+      "position_m": [
+        187.92,
+        73.42,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 7,
+      "description": "Optional cargo-yard elite alert",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        187.92,
+        71.42,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_026_VehicleShop_Recycler",
+      "building": "VehicleShop",
+      "floor": "Ground",
+      "type": "Recycler",
+      "position_m": [
+        160.08,
+        -4.1,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Trade salvaged supplies for run rewards",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        160.08,
+        -6.1,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_027_VehicleShop_ChargeRelay",
+      "building": "VehicleShop",
+      "floor": "Ground",
+      "type": "ChargeRelay",
+      "position_m": [
+        187.92,
+        9.1,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 6,
+      "description": "Restart workshop power under pressure",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        187.92,
+        7.1,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_028_Transit_EliteSignal",
+      "building": "Transit",
+      "floor": "Ground",
+      "type": "EliteSignal",
+      "position_m": [
+        -28.96,
+        -179.56,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 6,
+      "description": "Dispatch radio defence candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -28.96,
+        -181.56,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_029_Transit_LootCache",
+      "building": "Transit",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        20.96,
+        -169.44,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Luggage cache candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        20.96,
+        -171.44,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_030_FuelMart_TradeStation",
+      "building": "FuelMart",
+      "floor": "Ground",
+      "type": "TradeStation",
+      "position_m": [
+        166.4,
+        -180.7,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Run supplies trade candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        166.4,
+        -182.7,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_031_FuelMart_LootCache",
+      "building": "FuelMart",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        185.6,
+        -167.7,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Stockroom cache candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        183.6,
+        -167.7,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_032_Cafe_RecoveryStation",
+      "building": "Cafe",
+      "floor": "Ground",
+      "type": "RecoveryStation",
+      "position_m": [
+        -62.56,
+        149.78,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Limited restorative brew candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -62.56,
+        147.78,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_033_Cafe_LootCache",
+      "building": "Cafe",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        -41.44,
+        161.22,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Pantry cache candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -41.44,
+        159.22,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_034_FieldLab_SampleHunt",
+      "building": "FieldLab",
+      "floor": "Ground",
+      "type": "SampleHunt",
+      "position_m": [
+        -172.76,
+        145.12,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 4,
+      "description": "Field specimen search candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -172.76,
+        143.12,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_035_FieldLab_PurifierDefence",
+      "building": "FieldLab",
+      "floor": "Ground",
+      "type": "PurifierDefence",
+      "position_m": [
+        -149.24,
+        157.88,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 6,
+      "description": "Scan specimens under enemy pressure",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -149.24,
+        155.88,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_036_FieldLab_ChargeRelay",
+      "building": "FieldLab",
+      "floor": "Upper",
+      "type": "ChargeRelay",
+      "position_m": [
+        -150.22,
+        157.38,
+        4.46
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 5,
+      "description": "Upper-floor optional encounter site",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -150.22,
+        155.38,
+        4.46
+      ]
+    },
+    {
+      "id": "Site_037_FieldLab_DataCache",
+      "building": "FieldLab",
+      "floor": "Upper",
+      "type": "DataCache",
+      "position_m": [
+        -168.84,
+        157.38,
+        4.46
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Upper analysis/dispatch cache",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -168.84,
+        155.38,
+        4.46
+      ]
+    },
+    {
+      "id": "Site_038_SouthSecurity_DataCache",
+      "building": "SouthSecurity",
+      "floor": "Ground",
+      "type": "DataCache",
+      "position_m": [
+        35.78,
+        -195.0,
+        0.26
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 1.5,
+      "description": "Security route cache",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        35.78,
+        -197.0,
+        0.26
+      ]
+    },
+    {
+      "id": "Site_039_UtilityEast_LootCache",
+      "building": "UtilityEast",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        199.5,
+        -59.5,
+        0.10275000333786011
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Optional outdoor service site",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        197.5,
+        -59.5,
+        0.10275000333786011
+      ]
+    },
+    {
+      "id": "Site_040_UtilityWest_LootCache",
+      "building": "UtilityWest",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        -208.5,
+        23.5,
+        0.10199993848800659
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Optional outdoor service site",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -210.5,
+        23.5,
+        0.10199999809265137
+      ]
+    },
+    {
+      "id": "Site_041_UtilityPark_LootCache",
+      "building": "UtilityPark",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        89.5,
+        170.5,
+        0.10349994897842407
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Optional outdoor service site",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        87.5,
+        170.5,
+        0.10349994897842407
+      ]
+    },
+    {
+      "id": "Site_042_CoffeeWest_RecoveryStation",
+      "building": "CoffeeWest",
+      "floor": "Ground",
+      "type": "RecoveryStation",
+      "position_m": [
+        -94.5,
+        151.25,
+        0.10349994897842407
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Optional outdoor service site",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -94.5,
+        149.25,
+        0.10349994897842407
+      ]
+    },
+    {
+      "id": "Site_043_CoffeePark_RecoveryStation",
+      "building": "CoffeePark",
+      "floor": "Ground",
+      "type": "RecoveryStation",
+      "position_m": [
+        14.5,
+        176.25,
+        0.10349994897842407
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 2,
+      "description": "Optional outdoor service site",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        14.5,
+        174.25,
+        0.10349994897842407
+      ]
+    },
+    {
+      "id": "Site_044_Watch1_DataCache",
+      "building": "Watch1",
+      "floor": "Ground",
+      "type": "DataCache",
+      "position_m": [
+        -205.95,
+        -179.9,
+        6.125
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 1,
+      "description": "Compact observation-booth cache; NPC stair test required",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -204.95,
+        -179.9,
+        6.125
+      ]
+    },
+    {
+      "id": "Site_045_Watch2_DataCache",
+      "building": "Watch2",
+      "floor": "Ground",
+      "type": "DataCache",
+      "position_m": [
+        -205.95,
+        180.1,
+        6.125
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 1,
+      "description": "Compact observation-booth cache; NPC stair test required",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -204.95,
+        180.1,
+        6.125
+      ]
+    },
+    {
+      "id": "Site_046_Watch3_DataCache",
+      "building": "Watch3",
+      "floor": "Ground",
+      "type": "DataCache",
+      "position_m": [
+        204.05,
+        -179.9,
+        6.125
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 1,
+      "description": "Compact observation-booth cache; NPC stair test required",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        205.05,
+        -179.9,
+        6.125
+      ]
+    },
+    {
+      "id": "Site_047_Watch4_DataCache",
+      "building": "Watch4",
+      "floor": "Ground",
+      "type": "DataCache",
+      "position_m": [
+        204.05,
+        180.1,
+        6.125
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 1,
+      "description": "Compact observation-booth cache; NPC stair test required",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        205.05,
+        180.1,
+        6.125
+      ]
+    },
+    {
+      "id": "Site_048_Outdoor_EliteSignal",
+      "building": "Outdoor",
+      "floor": "Ground",
+      "type": "EliteSignal",
+      "position_m": [
+        -170.0,
+        -117.0,
+        -5.960464477539063e-08
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 8,
+      "description": "Helipad-adjacent elite alert",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -170.0,
+        -119.0,
+        0.2214999794960022
+      ]
+    },
+    {
+      "id": "Site_049_Outdoor_ChargeRelay",
+      "building": "Outdoor",
+      "floor": "Ground",
+      "type": "ChargeRelay",
+      "position_m": [
+        110.0,
+        34.0,
+        0.25
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 7,
+      "description": "Substation power defence",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        113.0,
+        34.0,
+        0.25
+      ]
+    },
+    {
+      "id": "Site_050_Outdoor_LootCache",
+      "building": "Outdoor",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        -105.0,
+        -48.0,
+        -0.1499999761581421
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Parking salvage cache",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -105.0,
+        -50.0,
+        -0.1499999761581421
+      ]
+    },
+    {
+      "id": "Site_051_Outdoor_LootCache",
+      "building": "Outdoor",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        153.0,
+        -33.0,
+        0.10275000333786011
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Container-yard supply cache",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        153.0,
+        -35.0,
+        0.10275000333786011
+      ]
+    },
+    {
+      "id": "Site_052_Outdoor_RecoveryStation",
+      "building": "Outdoor",
+      "floor": "Ground",
+      "type": "RecoveryStation",
+      "position_m": [
+        7.0,
+        139.0,
+        0.10349994897842407
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "Park recovery candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        7.0,
+        137.0,
+        0.10350000858306885
+      ]
+    },
+    {
+      "id": "Site_053_Outdoor_RiskTerminal",
+      "building": "Outdoor",
+      "floor": "Ground",
+      "type": "RiskTerminal",
+      "position_m": [
+        97.0,
+        168.0,
+        0.10349994897842407
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 7,
+      "description": "Lake-side risk encounter",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        97.0,
+        166.0,
+        0.10349994897842407
+      ]
+    },
+    {
+      "id": "Site_054_Outdoor_LootCache",
+      "building": "Outdoor",
+      "floor": "Ground",
+      "type": "LootCache",
+      "position_m": [
+        -38.0,
+        -10.0,
+        7.450580596923828e-09
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 3,
+      "description": "West-terrace exploration cache",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        -38.0,
+        -12.0,
+        7.450580596923828e-09
+      ]
+    },
+    {
+      "id": "Site_055_Outdoor_PurifierDefence",
+      "building": "Outdoor",
+      "floor": "Ground",
+      "type": "PurifierDefence",
+      "position_m": [
+        29.0,
+        28.0,
+        0.028500020503997803
+      ],
+      "interaction_radius_m": 2,
+      "event_radius_m": 8,
+      "description": "Central plaza purifier candidate",
+      "implementation": "authored_site_only",
+      "activation": "server-selected subset per run",
+      "recommended_approach_m": [
+        29.0,
+        26.0,
+        7.450580596923828e-09
+      ]
+    }
+  ],
+  "breakable_candidates": [
+    {
+      "id": "Breakable_1",
+      "building": "Atrium",
+      "position_m": [
+        -23.099999999999998,
+        54.9,
+        3
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_2",
+      "building": "Atrium",
+      "position_m": [
+        23.099999999999998,
+        54.9,
+        3
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_3",
+      "building": "Office",
+      "position_m": [
+        -71.7,
+        22.31,
+        4
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_4",
+      "building": "Office",
+      "position_m": [
+        -42.3,
+        22.31,
+        4
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_5",
+      "building": "Biolab",
+      "position_m": [
+        42.3,
+        22.31,
+        4
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_6",
+      "building": "Biolab",
+      "position_m": [
+        71.7,
+        22.31,
+        4
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_7",
+      "building": "Armory",
+      "position_m": [
+        -78.8,
+        76.36,
+        0.44
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_8",
+      "building": "Armory",
+      "position_m": [
+        -59.2,
+        76.36,
+        0.44
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_9",
+      "building": "DataCentre",
+      "position_m": [
+        61.5,
+        77.36,
+        0.44
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_10",
+      "building": "DataCentre",
+      "position_m": [
+        82.5,
+        77.36,
+        0.44
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_11",
+      "building": "PowerShop",
+      "position_m": [
+        70.2,
+        -25.7,
+        0.44
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_12",
+      "building": "PowerShop",
+      "position_m": [
+        89.8,
+        -25.7,
+        0.44
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_13",
+      "building": "Research",
+      "position_m": [
+        -193.95,
+        40.23,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_14",
+      "building": "Research",
+      "position_m": [
+        -154.05,
+        40.23,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_15",
+      "building": "Medical",
+      "position_m": [
+        -190.8,
+        -57.64,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_16",
+      "building": "Medical",
+      "position_m": [
+        -157.2,
+        -57.64,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_17",
+      "building": "Logistics",
+      "position_m": [
+        153.7,
+        55.28,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_18",
+      "building": "Logistics",
+      "position_m": [
+        194.3,
+        55.28,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_19",
+      "building": "VehicleShop",
+      "position_m": [
+        153.7,
+        -6.100000000000001,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_20",
+      "building": "VehicleShop",
+      "position_m": [
+        194.3,
+        -6.100000000000001,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_21",
+      "building": "Transit",
+      "position_m": [
+        -40.4,
+        -181.21,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_22",
+      "building": "Transit",
+      "position_m": [
+        32.4,
+        -181.21,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_23",
+      "building": "FuelMart",
+      "position_m": [
+        162.0,
+        -179.32,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_24",
+      "building": "FuelMart",
+      "position_m": [
+        190.0,
+        -179.32,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_25",
+      "building": "Cafe",
+      "position_m": [
+        -67.4,
+        147.98,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_26",
+      "building": "Cafe",
+      "position_m": [
+        -36.6,
+        147.98,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_27",
+      "building": "FieldLab",
+      "position_m": [
+        -178.15,
+        143.17,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    },
+    {
+      "id": "Breakable_28",
+      "building": "FieldLab",
+      "position_m": [
+        -143.85,
+        143.17,
+        0.26
+      ],
+      "implemented": false,
+      "role": "destructible_supply_prop"
+    }
+  ],
+  "lights": [
+    {
+      "p": [
+        -16.5,
+        55.5,
+        6.3
+      ],
+      "power": 1000,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Atrium"
+    },
+    {
+      "p": [
+        -16.5,
+        70.5,
+        6.3
+      ],
+      "power": 1000,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Atrium"
+    },
+    {
+      "p": [
+        16.5,
+        55.5,
+        6.3
+      ],
+      "power": 1000,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Atrium"
+    },
+    {
+      "p": [
+        16.5,
+        70.5,
+        6.3
+      ],
+      "power": 1000,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Atrium"
+    },
+    {
+      "p": [
+        0.0,
+        75.0,
+        11.299999999999999
+      ],
+      "power": 550,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Atrium"
+    },
+    {
+      "p": [
+        -67.5,
+        23.25,
+        7.3
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Office"
+    },
+    {
+      "p": [
+        -67.5,
+        46.75,
+        7.3
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Office"
+    },
+    {
+      "p": [
+        -46.5,
+        23.25,
+        7.3
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Office"
+    },
+    {
+      "p": [
+        -46.5,
+        46.75,
+        7.3
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Office"
+    },
+    {
+      "p": [
+        46.5,
+        23.25,
+        7.3
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Biolab"
+    },
+    {
+      "p": [
+        46.5,
+        46.75,
+        7.3
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Biolab"
+    },
+    {
+      "p": [
+        67.5,
+        23.25,
+        7.3
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Biolab"
+    },
+    {
+      "p": [
+        67.5,
+        46.75,
+        7.3
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Biolab"
+    },
+    {
+      "p": [
+        -76.0,
+        62.5,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Armory"
+    },
+    {
+      "p": [
+        -76.0,
+        73.5,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Armory"
+    },
+    {
+      "p": [
+        -62.0,
+        62.5,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Armory"
+    },
+    {
+      "p": [
+        -62.0,
+        73.5,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Armory"
+    },
+    {
+      "p": [
+        -69.0,
+        76.0,
+        8.1
+      ],
+      "power": 550,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Armory"
+    },
+    {
+      "p": [
+        64.5,
+        63.5,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "DataCentre"
+    },
+    {
+      "p": [
+        64.5,
+        74.5,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "DataCentre"
+    },
+    {
+      "p": [
+        79.5,
+        63.5,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "DataCentre"
+    },
+    {
+      "p": [
+        79.5,
+        74.5,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "DataCentre"
+    },
+    {
+      "p": [
+        72.0,
+        77.0,
+        8.1
+      ],
+      "power": 550,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "DataCentre"
+    },
+    {
+      "p": [
+        73.0,
+        -47.75,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "PowerShop"
+    },
+    {
+      "p": [
+        73.0,
+        -30.25,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "PowerShop"
+    },
+    {
+      "p": [
+        87.0,
+        -47.75,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "PowerShop"
+    },
+    {
+      "p": [
+        87.0,
+        -30.25,
+        3.7399999999999998
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "PowerShop"
+    },
+    {
+      "p": [
+        80.0,
+        -25.5,
+        7.300000000000001
+      ],
+      "power": 550,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "PowerShop"
+    },
+    {
+      "p": [
+        15.0,
+        -76.0,
+        3.14
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "GateOffice"
+    },
+    {
+      "p": [
+        -188.25,
+        41.25,
+        3.5599999999999996
+      ],
+      "power": 1000,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Research"
+    },
+    {
+      "p": [
+        -188.25,
+        66.75,
+        3.5599999999999996
+      ],
+      "power": 1000,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Research"
+    },
+    {
+      "p": [
+        -159.75,
+        41.25,
+        3.5599999999999996
+      ],
+      "power": 1000,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Research"
+    },
+    {
+      "p": [
+        -159.75,
+        66.75,
+        3.5599999999999996
+      ],
+      "power": 1000,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Research"
+    },
+    {
+      "p": [
+        -188.25,
+        41.25,
+        7.76
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Research"
+    },
+    {
+      "p": [
+        -188.25,
+        66.75,
+        7.76
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Research"
+    },
+    {
+      "p": [
+        -159.75,
+        41.25,
+        7.76
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Research"
+    },
+    {
+      "p": [
+        -159.75,
+        66.75,
+        7.76
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Research"
+    },
+    {
+      "p": [
+        -186.0,
+        -57.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Medical"
+    },
+    {
+      "p": [
+        -186.0,
+        -41.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Medical"
+    },
+    {
+      "p": [
+        -162.0,
+        -57.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Medical"
+    },
+    {
+      "p": [
+        -162.0,
+        -41.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Medical"
+    },
+    {
+      "p": [
+        159.5,
+        56.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Logistics"
+    },
+    {
+      "p": [
+        159.5,
+        74.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Logistics"
+    },
+    {
+      "p": [
+        188.5,
+        56.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Logistics"
+    },
+    {
+      "p": [
+        188.5,
+        74.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Logistics"
+    },
+    {
+      "p": [
+        159.5,
+        -5.5,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "VehicleShop"
+    },
+    {
+      "p": [
+        159.5,
+        9.5,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "VehicleShop"
+    },
+    {
+      "p": [
+        188.5,
+        -5.5,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "VehicleShop"
+    },
+    {
+      "p": [
+        188.5,
+        9.5,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "VehicleShop"
+    },
+    {
+      "p": [
+        -30.0,
+        -180.75,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Transit"
+    },
+    {
+      "p": [
+        -30.0,
+        -169.25,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Transit"
+    },
+    {
+      "p": [
+        22.0,
+        -180.75,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Transit"
+    },
+    {
+      "p": [
+        22.0,
+        -169.25,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Transit"
+    },
+    {
+      "p": [
+        166.0,
+        -179.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FuelMart"
+    },
+    {
+      "p": [
+        166.0,
+        -171.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FuelMart"
+    },
+    {
+      "p": [
+        186.0,
+        -179.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FuelMart"
+    },
+    {
+      "p": [
+        186.0,
+        -171.0,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FuelMart"
+    },
+    {
+      "p": [
+        -63.0,
+        148.5,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Cafe"
+    },
+    {
+      "p": [
+        -63.0,
+        161.5,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Cafe"
+    },
+    {
+      "p": [
+        -41.0,
+        148.5,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Cafe"
+    },
+    {
+      "p": [
+        -41.0,
+        161.5,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "Cafe"
+    },
+    {
+      "p": [
+        -173.25,
+        143.75,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FieldLab"
+    },
+    {
+      "p": [
+        -173.25,
+        158.25,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FieldLab"
+    },
+    {
+      "p": [
+        -148.75,
+        143.75,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FieldLab"
+    },
+    {
+      "p": [
+        -148.75,
+        158.25,
+        3.5599999999999996
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FieldLab"
+    },
+    {
+      "p": [
+        -173.25,
+        143.75,
+        7.76
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FieldLab"
+    },
+    {
+      "p": [
+        -173.25,
+        158.25,
+        7.76
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FieldLab"
+    },
+    {
+      "p": [
+        -148.75,
+        143.75,
+        7.76
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FieldLab"
+    },
+    {
+      "p": [
+        -148.75,
+        158.25,
+        7.76
+      ],
+      "power": 650,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 5,
+      "building": "FieldLab"
+    },
+    {
+      "p": [
+        32.0,
+        -195.0,
+        2.96
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "SouthSecurity"
+    },
+    {
+      "p": [
+        204.0,
+        -56.0,
+        2.96
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "UtilityEast"
+    },
+    {
+      "p": [
+        -204.0,
+        27.0,
+        2.96
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "UtilityWest"
+    },
+    {
+      "p": [
+        94.0,
+        174.0,
+        2.96
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "UtilityPark"
+    },
+    {
+      "p": [
+        -91.0,
+        154.0,
+        2.6
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "CoffeeWest"
+    },
+    {
+      "p": [
+        18.0,
+        179.0,
+        2.6
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "CoffeePark"
+    },
+    {
+      "p": [
+        -205.0,
+        -180.0,
+        7.9
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "Watch1"
+    },
+    {
+      "p": [
+        -205.0,
+        180.0,
+        7.9
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "Watch2"
+    },
+    {
+      "p": [
+        205.0,
+        -180.0,
+        7.9
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "Watch3"
+    },
+    {
+      "p": [
+        205.0,
+        180.0,
+        7.9
+      ],
+      "power": 170,
+      "color": [
+        0.68,
+        0.8,
+        1
+      ],
+      "size": 2,
+      "building": "Watch4"
+    }
+  ],
+  "nav_room_records": [
+    {
+      "id": "Atrium_Ground",
+      "floor_z": 3,
+      "bounds": [
+        -33.0,
+        48.0,
+        33.0,
+        78.0
+      ],
+      "theme": "Command",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending",
+      "transverse_route_y_m": 52
+    },
+    {
+      "id": "Atrium_Gallery",
+      "floor_z": 8.2,
+      "bounds": [
+        -32.0,
+        72.0,
+        32.0,
+        78.0
+      ],
+      "theme": "Control",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Office_Ground",
+      "floor_z": 4,
+      "bounds": [
+        -78.0,
+        11.5,
+        -36.0,
+        58.5
+      ],
+      "theme": "Office",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Biolab_Ground",
+      "floor_z": 4,
+      "bounds": [
+        36.0,
+        11.5,
+        78.0,
+        58.5
+      ],
+      "theme": "Biolab",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Armory_Ground",
+      "floor_z": 0.44,
+      "bounds": [
+        -83.0,
+        57.0,
+        -55.0,
+        79.0
+      ],
+      "theme": "Armory",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending",
+      "transverse_route_y_m": 61
+    },
+    {
+      "id": "Armory_Mezzanine",
+      "floor_z": 5,
+      "bounds": [
+        -82.0,
+        73.0,
+        -56.0,
+        79.0
+      ],
+      "theme": "Armory",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "DataCentre_Ground",
+      "floor_z": 0.44,
+      "bounds": [
+        57.0,
+        58.0,
+        87.0,
+        80.0
+      ],
+      "theme": "Servers",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending",
+      "transverse_route_y_m": 62
+    },
+    {
+      "id": "DataCentre_Mezzanine",
+      "floor_z": 5,
+      "bounds": [
+        58.0,
+        74.0,
+        86.0,
+        80.0
+      ],
+      "theme": "Servers",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "PowerShop_Ground",
+      "floor_z": 0.44,
+      "bounds": [
+        66.0,
+        -56.5,
+        94.0,
+        -21.5
+      ],
+      "theme": "Workshop",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending",
+      "transverse_route_y_m": -51
+    },
+    {
+      "id": "PowerShop_Mezzanine",
+      "floor_z": 4.2,
+      "bounds": [
+        67.0,
+        -29.5,
+        93.0,
+        -21.5
+      ],
+      "theme": "Control",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "GateOffice_Ground",
+      "floor_z": 0.44,
+      "bounds": [
+        10.5,
+        -79.5,
+        19.5,
+        -72.5
+      ],
+      "theme": "Security",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Research_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        -202.5,
+        28.5,
+        -145.5,
+        79.5
+      ],
+      "theme": "Research",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Research_Upper",
+      "floor_z": 4.46,
+      "bounds": [
+        -202.5,
+        28.5,
+        -145.5,
+        79.5
+      ],
+      "theme": "Analysis",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Medical_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        -198.0,
+        -65.0,
+        -150.0,
+        -33.0
+      ],
+      "theme": "Medical",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Logistics_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        145.0,
+        47.0,
+        203.0,
+        83.0
+      ],
+      "theme": "Logistics",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "VehicleShop_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        145.0,
+        -13.0,
+        203.0,
+        17.0
+      ],
+      "theme": "Workshop",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Transit_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        -56.0,
+        -186.5,
+        48.0,
+        -163.5
+      ],
+      "theme": "Transit",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "FuelMart_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        156.0,
+        -183.0,
+        196.0,
+        -167.0
+      ],
+      "theme": "Retail",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Cafe_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        -74.0,
+        142.0,
+        -30.0,
+        168.0
+      ],
+      "theme": "Cafe",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "FieldLab_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        -185.5,
+        136.5,
+        -136.5,
+        165.5
+      ],
+      "theme": "FieldLab",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending",
+      "transverse_route_y_m": 139.5
+    },
+    {
+      "id": "FieldLab_Upper",
+      "floor_z": 4.46,
+      "bounds": [
+        -185.5,
+        136.5,
+        -136.5,
+        165.5
+      ],
+      "theme": "Radio",
+      "main_route_width_m": 6,
+      "status": "authored_geometry_runtime_pending",
+      "transverse_route_y_m": 139.5
+    },
+    {
+      "id": "SouthSecurity_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        25.0,
+        -200.0,
+        39.0,
+        -190.0
+      ],
+      "theme": "Security",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "UtilityEast_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        200.5,
+        -58.5,
+        207.5,
+        -53.5
+      ],
+      "theme": "Utility",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "UtilityWest_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        -207.5,
+        24.5,
+        -200.5,
+        29.5
+      ],
+      "theme": "Utility",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "UtilityPark_Ground",
+      "floor_z": 0.26,
+      "bounds": [
+        90.5,
+        171.5,
+        97.5,
+        176.5
+      ],
+      "theme": "Utility",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "CoffeeWest_Ground",
+      "floor_z": 0.2,
+      "bounds": [
+        -93.5,
+        152.25,
+        -88.5,
+        155.75
+      ],
+      "theme": "Kiosk",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "CoffeePark_Ground",
+      "floor_z": 0.2,
+      "bounds": [
+        15.5,
+        177.25,
+        20.5,
+        180.75
+      ],
+      "theme": "Kiosk",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Watch1_Ground",
+      "floor_z": 6.125,
+      "bounds": [
+        -206.6,
+        -181.6,
+        -203.4,
+        -178.4
+      ],
+      "theme": "Watch",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Watch2_Ground",
+      "floor_z": 6.125,
+      "bounds": [
+        -206.6,
+        178.4,
+        -203.4,
+        181.6
+      ],
+      "theme": "Watch",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Watch3_Ground",
+      "floor_z": 6.125,
+      "bounds": [
+        203.4,
+        -181.6,
+        206.6,
+        -178.4
+      ],
+      "theme": "Watch",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    },
+    {
+      "id": "Watch4_Ground",
+      "floor_z": 6.125,
+      "bounds": [
+        203.4,
+        178.4,
+        206.6,
+        181.6
+      ],
+      "theme": "Watch",
+      "main_route_width_m": 1.8,
+      "status": "authored_geometry_runtime_pending"
+    }
+  ],
+  "structural_boxes_carved": 289,
+  "added_geometry_counts": {
+    "Stairs": 414,
+    "StairNosings": 328,
+    "Rails": 402,
+    "FacadeRepair": 2,
+    "Landings": 8,
+    "Threshold": 36,
+    "Floor": 31,
+    "FloorMarkings": 3167,
+    "Cover": 235,
+    "Electronics": 392,
+    "ScreenGraphics": 495,
+    "Furniture": 314,
+    "Storage": 186,
+    "Plants": 208,
+    "WallDetails": 32,
+    "WallPanels": 96,
+    "Scatter": 224,
+    "Lighting": 158,
+    "Activity": 377,
+    "ActivitySign": 110,
+    "Workshop": 518,
+    "Armory": 333,
+    "Breakable": 168,
+    "MezzFloor": 7,
+    "SmallProps": 1233,
+    "Lab": 817,
+    "LabGlass": 298,
+    "LabPods": 160,
+    "LabSample": 16,
+    "Servers": 1784,
+    "Medical": 146,
+    "Retail": 77,
+    "CargoRacks": 54,
+    "Luggage": 6,
+    "Kitchen": 37,
+    "Utility": 12
+  },
+  "runtime_handlers_implemented": false,
+  "studio_runtime_verified": false,
+  "blender_qa": {
+    "method": "Blender scene ray casts at multiple lateral/height samples plus stair support/headroom; visual art checks only",
+    "samples": 849,
+    "failures": [],
+    "empty_meshes": [],
+    "invalid_coordinates": [],
+    "studio_runtime_verified": false
+  }
+}

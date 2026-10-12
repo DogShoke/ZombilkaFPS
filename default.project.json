@@ -40,6 +40,13 @@
       }
     },
 
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "$ignoreUnknownInstances": true,
+      "CampusAssets": {
+        "$path": "assets/maps/CampusReference/roblox_runtime"
+      }
+    },
     "ServerScriptService": {
       "Server": {
         "$path": "src/server"
@@ -58,7 +65,9 @@
     },
 
     "Workspace": {
+      "$ignoreUnknownInstances": true,
       "$properties": {
+        "StreamingEnabled": true,
         "FilteringEnabled": true
       },
       "Baseplate": {

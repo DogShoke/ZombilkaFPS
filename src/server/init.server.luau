@@ -34,11 +34,21 @@ local function preserve(instance,folderName)
 end
 local preview=workspace:FindFirstChild("CorporateComplex")
 if preview and preview:GetAttribute("EndlessPrototypePreview")==true then preserve(preview,"EndlessPreviewArchive")end
+local campusPreview=workspace:FindFirstChild("CampusComplex")
+if campusPreview and campusPreview:GetAttribute("EndlessPrototypePreview")==true then preserve(campusPreview,"EndlessPreviewArchive")end
 preserve(workspace:FindFirstChild("OfficeRun"),"LegacyMapArchive")
 local spawn
 if mode=="EndlessSurvivalPrototype"then
-	local map=require(script.CorporateMap).Build()
-	for key,value in modes.Prototype.Lighting do game:GetService("Lighting")[key]=value end
+	local selected=modes.Prototype.Map or "Corporate"
+	assert(selected=="Corporate"or selected=="Campus","Unknown prototype map: "..tostring(selected))
+	local map=require(selected=="Campus"and script.CampusMap or script.CorporateMap).Build()
+	runState:SetAttribute("ActiveMap",selected)
+	local lighting=selected=="Campus"and modes.Prototype.CampusLighting or modes.Prototype.Lighting
+	for key,value in lighting do game:GetService("Lighting")[key]=value end
+	if selected=="Campus"then
+		local atmosphere=game:GetService("Lighting"):FindFirstChildOfClass("Atmosphere")
+		if atmosphere then for key,value in modes.Prototype.CampusAtmosphere do atmosphere[key]=value end end
+	end
 	ZombieService.Start(map.Zones);WeaponService.Start()
 	require(script.EndlessPrototype).Start(map)
 	spawn=map.Spawn

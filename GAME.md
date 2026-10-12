@@ -1,5 +1,7 @@
 # Zombilka FPS — устройство игры и текущий баланс
 
+> **12 октября 2026:** в обычном Studio Play подключён кампус Blender V4 с горами, машинами и интерьерами. Выбор карты — `GameModeConfig.Prototype.Map="Campus"`, откат карты — `"Corporate"`. Используются существующие оружие, зомби и перезапуск прототипа. 55 мест активностей перенесены как неактивные маркеры; их сценарии, XP и новые награды не добавлены. Источник ассетов — `assets/maps/CampusReference/roblox_runtime`, подключённый через Rojo. Подробности проверки и продолжение — CURRENT в `AI/ENDLESS_MIGRATION_PROGRESS.md`; описание CorporateMap ниже относится к предыдущему прототипу.
+
 > **11 октября 2026: обычный Studio Play запускает Endless Survival Prototype.**
 > Новое ТЗ — `ZOMBILKAFPS_2_0_ENDLESS_MIGRATION_TASK.md`. На единой CorporateMap v2
 > доступны офис, парковка и техническая зона, Glock/AKM/Mossberg и существующие зомби.

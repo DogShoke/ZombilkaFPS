@@ -1,5 +1,7 @@
 # Native Studio migration checks
 
+2026-10-12 current map: CampusComplex (Blender V4). Press Play with Prototype.Map="Campus". Evidence: results/CampusOrdinaryPlay_20261012.json (native read-only sampling + actual inputs), CampusCollisionQA_20261012.json (final physical collision rays), Campus_Edit_20261012.png (real Studio capture). No exhaustive traversal/FPS claim. Existing tests/checkpoints below refer to previous CorporateComplex.
+
 ## Current ordinary prototype — no QA setup required
 
 Press Play in ZombilkaFPS.rbxl and choose a weapon. GameModeConfig.StudioMode defaults

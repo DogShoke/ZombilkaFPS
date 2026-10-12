@@ -1,0 +1,554 @@
+{
+  "version": 3,
+  "playable_dimensions_metres": [
+    480,
+    440
+  ],
+  "exterior_bounds_metres": [
+    1400,
+    1260
+  ],
+  "mountain_peak_vertices_max_m": 224.09549876731464,
+  "cars_replaced": 41,
+  "vehicle_variants": [
+    "Ambulance",
+    "Hatchback",
+    "Pickup",
+    "SUV",
+    "SecuritySUV",
+    "Sedan",
+    "SportCoupe",
+    "Wagon"
+  ],
+  "cars": [
+    {
+      "model": "Sedan",
+      "position": [
+        -82.5,
+        -70.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarSilver"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        -82.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarForestGreen"
+    },
+    {
+      "model": "SUV",
+      "position": [
+        -72.5,
+        -70.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.72,
+      "width_metres": 1.95,
+      "paint": "Campus_CarDesertTan"
+    },
+    {
+      "model": "Wagon",
+      "position": [
+        -72.5,
+        -51.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.75,
+      "width_metres": 1.82,
+      "paint": "Campus_CarBurgundy"
+    },
+    {
+      "model": "Pickup",
+      "position": [
+        -62.5,
+        -70.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 5.0,
+      "width_metres": 1.95,
+      "paint": "Campus_CarPearlWhite"
+    },
+    {
+      "model": "SportCoupe",
+      "position": [
+        -62.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.55,
+      "width_metres": 1.86,
+      "paint": "Campus_CarCopper"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        -52.5,
+        -51.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarMidnightBlue"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        -52.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarPetrolTeal"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        -42.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarSilver"
+    },
+    {
+      "model": "SecuritySUV",
+      "position": [
+        -32.5,
+        -70.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.72,
+      "width_metres": 1.95,
+      "paint": "Campus_CarPearlWhite"
+    },
+    {
+      "model": "SUV",
+      "position": [
+        -32.5,
+        -51.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.72,
+      "width_metres": 1.95,
+      "paint": "Campus_CarDesertTan"
+    },
+    {
+      "model": "Wagon",
+      "position": [
+        -22.5,
+        -70.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.75,
+      "width_metres": 1.82,
+      "paint": "Campus_CarBurgundy"
+    },
+    {
+      "model": "Pickup",
+      "position": [
+        -22.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 5.0,
+      "width_metres": 1.95,
+      "paint": "Campus_CarPearlWhite"
+    },
+    {
+      "model": "SportCoupe",
+      "position": [
+        -2.5,
+        -51.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.55,
+      "width_metres": 1.86,
+      "paint": "Campus_CarCopper"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        -2.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarMidnightBlue"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        7.5,
+        -51.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarPetrolTeal"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        7.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarSilver"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        17.5,
+        -70.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarForestGreen"
+    },
+    {
+      "model": "SUV",
+      "position": [
+        17.5,
+        -51.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.72,
+      "width_metres": 1.95,
+      "paint": "Campus_CarDesertTan"
+    },
+    {
+      "model": "Wagon",
+      "position": [
+        17.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.75,
+      "width_metres": 1.82,
+      "paint": "Campus_CarBurgundy"
+    },
+    {
+      "model": "Pickup",
+      "position": [
+        27.5,
+        -70.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 5.0,
+      "width_metres": 1.95,
+      "paint": "Campus_CarPearlWhite"
+    },
+    {
+      "model": "SportCoupe",
+      "position": [
+        27.5,
+        -31.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.55,
+      "width_metres": 1.86,
+      "paint": "Campus_CarCopper"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        37.5,
+        -70.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarMidnightBlue"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        37.5,
+        -51.0,
+        0.08
+      ],
+      "angle_radians": 4.371139006309477e-08,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarPetrolTeal"
+    },
+    {
+      "model": "Ambulance",
+      "position": [
+        -162.0,
+        -71.0,
+        0.08
+      ],
+      "angle_radians": 0.0,
+      "length_metres": 5.15,
+      "width_metres": 1.95,
+      "paint": "Campus_CarPearlWhite"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        -99.0,
+        -171.0,
+        0.08
+      ],
+      "angle_radians": 3.141592653589793,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarForestGreen"
+    },
+    {
+      "model": "SUV",
+      "position": [
+        -99.0,
+        -150.0,
+        0.08
+      ],
+      "angle_radians": 0.0,
+      "length_metres": 4.72,
+      "width_metres": 1.95,
+      "paint": "Campus_CarDesertTan"
+    },
+    {
+      "model": "Wagon",
+      "position": [
+        -99.0,
+        -131.0,
+        0.08
+      ],
+      "angle_radians": 3.141592653589793,
+      "length_metres": 4.75,
+      "width_metres": 1.82,
+      "paint": "Campus_CarBurgundy"
+    },
+    {
+      "model": "Pickup",
+      "position": [
+        -86.0,
+        -150.0,
+        0.08
+      ],
+      "angle_radians": 0.0,
+      "length_metres": 5.0,
+      "width_metres": 1.95,
+      "paint": "Campus_CarPearlWhite"
+    },
+    {
+      "model": "SportCoupe",
+      "position": [
+        -86.0,
+        -131.0,
+        0.08
+      ],
+      "angle_radians": 3.141592653589793,
+      "length_metres": 4.55,
+      "width_metres": 1.86,
+      "paint": "Campus_CarCopper"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        -73.0,
+        -150.0,
+        0.08
+      ],
+      "angle_radians": 0.0,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarMidnightBlue"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        -73.0,
+        -171.0,
+        0.08
+      ],
+      "angle_radians": 3.141592653589793,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarPetrolTeal"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        76.0,
+        -150.0,
+        0.08
+      ],
+      "angle_radians": 3.141592653589793,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarSilver"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        89.0,
+        -150.0,
+        0.08
+      ],
+      "angle_radians": 3.141592653589793,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarForestGreen"
+    },
+    {
+      "model": "SUV",
+      "position": [
+        89.0,
+        -131.0,
+        0.08
+      ],
+      "angle_radians": 0.0,
+      "length_metres": 4.72,
+      "width_metres": 1.95,
+      "paint": "Campus_CarDesertTan"
+    },
+    {
+      "model": "Wagon",
+      "position": [
+        89.0,
+        -171.0,
+        0.08
+      ],
+      "angle_radians": 3.141592653589793,
+      "length_metres": 4.75,
+      "width_metres": 1.82,
+      "paint": "Campus_CarBurgundy"
+    },
+    {
+      "model": "Pickup",
+      "position": [
+        102.0,
+        -171.0,
+        0.08
+      ],
+      "angle_radians": 3.141592653589793,
+      "length_metres": 5.0,
+      "width_metres": 1.95,
+      "paint": "Campus_CarPearlWhite"
+    },
+    {
+      "model": "SportCoupe",
+      "position": [
+        102.0,
+        -131.0,
+        0.08
+      ],
+      "angle_radians": 0.0,
+      "length_metres": 4.55,
+      "width_metres": 1.86,
+      "paint": "Campus_CarCopper"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        162.0,
+        -143.0,
+        0.08
+      ],
+      "angle_radians": 0.0,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarMidnightBlue"
+    },
+    {
+      "model": "Hatchback",
+      "position": [
+        181.0,
+        -132.0,
+        0.08
+      ],
+      "angle_radians": 0.0,
+      "length_metres": 4.15,
+      "width_metres": 1.82,
+      "paint": "Campus_CarPetrolTeal"
+    },
+    {
+      "model": "Sedan",
+      "position": [
+        194.0,
+        -157.0,
+        0.08
+      ],
+      "angle_radians": 1.5707963267948966,
+      "length_metres": 4.65,
+      "width_metres": 1.82,
+      "paint": "Campus_CarSilver"
+    }
+  ],
+  "pine_instances": 415,
+  "mesh_objects": 3644,
+  "base_triangles": 1592324,
+  "evaluated_triangles": 2192980,
+  "removed_old_vehicle_faces": 8206,
+  "wire_fence_bounds": {
+    "x": [
+      -220,
+      220
+    ],
+    "y": [
+      -199,
+      199
+    ]
+  },
+  "south_approach_open": true,
+  "runtime_verified": false,
+  "visual_checked": [
+    "hero",
+    "cars",
+    "fence"
+  ],
+  "export_warnings": [],
+  "road_guide_posts": 40,
+  "terrain_material": "continuous altitude/slope shader",
+  "seam_normals": "shared analytical derivatives",
+  "fbx_instance_material_fix": "temporary unique pine mesh data; linked originals restored",
+  "invalid_coordinates": [],
+  "empty_meshes": [],
+  "old_car_face_remnants": 0,
+  "car_fbx_reimport": {
+    "mesh_objects": 41,
+    "empty_meshes": 0,
+    "material_slots": 623,
+    "bounds_check": true
+  },
+  "border_seam_height_m": -0.15
+}

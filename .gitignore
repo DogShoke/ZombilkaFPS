@@ -19,3 +19,8 @@ sourcemap.json
 /assets/zombies/generated/validation.rbxlx
 /assets/environment/*.blend1
 /assets/environment/**/*.blend1
+
+# Map authoring recovery files and local Studio handoff
+/assets/maps/**/*.blend1
+/assets/maps/**/roblox_staging/
+/assets/maps/**/__pycache__/

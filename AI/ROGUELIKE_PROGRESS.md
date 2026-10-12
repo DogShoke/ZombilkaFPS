@@ -1,5 +1,11 @@
 # Roguelike progression — continuation checkpoint
 
+## 2026-10-12 — Blender interior asset checkpoint
+
+Later scope update: user requested game integration. Campus V4 is now selected in ordinary Studio Play, with filesystem visual/collision assets, existing combat/restart and bounded native runtime verification. Activities/progression remain unimplemented. Read CURRENT in AI/ENDLESS_MIGRATION_PROGRESS.md and the asset README; the asset-only paragraph below describes the earlier milestone.
+
+User selected Blender map population and prepared activity locations only. V4 assets are in `assets/maps/CampusReference/Campus_RunSpaces.blend`; read that folder's README and INTERIOR_GAMEPLAY_PLAN.md to resume. Added 25 populated buildings / 31 spaces / 55 inactive activity sites. 849 Blender geometry samples pass; FBX exports have zero warnings. Activity handlers, XP, rewards and progression were not changed or runtime tested. Rojo sources and the active Studio map are untouched. Current gameplay continuation is `AI/ENDLESS_MIGRATION_PROGRESS.md`; historical progression checkpoints below retain their original scope/status.
+
 Date: 2026-10-09. Branch: `dev`. Read `AGENTS.md`, the ENTIRE
 `ZOMBILKA_CODEX_MASTER_PROMPT.md`, this file and recent `AI/IMPLEMENTATION.md`
 before continuing. No automatic commit/merge/push.

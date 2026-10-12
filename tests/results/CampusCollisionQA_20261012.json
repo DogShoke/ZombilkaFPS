@@ -1,0 +1,21 @@
+{
+  "spawn_floor_rays": 1273,
+  "collider_count": 6414,
+  "route_headroom_rays": 714,
+  "stage": "Actual final Studio collision geometry in Edit",
+  "failures": [],
+  "spawn_heights_resnapped": 12,
+  "fountain_hull_query": true,
+  "fountain_probe": {
+    "origin": [
+      -40,
+      181.4,
+      -38.5
+    ],
+    "direction": [
+      80,
+      0,
+      0
+    ]
+  }
+}

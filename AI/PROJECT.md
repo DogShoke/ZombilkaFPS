@@ -1,5 +1,7 @@
 # Zombilka FPS
 
+2026-10-12 CURRENT: ordinary Studio Play uses Blender campus V4 through Prototype.Map="Campus". Filesystem visual/collision templates are mapped to ServerStorage.CampusAssets; existing combat/controller/restart retained. Actual native movement/fire/reload/NPC chase/damage/death/restart observed; final collision rays pass. Inactive activity markers only, no XP/full progression. Read CURRENT in ENDLESS_MIGRATION_PROGRESS.md and assets/maps/CampusReference/README.md. The CorporateMap checkpoint below is historical.
+
 2026-10-11 CURRENT: ordinary Studio Play now selects EndlessSurvivalPrototype through
 GameModeConfig.StudioMode. CorporateMap v2 is active, with existing three weapons and
 bounded constant NPC replenishment; FloorDirector/elevators are absent in that branch.
